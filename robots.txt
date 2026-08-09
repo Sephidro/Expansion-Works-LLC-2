@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: swap in the real production domain once this test build goes live, then uncomment:
+# Sitemap: https://REPLACE-WITH-PRODUCTION-DOMAIN/sitemap.xml

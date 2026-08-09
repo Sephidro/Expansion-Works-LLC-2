@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/xp-logo.png">
+    <link rel="apple-touch-icon" href="/assets/xp-logo.png">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="/assets/xp-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/assets/xp-logo.png">
+    <title>Case Study // 01 — Donation Page Rebuild</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=JetBrains+Mono:wght@100;400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #050608;
+            --bg-surface: #0a0c11;
+            --bg-surface-light: #12151c;
+
+            --cyan-glow: #00E5FF;
+            --cyan-dim: rgba(0, 229, 255, 0.15);
+
+            --copper-accent: #D9774B;
+            --copper-dim: rgba(217, 119, 75, 0.15);
+
+            --text-primary: #e0e2e8;
+            --text-muted: #6b7280;
+
+            --font-display: 'Syncopate', sans-serif;
+            --font-body: 'Chakra Petch', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(var(--bg-surface-light) 1px, transparent 1px),
+                linear-gradient(90deg, var(--bg-surface-light) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center top;
+            counter-reset: h2-counter;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 229, 255, 0.02) 0.5%,
+                transparent 1%
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .hud-bracket-top {
+            position: absolute;
+            top: 2rem;
+            left: 1rem;
+            width: 40px;
+            height: 40px;
+            border-top: 2px solid var(--cyan-glow);
+            border-left: 2px solid var(--cyan-glow);
+        }
+
+        .hud-bracket-bottom {
+            position: absolute;
+            bottom: 2rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid var(--copper-accent);
+            border-right: 2px solid var(--copper-accent);
+        }
+
+        .meta-data {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--cyan-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--cyan-dim);
+            padding-bottom: 1rem;
+        }
+
+        .meta-data span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-data span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--copper-accent);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            color: var(--copper-accent);
+            display: block;
+        }
+
+        .abstract {
+            background: var(--bg-surface);
+            border-left: 4px solid var(--cyan-glow);
+            padding: 2rem;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+        }
+
+        .abstract::after {
+            content: "// THE SHORT VERSION";
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--cyan-glow);
+            margin: 4rem 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::before {
+            content: "0" counter(h2-counter);
+            counter-increment: h2-counter;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--copper-accent);
+            border: 1px solid var(--copper-dim);
+            padding: 0.2rem 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #b0b4c0;
+        }
+
+        .tactic-card {
+            background: var(--bg-surface-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+
+        .tactic-card:hover {
+            border-color: var(--copper-dim);
+        }
+
+        .tactic-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20%;
+            width: 60px;
+            height: 2px;
+            background: var(--copper-accent);
+        }
+
+        .tactic-title {
+            font-family: var(--font-mono);
+            color: var(--copper-accent);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .code-block {
+            background: #020203;
+            border: 1px solid var(--cyan-dim);
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #a6accd;
+            overflow-x: auto;
+            margin: 2rem 0;
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+        }
+
+        .highlight { color: var(--cyan-glow); }
+        .copper-text { color: var(--copper-accent); }
+
+        ul {
+            list-style: none;
+            margin-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: #b0b4c0;
+        }
+
+        ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--cyan-glow);
+            font-family: var(--font-mono);
+        }
+
+        .node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--cyan-glow);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--cyan-glow);
+        }
+
+        .node-1 { top: 15%; right: -5%; }
+        .node-2 { bottom: 30%; left: -2%; background: var(--copper-accent); box-shadow: 0 0 10px var(--copper-accent); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hud-bracket-top"></div>
+        <div class="node node-1"></div>
+
+        <div class="meta-data">
+            <span>CASE 01 // DONATION PAGE REBUILD</span>
+            <span>RESULT: MORE DONATIONS, SAME TRAFFIC</span>
+        </div>
+
+        <h1>A Pretty Page <br><span>That Didn't Make Money.</span></h1>
+
+        <div class="abstract">
+            The page looked incredible. Dark, sharp, brutalist, every designer's wet dream. It also wasn't bringing in donations. Beautiful and broken aren't mutually exclusive. I rebuilt three things. The pricing tiers. The copy. And what actually happens the second somebody clicks "Donate." Here's exactly what changed and why it worked.
+        </div>
+
+        <h2>The $50 to $250 Cliff</h2>
+        <p>Their donation page had two options. Fifty bucks or two hundred fifty. Nothing in between. That's a 5x jump with no place to land.</p>
+        <p>If you're staring at that grid and you actually want to give something meaningful, your brain does this thing. Fifty feels too small if you're being serious. Two-fifty feels like a lot. So you don't pick either. You close the tab. You tell yourself you'll come back. You don't come back.</p>
+        <p>That's not the donor being cheap. That's the page making them work too hard to decide.</p>
+
+        <div class="tactic-card">
+            <div class="tactic-title">The Fix: A $100 Bridge</div>
+            <p>I added a $100 tier. Not because I expected people to pick $100 (though a bunch did). I added it so <span class="highlight">$250 stopped feeling like a leap and started feeling like a step up.</span></p>
+            <ul>
+                <li><strong>$50:</strong> Buys the materials a student actually uses.</li>
+                <li><strong>$100:</strong> Funds a local project from start to finish.</li>
+                <li><strong>$250:</strong> Changes the trajectory of one kid's year.</li>
+            </ul>
+            <p>Same page, one new button. Donations went up across every tier. The middle option pulled people up the ladder.</p>
+        </div>
+
+        <h2>Stop Sounding Like Every Other Nonprofit</h2>
+        <p>The original copy had every phrase you've ever read on a charity site. "Help students." "Support our mission." "Your gift makes a difference." None of it is wrong. None of it makes anyone click Donate.</p>
+        <p>A $50 donor and a $250 donor are different humans. They want different things. They give for different reasons. Writing the same line for both means you miss both.</p>
+
+        <div class="tactic-card">
+            <div class="tactic-title">The Fix: Different Pitch Per Tier</div>
+            <p>For the $50 tier I made it concrete. <span class="copper-text">"Skip the admin. The exact materials the kid needs, in the kid's hands."</span> Grassroots donors fear waste. Tell them their money goes directly into the thing.</p>
+            <p>For the $250 tier I shifted to legacy. <span class="highlight">"You're not paying for a bus ride. You're paying for the moment a student realizes the door is open."</span> That donor wants to be the reason something happened. Sell them the outcome, not the line item.</p>
+            <p>Same school, same mission, two completely different conversations. Because they're two completely different people.</p>
+        </div>
+
+        <h2>The Checkout That Killed the Vibe</h2>
+        <p>This was the leak. They used Square for payments. Fine, Square works. But clicking "Donate" opened a new tab and dropped the donor on a generic, white-labeled Square checkout that looked nothing like the site they were just on.</p>
+        <p>That's the moment you lose them. They came in trusting a sharp, intentional brand. Now they're staring at what looks like a phishing page. Their brain says "wait, am I in the right place?" and the answer is "I'll come back later." They don't come back later.</p>
+
+        <div class="tactic-card">
+            <div class="tactic-title">The Fix: Bring the Checkout Onto the Page</div>
+            <p>I couldn't change the processor (the client wanted to keep Square). So I wrote a small piece of JavaScript that catches the click, kills the new tab, and pops the Square checkout in a window that hovers over the site they're already on. Same processor. Same security. Totally different experience.</p>
+
+            <div class="code-block">
+// Catch the "Donate" button click and open the
+// Square checkout in a modal instead of a new tab.
+const buttons = document.querySelectorAll('.square-checkout-btn');
+
+buttons.forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const url = this.getAttribute('data-url');
+    window.open(url, 'Payment', 'width=500,height=720,top=100,left=400');
+  });
+});
+            </div>
+            <p>The vibe holds. The donor clicks a sharp custom button and a Square checkout floats over the page they were already on. No redirect. No broken trust. Donation processed.</p>
+        </div>
+
+        <h2>The Real Lesson</h2>
+        <p>None of this was hard. A new button. Two different paragraphs. A few lines of JavaScript. The original page wasn't broken because the designer was bad. It was broken because nobody asked "what does the donor's brain actually do on this page?"</p>
+        <p>That's the gap. Most websites have a beautiful version of the thing. Almost none of them have a converting version. Pretending those are the same thing costs you money every day the site is live.</p>
+        <p>If your site looks great but the leads aren't coming through, the design isn't the problem. The mechanics are. <span class="copper-text">That's what I fix.</span></p>
+
+        <!-- TERMINAL CTA BLOCK -->
+        <div style="
+            background: #020203;
+            border: 1px solid var(--cyan-glow);
+            padding: 3rem;
+            margin: 5rem 0 2rem;
+            position: relative;
+            text-align: center;
+        ">
+            <div style="
+                position: absolute;
+                top: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--bg-base);
+                padding: 0 1rem;
+                color: var(--cyan-glow);
+                font-family: var(--font-mono);
+                font-size: 0.8rem;
+                letter-spacing: 0.2em;
+                white-space: nowrap;
+            ">SYS.AUDIT // INITIATE</div>
+
+            <h3 style="
+                font-family: var(--font-display);
+                font-size: 2rem;
+                color: #ffffff;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+            ">Is Your Funnel Leaking Money?</h3>
+
+            <p style="
+                font-size: 1.1rem;
+                color: #b0b4c0;
+                max-width: 600px;
+                margin: 0 auto 2rem;
+            ">Send me your current landing page URL. I will record a custom 3-minute Loom teardown identifying exactly where you are losing conversions, and give you the wireframe to fix it. Zero cost. Zero commitment.</p>
+
+            <a href="/sales" style="
+                display: inline-block;
+                background: var(--cyan-glow);
+                color: #000000;
+                font-family: var(--font-mono);
+                font-weight: 700;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                padding: 1rem 2.5rem;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            "
+            onmouseover="this.style.boxShadow='0 0 25px rgba(0, 229, 255, 0.5)'; this.style.transform='translateY(-2px)';"
+            onmouseout="this.style.boxShadow='0 0 15px rgba(0, 229, 255, 0.2)'; this.style.transform='translateY(0)';"
+            >
+                REQUEST CUSTOM TEARDOWN &rarr;
+            </a>
+        </div>
+
+        <div class="hud-bracket-bottom"></div>
+        <div class="node node-2"></div>
+    </div>
+
+</body>
+</html>

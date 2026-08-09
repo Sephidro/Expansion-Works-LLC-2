@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: replace REPLACE-WITH-PRODUCTION-DOMAIN with the real domain once this test build goes live. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/sales</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/leads-go-cold</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/where-leads-come-from</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/consistent-followup</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/why-isnt-it-closing</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/which-crm-fits</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/how-i-write-follow-up</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/work/donation</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/work/staff</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/work/ibucks</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/qualify.html</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/audit-request.html</loc></url>
+</urlset>

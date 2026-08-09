@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/xp-logo.png">
+    <link rel="apple-touch-icon" href="/assets/xp-logo.png">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="/assets/xp-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/assets/xp-logo.png">
+    <title>Case Study // 02 — Staff Appreciation Redesign</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=JetBrains+Mono:wght@100;400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #050608;
+            --bg-surface: #0a0c11;
+            --bg-surface-light: #12151c;
+
+            --cyan-glow: #00E5FF;
+            --cyan-dim: rgba(0, 229, 255, 0.15);
+
+            --copper-accent: #D9774B;
+            --copper-dim: rgba(217, 119, 75, 0.15);
+
+            --text-primary: #e0e2e8;
+            --text-muted: #6b7280;
+
+            --font-display: 'Syncopate', sans-serif;
+            --font-body: 'Chakra Petch', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(var(--bg-surface-light) 1px, transparent 1px),
+                linear-gradient(90deg, var(--bg-surface-light) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center top;
+            counter-reset: h2-counter;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 229, 255, 0.02) 0.5%,
+                transparent 1%
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .hud-bracket-top {
+            position: absolute;
+            top: 2rem;
+            left: 1rem;
+            width: 40px;
+            height: 40px;
+            border-top: 2px solid var(--cyan-glow);
+            border-left: 2px solid var(--cyan-glow);
+        }
+
+        .hud-bracket-bottom {
+            position: absolute;
+            bottom: 2rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid var(--copper-accent);
+            border-right: 2px solid var(--copper-accent);
+        }
+
+        .meta-data {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--cyan-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--cyan-dim);
+            padding-bottom: 1rem;
+        }
+
+        .meta-data span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-data span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--copper-accent);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            color: var(--copper-accent);
+            display: block;
+        }
+
+        .abstract {
+            background: var(--bg-surface);
+            border-left: 4px solid var(--cyan-glow);
+            padding: 2rem;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+        }
+
+        .abstract::after {
+            content: "// THE SHORT VERSION";
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--cyan-glow);
+            margin: 4rem 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::before {
+            content: "0" counter(h2-counter);
+            counter-increment: h2-counter;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--copper-accent);
+            border: 1px solid var(--copper-dim);
+            padding: 0.2rem 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #b0b4c0;
+        }
+
+        .tactic-card {
+            background: var(--bg-surface-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+
+        .tactic-card:hover {
+            border-color: var(--copper-dim);
+        }
+
+        .tactic-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20%;
+            width: 60px;
+            height: 2px;
+            background: var(--copper-accent);
+        }
+
+        .tactic-title {
+            font-family: var(--font-mono);
+            color: var(--copper-accent);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .code-block {
+            background: #020203;
+            border: 1px solid var(--cyan-dim);
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #a6accd;
+            overflow-x: auto;
+            margin: 2rem 0;
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+        }
+
+        .highlight { color: var(--cyan-glow); }
+        .copper-text { color: var(--copper-accent); }
+
+        ul {
+            list-style: none;
+            margin-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: #b0b4c0;
+        }
+
+        ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--cyan-glow);
+            font-family: var(--font-mono);
+        }
+
+        .node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--cyan-glow);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--cyan-glow);
+        }
+
+        .node-1 { top: 15%; right: -5%; }
+        .node-2 { bottom: 30%; left: -2%; background: var(--copper-accent); box-shadow: 0 0 10px var(--copper-accent); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hud-bracket-top"></div>
+        <div class="node node-1"></div>
+
+        <div class="meta-data">
+            <span>CASE 02 // STAFF APPRECIATION REDESIGN</span>
+            <span>RESULT: STAFF ACTUALLY KEPT THE FLYER</span>
+        </div>
+
+        <h1>Making the Schedule <br><span>The Actual Gift.</span></h1>
+
+        <div class="abstract">
+            Every school does a Staff Appreciation Week. They print the schedule on regular printer paper, slap some clip art on it, and slide it into mailboxes. It says "we appreciate you" in Comic Sans and the staff sees right through it. I made a different schedule. Same bagels. Same raffle. Same shoutouts. Different schedule. Staff kept theirs on their desks.
+        </div>
+
+        <h2>What a Cheap Flyer Actually Says</h2>
+        <p>Here's the thing nobody wants to admit. When you hand someone a clip-art Word doc that says "You're Valued!", what they hear is "you're an obligation we're checking off." The flyer is the message. The flyer was the message before they even read the words.</p>
+        <p>Companies spend real money on their external marketing. Gradients. Custom fonts. Photo shoots. The whole thing. Then internal comms get whatever fits on a piece of copy paper printed in the breakroom. <span class="copper-text">Your staff sees both. They notice.</span></p>
+
+        <div class="tactic-card">
+            <div class="tactic-title">The Fix: Treat Internal Like External</div>
+            <p>I told the AI exactly what I didn't want. No corporate clip art. No primary colors. No dense walls of text. I wanted it to feel like a menu at a nice spa or a page in a magazine you'd actually save.</p>
+
+            <div class="code-block">
+// The art direction I gave the AI
+const styleGuide = {
+  vibe: "Editorial wellness. Calm. Premium.",
+  banned: ["clip art", "primary colors", "dense text blocks"],
+  palette: {
+    base: "Warm cream",
+    text: "Deep charcoal",
+    accents: "Muted sage and soft terracotta"
+  },
+  type: "Elegant serif headlines, clean sans-serif body",
+  spacing: "Let it breathe. Lots of white space."
+};
+            </div>
+            <p>The point wasn't to be fancy. The point was to <span class="highlight">match the care of the gesture to the look of the gesture.</span> You can't say "you matter" on a piece of paper that says "you're an afterthought."</p>
+        </div>
+
+        <h2>Same Week, Different Feeling</h2>
+        <p>The week itself was unchanged. Bagels Monday. Raffle Wednesday. Shoutout board Friday. None of the actual gifts changed. None of the budget changed.</p>
+        <p>What changed was how it landed. Staff actually talked about it. People asked who made it. Someone framed theirs in their classroom. Someone from a different committee asked if I could redo their flyer "like that one."</p>
+
+        <div class="tactic-card">
+            <div class="tactic-title">Why It Worked</div>
+            <p>It wasn't the bagels that made them feel valued. It was the fact that the schedule looked like somebody thought they were worth the effort. The packaging IS the message. People know.</p>
+            <ul>
+                <li><strong>The old way:</strong> Cluttered, generic, "internal use only" energy. Reads as obligation.</li>
+                <li><strong>The new way:</strong> Editorial design. Reads as deliberate care.</li>
+            </ul>
+        </div>
+
+        <h2>The Real Lesson</h2>
+        <p>If you treat your staff like external customers, with the same design care and the same intentionality, they notice immediately. Most organizations don't. <span class="copper-text">That gap is the opportunity.</span></p>
+        <p>Your internal documents tell people what you actually think of them. The "for internal use only" stamp is everywhere, even when you don't print it on the page.</p>
+        <p>This is the same thing I do for businesses. Every touchpoint, every email, every page on your site. The design isn't about looking good. It's about what it makes people feel about you. <span class="highlight">That's the part that drives the behavior you actually want.</span></p>
+
+        <!-- TERMINAL CTA BLOCK -->
+        <div style="
+            background: #020203;
+            border: 1px solid var(--cyan-glow);
+            padding: 3rem;
+            margin: 5rem 0 2rem;
+            position: relative;
+            text-align: center;
+        ">
+            <div style="
+                position: absolute;
+                top: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--bg-base);
+                padding: 0 1rem;
+                color: var(--cyan-glow);
+                font-family: var(--font-mono);
+                font-size: 0.8rem;
+                letter-spacing: 0.2em;
+                white-space: nowrap;
+            ">SYS.AUDIT // INITIATE</div>
+
+            <h3 style="
+                font-family: var(--font-display);
+                font-size: 2rem;
+                color: #ffffff;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+            ">Is Your Funnel Leaking Money?</h3>
+
+            <p style="
+                font-size: 1.1rem;
+                color: #b0b4c0;
+                max-width: 600px;
+                margin: 0 auto 2rem;
+            ">Send me your current landing page URL. I will record a custom 3-minute Loom teardown identifying exactly where you are losing conversions, and give you the wireframe to fix it. Zero cost. Zero commitment.</p>
+
+            <a href="/sales" style="
+                display: inline-block;
+                background: var(--cyan-glow);
+                color: #000000;
+                font-family: var(--font-mono);
+                font-weight: 700;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                padding: 1rem 2.5rem;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            "
+            onmouseover="this.style.boxShadow='0 0 25px rgba(0, 229, 255, 0.5)'; this.style.transform='translateY(-2px)';"
+            onmouseout="this.style.boxShadow='0 0 15px rgba(0, 229, 255, 0.2)'; this.style.transform='translateY(0)';"
+            >
+                REQUEST CUSTOM TEARDOWN &rarr;
+            </a>
+        </div>
+
+        <div class="hud-bracket-bottom"></div>
+        <div class="node node-2"></div>
+    </div>
+
+</body>
+</html>
