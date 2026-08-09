@@ -14,6 +14,7 @@
 
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 
 const CHROME_CANDIDATES = [
@@ -40,11 +41,19 @@ if (!chrome) {
 
 fs.mkdirSync(path.dirname(path.resolve(outFile)), { recursive: true });
 
+// Fresh profile dir per run — a reused default profile would let Chrome serve
+// cached CSS/JS from a previous invocation instead of the file you just edited.
+const profileDir = fs.mkdtempSync(path.join(os.tmpdir(), 'shot-profile-'));
+
 execFileSync(chrome, [
   '--headless=new', '--disable-gpu', '--hide-scrollbars',
+  '--disk-cache-dir=' + path.join(profileDir, 'cache'),
+  '--user-data-dir=' + profileDir,
   `--window-size=${width},${height}`,
   `--screenshot=${path.resolve(outFile)}`,
   url,
 ], { stdio: 'inherit' });
+
+fs.rmSync(profileDir, { recursive: true, force: true });
 
 console.log('Saved ' + outFile);
