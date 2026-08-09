@@ -29,8 +29,8 @@
   --panel-bg2: #1A1A1A;
   --panel-text: #F5F4EF;
   --panel-text-muted: rgba(245,244,239,0.64);
-  --panel-cyan: #FF7A45;
-  --panel-orange: #FFB020;
+  --panel-cyan: var(--terracotta);   /* alias — was a second, near-duplicate orange; one accent, sitewide */
+  --panel-orange: var(--terracotta);
   --panel-hairline: rgba(245,244,239,0.16);
 
   /* Type */
@@ -239,7 +239,7 @@ nav.nav-on-hero .nav-link:hover { color: var(--panel-cyan); }
   align-items: end; min-height: 460px; position: relative;
 }
 .hero-copy { padding: calc(var(--nav-h) + 40px) 0 56px; position: relative; z-index: 3; }
-.hero-copy h1 { color: var(--panel-text); }
+.hero-copy h1 { color: var(--panel-text); letter-spacing: -0.03em; }
 .hero-cta-row { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; margin-top: 28px; }
 .hero-dek { font-size: 17px; color: var(--panel-text-muted); max-width: 440px; margin-top: 16px; line-height: 1.5; }
 
