@@ -6,8 +6,8 @@ The public-facing brand for Expansion Works / EXPworks (Xaiver Pearson). Vanilla
 
 | URL | File | Job |
 |-----|------|-----|
-| `/` | `index.html` | **Homepage.** Hero, trust/methodology section, service tiers, case studies, pain points, the embedded 6-question lead diagnostic quiz, a guides teaser, closing CTA. Quiz routes to `/qualify.html` or `/audit-request.html` with the flagged bottleneck/tier pre-filled via query params. |
-| `/sales` | `sales.html` | **Sales page.** Diagnosis → process → proof → real pricing (matches the 3 tiers below) → FAQ → the URL-capture teardown form (Formspree). |
+| `/` | `index.html` | **StackBrief homepage.** Founder-led positioning, decision-led product explanation, the embedded 5-question software-stack diagnostic, transparent editorial rules, and the Expansion Works implementation upsell. The result is shown before email capture. |
+| `/sales` | `sales.html` | **Expansion Works implementation page.** Fit filter → connected-system map → three scoped service ranges → operating proof → implementation inquiry form (Formspree). |
 | `/qualify.html` | `qualify.html` | **Booking-intent lead capture.** Industry, lead volume, biggest bottleneck, scored client-side for the on-page message + email subject line. |
 | `/audit-request.html` | `audit-request.html` | **Written-breakdown request.** Lower-commitment alternative to booking a call: send a URL, get a real (human-run, not automated) conversion audit back. |
 | `/guides/` | `guides/index.html` | **Guides hub.** 6 long-form articles, one per lead-system pillar (speed-to-lead, attribution, follow-up, close rate, CRM tooling, follow-up copy). No email gate — verdict/value before any ask. |
@@ -17,15 +17,17 @@ The public-facing brand for Expansion Works / EXPworks (Xaiver Pearson). Vanilla
 
 > The 3 case studies still use the older "terminal/HUD" treatment (Syncopate / JetBrains Mono, cyan + copper), not the current design system below. Flagged, not yet redesigned — a real gap, not a mistake.
 
-The real offer (Lead Visibility Sprint / Lead Recovery Installation / Continuous Optimization) is consistent across `index.html`, `sales.html`, `qualify.html`, and every guide's CTA. There is no unresolved offer mismatch as of the 2026-08-09 redesign.
+The service offer remains Lead Visibility Sprint / Lead Recovery Installation / Continuous Optimization. StackBrief now sits in front of the service as the free decision product. Legacy qualification and audit pages remain live for existing guide links.
 
-## Design system (shared across all pages)
+## Design systems
 
-`assets/style.css` + `assets/site.js` are the single source of truth, linked from every page. Not copy-pasted per file.
+`assets/stackbrief.css` + `assets/stackbrief.js` power the new StackBrief homepage and Expansion Works implementation page. The system uses midnight navy, electric cyan, and conversion-only orange with condensed display typography and technical module frames.
 
-- **Palette:** warm paper `#FAF7F0`, ink `#1C2430`, teal `#1F6F6B` (analytical: links, tags), terracotta `#B04E22` (action: CTAs). One deliberate dark "ink panel" (`#10151D`) reserved for exactly one section, the homepage's closing CTA, not the whole site.
-- **Type:** Fraunces (display, sentence case, headlines only), Inter (body/UI), IBM Plex Mono (labels, kickers, data — the only place all-caps survives).
-- **Why:** this replaced a dark-navy/cyan/orange/Anton all-caps system that read as "dev tool," not "advisor," for a buyer (CPAs, recruiting firms, sales coaches) that isn't shopping for software. Won a 4-pitch/3-judge blind design tournament over 3 other directions.
+`assets/style.css` + `assets/site.js` remain the source of truth for the guide, qualification, audit, and older case-study pages while those surfaces are migrated.
+
+- **StackBrief palette:** midnight navy `#06111F`, electric cyan `#11C8E8`, warm orange `#F28C38`, and off-white `#F4F6F7`.
+- **StackBrief type:** Barlow Condensed (display), Inter (body/UI), IBM Plex Mono (labels and system data).
+- **Editorial rule:** the recommendation result appears before the optional email save. Partner status is explicitly separated from recommendation logic.
 - `vercel.json` → `cleanUrls: true` (so `sales.html` serves at `/sales`)
 
 ## Before going live

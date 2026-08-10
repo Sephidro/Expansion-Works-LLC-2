@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const port = Number(process.argv[2] || 8080);
-const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.png': 'image/png', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain' };
+const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain' };
 
 http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0].split('#')[0]);
@@ -24,4 +24,4 @@ http.createServer((req, res) => {
   const ext = path.extname(file);
   res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
   fs.createReadStream(file).on('error', () => res.end()).pipe(res);
-}).listen(port, () => console.log('serving ' + root + ' on http://localhost:' + port));
+}).listen(port, '0.0.0.0', () => console.log('serving ' + root + ' on http://localhost:' + port));

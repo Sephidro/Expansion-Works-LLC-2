@@ -1,501 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xaiver Pearson · Lead Capture & Follow-Up Systems | EXPworks</title>
-<meta name="description" content="I build the system between someone showing interest and someone following up. Lead capture, response, and follow-up systems for founder-led B2B service businesses. Founder of Expansion Works.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StackBrief | Build the right software stack for your consulting business</title>
+  <meta name="description" content="Get a practical software plan for your consulting business: what to use now, what to skip, and when to upgrade. Built by Expansion Works.">
+  <meta name="theme-color" content="#06111f">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xaiver Pearson · Lead Capture & Follow-Up Systems">
-<meta property="og:description" content="Your leads aren't the problem. What happens after they land is. I build the system that catches them.">
-<meta property="og:image" content="/assets/xp-logo.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Xaiver Pearson · Lead Capture & Follow-Up Systems">
-<meta name="twitter:description" content="Your leads aren't the problem. What happens after they land is.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Build your business stack | StackBrief">
+  <meta property="og:description" content="What to use. What to skip. When to upgrade.">
+  <meta property="og:image" content="/assets/stackbrief-featured.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Build your business stack | StackBrief">
+  <meta name="twitter:description" content="What to use. What to skip. When to upgrade.">
+  <meta name="twitter:image" content="/assets/stackbrief-featured.jpg">
 
-<link rel="icon" type="image/png" href="/assets/xp-logo.png">
-<link rel="apple-touch-icon" href="/assets/xp-logo.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<style>
-  .about-grid { display: grid; grid-template-columns: 1fr 0.8fr; gap: 64px; align-items: center; }
-  .about-body p { font-size: 17px; line-height: 1.75; margin-bottom: 18px; }
-  .about-signature { font-family: var(--font-display); font-weight: 650; font-size: 20px; color: var(--ink); margin-top: 24px; }
-  .about-signature span { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-faint); display: block; margin-top: 4px; letter-spacing: 0.06em; text-transform: uppercase; }
-  .about-photo-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); overflow: hidden; max-width: 340px; aspect-ratio: 3/4; }
-  .about-photo { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-
-  .stats-strip { padding: 72px 0 var(--section-pad); }
-  .stats-strip .kicker { margin-bottom: 24px; }
-  .stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
-  .stat-cell { background: var(--paper-card); padding: 36px 30px; }
-  .stat-cell .stat-num { font-family: var(--font-display); font-weight: 900; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; font-size: clamp(40px, 5vw, 60px); color: var(--ink); line-height: 1; }
-  .stat-cell .stat-num.accent { color: var(--terracotta); }
-  .stat-cell .stat-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 10px 0 10px; }
-  .stat-cell .stat-desc { font-size: 14.5px; color: var(--ink-faint); line-height: 1.55; max-width: 240px; }
-
-  .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); margin-top: 8px; }
-  .trust-item { background: var(--paper-card); padding: 32px 28px; }
-  .trust-item h3 { font-size: 18px; margin-bottom: 10px; }
-  .trust-item p { font-size: 14.5px; line-height: 1.6; }
-
-  .pain-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); margin-top: 8px; }
-  .pain-item { background: var(--paper-card); padding: 30px 26px; border-left: 3px solid var(--terracotta); }
-  .pain-quote { font-family: var(--font-display); font-weight: 650; font-size: 18px; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
-  .pain-answer { font-size: 14.5px; line-height: 1.6; color: var(--ink-body); }
-
-  .quiz-wrap { max-width: 640px; }
-  .quiz-progress-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
-  .quiz-progress-bar-track { flex: 1; height: 2px; background: var(--hairline); }
-  .quiz-progress-bar { height: 100%; background: var(--terracotta); width: 0%; transition: width 0.4s cubic-bezier(.16,1,.3,1); }
-  .quiz-progress-text { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
-  .quiz-q { display: none; }
-  .quiz-q.active { display: block; }
-  .quiz-q-text { font-family: var(--font-display); font-weight: 650; font-size: clamp(22px,2.8vw,30px); color: var(--ink); line-height: 1.15; margin-bottom: 26px; }
-  .quiz-options { display: flex; flex-direction: column; gap: 10px; }
-  .quiz-opt { background: var(--paper-card); border: 1px solid var(--hairline); color: var(--ink-body); font-family: var(--font-body); font-size: 15px; font-weight: 500; text-align: left; padding: 16px 20px; border-radius: var(--radius); cursor: pointer; transition: border-color .15s, background .15s; }
-  .quiz-opt:hover { border-color: var(--teal); }
-  .quiz-opt.selected { border-color: var(--teal); background: var(--teal-soft); color: var(--teal); pointer-events: none; }
-  .quiz-result { display: none; }
-  .quiz-result-tier { font-family: var(--font-mono); font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
-  .quiz-result-tier.ok { color: var(--teal); }
-  .quiz-result-tier.mid { color: var(--terracotta); }
-  .quiz-result-tier.bad { color: #A83226; }
-  .quiz-result-headline { font-family: var(--font-display); font-weight: 650; font-size: clamp(26px,4vw,42px); color: var(--ink); line-height: 1.05; margin-bottom: 18px; }
-  .quiz-result-sub { font-size: 16px; line-height: 1.65; max-width: 560px; margin-bottom: 26px; }
-  .quiz-issues { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
-  .quiz-issue { font-size: 14px; padding: 12px 16px; border-left: 3px solid var(--terracotta); background: var(--terracotta-soft); line-height: 1.5; }
-  .quiz-issue strong { display: block; margin-bottom: 2px; font-weight: 600; font-size: 13px; color: var(--ink); }
-  .quiz-result-ctas { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
-  .quiz-restart { background: transparent; border: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); cursor: pointer; margin-top: 18px; padding: 0; }
-  .quiz-restart:hover { color: var(--ink-body); }
-
-  .cta-panel { text-align: left; padding: 88px 0; }
-  .cta-panel .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-  .cta-panel h2 { margin-bottom: 18px; }
-  .cta-panel p { max-width: 480px; margin-bottom: 8px; }
-  .cta-bullets { display: flex; flex-direction: column; gap: 8px; margin: 22px 0 30px; }
-  .cta-bullet { font-size: 15px; color: var(--panel-text-muted); padding-left: 18px; position: relative; }
-  .cta-bullet::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: var(--panel-cyan); border-radius: 50%; }
-  .btn-note { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--panel-text-muted); margin-top: 16px; }
-
-  @media (max-width: 900px) {
-    .about-grid, .cta-panel .wrap { grid-template-columns: 1fr; }
-    .trust-grid, .pain-grid, .stats-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 600px) {
-    .trust-grid, .pain-grid, .stats-grid { grid-template-columns: 1fr; }
-  }
-</style>
+  <link rel="icon" type="image/png" href="/assets/xp-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/stackbrief.css">
+  <script src="/assets/stackbrief.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav id="mainNav" class="nav-on-hero">
-  <a class="nav-logo" href="/">EXPworks</a>
-  <div class="nav-links">
-    <a class="nav-link" href="/guides/">Guides</a>
-    <a class="nav-link" href="#work">Work</a>
-    <a class="nav-link" href="#cases">Case studies</a>
-    <a class="nav-link" href="/sales">Pricing</a>
-    <a class="btn-primary btn-nav" href="#quiz">Find my leak →</a>
-  </div>
-</nav>
+  <header class="site-header" data-header>
+    <a class="brand" href="/" aria-label="StackBrief home">
+      <span class="brand-mark" aria-hidden="true">XP</span>
+      <span class="brand-copy"><strong>STACKBRIEF</strong><small>BY EXPANSION WORKS</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span></span><span></span><span></span><span class="sr-only">Open menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation" data-menu>
+      <a href="#what-you-get">What you get</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#independence">How we choose</a>
+      <a href="/sales">Done for you</a>
+      <a class="button button-small" href="#stackbrief">Build my brief</a>
+    </nav>
+  </header>
 
-<!-- ─── HERO ─── -->
-<section class="hero hero--dark">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <div class="kicker on-panel">EXPworks · Xaiver Pearson</div>
-      <h1>Your leads are <span class="mark">leaking.</span><br>I find where.</h1>
-      <p class="hero-dek">You're good at what you do. The problem isn't getting inquiries, it's what happens after. Six questions tell you exactly where they're disappearing, and what it's costing you every month it stays that way.</p>
-      <div class="hero-cta-row">
-        <a class="btn-primary" href="#quiz">Find my biggest leak →</a>
-        <a class="btn-secondary" href="/guides/">Or start with the free guides →</a>
+  <main id="main">
+    <section class="hero">
+      <div class="tech-grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span>SOFTWARE DECISIONS</span> FOR INDEPENDENT CONSULTANTS</p>
+        <h1>Stop guessing which software your business needs.</h1>
+        <p class="hero-dek">StackBrief turns your business stage, lead flow, budget, and tolerance for tech into a practical plan: <strong>what to use now, what to skip, and when to upgrade.</strong></p>
+        <div class="hero-actions">
+          <a class="button" href="#stackbrief">Build my free StackBrief <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="/sales">Already at $100K+? Have me build it <span aria-hidden="true">↗</span></a>
+        </div>
+        <ul class="trust-line" aria-label="StackBrief principles">
+          <li>No pay-to-rank</li>
+          <li>No-buy is a valid answer</li>
+          <li>Useful before the email ask</li>
+        </ul>
       </div>
-    </div>
 
-    <div class="hero-photo-col">
-      <div class="hero-ghost-num" aria-hidden="true">01</div>
-      <img class="hero-photo" src="/assets/xavier-headshot.png" alt="Xaiver Pearson, founder of Expansion Works">
-      <div class="hero-stamp">
-        <span class="hero-stamp-label">Case file · Lead recovery</span>
-        <span class="hero-stamp-num">32% → 72%</span>
-        <span class="hero-stamp-cap">Application completion, before/after fixing the follow-up gap. $1.7M recovered.</span>
+      <div class="hero-visual" aria-label="The four parts of a business stack">
+        <div class="portrait-frame">
+          <span class="portrait-index">SYSTEM // 01</span>
+          <img src="/assets/xavier-headshot.png" alt="Xaiver Pearson, founder of Expansion Works">
+          <div class="portrait-caption"><strong>XAIVER PEARSON</strong><span>FOUNDER + SYSTEMS BUILDER</span></div>
+        </div>
+        <div class="module-rack">
+          <div class="module-card"><span>01</span><strong>WEBSITE</strong><small>Explain the offer</small></div>
+          <div class="module-card"><span>02</span><strong>CRM</strong><small>Track the pipeline</small></div>
+          <div class="module-card"><span>03</span><strong>FOLLOW-UP</strong><small>Keep leads moving</small></div>
+          <div class="module-card module-card-accent"><span>04</span><strong>AUTOMATION</strong><small>Add only when earned</small></div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ─── STATS STRIP ─── -->
-<section class="stats-strip wrap">
-  <div class="kicker">The receipts</div>
-  <div class="stats-grid">
-    <div class="stat-cell">
-      <div class="stat-num">5</div>
-      <div class="stat-label">Seconds</div>
-      <div class="stat-desc">That's how long a visitor takes to form a first impression. After that, they've already decided.</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num accent">97%</div>
-      <div class="stat-label">Leave, never return</div>
-      <div class="stat-desc">Without a system to capture and follow up, every visitor who bounces is a client you never got to meet.</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">$1.7M+</div>
-      <div class="stat-label">Revenue recovered</div>
-      <div class="stat-desc">What catching people who'd already raised their hand, instead of losing them to silence, recovered at the charter school I used to run growth for.</div>
-    </div>
-  </div>
-</section>
+    <section class="signal-strip" aria-label="Who StackBrief is for">
+      <span>CONSULTANTS</span><i></i><span>FREELANCERS</span><i></i><span>COACHES</span><i></i><span>SMALL SERVICE FIRMS</span>
+    </section>
 
-<!-- ─── ABOUT ─── -->
-<section class="band wrap">
-  <div class="about-grid">
-    <div class="reveal">
-      <div class="kicker">Who's behind this</div>
-      <h2 style="margin-bottom:22px;">I've been building websites since I was eleven.</h2>
-      <div class="about-body">
-        <p>Two decades later, I figured out the part most agencies never do. A website isn't art on a wall. <strong>It's the first step in a system.</strong> And most businesses stop building right after it.</p>
-        <p>I ran growth for a NYC charter school for two years, and the fix wasn't some school-specific trick. It was the standard lead-capture and follow-up playbook gyms run, SaaS companies run, even the guy who does my dreadlocks runs. Charter schools were just late to it. I applied what already works everywhere else and recovered <strong>over $1.7M</strong> in enrollment value that was already showing up, just going cold before anyone caught it.</p>
-        <p>I'm the outside eye. You're too close to your own process to see where people are actually falling out of it. <strong>I'm not.</strong></p>
+    <section id="what-you-get" class="section section-dark">
+      <div class="section-heading">
+        <p class="eyebrow">THE OUTPUT</p>
+        <h2>A decision brief, not another “best software” list.</h2>
+        <p>Generic reviews start with products. StackBrief starts with how your business actually works, then shows the minimum system your next stage requires.</p>
       </div>
-      <div class="about-signature">Xaiver Pearson<span>Founder, Expansion Works</span></div>
-    </div>
-    <div class="reveal">
-      <div class="about-photo-wrap">
-        <img class="about-photo" src="/assets/xavier-headshot.png" alt="Xaiver Pearson" />
+
+      <div class="decision-board">
+        <article class="decision-column do-now">
+          <p class="decision-label">DO NOW</p>
+          <h3>Fix the active constraint</h3>
+          <ul>
+            <li>One clear recommendation</li>
+            <li>Why it fits your stage</li>
+            <li>What it should connect to</li>
+          </ul>
+        </article>
+        <article class="decision-column later">
+          <p class="decision-label">ADD LATER</p>
+          <h3>Know the upgrade trigger</h3>
+          <ul>
+            <li>The milestone that justifies it</li>
+            <li>Expected workflow impact</li>
+            <li>Migration risk to watch</li>
+          </ul>
+        </article>
+        <article class="decision-column skip">
+          <p class="decision-label">SKIP FOR NOW</p>
+          <h3>Keep complexity out</h3>
+          <ul>
+            <li>Tools you do not need yet</li>
+            <li>Features you should not pay for</li>
+            <li>Work you can keep manual</li>
+          </ul>
+        </article>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ─── TRUST / METHODOLOGY ─── -->
-<section id="how-we-diagnose" class="band wrap">
-  <div class="section-header">
-    <div class="kicker">How this actually works</div>
-    <h2>I diagnose before I pitch.</h2>
-    <p>Every guide, the quiz, the whole site, runs on the same three rules. Not marketing, just how I actually work.</p>
-  </div>
-  <div class="trust-grid">
-    <div class="trust-item">
-      <h3>We look before we pitch</h3>
-      <p>I don't know which tier fits your business until you tell me what's actually happening in it. That's what the quiz and the guides are for, not a funnel to a call.</p>
-    </div>
-    <div class="trust-item">
-      <h3>"Not yet" is a valid answer</h3>
-      <p>If your funnel scores clean, the diagnostic says so. Continuous Optimization exists because most of what's broken by the time people call me is small, not because I need a bigger problem to sell.</p>
-    </div>
-    <div class="trust-item">
-      <h3>You get the reasoning, not a score</h3>
-      <p>Every result names the specific question that flagged it and why it matters. Not a number out of 100 with nothing behind it.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SERVICES ─── -->
-<section id="work" class="band wrap">
-  <div class="section-header">
-    <div class="kicker">01 · What I build</div>
-    <h2>The work</h2>
-    <p>Most service businesses aren't missing leads, they're missing the system that catches them. Three ways I fix that, priced so you always know what you're getting into before you talk to me.</p>
-  </div>
-  <div class="card-grid">
-    <div class="card">
-      <div class="kicker">01</div>
-      <h3>Lead Visibility Sprint · $1,500–$2,500</h3>
-      <p class="card-body">I map your current lead process end to end: where inquiries come from, how fast you respond, where they go quiet. You get a prioritized list of what's actually costing you clients, whether you hire me for the rest or not.</p>
-    </div>
-    <div class="card alt">
-      <div class="kicker">02</div>
-      <h3>Lead Recovery Installation · $4,000–$7,500</h3>
-      <p class="card-body">The build. Capture, CRM, automated response, follow-up sequences, booking, reporting, all connected. So an inquiry never sits in an inbox hoping someone remembers it.</p>
-    </div>
-    <div class="card">
-      <div class="kicker">03</div>
-      <h3>Continuous Optimization · $750–$1,500/mo</h3>
-      <p class="card-body">Once the system's live, this is what keeps it sharp: reviewing response times, follow-up timing, routing, and copy every month instead of letting it quietly decay.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── CASE STUDIES ─── -->
-<section id="cases" class="band wrap">
-  <div class="section-header">
-    <div class="kicker">02 · Proof it works</div>
-    <h2>Tactical breakdowns</h2>
-    <p>Not "we increased engagement." Real problems, the exact fix, and why it changed the behavior.</p>
-  </div>
-  <div class="card-grid">
-    <a class="card" href="/work/donation">
-      <div class="kicker">Case 01 · Donation page</div>
-      <h3>A pretty page that didn't make money</h3>
-      <p class="card-body">One new pricing tier and a checkout that didn't break the vibe. <strong>Donations up across every tier, same traffic.</strong></p>
-      <div class="card-meta"><span>Read the breakdown</span><span>→</span></div>
-    </a>
-    <a class="card alt" href="/work/staff">
-      <div class="kicker">Case 02 · Staff appreciation</div>
-      <h3>Making the schedule the actual gift</h3>
-      <p class="card-body">Same bagels. Same budget. Different design. <strong>Staff kept the flyer on their desks.</strong></p>
-      <div class="card-meta"><span>Read the breakdown</span><span>→</span></div>
-    </a>
-    <a class="card" href="/work/ibucks">
-      <div class="kicker">Case 03 · iBucks economy</div>
-      <h3>A $10K cost that funded itself</h3>
-      <p class="card-body">Killed the subscription, built a currency. <strong>$100K–$200K in new funding a year. Ran 5 years.</strong></p>
-      <div class="card-meta"><span>Read the breakdown</span><span>→</span></div>
-    </a>
-  </div>
-</section>
-
-<!-- ─── PAIN SECTION ─── -->
-<section class="band wrap">
-  <div class="section-header">
-    <div class="kicker">03 · Sound familiar?</div>
-  </div>
-  <div class="pain-grid">
-    <div class="pain-item">
-      <div class="pain-quote">"Leads go cold before anyone follows up."</div>
-      <div class="pain-answer">By the time you get to it, they've already called someone else. The first response usually wins.</div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-quote">"I don't know where my leads come from."</div>
-      <div class="pain-answer">No source tracking means no way to double down on what's working, or stop wasting time on what isn't.</div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-quote">"Follow-up happens if I remember."</div>
-      <div class="pain-answer">That's not a discipline problem, it's a missing system. Automated, not more organized.</div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-quote">"They inquire, but don't become clients."</div>
-      <div class="pain-answer">If the conversation itself isn't converting, more traffic just means losing more people the same way.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── QUIZ ─── -->
-<section id="quiz" class="band wrap">
-  <div class="section-header">
-    <div class="kicker">04 · Free 2-minute diagnostic</div>
-    <h2>Where are your leads actually going?</h2>
-    <p>6 questions. 2 minutes. See exactly which part of your lead process is leaking, and which of the three ways I fix it fits, before you talk to me about any of it.</p>
-  </div>
-  <div class="quiz-wrap reveal" id="siteQuiz">
-    <div class="quiz-progress-wrap" id="quizProgressWrap">
-      <div class="quiz-progress-bar-track"><div class="quiz-progress-bar" id="quizProgress"></div></div>
-      <span class="quiz-progress-text" id="quizProgressText">Question 1 of 6</span>
-    </div>
-    <div class="quiz-questions" id="quizQuestions"></div>
-    <div class="quiz-result" id="quizResult"></div>
-  </div>
-</section>
-
-<!-- ─── GUIDES TEASER ─── -->
-<section id="guides-teaser" class="band wrap">
-  <div class="section-header">
-    <div class="kicker">05 · Go deeper</div>
-    <h2>The guides</h2>
-    <p>The quiz gives you a verdict in two minutes. These go longer: the actual mechanics behind each leak, written from what I've seen break, not a listicle.</p>
-  </div>
-  <div class="card-grid cols-4">
-    <a class="card" href="/guides/leads-go-cold">
-      <div class="kicker">Guide 01</div>
-      <h3 style="font-size:19px;">Why leads go cold before anyone follows up</h3>
-      <p class="card-body">The system that recovered $1.7M in leads that had already raised their hand.</p>
-      <div class="card-meta"><span>Read</span><span>→</span></div>
-    </a>
-    <a class="card alt" href="/guides/where-leads-come-from">
-      <div class="kicker">Guide 02</div>
-      <h3 style="font-size:19px;">Where are your leads actually coming from</h3>
-      <p class="card-body">What's worth instrumenting first, before you buy anything.</p>
-      <div class="card-meta"><span>Read</span><span>→</span></div>
-    </a>
-    <a class="card alt" href="/guides/consistent-followup">
-      <div class="kicker">Guide 03</div>
-      <h3 style="font-size:19px;">Why "I'll get to it" loses you the deal</h3>
-      <p class="card-body">A system that runs whether you remember or not.</p>
-      <div class="card-meta"><span>Read</span><span>→</span></div>
-    </a>
-    <a class="card" href="/guides/why-isnt-it-closing">
-      <div class="kicker">Guide 04</div>
-      <h3 style="font-size:19px;">Why more traffic won't fix a leaky middle</h3>
-      <p class="card-body">The conversation is where it's leaking, not the ad spend.</p>
-      <div class="card-meta"><span>Read</span><span>→</span></div>
-    </a>
-  </div>
-  <div style="text-align:center;margin-top:32px;"><a class="btn-secondary" href="/guides/">See all 6 guides →</a></div>
-</section>
-
-<!-- ─── CTA (ink panel, the one deliberate dark moment) ─── -->
-<section id="cta" class="panel cta-panel">
-  <div class="wrap">
-    <div>
-      <div class="kicker on-panel">06 · Your move</div>
-      <h2>Still scrolling? <span style="color:var(--panel-orange);">Take the diagnostic.</span></h2>
-      <p>Six questions gets you a specific answer, not a sales pitch: which of your leads are actually leaking, and which of the three ways I fix it fits your business.</p>
-      <div class="cta-bullets">
-        <div class="cta-bullet">The specific leaks, ranked by what they're costing you.</div>
-        <div class="cta-bullet">A tier recommendation, not a generic pitch.</div>
-        <div class="cta-bullet">Full pricing, upfront, no call required to see it.</div>
+    <section id="how-it-works" class="section process-section">
+      <div class="section-heading">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>From scattered tools to a stack you can explain.</h2>
       </div>
-      <button class="btn-primary" id="ctaBtn" data-href="/sales">See the pricing →</button>
-      <p class="btn-note">Or scroll back up and take the 2-minute diagnostic first.</p>
-    </div>
-  </div>
-</section>
+      <div class="process-grid">
+        <article>
+          <span class="step-number">01</span>
+          <h3>Describe the business</h3>
+          <p>Tell us how leads arrive, what happens next, what you already use, and how much complexity you can tolerate.</p>
+        </article>
+        <article>
+          <span class="step-number">02</span>
+          <h3>Get the decision order</h3>
+          <p>See what belongs in the stack now, what can wait, and the trigger that should cause the next decision.</p>
+        </article>
+        <article>
+          <span class="step-number">03</span>
+          <h3>Build it or hand it off</h3>
+          <p>Use the plan yourself. If the system is justified but your time is better spent elsewhere, Expansion Works can install it.</p>
+        </article>
+      </div>
+    </section>
 
-<!-- ─── FOOTER ─── -->
-<footer>
-  <span>EXPworks // Built by Xaiver Pearson</span>
-  <a href="/guides/">Guides</a>
-  <a href="#how-we-diagnose">Methodology</a>
-  <a href="/qualify.html">Free Lead Visibility Check</a>
-  <a href="/audit-request.html">Free Conversion Audit</a>
-  <a href="https://www.linkedin.com/in/xaiverp/" target="_blank" rel="noopener">LinkedIn</a>
-</footer>
+    <section id="stackbrief" class="section brief-section">
+      <span id="quiz" class="anchor-alias" aria-hidden="true"></span>
+      <div class="brief-shell">
+        <div class="brief-intro">
+          <p class="eyebrow">STACKBRIEF // BETA</p>
+          <h2>Build your first software plan.</h2>
+          <p>Five questions. About two minutes. Your core verdict appears before we ask for your email.</p>
+          <div class="brief-spec">
+            <span><b>01</b> Business stage</span>
+            <span><b>02</b> Lead volume</span>
+            <span><b>03</b> Current stack</span>
+            <span><b>04</b> Bottleneck</span>
+            <span><b>05</b> Ownership</span>
+          </div>
+        </div>
 
-<script src="/assets/site.js"></script>
-<script>
-(function () {
-  'use strict';
+        <div class="quiz-panel" data-quiz>
+          <div class="quiz-topline">
+            <span data-progress-label>QUESTION 01 / 05</span>
+            <div class="progress-track"><i data-progress></i></div>
+          </div>
+          <div class="quiz-stage" data-quiz-stage aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
 
-  // ─── LEAD DIAGNOSTIC QUIZ (logic unchanged from prior build, restyled only) ───
-  (function() {
-    var Qs = [
-      { q: 'When someone fills out a form or messages you, how fast do they typically hear back?', issue: 'Leads go cold before anyone follows up', detail: 'The first business to respond usually wins the deal. Every hour of silence is a coin flip you\'re losing.', pillar: 'leads-go-cold',
-        opts: [{ label: 'Same day, if I remember', score: 3 }, { label: 'Within a day or two, depends how busy I am', score: 2 }, { label: 'Automatic same-hour response, then I follow up personally', score: 0 }] },
-      { q: 'If I asked which channel your last 5 clients actually came from, could you tell me?', issue: 'No idea where leads come from', detail: 'You can\'t double down on what\'s working, or cut what isn\'t, if you can\'t see it.', pillar: 'dont-know-source',
-        opts: [{ label: 'Not really, it\'s a blur', score: 3 }, { label: 'Roughly, I have a general sense', score: 1 }, { label: 'Yes, I track it by source', score: 0 }] },
-      { q: 'When a lead goes quiet after the first message, what happens next?', issue: 'Follow-up is inconsistent', detail: 'Whoever\'s free handles it, which means most of the time nobody does. That\'s not a person problem, it\'s a system problem.', pillar: 'inconsistent-followup',
-        opts: [{ label: 'Honestly, probably nothing', score: 3 }, { label: 'I mean to follow up, sometimes I do', score: 2 }, { label: 'A sequence follows up automatically until they respond', score: 0 }] },
-      { q: 'Of the people who reach out, how many turn into an actual client?', issue: 'Leads come in, but they don\'t close', detail: 'If they\'re inquiring but not buying, the conversation itself, not the traffic, is where the money\'s leaking.', pillar: 'low-close-rate',
-        opts: [{ label: 'Way fewer than I\'d expect', score: 3 }, { label: 'It\'s fine, could be better', score: 1 }, { label: 'Most qualified leads convert', score: 0 }] },
-      { q: 'Where does a new inquiry actually land right now?', issue: 'No central system', detail: 'Email, texts, DMs, and a notebook aren\'t a pipeline. Nothing that isn\'t tracked gets followed up on.', pillar: null,
-        opts: [{ label: 'Scattered across email, texts, DMs, wherever', score: 3 }, { label: 'One inbox, but no real tracking', score: 2 }, { label: 'A CRM or pipeline tool everyone actually uses', score: 0 }] },
-      { q: 'Have you already got a lead-capture system in place, or is it all manual?', issue: 'No system at all', detail: 'Nothing to optimize yet, this starts with getting the basics in place.', pillar: null,
-        opts: [{ label: 'Nothing formal, it\'s all manual', score: 3 }, { label: 'Some pieces exist but they don\'t talk to each other', score: 2 }, { label: 'A real system exists, it just needs tuning', score: 0 }] }
-    ];
-    var TIERS = {
-      installation: { label: 'Lead Recovery Installation', price: '$4,000–$7,500' },
-      sprint: { label: 'Lead Visibility Sprint', price: '$1,500–$2,500' },
-      optimization: { label: 'Continuous Optimization', price: '$750–$1,500/mo' }
-    };
+    <section id="independence" class="section independence-section">
+      <span id="how-we-diagnose" class="anchor-alias" aria-hidden="true"></span>
+      <div class="independence-copy">
+        <p class="eyebrow">HOW WE CHOOSE</p>
+        <h2>The recommendation comes before the monetization.</h2>
+        <p>StackBrief is being built to earn money through legitimate software partner programs. That only works if the decision is still useful when every affiliate link disappears.</p>
+        <p>Fit rules are based on your constraints. Partner status never changes the order. A non-affiliate product, your current tool, or buying nothing can win.</p>
+      </div>
+      <div class="rules-card">
+        <p class="rules-title">EDITORIAL RULESET // V0.1</p>
+        <ol>
+          <li><span>01</span>Recommend the job before the brand.</li>
+          <li><span>02</span>Show a no-buy path when it fits.</li>
+          <li><span>03</span>Explain disqualifiers, not just benefits.</li>
+          <li><span>04</span>Label compensated links clearly.</li>
+          <li><span>05</span>Recheck facts before publishing.</li>
+        </ol>
+      </div>
+    </section>
 
-    var scores = new Array(Qs.length).fill(null);
-    var current = 0, N = Qs.length;
-    var wrap = document.getElementById('siteQuiz');
-    if (!wrap) return;
-    var progressWrap = document.getElementById('quizProgressWrap');
-    var bar = document.getElementById('quizProgress');
-    var progressText = document.getElementById('quizProgressText');
-    var qWrap = document.getElementById('quizQuestions');
-    var rWrap = document.getElementById('quizResult');
+    <section id="work" class="section install-section">
+      <div class="install-copy">
+        <p class="eyebrow">THE OBVIOUS NEXT STEP</p>
+        <h2>Already making $100K+? Stop learning tools. Run the business.</h2>
+        <p>If your StackBrief says the system is justified but you do not want another implementation project, Expansion Works can map, install, and connect it for you.</p>
+        <div class="install-list">
+          <span>Website + lead capture</span>
+          <span>CRM + pipeline</span>
+          <span>Booking + follow-up</span>
+          <span>Automation + reporting</span>
+        </div>
+        <a class="button" href="/sales">See done-for-you implementation <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="install-proof">
+        <p class="proof-kicker">WHY EXPANSION WORKS</p>
+        <blockquote>“A website isn’t art on a wall. It’s the first step in a system.”</blockquote>
+        <p>Xaiver Pearson has built websites since age eleven and later applied lead-capture and follow-up systems while running growth for a NYC charter school, recovering more than $1.7M in enrollment value.</p>
+        <a href="/work/donation">See how I think through a real build <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
 
-    qWrap.innerHTML = Qs.map(function(q, i) {
-      return '<div class="quiz-q' + (i === 0 ? ' active' : '') + '" data-q="' + i + '">' +
-        '<div class="quiz-q-text">' + q.q + '</div><div class="quiz-options">' +
-        q.opts.map(function(o) { return '<button class="quiz-opt" data-score="' + o.score + '" data-qi="' + i + '">' + o.label + '</button>'; }).join('') +
-        '</div></div>';
-    }).join('');
+    <section class="section final-cta">
+      <p class="eyebrow">START WITH THE DECISION</p>
+      <h2>Build less. Connect better. Upgrade when the business earns it.</h2>
+      <a class="button" href="#stackbrief">Build my free StackBrief <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
 
-    function updateBar() {
-      bar.style.width = ((current / N) * 100) + '%';
-      progressText.textContent = 'Question ' + (current + 1) + ' of ' + N;
-    }
-
-    function showResult() {
-      var total = scores.reduce(function(a, b) { return a + b; }, 0);
-      var issues = [];
-      scores.forEach(function(s, i) { if (s >= 2) issues.push(Qs[i]); });
-
-      var topPillar = null, topIssueLabel = null, topScore = -1;
-      for (var i = 0; i < 4; i++) {
-        if (Qs[i].pillar && scores[i] >= 2 && scores[i] > topScore) { topScore = scores[i]; topPillar = Qs[i].pillar; topIssueLabel = Qs[i].issue; }
-      }
-
-      var tierKey, tClass, headline, sub;
-      if (total >= 13) {
-        tierKey = 'installation'; tClass = 'bad';
-        headline = 'You\'re losing leads by default.';
-        sub = 'This isn\'t one broken thing, it\'s most of the chain: capture, follow-up, tracking. The fix isn\'t a tweak, it\'s building the system from the ground up. That\'s the ' + TIERS.installation.label + ' (' + TIERS.installation.price + ').';
-      } else if (total >= 6) {
-        tierKey = 'sprint'; tClass = 'mid';
-        headline = 'A few leaks are costing you real money.';
-        sub = 'The foundation\'s mostly there. These specific gaps are where inquiries are quietly disappearing. Worth mapping before you build anything new, that\'s what the ' + TIERS.sprint.label + ' does (' + TIERS.sprint.price + ').';
-      } else {
-        tierKey = 'optimization'; tClass = 'ok';
-        headline = 'You\'re ahead of most operators.';
-        sub = 'Most of the chain holds together already. What\'s left is the kind of tuning that\'s easy to miss from the inside, wording, timing, one dropped step, and worth a second set of eyes. That\'s ' + TIERS.optimization.label + ' (' + TIERS.optimization.price + ').';
-      }
-      var tier = TIERS[tierKey].label;
-
-      var issuesHtml = issues.length
-        ? '<div class="quiz-issues">' + issues.map(function(q) { return '<div class="quiz-issue"><strong>' + q.issue + '</strong>' + q.detail + '</div>'; }).join('') + '</div>'
-        : '<p style="font-size:15px;margin-bottom:26px;">No major issues found. Here\'s the tier worth a look anyway.</p>';
-
-      var noteParts = ['Quiz result: recommended ' + tier + '.'];
-      if (topIssueLabel) noteParts.push('Biggest flagged issue: ' + topIssueLabel + '.');
-      var note = noteParts.join(' ');
-
-      var qualifyUrl = '/qualify.html?recommend=' + encodeURIComponent(tierKey) + (topPillar ? '&bottleneck=' + encodeURIComponent(topPillar) : '');
-      var auditUrl = '/audit-request.html?note=' + encodeURIComponent(note);
-
-      rWrap.innerHTML =
-        '<div class="quiz-result-tier ' + tClass + '">' + tier + '</div>' +
-        '<div class="quiz-result-headline">' + headline + '</div>' +
-        '<p class="quiz-result-sub">' + sub + '</p>' + issuesHtml +
-        '<div class="quiz-result-ctas">' +
-          '<a class="btn-primary" href="' + qualifyUrl + '">Book a ' + tier + ' call →</a>' +
-          '<a class="btn-secondary" href="' + auditUrl + '">Get the full written breakdown →</a>' +
-        '</div>' +
-        '<button class="quiz-restart" id="quizRestart">← Retake the diagnostic</button>';
-      qWrap.style.display = 'none';
-      progressWrap.style.display = 'none';
-      rWrap.style.display = 'block';
-      document.getElementById('quizRestart').addEventListener('click', function() {
-        scores = new Array(N).fill(null); current = 0;
-        rWrap.style.display = 'none'; qWrap.style.display = 'block'; progressWrap.style.display = 'flex';
-        qWrap.querySelectorAll('.quiz-q').forEach(function(el) { el.classList.remove('active'); });
-        qWrap.querySelectorAll('.quiz-opt').forEach(function(el) { el.classList.remove('selected'); });
-        qWrap.querySelector('[data-q="0"]').classList.add('active');
-        updateBar();
-      });
-    }
-
-    qWrap.addEventListener('click', function(e) {
-      var btn = e.target.closest('.quiz-opt');
-      if (!btn) return;
-      var qi = parseInt(btn.dataset.qi);
-      if (qi !== current) return;
-      btn.parentElement.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.remove('selected'); });
-      btn.classList.add('selected');
-      scores[current] = parseInt(btn.dataset.score);
-      setTimeout(function() {
-        current++;
-        if (current >= N) { showResult(); }
-        else {
-          qWrap.querySelectorAll('.quiz-q').forEach(function(el) { el.classList.remove('active'); });
-          qWrap.querySelector('[data-q="' + current + '"]').classList.add('active');
-          updateBar();
-        }
-      }, 280);
-    });
-    updateBar();
-  })();
-
-  // ─── CTA BUTTON ───
-  var ctaBtn = document.getElementById('ctaBtn');
-  ctaBtn.addEventListener('click', function() {
-    var href = ctaBtn.dataset.href;
-    if (href) window.location.href = href;
-  });
-})();
-</script>
-
+  <footer class="site-footer">
+    <div class="footer-brand"><strong>STACKBRIEF</strong><span>BY EXPANSION WORKS</span></div>
+    <p>Software decisions and implementation systems for independent service businesses.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/guides/">Guides</a>
+      <a href="/sales">Done for you</a>
+      <a href="#independence">Editorial rules</a>
+    </nav>
+    <p class="footer-note">© 2026 Expansion Works LLC. StackBrief is in beta. Recommendations are educational and should be verified against current vendor terms.</p>
+  </footer>
 </body>
 </html>
