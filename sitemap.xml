@@ -2,6 +2,7 @@
 <!-- TODO: replace REPLACE-WITH-PRODUCTION-DOMAIN with the real domain once this test build goes live. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/</loc></url>
+  <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/stackbrief</loc></url>
   <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/sales</loc></url>
   <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/</loc></url>
   <url><loc>https://REPLACE-WITH-PRODUCTION-DOMAIN/guides/leads-go-cold</loc></url>

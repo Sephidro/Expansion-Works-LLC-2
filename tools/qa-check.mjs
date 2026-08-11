@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
 const FILES = [
-  'index.html', 'sales.html', 'qualify.html', 'audit-request.html',
+  'index.html', 'stackbrief.html', 'sales.html', 'qualify.html', 'audit-request.html',
   'guides/index.html', 'guides/leads-go-cold.html', 'guides/where-leads-come-from.html',
   'guides/consistent-followup.html', 'guides/why-isnt-it-closing.html',
   'guides/which-crm-fits.html', 'guides/how-i-write-follow-up.html',
