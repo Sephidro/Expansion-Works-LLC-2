@@ -289,6 +289,7 @@ h3 { font-size: 25px; font-weight: 800; line-height: 1; }
 .site-footer nav { display: flex; gap: 20px; }
 .site-footer nav a { color: #9aadb9; font: 500 9px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .footer-note { grid-column: 1 / -1; padding-top: 22px; border-top: 1px solid var(--line); color: #607382; font: 400 9px/1.5 var(--mono); }
+.site-footer .site-verification { grid-column: 1 / -1; max-width: none; margin-top: -14px; color: #415462; font: 400 8px/1.5 var(--mono); overflow-wrap: anywhere; }
 
 /* Done-for-you implementation page */
 .service-hero {
