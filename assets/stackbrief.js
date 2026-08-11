@@ -217,15 +217,20 @@
     const currentFits = current.value === 'connected'
       || (current.value === 'wordpress' && sitejob.value === 'content')
       || (current.value === 'allinone' && ['digital', 'hybrid'].includes(sitejob.value));
+    const offerProblemOnExistingSite = current.value !== 'none' && bottleneck.value === 'offer';
 
-    if (currentFits && bottleneck.value !== 'offer') {
+    if (currentFits || offerProblemOnExistingSite) {
       return baseRecommendation({
         layer: 'FRONT DOOR',
         product: 'Keep the current website',
         status: 'KEEP',
         confidence: 'HIGH CONFIDENCE',
-        summary: 'Nothing in your answers justifies a platform migration. Fix the inquiry path or handoff before replacing the site.',
-        fit: 'The current platform already matches the main job you selected.',
+        summary: offerProblemOnExistingSite
+          ? 'Your failure is offer clarity, not the website platform. Rewrite the promise and next step before considering a rebuild.'
+          : 'Nothing in your answers justifies a platform migration. Fix the inquiry path or handoff before replacing the site.',
+        fit: offerProblemOnExistingSite
+          ? 'The existing platform is capable of testing a clearer offer path without migration.'
+          : 'The current platform already matches the main job you selected.',
         avoid: 'Reconsider only when a measured limitation blocks conversion, publishing, or delivery.',
         cost: 'No new platform cost',
         alternative: 'Run a focused conversion audit before buying another builder.',
