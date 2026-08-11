@@ -148,6 +148,25 @@
     })[character]);
   }
 
+  async function copyText(value, button) {
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch (error) {
+      const textarea = document.createElement('textarea');
+      textarea.value = value;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+    const original = button.textContent;
+    button.textContent = 'Brief copied';
+    window.setTimeout(() => { button.textContent = original; }, 1800);
+  }
+
   function updateProgress() {
     const current = Math.min(state.index + 1, questions.length);
     progress.style.width = `${(current / questions.length) * 100}%`;
@@ -554,6 +573,22 @@
     const recommendationSummary = recommendations.map((item) => `${item.layer}: ${item.product} (${item.status})`).join(' | ');
     const answerSummary = questions.map((question) => `${question.kicker}: ${state.answers[question.id].label}`).join(' | ');
     const summary = `${plan.label} | ${recommendationSummary} | ${answerSummary}`;
+    const portableBrief = [
+      `STACKBRIEF — ${plan.label}`,
+      plan.title,
+      plan.reason,
+      '',
+      ...recommendations.flatMap((item) => [
+        `${item.layer}: ${item.product} — ${item.status}`,
+        `Why: ${item.summary}`,
+        `Disqualifier: ${item.avoid}`,
+        `No-buy path: ${item.noBuy}`,
+        `Cost fact checked ${verifiedDate}: ${item.cost}`,
+        ''
+      ]),
+      'Generated at expansion-works-llc-2.vercel.app',
+      'Verify current vendor prices, limits, and terms before purchasing.'
+    ].join('\n');
 
     stage.innerHTML = `
       <div class="result-header">
@@ -575,20 +610,21 @@
         <p class="legal-note">Business-formation information is educational, not legal or tax advice. Verify all prices, limits, and terms with the vendor before purchasing.</p>
       </div>
       <div class="save-box">
-        <h4>Save this exact brief.</h4>
-        <p>Leave your email for the implementation order and future alerts tied to these decisions. No generic software-news drip.</p>
+        <h4>Want a human beta review?</h4>
+        <p>Share your email and Expansion Works will receive this exact result. During beta, follow-up is manual. No fake automated lifecycle and no generic software-news drip.</p>
         <form class="save-form" action="https://formspree.io/f/xeewjjlv" method="POST" data-save-form>
           <input type="email" name="email" autocomplete="email" placeholder="you@business.com" aria-label="Work email" required>
-          <input type="hidden" name="source" value="StackBrief product-level beta">
+          <input type="hidden" name="source" value="StackBrief manual beta review">
           <input type="hidden" name="stackbrief_result" value="${escapeHtml(summary)}">
-          <input type="hidden" name="_subject" value="New StackBrief product decision lead">
-          <button class="button" type="submit">Save my StackBrief →</button>
+          <input type="hidden" name="_subject" value="New StackBrief beta review request">
+          <button class="button" type="submit">Request beta review →</button>
         </form>
         <p class="form-status" data-form-status aria-live="polite"></p>
       </div>
       <div class="result-actions">
         ${state.answers.ownership.value === 'none' || ['growth'].includes(selection.key) ? '<a href="/sales">Have Expansion Works install it →</a>' : '<a href="/sales">See the done-for-you option →</a>'}
         <a href="/tools/better-inquiry-form">Build a better inquiry form →</a>
+        <button type="button" data-copy-brief>Copy my brief</button>
         <button type="button" data-restart>Retake the brief</button>
       </div>
     `;
@@ -599,6 +635,9 @@
       state.answers = {};
       renderQuestion();
     });
+
+    const copyBrief = stage.querySelector('[data-copy-brief]');
+    copyBrief.addEventListener('click', () => copyText(portableBrief, copyBrief));
 
     const form = stage.querySelector('[data-save-form]');
     const status = stage.querySelector('[data-form-status]');
@@ -615,11 +654,11 @@
           headers: { Accept: 'application/json' }
         });
         if (!response.ok) throw new Error('Form submission failed');
-        form.innerHTML = '<p class="form-status">SAVED. Your full product brief was attached to this request.</p>';
+        form.innerHTML = '<p class="form-status">RECEIVED. Expansion Works has your exact result. Beta follow-up is manual.</p>';
       } catch (error) {
         status.textContent = 'That did not save. Try again or use the done-for-you page to contact me directly.';
         submit.disabled = false;
-        submit.textContent = 'SAVE MY STACKBRIEF →';
+        submit.textContent = 'REQUEST BETA REVIEW →';
       }
     });
   }
