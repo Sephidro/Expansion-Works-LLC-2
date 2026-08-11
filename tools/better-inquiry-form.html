@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better Inquiry Form Builder | StackBrief</title>
+  <meta name="description" content="Replace the vague contact-us box with a structured inquiry form that helps real buyers identify what they need.">
+  <meta name="theme-color" content="#06111f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Build a better inquiry form | StackBrief">
+  <meta property="og:description" content="Give buyers clear ways to request your services without giving every stranger an unrestricted path into your inbox.">
+  <meta property="og:image" content="/assets/stackbrief-featured.jpg">
+  <link rel="icon" type="image/png" href="/assets/xp-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/stackbrief.css">
+  <script src="/assets/stackbrief.js" defer></script>
+  <script src="/assets/inquiry-builder.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="StackBrief home">
+      <span class="brand-mark" aria-hidden="true">XP</span>
+      <span class="brand-copy"><strong>STACKBRIEF</strong><small>BY EXPANSION WORKS</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span></span><span></span><span></span><span class="sr-only">Open menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" data-menu aria-label="Main navigation">
+      <a href="/#stackbrief">Build a StackBrief</a>
+      <a href="/sales">Done for you</a>
+      <a class="button button-small" href="#builder">Build my form</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="tool-hero">
+      <div>
+        <p class="eyebrow">FREE TOOL // INQUIRY ARCHITECT</p>
+        <h1>Stop asking strangers to write an essay</h1>
+        <p>Give prospective buyers clear ways to request your services. Route partnerships and unsolicited pitches somewhere else. This builder creates the question structure and starter HTML before asking for an email.</p>
+        <a class="button" href="#builder">Build my inquiry form →</a>
+      </div>
+      <aside class="tool-principle">
+        <span>THE PRINCIPLE</span>
+        <blockquote>Make buyers identify the problem they want solved before opening the message box.</blockquote>
+        <p>Structured choices reduce ambiguity and human solicitation. Technical filtering still handles automated bots.</p>
+      </aside>
+    </section>
+
+    <section id="builder" class="section inquiry-builder-section">
+      <div class="section-heading">
+        <p class="eyebrow">BUILD THE ROUTE</p>
+        <h2>Start with buyer intent, then collect context.</h2>
+        <p>Use real service or problem names. The output is a starting architecture, not a fake universal conversion formula.</p>
+      </div>
+
+      <div class="inquiry-builder-shell">
+        <form class="inquiry-config" data-inquiry-config>
+          <label>
+            What kind of business is this?
+            <select name="business_type" required>
+              <option value="">Choose one</option>
+              <option value="consulting">Consulting or professional service</option>
+              <option value="coaching">Coaching or training</option>
+              <option value="creative">Creative, design, or marketing service</option>
+              <option value="local">Local or appointment-based service</option>
+              <option value="event">Events, nonprofit, or community organization</option>
+            </select>
+          </label>
+
+          <label>
+            What should a qualified visitor request?
+            <select name="primary_action" required>
+              <option value="">Choose one</option>
+              <option value="consultation">A consultation or strategy call</option>
+              <option value="quote">A quote or project estimate</option>
+              <option value="booking">An appointment or booking</option>
+              <option value="application">An application or eligibility review</option>
+              <option value="information">More information about a specific service</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>What are the three most common paid problems or service requests?</legend>
+            <label><span class="sr-only">First buyer problem</span><input name="problem_1" required maxlength="80" placeholder="Example: My website gets traffic but few inquiries"></label>
+            <label><span class="sr-only">Second buyer problem</span><input name="problem_2" required maxlength="80" placeholder="Example: Leads are not followed up consistently"></label>
+            <label><span class="sr-only">Third buyer problem</span><input name="problem_3" required maxlength="80" placeholder="Example: Our tools do not share lead information"></label>
+          </fieldset>
+
+          <label>
+            What platform holds the website?
+            <select name="platform" required>
+              <option value="">Choose one</option>
+              <option value="custom">Custom or static HTML site</option>
+              <option value="wordpress">WordPress + Elementor</option>
+              <option value="wix">Wix</option>
+              <option value="beacons">Beacons</option>
+              <option value="other">Another builder or I am not sure</option>
+            </select>
+          </label>
+
+          <label>
+            How should inquiries be handled?
+            <select name="routing" required>
+              <option value="">Choose one</option>
+              <option value="one">One person receives everything</option>
+              <option value="several">Different requests go to different people</option>
+              <option value="crm">Every qualified request must enter a CRM</option>
+            </select>
+          </label>
+
+          <label>
+            How many legitimate inquiries arrive in a normal month?
+            <select name="volume" required>
+              <option value="">Choose one</option>
+              <option value="low">Fewer than 5</option>
+              <option value="medium">About 5 to 20</option>
+              <option value="high">More than 20</option>
+            </select>
+          </label>
+
+          <button class="button" type="submit">Generate my form plan →</button>
+          <p class="config-note">Nothing is submitted or stored. The form plan is generated in this browser.</p>
+        </form>
+
+        <div class="inquiry-output" data-inquiry-output aria-live="polite">
+          <div class="output-empty">
+            <span>OUTPUT // WAITING</span>
+            <h3>Your form architecture will appear here.</h3>
+            <p>You will get a recommended field order, backend decision, routing notes, and starter HTML.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <p class="eyebrow">THE FORM IS ONE NODE</p>
+      <h2>See what should happen before and after the inquiry.</h2>
+      <a class="button" href="/#stackbrief">Build my free StackBrief →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><strong>STACKBRIEF</strong><span>BY EXPANSION WORKS</span></div>
+    <p>Software decisions and implementation systems for independent service businesses.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/#stackbrief">StackBrief</a>
+      <a href="/guides/">Guides</a>
+      <a href="/sales">Done for you</a>
+    </nav>
+    <p class="footer-note">© 2026 Expansion Works LLC. This tool provides a starting structure. Test the resulting form with real buyers and your actual routing process.</p>
+  </footer>
+</body>
+</html>

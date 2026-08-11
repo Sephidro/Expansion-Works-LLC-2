@@ -21,6 +21,7 @@ const FILES = [
   'guides/consistent-followup.html', 'guides/why-isnt-it-closing.html',
   'guides/which-crm-fits.html', 'guides/how-i-write-follow-up.html',
   'work/donation.html', 'work/staff.html', 'work/ibucks.html',
+  'tools/better-inquiry-form.html',
 ];
 
 let errors = 0;

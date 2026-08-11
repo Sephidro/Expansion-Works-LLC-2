@@ -1,6 +1,6 @@
 # Expansion Works: Public Site
 
-The public-facing brand for Expansion Works / EXPworks (Xaiver Pearson). Vanilla HTML + GSAP, no build step. Deploys to Vercel on every push to `main`.
+The public-facing brand for Expansion Works / EXPworks (Xavier Pearson). Vanilla HTML + GSAP, no build step. Deploys to Vercel on every push to `main`.
 
 ## Pages
 
