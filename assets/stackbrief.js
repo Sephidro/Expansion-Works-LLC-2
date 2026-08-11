@@ -19,7 +19,11 @@
   const stage = quiz.querySelector('[data-quiz-stage]');
   const progress = document.querySelector('[data-progress]');
   const progressLabel = document.querySelector('[data-progress-label]');
-  const verifiedDate = 'August 11, 2026';
+  const catalog = window.StackBriefCatalog;
+  const productCatalog = catalog?.products || {};
+  const verifiedDate = catalog?.verifiedDate || 'Verify before purchase';
+  const rulesetVersion = '2026-08-11.2';
+  const funnel = window.StackBriefFunnel;
 
   const commonQuestions = [
     {
@@ -203,7 +207,14 @@
     }
   };
 
-  const state = { index: 0, answers: {} };
+  const state = {
+    index: 0,
+    answers: {},
+    startedAt: new Date().toISOString(),
+    completedAt: '',
+    briefId: '',
+    wasCompleted: false
+  };
 
   function escapeHtml(value) {
     return String(value).replace(/[&<>'"]/g, (character) => ({
@@ -221,6 +232,18 @@
   function questionFlow() {
     if (!state.answers.stage) return [...commonQuestions, ...routeQuestions.working];
     return [...commonQuestions, ...routeQuestions[routeKey()]];
+  }
+
+  function persistSession(completed = false) {
+    funnel?.saveQuizSession({
+      rulesetVersion,
+      index: state.index,
+      answers: state.answers,
+      startedAt: state.startedAt,
+      completedAt: state.completedAt,
+      briefId: state.briefId,
+      completed
+    });
   }
 
   async function copyText(value, button) {
@@ -276,6 +299,14 @@
         if (question.id === 'stage') state.answers = { stage: answer };
         else state.answers[question.id] = answer;
         state.index += 1;
+        persistSession(false);
+        funnel?.track('quiz_answered', {
+          rulesetVersion,
+          questionId: question.id,
+          answer: answer.value,
+          questionNumber: state.index,
+          route: routeKey()
+        });
         if (state.index < questionFlow().length) renderQuestion();
         else renderAnalysis();
       });
@@ -309,6 +340,20 @@
       experience: 'No operator-specific evidence is being claimed for this decision.',
       sourceLabel: 'Verify current facts', ...overrides
     };
+  }
+
+  function recommendProduct(key, overrides) {
+    const product = productCatalog[key];
+    if (!product) throw new Error(`Missing StackBrief catalog product: ${key}`);
+    return baseRecommendation({
+      product: product.name,
+      cost: product.cost,
+      experience: product.experience,
+      url: product.url,
+      sourceUrl: product.sourceUrl,
+      commercial: product.commercial,
+      ...overrides
+    });
   }
 
   function pickWebsite() {
@@ -348,43 +393,34 @@
     }
 
     if (['buy', 'list'].includes(answer('nextstep')) || (routeKey() === 'starter' && answer('channel') === 'social')) {
-      return baseRecommendation({
-        layer: 'FRONT DOOR', product: 'Beacons', confidence: 'HIGH CONFIDENCE',
+      return recommendProduct('beacons', {
+        layer: 'FRONT DOOR', confidence: 'HIGH CONFIDENCE',
         summary: 'A social-first page, digital delivery, selling, and email follow-up can live in one lightweight system.',
         fit: 'Best when traffic begins on social or the first offer needs simple payment and automatic delivery.',
         avoid: 'Avoid as the primary home when searchable long-form content or a desktop-first experience drives acquisition.',
-        cost: 'Free plan; paid plans start at $10/month', alternative: 'Wix if the business needs a broader hybrid website.',
+        alternative: 'Wix if the business needs a broader hybrid website.',
         noBuy: 'Keep the current link page if it already captures and follows up with buyers.',
-        experience: 'Expansion Works uses Beacons regularly for lightweight sites, digital delivery, and email follow-up.',
-        url: 'https://beacons.ai/signup?c=expworks', sourceUrl: 'https://beacons.ai/i/pricing',
-        commercial: 'REFERRAL LINK • MAY EARN 25% OF A QUALIFYING PAID PLAN'
       });
     }
 
     if (answer('channel') === 'search' || answer('offer') === 'content') {
-      return baseRecommendation({
-        layer: 'FRONT DOOR', product: 'WordPress + Elementor',
+      return recommendProduct('wordpressElementor', {
+        layer: 'FRONT DOOR',
         summary: 'This combination offers publishing control and a visual editing layer for a content-led site.',
         fit: 'Best when organic content, ownership, and design flexibility justify ongoing maintenance.',
         avoid: 'Avoid when nobody will manage hosting, updates, plugins, security, and performance.',
-        cost: 'WordPress is open source; hosting varies; Elementor paid plans start at $49/year',
         alternative: 'Wix if operational simplicity matters more than publishing control.',
         noBuy: 'Keep an existing site until content production, not platform choice, becomes the constraint.',
-        experience: 'Expansion Works has built multiple WordPress sites and treats plugin load, upkeep, and performance as ongoing costs.',
-        url: 'https://elementor.com/', sourceUrl: 'https://elementor.com/pricing/'
       });
     }
 
-    return baseRecommendation({
-      layer: 'FRONT DOOR', product: 'Wix',
+    return recommendProduct('wix', {
+      layer: 'FRONT DOOR',
       summary: 'Wix is the strongest fit here because the business needs a clear website with useful functions and a manageable learning curve.',
       fit: 'Best for service businesses using bookings, events, content, memberships, donations, or moderate commerce.',
       avoid: 'Avoid when maximum design control matters more than convenience. Complex layouts still deserve a manual mobile review.',
-      cost: 'Free plan available; a paid plan is needed for a custom domain and removal of Wix branding',
       alternative: 'Beacons for social-first selling; WordPress + Elementor for content control.',
       noBuy: 'Do not migrate if the existing builder already supports the required jobs without workarounds.',
-      experience: 'Expansion Works currently supports client sites on Wix and previously ran an ecommerce site on the platform.',
-      url: 'https://www.wix.com/', sourceUrl: 'https://www.wix.com/plans', commercial: 'DIRECT LINK • AFFILIATE APPLICATION PENDING'
     });
   }
 
@@ -427,16 +463,13 @@
       });
     }
 
-    return baseRecommendation({
-      layer: 'INQUIRY ROUTE', product: 'Formspree',
+    return recommendProduct('formspree', {
+      layer: 'INQUIRY ROUTE',
       summary: 'Formspree supplies a lightweight backend for a structured custom form without forcing a full CRM or server build.',
       fit: 'Best when you control the page and want inquiries delivered reliably with purposeful fields.',
       avoid: 'Avoid adding it when the current builder or CRM already handles forms and routing well.',
-      cost: 'Free tier includes 50 submissions per month; paid limits and features vary',
       alternative: 'Use the website platform’s native form when it supports the required routing.',
       noBuy: 'Use the existing form if it supports structured choices and dependable delivery.',
-      experience: 'Expansion Works currently uses Formspree for its own website forms.',
-      url: 'https://formspree.io/', sourceUrl: 'https://help.formspree.io/articles/account-management/account-limits'
     });
   }
 
@@ -461,50 +494,39 @@
     }
 
     if (highLevelEligible) {
-      return baseRecommendation({
-        layer: 'PIPELINE + FOLLOW-UP', product: 'HighLevel', confidence: 'HIGH CONFIDENCE',
+      return recommendProduct('highLevel', {
+        layer: 'PIPELINE + FOLLOW-UP', confidence: 'HIGH CONFIDENCE',
         summary: 'Your volume, repeated workflow pain, and named ownership make an all-in-one automation platform defensible.',
         fit: 'Best when one owner can maintain CRM data, routing, campaigns, agents, calendars, and workflow exceptions.',
         avoid: 'Do not buy it when nobody owns the system or fewer tools can handle the proven workflow.',
-        cost: 'Plans start at $97/month; phone, messaging, email, and AI usage can add cost',
         alternative: 'HubSpot when CRM discipline matters more than an agency-style automation arsenal.',
         noBuy: 'Keep the current stack if the manual cost has not been measured.',
-        experience: 'Expansion Works used HighLevel to train a question-answering chatbot, capture interested prospects, and route human follow-up during a three-month organizational trial.',
-        url: 'https://www.gohighlevel.com/', sourceUrl: 'https://www.gohighlevel.com/pricing'
       });
     }
 
     if (['pipeline', 'growth'].includes(planKey)) {
-      return baseRecommendation({
-        layer: 'PIPELINE + FOLLOW-UP', product: 'HubSpot Free CRM',
+      return recommendProduct('hubspot', {
+        layer: 'PIPELINE + FOLLOW-UP',
         summary: 'A visible pipeline is justified, but your answers do not justify HighLevel-level complexity.',
         fit: 'Best for centralizing contacts, deals, tasks, meeting links, and basic email tracking before advanced automation.',
         avoid: 'Avoid paid upgrades until a specific limit blocks a valuable repeated process.',
-        cost: 'Free CRM supports up to 2 users and 1,000 contacts; premium products add cost',
         alternative: 'HighLevel later if volume grows and a dedicated operator owns broader automation.',
         noBuy: 'A disciplined spreadsheet still wins when one person can see every active opportunity.',
-        experience: 'Expansion Works has used HubSpot for email campaigns, CRM segmentation, and follow-up tracking.',
-        url: 'https://www.hubspot.com/products/crm', sourceUrl: 'https://www.hubspot.com/products/crm',
-        commercial: 'DIRECT LINK • AFFILIATE PROGRAM EXISTS, NO TRACKING LINK ACTIVE'
       });
     }
 
-    return baseRecommendation({
-      layer: 'PIPELINE + FOLLOW-UP', product: 'Google Sheet + Gmail', status: 'START SCRAPPY', confidence: 'HIGH CONFIDENCE',
+    return recommendProduct('sheetsGmail', {
+      layer: 'PIPELINE + FOLLOW-UP', status: 'START SCRAPPY', confidence: 'HIGH CONFIDENCE',
       summary: 'At this stage, visibility and a consistent follow-up habit matter more than buying a CRM.',
       fit: 'Best when one person can still scan every active opportunity in one simple view.',
       avoid: 'Upgrade when opportunities become hard to scan, more people need access, or follow-up repeatedly slips.',
-      cost: 'No additional software purchase for an existing Google account; usage limits apply',
       alternative: 'HubSpot Free CRM when active opportunities outgrow the sheet.', noBuy: 'Do not buy CRM software yet.',
-      experience: 'Expansion Works has built and operated multiple lightweight pipelines with Google Sheets, Gmail, and Apps Script.',
-      url: 'https://workspace.google.com/products/sheets/', sourceUrl: 'https://developers.google.com/apps-script/guides/services/quotas',
-      commercial: 'NON-AFFILIATE RECOMMENDATION'
     });
   }
 
   function recommendationCard(item) {
     const productLink = item.url
-      ? `<a class="product-cta" href="${escapeHtml(item.url)}" target="_blank" rel="${item.commercial.startsWith('REFERRAL') ? 'sponsored noopener' : 'noopener'}">Visit ${escapeHtml(item.product)} <span aria-hidden="true">↗</span></a>` : '';
+      ? `<a class="product-cta" href="${escapeHtml(item.url)}" target="_blank" rel="${item.commercial.startsWith('REFERRAL') ? 'sponsored noopener' : 'noopener'}" data-product-link data-product="${escapeHtml(item.product)}" data-layer="${escapeHtml(item.layer)}">Visit ${escapeHtml(item.product)} <span aria-hidden="true">↗</span></a>` : '';
     const sourceLink = item.sourceUrl
       ? `<a class="source-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(item.sourceLabel)} <span aria-hidden="true">↗</span></a>` : '';
     return `
@@ -580,6 +602,8 @@
     const recommendationSummary = recommendations.map((item) => `${item.layer}: ${item.product} (${item.status})`).join(' | ');
     const answerSummary = flow.map((question) => `${question.kicker}: ${state.answers[question.id].label}`).join(' | ');
     const summary = `${plan.label} | ${recommendationSummary} | ${answerSummary}`;
+    if (!state.briefId) state.briefId = funnel?.makeId('SBB') || `SBB-${Date.now().toString(36)}`;
+    if (!state.completedAt) state.completedAt = new Date().toISOString();
     const portableBrief = [
       `STACKBRIEF — ${plan.label}`, plan.title, plan.reason, '',
       ...recommendations.flatMap((item) => [
@@ -589,8 +613,41 @@
       'Generated at expansion-works-llc-2.vercel.app/stackbrief',
       'Verify current vendor prices, limits, and terms before purchasing.'
     ].join('\n');
+    const answersRecord = Object.fromEntries(flow.map((question) => [question.id, {
+      value: state.answers[question.id].value,
+      label: state.answers[question.id].label
+    }]));
+    const resultData = {
+      briefId: state.briefId,
+      rulesetVersion,
+      visitorId: funnel?.visitorId() || '',
+      route: routeKey(),
+      planKey,
+      planTitle: plan.title,
+      recommendations: recommendations.map((item) => ({ layer: item.layer, product: item.product, status: item.status })),
+      answers: answersRecord,
+      portableBrief,
+      attribution: funnel?.attribution() || {},
+      startedAt: state.startedAt,
+      completedAt: state.completedAt
+    };
+    funnel?.saveResult(resultData);
+    persistSession(true);
+    if (!state.wasCompleted) {
+      funnel?.track('quiz_completed', {
+        briefId: state.briefId,
+        rulesetVersion,
+        route: routeKey(),
+        planKey,
+        goal: answersRecord.goal?.value,
+        implementationPreference: answersRecord.involvement?.value,
+        products: resultData.recommendations.map((item) => item.product).join(' | ')
+      });
+      state.wasCompleted = true;
+    }
     const implementationCTA = ['dfy', 'setup'].includes(state.answers.involvement.value) || planKey === 'growth'
       ? 'Have Expansion Works build this →' : 'See the done-for-you option →';
+    const implementationHref = `/sales?from=stackbrief&brief=${encodeURIComponent(state.briefId)}&fit=${encodeURIComponent(planKey)}`;
 
     stage.innerHTML = `
       <div class="result-header">
@@ -615,13 +672,23 @@
           <input type="email" name="email" autocomplete="email" placeholder="you@business.com" aria-label="Work email" required>
           <input type="hidden" name="source" value="StackBrief manual beta review">
           <input type="hidden" name="stackbrief_result" value="${escapeHtml(summary)}">
+          <input type="hidden" name="stackbrief_id" value="${escapeHtml(state.briefId)}">
+          <input type="hidden" name="stackbrief_ruleset" value="${escapeHtml(rulesetVersion)}">
+          <input type="hidden" name="stackbrief_route" value="${escapeHtml(routeKey())}">
+          <input type="hidden" name="stackbrief_level" value="${escapeHtml(planKey)}">
+          <input type="hidden" name="stackbrief_goal" value="${escapeHtml(answersRecord.goal?.label || '')}">
+          <input type="hidden" name="stackbrief_implementation_preference" value="${escapeHtml(answersRecord.involvement?.label || '')}">
+          <input type="hidden" name="stackbrief_products" value="${escapeHtml(resultData.recommendations.map((item) => item.product).join(' | '))}">
+          <input type="hidden" name="stackbrief_attribution" value="${escapeHtml(JSON.stringify(resultData.attribution))}">
+          <input type="hidden" name="stackbrief_started_at" value="${escapeHtml(state.startedAt)}">
+          <input type="hidden" name="stackbrief_completed_at" value="${escapeHtml(state.completedAt)}">
           <input type="hidden" name="_subject" value="New StackBrief beta review request">
           <button class="button" type="submit">Request beta review →</button>
         </form>
         <p class="form-status" data-form-status aria-live="polite"></p>
       </div>
       <div class="result-actions">
-        <a href="/sales">${escapeHtml(implementationCTA)}</a>
+        <a href="${escapeHtml(implementationHref)}" data-dfy-link>${escapeHtml(implementationCTA)}</a>
         <a href="/tools/better-inquiry-form">Build a better inquiry form →</a>
         <button type="button" data-copy-brief>Copy my brief</button>
         <button type="button" data-restart>Retake the brief</button>
@@ -630,11 +697,31 @@
     stage.querySelector('[data-restart]').addEventListener('click', () => {
       state.index = 0;
       state.answers = {};
+      state.startedAt = new Date().toISOString();
+      state.completedAt = '';
+      state.briefId = '';
+      state.wasCompleted = false;
+      funnel?.clearQuizSession();
+      funnel?.clearResult();
+      funnel?.track('quiz_restarted', { rulesetVersion });
       window.scrollTo({ top: 0, behavior: 'smooth' });
       renderQuestion();
     });
     const copyBrief = stage.querySelector('[data-copy-brief]');
     copyBrief.addEventListener('click', () => copyText(portableBrief, copyBrief));
+    stage.querySelectorAll('[data-product-link]').forEach((link) => {
+      link.addEventListener('click', () => {
+        funnel?.track('recommendation_clicked', {
+          briefId: state.briefId,
+          planKey,
+          product: link.dataset.product,
+          layer: link.dataset.layer
+        });
+      });
+    });
+    stage.querySelector('[data-dfy-link]').addEventListener('click', () => {
+      funnel?.track('dfy_handoff_clicked', { briefId: state.briefId, planKey, route: routeKey() });
+    });
 
     const form = stage.querySelector('[data-save-form]');
     const status = stage.querySelector('[data-form-status]');
@@ -647,6 +734,7 @@
       try {
         const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
         if (!response.ok) throw new Error('Form submission failed');
+        funnel?.track('lead_captured', { briefId: state.briefId, planKey, route: routeKey(), source: 'manual_beta_review' });
         form.innerHTML = '<p class="form-status">RECEIVED. Expansion Works has your exact result. Beta follow-up is manual.</p>';
       } catch (error) {
         status.textContent = 'That did not save. Try again or use the done-for-you page to contact me directly.';
@@ -656,5 +744,24 @@
     });
   }
 
-  renderQuestion();
+  const savedSession = funnel?.getQuizSession();
+  if (savedSession?.rulesetVersion === rulesetVersion && savedSession.answers && Number.isInteger(savedSession.index)) {
+    state.answers = savedSession.answers;
+    state.index = Math.min(savedSession.index, questionFlow().length);
+    state.startedAt = savedSession.startedAt || state.startedAt;
+    state.completedAt = savedSession.completedAt || '';
+    state.briefId = savedSession.briefId || '';
+    state.wasCompleted = Boolean(savedSession.completed);
+    funnel?.track(savedSession.completed ? 'quiz_result_revisited' : 'quiz_resumed', {
+      briefId: state.briefId,
+      rulesetVersion,
+      questionNumber: Math.min(state.index + 1, questionFlow().length),
+      route: routeKey()
+    });
+  } else {
+    funnel?.track('quiz_started', { rulesetVersion });
+  }
+
+  if (state.wasCompleted && state.index >= questionFlow().length) renderResult();
+  else renderQuestion();
 })();

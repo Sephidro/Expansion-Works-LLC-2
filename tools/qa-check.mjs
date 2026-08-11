@@ -24,6 +24,11 @@ const FILES = [
   'tools/better-inquiry-form.html',
 ];
 
+const JS_FILES = [
+  'assets/stackbrief-catalog.js', 'assets/funnel.js', 'assets/stackbrief.js',
+  'assets/stackbrief-handoff.js', 'assets/inquiry-builder.js', 'assets/site.js'
+];
+
 let errors = 0;
 
 function fileExists(p) {
@@ -96,6 +101,23 @@ for (const f of FILES) {
   }
 }
 
+for (const f of JS_FILES) {
+  const full = path.join(root, f);
+  if (!fs.existsSync(full)) {
+    errors++;
+    console.log('[MISSING SCRIPT] ' + f + ' is listed in JS_FILES but does not exist');
+    continue;
+  }
+  try { new Function(fs.readFileSync(full, 'utf8')); }
+  catch (e) {
+    errors++;
+    console.log('=== ' + f + ' ===');
+    console.log('  [SYNTAX ERROR] ' + e.message);
+  }
+}
+
 console.log('');
-console.log(errors === 0 ? 'QA CHECK PASSED — ' + FILES.length + ' files clean' : 'QA CHECK FAILED — ' + errors + ' issue(s) found');
+console.log(errors === 0
+  ? 'QA CHECK PASSED — ' + FILES.length + ' HTML files and ' + JS_FILES.length + ' scripts clean'
+  : 'QA CHECK FAILED — ' + errors + ' issue(s) found');
 process.exit(errors === 0 ? 0 : 1);

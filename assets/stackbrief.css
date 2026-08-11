@@ -484,6 +484,13 @@ h3 { font-size: 25px; font-weight: 800; line-height: 1; }
 .apply-copy .eyebrow { margin-bottom: 16px; }
 .apply-copy p:not(.eyebrow) { margin-top: 22px; color: var(--muted); }
 .apply-copy .apply-note { padding-left: 16px; border-left: 2px solid var(--orange); color: #c7d3db; font-size: 13px; }
+.handoff-context { margin-top: 27px; padding: 20px; border: 1px solid var(--cyan); background: linear-gradient(135deg, rgba(17,200,232,.09), rgba(6,17,31,.7)); }
+.handoff-context .handoff-kicker { margin: 0; color: var(--cyan); font: 600 9px/1 var(--mono); letter-spacing: .1em; }
+.handoff-context h3 { margin-top: 10px; font-size: 28px; }
+.handoff-context > p:not(.handoff-kicker) { margin-top: 9px; color: #9eb0bd; font-size: 12px; }
+.handoff-context ul { list-style: none; margin-top: 15px; display: grid; gap: 6px; }
+.handoff-context li { color: #c5d2da; font-size: 11px; }
+.handoff-context li::before { content: "+"; margin-right: 8px; color: var(--orange); font-family: var(--mono); }
 .service-form { padding: clamp(27px, 4vw, 44px); display: grid; grid-template-columns: 1fr 1fr; gap: 18px; background: #071321; border: 1px solid var(--line); }
 .service-form label { color: var(--cyan); font: 500 9px/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
 .service-form input, .service-form select, .service-form textarea { width: 100%; margin-top: 7px; padding: 13px 14px; border: 1px solid var(--line); border-radius: 0; background: #020a12; color: var(--white); font: 400 14px/1.4 var(--body); text-transform: none; }

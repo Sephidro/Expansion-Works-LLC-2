@@ -15,7 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/stackbrief.css">
+  <script src="/assets/funnel.js" defer></script>
   <script src="/assets/stackbrief.js" defer></script>
+  <script src="/assets/stackbrief-handoff.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -28,7 +30,7 @@
       <span></span><span></span><span></span><span class="sr-only">Open menu</span>
     </button>
     <nav id="site-nav" class="site-nav" data-menu aria-label="Main navigation">
-      <a href="/#stackbrief">Free StackBrief</a>
+      <a href="/stackbrief">Free StackBrief</a>
       <a href="#fit">Who it is for</a>
       <a href="#offers">Ways to work</a>
       <a class="button button-small" href="#apply">Discuss my system</a>
@@ -79,7 +81,7 @@
             <li>A simple form and calendar solve the immediate constraint</li>
             <li>You want to build and maintain the system yourself</li>
           </ul>
-          <a href="/#stackbrief">Build the free brief instead →</a>
+          <a href="/stackbrief">Build the free brief instead →</a>
         </article>
       </div>
     </section>
@@ -143,10 +145,11 @@
       <div class="apply-copy">
         <p class="eyebrow">START WITH THE CURRENT STATE</p>
         <h2>Show me the system you have now.</h2>
+        <div class="handoff-context" data-stackbrief-handoff hidden></div>
         <p>Send the site, the tools you already use, and the point where things break. I’ll tell you whether a diagnostic, installation, or no engagement is the right next move.</p>
         <p class="apply-note">No calendar ambush. No “custom strategy” theater. I review the context first.</p>
       </div>
-      <form class="service-form" action="https://formspree.io/f/xeewjjlv" method="POST">
+      <form class="service-form" action="https://formspree.io/f/xeewjjlv" method="POST" data-service-form>
         <input type="hidden" name="_subject" value="Expansion Works implementation inquiry">
         <input type="hidden" name="source" value="StackBrief implementation page">
         <label>Name<input type="text" name="name" autocomplete="name" required></label>
