@@ -327,9 +327,9 @@
         alternative: 'Formspree if you later move to a custom or static page.',
         noBuy: 'No additional form subscription is justified yet.',
         experience: `Expansion Works has implemented structured capture inside ${website.product} workflows.`,
-        url: website.url,
+        url: '',
         sourceUrl: website.sourceUrl,
-        commercial: website.commercial
+        commercial: 'INCLUDED IN THE FRONT-DOOR RECOMMENDATION • NO SECOND PURCHASE'
       });
     }
 
