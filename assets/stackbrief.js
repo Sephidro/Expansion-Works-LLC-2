@@ -279,8 +279,8 @@
     updateProgress();
     stage.innerHTML = `
       <div class="question-count">${String(state.index + 1).padStart(2, '0')}</div>
-      <p class="question-kicker">${escapeHtml(question.kicker)}</p>
       <h2 class="question-title">${escapeHtml(question.title)}</h2>
+      <p class="question-kicker">${escapeHtml(question.kicker)}</p>
       ${question.note ? `<p class="question-note">${escapeHtml(question.note)}</p>` : ''}
       <div class="answer-grid">
         ${question.answers.map((answer) => `
@@ -566,8 +566,8 @@
     stage.innerHTML = `
       <div class="analysis-shell">
         <div class="analysis-orbit" aria-hidden="true"><span>XP</span><i></i><b></b></div>
-        <p class="question-kicker">STACKBRIEF // ANALYSIS</p>
         <h2>Turning your answers into a decision order.</h2>
+        <p class="question-kicker">STACKBRIEF // ANALYSIS</p>
         <p class="analysis-message" data-analysis-message>${escapeHtml(steps[0])}</p>
         <div class="analysis-track"><i data-analysis-progress></i></div>
         <p class="analysis-truth">No live magic trick here. This is a rules-based beta using the constraints you gave us.</p>
