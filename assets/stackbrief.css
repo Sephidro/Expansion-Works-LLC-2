@@ -367,7 +367,7 @@ h3 { font-size: 25px; font-weight: 800; line-height: 1; }
 .site-footer nav { display: flex; gap: 20px; }
 .site-footer nav a { color: #9aadb9; font: 500 9px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .footer-note { grid-column: 1 / -1; padding-top: 22px; border-top: 1px solid var(--line); color: #607382; font: 400 9px/1.5 var(--mono); }
-.site-footer .site-verification { grid-column: 1 / -1; max-width: none; margin-top: -14px; color: #415462; font: 400 8px/1.5 var(--mono); overflow-wrap: anywhere; }
+.site-footer .site-verification { grid-column: 1 / -1; max-width: none; margin-top: -18px; color: #2d414f; font: 400 6px/1.35 var(--mono); letter-spacing: .02em; overflow-wrap: anywhere; opacity: .72; }
 
 /* Better inquiry form builder */
 .tool-hero { min-height: 660px; padding: clamp(90px, 11vw, 150px) var(--pad); display: grid; grid-template-columns: 1.15fr .65fr; gap: clamp(50px, 9vw, 130px); align-items: center; background: radial-gradient(circle at 78% 40%, rgba(17,200,232,.13), transparent 25%), linear-gradient(135deg, #030a12, #08192a); }
