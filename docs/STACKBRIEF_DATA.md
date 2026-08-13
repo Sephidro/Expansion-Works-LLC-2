@@ -5,7 +5,7 @@ StackBrief uses browser storage to preserve an unfinished brief and carry a comp
 ## Versions
 
 - Funnel utility: `1.0.0`
-- Quiz ruleset: `2026-08-11.2`
+- Quiz ruleset: `2026-08-13.1`
 - Product catalog: `2026-08-11.1`
 
 Changing question IDs or recommendation behavior should increment the ruleset. Changing vendor facts or destinations should increment the catalog.

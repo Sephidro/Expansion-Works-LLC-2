@@ -13,20 +13,17 @@
   const form = document.querySelector('[data-service-form]');
   if (!panel || !form) return;
 
-  const kicker = document.createElement('p');
-  kicker.className = 'handoff-kicker';
-  kicker.textContent = 'STACKBRIEF CONTEXT ATTACHED';
   const title = document.createElement('h3');
-  title.textContent = result.planTitle;
+  title.textContent = `I already have your “${result.planTitle}” StackBrief.`;
   const summary = document.createElement('p');
-  summary.textContent = `Brief ${result.briefId} • ${result.recommendations.length} system decisions will be included with this inquiry.`;
+  summary.textContent = `Your answers and ${result.recommendations.length} system decisions are attached to this inquiry. You do not need to explain everything again.`;
   const list = document.createElement('ul');
   result.recommendations.forEach((recommendation) => {
     const item = document.createElement('li');
     item.textContent = `${recommendation.layer}: ${recommendation.product}`;
     list.appendChild(item);
   });
-  panel.append(kicker, title, summary, list);
+  panel.append(title, summary, list);
   panel.hidden = false;
 
   function addHidden(name, value) {

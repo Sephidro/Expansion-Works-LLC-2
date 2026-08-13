@@ -22,7 +22,7 @@
   const catalog = window.StackBriefCatalog;
   const productCatalog = catalog?.products || {};
   const verifiedDate = catalog?.verifiedDate || 'Verify before purchase';
-  const rulesetVersion = '2026-08-11.2';
+  const rulesetVersion = '2026-08-13.1';
   const funnel = window.StackBriefFunnel;
 
   const commonQuestions = [
@@ -186,24 +186,24 @@
   const plans = {
     essentials: {
       code: '01', label: 'STACK 01 // ESSENTIALS', title: 'Make the next step obvious',
-      reason: 'Your next gain is more likely to come from a clear offer path and a follow-up habit you will actually use than from buying a complex platform.',
-      doNow: ['One clear website job', 'One useful next action', 'One place to track active conversations'],
-      later: ['CRM after opportunities become hard to scan', 'Automation after a repeated task is proven'],
-      skip: ['HighLevel without an owner', 'A large stack before consistent demand', 'Features bought for “someday”']
+      reason: 'The business does not need more software yet. It needs one credible path from interest to action and a follow-up habit you will actually use.',
+      doNow: ['Give the website one job', 'Give interested people one useful next step', 'Track every active conversation in one place'],
+      later: ['Add a CRM when opportunities become hard to scan', 'Automate only after the same task repeats reliably'],
+      skip: ['An all-in-one platform without an owner', 'A large stack before consistent demand', 'Features purchased for a future business']
     },
     pipeline: {
       code: '02', label: 'STACK 02 // RELIABLE PIPELINE', title: 'Stop relying on memory',
-      reason: 'You have enough real activity for scattered context or inconsistent follow-up to cost opportunities. The system should make every inquiry visible without becoming a second job.',
-      doNow: ['Give every inquiry one destination', 'Keep one visible pipeline', 'Make the first follow-up automatic or unavoidable'],
-      later: ['Proposal and payment handoff', 'Source and close-rate reporting'],
-      skip: ['A second system of record', 'Automating every task', 'Migrating without a measured reason']
+      reason: 'You have enough real activity for scattered information and inconsistent follow-up to cost opportunities. The fix is visibility and discipline, not automation everywhere.',
+      doNow: ['Send every inquiry to one dependable destination', 'Keep one visible pipeline', 'Make the first follow-up automatic or impossible to forget'],
+      later: ['Connect proposal, payment, and onboarding', 'Add source and close-rate reporting'],
+      skip: ['A second place to track the same leads', 'Automating every task', 'Migrating without a measured reason']
     },
     growth: {
       code: '03', label: 'STACK 03 // CONNECTED GROWTH', title: 'Connect the handoffs',
-      reason: 'Fragmented data and manual transitions are becoming an operating cost. The goal is one source of truth, clear ownership, and automation only where repetition is proven.',
-      doNow: ['Assign one system owner', 'Connect capture, CRM, and follow-up', 'Measure response and stage conversion'],
-      later: ['Long-term nurture', 'Permissions, exceptions, and advanced reporting'],
-      skip: ['An ownerless all-in-one platform', 'Rebuilding everything at once', 'Automation without exception handling']
+      reason: 'The business has outgrown information scattered across tools and people. Every opportunity needs one visible record, one owner, and one next step.',
+      doNow: ['Give one person ownership of the system', 'Connect capture, CRM, and follow-up', 'Measure response time and movement between stages'],
+      later: ['Add long-term nurture', 'Build permissions, exceptions, and deeper reporting'],
+      skip: ['An ownerless all-in-one platform', 'Rebuilding everything at once', 'Automation nobody knows how to fix']
     }
   };
 
@@ -535,12 +535,12 @@
         <h4>${escapeHtml(item.product)}</h4>
         <p class="product-summary">${escapeHtml(item.summary)}</p>
         <dl>
-          <div><dt>FIT</dt><dd>${escapeHtml(item.fit)}</dd></div>
-          <div><dt>DISQUALIFIER</dt><dd>${escapeHtml(item.avoid)}</dd></div>
-          <div><dt>CURRENT COST FACT</dt><dd>${escapeHtml(item.cost)}</dd></div>
-          <div><dt>OPERATOR NOTE</dt><dd>${escapeHtml(item.experience)}</dd></div>
-          <div><dt>RUNNER-UP</dt><dd>${escapeHtml(item.alternative)}</dd></div>
-          <div><dt>NO-BUY PATH</dt><dd>${escapeHtml(item.noBuy)}</dd></div>
+          <div><dt>WHY THIS FITS</dt><dd>${escapeHtml(item.fit)}</dd></div>
+          <div><dt>WHEN IT BECOMES WRONG</dt><dd>${escapeHtml(item.avoid)}</dd></div>
+          <div><dt>WHAT IT COSTS NOW</dt><dd>${escapeHtml(item.cost)}</dd></div>
+          <div><dt>WHAT I KNOW FROM USING IT</dt><dd>${escapeHtml(item.experience)}</dd></div>
+          <div><dt>NEXT BEST OPTION</dt><dd>${escapeHtml(item.alternative)}</dd></div>
+          <div><dt>KEEP WHAT YOU HAVE IF...</dt><dd>${escapeHtml(item.noBuy)}</dd></div>
         </dl>
         <div class="product-meta"><span>${escapeHtml(item.confidence)}</span><span>FACTS CHECKED ${escapeHtml(verifiedDate.toUpperCase())}</span><span>${escapeHtml(item.commercial)}</span></div>
         <div class="product-links">${productLink}${sourceLink}</div>
@@ -556,12 +556,12 @@
     progress.style.width = '100%';
     progressLabel.textContent = 'BUILDING YOUR STACKBRIEF';
     const steps = [
-      'Reading the room…',
-      'Separating useful tools from expensive hobbies…',
-      'Finding the best-fit tools for this stage…',
-      'Looking under the bed for that guide I know I saved…',
-      'Checking what should stay manual…',
-      'Matching the stack to your next 90 days…'
+      'Reading what is true in the business today…',
+      'Separating the immediate problem from the feature wishlist…',
+      'Checking whether the current tools can stay…',
+      'Matching complexity to the person who will own it…',
+      'Identifying what should remain manual…',
+      'Putting the next decisions in order…'
     ];
     stage.innerHTML = `
       <div class="analysis-shell">
@@ -645,8 +645,18 @@
       });
       state.wasCompleted = true;
     }
-    const implementationCTA = ['dfy', 'setup'].includes(state.answers.involvement.value) || planKey === 'growth'
-      ? 'Have Expansion Works build this →' : 'See the done-for-you option →';
+    const wantsImplementation = ['dfy', 'setup'].includes(state.answers.involvement.value) || planKey === 'growth';
+    const implementationTitle = wantsImplementation
+      ? 'You have the plan. You do not have to become the person who builds it.'
+      : 'Your answers do not prove that you need to pay someone to build this yet.';
+    const implementationBody = ['dfy', 'setup'].includes(state.answers.involvement.value)
+      ? `You said, “${state.answers.involvement.label}.” Expansion Works can carry this exact StackBrief into the build, connect the moving parts, test the handoffs, and give you a system you can see and manage.`
+      : wantsImplementation
+        ? 'Your answers point to a business where disconnected handoffs are already becoming an operating cost. Expansion Works can carry this exact StackBrief into the build, connect the moving parts, test the handoffs, and give the team one system to manage.'
+        : 'Use this brief to make the next decision yourself. If the setup later begins costing more time or lost opportunities than the installation, Expansion Works will still have the context needed to take it over.';
+    const implementationCTA = wantsImplementation
+      ? 'Turn this StackBrief into a working system →'
+      : 'See what done-for-you would include →';
     const implementationHref = `/sales?from=stackbrief&brief=${encodeURIComponent(state.briefId)}&fit=${encodeURIComponent(planKey)}`;
 
     stage.innerHTML = `
@@ -660,14 +670,23 @@
         <div class="result-block"><h4>ADD LATER</h4>${list(plan.later)}</div>
         <div class="result-block"><h4>SKIP FOR NOW</h4>${list(plan.skip)}</div>
       </div>
-      <div class="product-brief">
-        <div class="product-brief-heading"><p>YOUR PRODUCT-LEVEL BRIEF</p><span>Rules-based beta • no pay-to-rank</span></div>
+      <section class="ascension-box ${wantsImplementation ? 'is-qualified' : 'is-diy'}">
+        <h3>${escapeHtml(implementationTitle)}</h3>
+        <p>${escapeHtml(implementationBody)}</p>
+        <div class="ascension-actions">
+          <a class="button" href="${escapeHtml(implementationHref)}" data-dfy-link>${escapeHtml(implementationCTA)}</a>
+          <a href="#product-brief">I want to review the tool decisions first</a>
+        </div>
+        <small>Your answers and recommendations come with you. You will not have to explain the business again from scratch.</small>
+      </section>
+      <div class="product-brief" id="product-brief">
+        <div class="product-brief-heading"><p>THE TOOL DECISIONS</p><span>Fit decided before compensation</span></div>
         ${recommendations.map(recommendationCard).join('')}
         <p class="legal-note">Recommendations are educational. Verify current prices, limits, and terms with each vendor before purchasing.</p>
       </div>
       <div class="save-box">
-        <h4>Want a human beta review?</h4>
-        <p>Share your email and Expansion Works will receive this exact result. During beta, follow-up is manual. No generic software-news drip.</p>
+        <h4>Want a second set of eyes before you spend money?</h4>
+        <p>Send me this exact StackBrief. During beta, I’ll check the recommendation and tell you if anything important looks wrong. You will not be added to a generic software newsletter.</p>
         <form class="save-form" action="https://formspree.io/f/xeewjjlv" method="POST" data-save-form>
           <input type="email" name="email" autocomplete="email" placeholder="you@business.com" aria-label="Work email" required>
           <input type="hidden" name="source" value="StackBrief manual beta review">
@@ -683,12 +702,11 @@
           <input type="hidden" name="stackbrief_started_at" value="${escapeHtml(state.startedAt)}">
           <input type="hidden" name="stackbrief_completed_at" value="${escapeHtml(state.completedAt)}">
           <input type="hidden" name="_subject" value="New StackBrief beta review request">
-          <button class="button" type="submit">Request beta review →</button>
+          <button class="button" type="submit">Check my StackBrief →</button>
         </form>
         <p class="form-status" data-form-status aria-live="polite"></p>
       </div>
       <div class="result-actions">
-        <a href="${escapeHtml(implementationHref)}" data-dfy-link>${escapeHtml(implementationCTA)}</a>
         <a href="/tools/better-inquiry-form">Build a better inquiry form →</a>
         <button type="button" data-copy-brief>Copy my brief</button>
         <button type="button" data-restart>Retake the brief</button>
@@ -735,11 +753,11 @@
         const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
         if (!response.ok) throw new Error('Form submission failed');
         funnel?.track('lead_captured', { briefId: state.briefId, planKey, route: routeKey(), source: 'manual_beta_review' });
-        form.innerHTML = '<p class="form-status">RECEIVED. Expansion Works has your exact result. Beta follow-up is manual.</p>';
+        form.innerHTML = '<p class="form-status">RECEIVED. I have your exact StackBrief and will review it manually.</p>';
       } catch (error) {
         status.textContent = 'That did not save. Try again or use the done-for-you page to contact me directly.';
         submit.disabled = false;
-        submit.textContent = 'REQUEST BETA REVIEW →';
+        submit.textContent = 'CHECK MY STACKBRIEF →';
       }
     });
   }
