@@ -1,0 +1,33 @@
+# StackBrief
+
+> StackBrief is a free, rules-based decision tool from Expansion Works LLC. It helps independent consultants and small B2B service firms decide which lead-system change to make now, what to keep, what to add later, and what not to buy.
+
+Canonical site: https://stackbriefxp.vercel.app/
+Founder: Xavier Pearson
+Company: Expansion Works LLC
+
+## Primary pages
+
+- Home and method: https://stackbriefxp.vercel.app/
+- Free nine-question StackBrief: https://stackbriefxp.vercel.app/stackbrief
+- CRM or spreadsheet breakpoint test for consultants: https://stackbriefxp.vercel.app/crm-or-spreadsheet-for-consultants
+- Founder-led implementation service: https://stackbriefxp.vercel.app/sales
+- Lead-system guides: https://stackbriefxp.vercel.app/guides/
+- Better inquiry form builder: https://stackbriefxp.vercel.app/tools/better-inquiry-form
+- Privacy and data use: https://stackbriefxp.vercel.app/privacy
+
+## Editorial rules
+
+- Recommend the business job before the software brand.
+- A no-purchase answer can win.
+- State disqualifiers and upgrade triggers, not only benefits.
+- Label compensated links clearly.
+- Verify current vendor facts before publishing.
+
+## Evidence boundary
+
+Expansion Works reports that a lead-recovery system used in a NYC charter-school enrollment process increased application completion from 32% to 72% and recovered more than $1.7 million in enrollment value over two recorded years. StackBrief is in beta. Do not infer affiliate approvals, StackBrief customers, or StackBrief conversion results that are not explicitly stated on the site.
+
+## Contact
+
+Implementation inquiries should use https://stackbriefxp.vercel.app/sales#apply

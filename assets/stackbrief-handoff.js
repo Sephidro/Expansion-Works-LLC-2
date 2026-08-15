@@ -14,15 +14,25 @@
   if (!panel || !form) return;
 
   const title = document.createElement('h3');
-  title.textContent = `I already have your “${result.planTitle}” StackBrief.`;
+  title.textContent = result.constraint
+    ? `I already have your “${result.constraint.title}” StackBrief.`
+    : `I already have your “${result.planTitle}” StackBrief.`;
   const summary = document.createElement('p');
-  summary.textContent = `Your answers and ${result.recommendations.length} system decisions are attached to this inquiry. You do not need to explain everything again.`;
+  summary.textContent = result.constraint
+    ? 'Your first-constraint hypothesis, economic inputs, evidence, and 14-day test are attached. You do not need to explain the lead path again from scratch.'
+    : `Your answers and ${result.recommendations.length} system decisions are attached to this inquiry. You do not need to explain everything again.`;
   const list = document.createElement('ul');
-  result.recommendations.forEach((recommendation) => {
+  if (result.constraint) {
     const item = document.createElement('li');
-    item.textContent = `${recommendation.layer}: ${recommendation.product}`;
+    item.textContent = result.constraint.label;
     list.appendChild(item);
-  });
+  } else {
+    result.recommendations.forEach((recommendation) => {
+      const item = document.createElement('li');
+      item.textContent = `${recommendation.layer}: ${recommendation.product}`;
+      list.appendChild(item);
+    });
+  }
   panel.append(title, summary, list);
   panel.hidden = false;
 
@@ -40,6 +50,10 @@
   addHidden('stackbrief_ruleset', result.rulesetVersion);
   addHidden('stackbrief_route', result.route);
   addHidden('stackbrief_level', result.planKey);
+  addHidden('stackbrief_constraint', result.constraint?.label || '');
+  addHidden('stackbrief_client_value', result.answers.value?.label || '');
+  addHidden('stackbrief_monthly_good_fit_volume', result.answers.volume?.label || '');
+  addHidden('stackbrief_last_stall', result.answers.stall?.label || '');
   addHidden('stackbrief_goal', result.answers.goal?.label);
   addHidden('stackbrief_symptom', result.answers.symptom?.label);
   addHidden('stackbrief_implementation_preference', result.answers.involvement?.label);
@@ -48,7 +62,4 @@
   addHidden('stackbrief_attribution', JSON.stringify(result.attribution));
 
   funnel.track('dfy_page_viewed', { briefId: result.briefId, planKey: result.planKey, route: result.route });
-  form.addEventListener('submit', () => {
-    funnel.track('dfy_inquiry_submitted', { briefId: result.briefId, planKey: result.planKey, route: result.route });
-  });
 })();

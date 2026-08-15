@@ -22,7 +22,7 @@
   const catalog = window.StackBriefCatalog;
   const productCatalog = catalog?.products || {};
   const verifiedDate = catalog?.verifiedDate || 'Verify before purchase';
-  const rulesetVersion = '2026-08-13.1';
+  const rulesetVersion = '2026-08-15.1';
   const funnel = window.StackBriefFunnel;
 
   const commonQuestions = [
@@ -183,6 +183,91 @@
     ]
   };
 
+  const establishedQuestions = [
+    {
+      id: 'value', kicker: 'THE ECONOMIC STAKES', title: 'What is one normal new client worth in the first 90 days?',
+      note: 'Use a normal engagement, not the biggest contract you have ever sold.', answers: [
+        { value: 'under2', label: 'Under $2,000', detail: 'A paid build may be difficult to justify from one preventable loss.' },
+        { value: '2to5', label: '$2,000 to $4,999', detail: 'The leak needs enough volume or repeated admin cost to justify a larger fix.' },
+        { value: '5to10', label: '$5,000 to $9,999', detail: 'One preventable loss could outweigh normal setup and software cost.' },
+        { value: '10to25', label: '$10,000 to $24,999', detail: 'Lead-path reliability deserves direct measurement.' },
+        { value: '25plus', label: '$25,000 or more', detail: 'A small number of stalled opportunities can carry material exposure.' },
+        { value: 'unknown', label: 'I do not know', detail: 'The missing economic number should be resolved before buying a large system.' }
+      ]
+    },
+    {
+      id: 'volume', kicker: 'REAL DEMAND', title: 'How many good-fit prospects raise their hands in a normal month?',
+      note: 'Count serious inquiries, applications, bookings, or referrals. Do not count website visitors.', answers: [
+        { value: 'low', label: '1 to 4', detail: 'One person may still be able to see every live opportunity.' },
+        { value: 'medium', label: '5 to 20', detail: 'Visibility and follow-through can now affect meaningful revenue.' },
+        { value: 'high', label: 'More than 20', detail: 'Routing, ownership, and response time deserve measurement every week.' },
+        { value: 'unknown', label: 'I do not track this', detail: 'The missing count is itself a visibility problem.' }
+      ]
+    },
+    {
+      id: 'stall', kicker: 'ONE REAL EPISODE', title: 'Think of the last strong prospect who went quiet. Where did momentum stop?',
+      note: 'Concrete recall is more useful than rating the process in general.', answers: [
+        { value: 'inquiry', label: 'After the first inquiry or referral', detail: 'The first useful response may have been late, vague, or missing.' },
+        { value: 'booking', label: 'During qualification or booking', detail: 'The path to a useful conversation may be asking too much or giving too little.' },
+        { value: 'aftercall', label: 'After the first call', detail: 'The next action may not have had one owner and one date.' },
+        { value: 'proposal', label: 'After the proposal', detail: 'The decision was left open without a defined follow-up path.' },
+        { value: 'nurture', label: 'They were interested, but not ready yet', detail: 'A real opportunity may have been treated as a final no.' },
+        { value: 'handoff', label: 'During an internal handoff', detail: 'Context or ownership disappeared between people or tools.' },
+        { value: 'unknown', label: 'I cannot reconstruct what happened', detail: 'The missing history is evidence of a visibility constraint.' }
+      ]
+    },
+    {
+      id: 'response', kicker: 'FIRST RESPONSE', title: 'How quickly does a new inquiry receive a useful human response?',
+      answers: [
+        { value: 'hour', label: 'Usually within one hour', detail: 'Speed is probably not the first constraint.' },
+        { value: 'day', label: 'Usually the same business day', detail: 'The response habit is reasonably strong.' },
+        { value: 'nextday', label: 'Usually the next business day', detail: 'Some buyers may already be in another conversation.' },
+        { value: 'longer', label: 'Two days or longer', detail: 'Response delay is a repeatable exposure worth testing.' },
+        { value: 'unknown', label: 'I do not track it', detail: 'Measure before claiming response time is fine.' }
+      ]
+    },
+    {
+      id: 'visible', kicker: 'OPPORTUNITY VISIBILITY', title: 'Can you list every open opportunity and its next action in 60 seconds?',
+      answers: [
+        { value: 'yes', label: 'Yes, from one dependable place', detail: 'The current source of truth is doing its job.' },
+        { value: 'mostly', label: 'Mostly, after checking a few places', detail: 'The system works, but context is beginning to scatter.' },
+        { value: 'no', label: 'No, some of it lives in memory or inboxes', detail: 'Active opportunity visibility is unreliable.' },
+        { value: 'unknown', label: 'I am not sure what counts as open', detail: 'Stage definitions should come before software.' }
+      ]
+    },
+    {
+      id: 'owner', kicker: 'NEXT-STEP OWNERSHIP', title: 'Who owns the next step after a call or proposal?',
+      answers: [
+        { value: 'explicit', label: 'One named person with a date', detail: 'Ownership is explicit and testable.' },
+        { value: 'memory', label: 'Usually me, when I remember', detail: 'The founder is acting as the workflow engine.' },
+        { value: 'shared', label: 'It depends on who is available', detail: 'Shared responsibility may mean nobody owns the deadline.' },
+        { value: 'system', label: 'The process assigns it automatically', detail: 'The system may already handle ownership reliably.' },
+        { value: 'unknown', label: 'It is not clearly defined', detail: 'Ownership should be resolved before deeper automation.' }
+      ]
+    },
+    {
+      id: 'noresponse', kicker: 'WHEN THEY DO NOT REPLY', title: 'What happens when a good-fit prospect does not answer?',
+      answers: [
+        { value: 'sequence', label: 'A defined follow-up sequence runs', detail: 'The open loop has a planned end state.' },
+        { value: 'once', label: 'I follow up once', detail: 'Some decisions may need more context or timing.' },
+        { value: 'adhoc', label: 'I follow up when I remember', detail: 'Timing depends on attention rather than a visible process.' },
+        { value: 'none', label: 'Usually nothing', detail: 'Silence is being treated as a final decision.' },
+        { value: 'unknown', label: 'It varies too much to say', detail: 'The process cannot be measured consistently yet.' }
+      ]
+    },
+    {
+      id: 'involvement', kicker: 'WHO SHOULD RUN THE FIX', title: 'How do you want the first fix handled?',
+      answers: [
+        { value: 'simple', label: 'Give me the test. I will run it myself', detail: 'The brief should stay operational and lightweight.' },
+        { value: 'learn', label: 'I will build it if the reason is clear', detail: 'A defined process and moderate setup are acceptable.' },
+        { value: 'setup', label: 'Set it up correctly, then hand it to me', detail: 'The system needs an experienced first build and a clear handoff.' },
+        { value: 'team', label: 'Someone on my team will own it', detail: 'Ownership can be named before implementation.' },
+        { value: 'dfy', label: 'Build and connect it for us', detail: 'Your time is better spent selling, delivering, or leading.' },
+        { value: 'unknown', label: 'I need the diagnosis first', detail: 'Ownership can be decided after the constraint is clearer.' }
+      ]
+    }
+  ];
+
   const plans = {
     essentials: {
       code: '01', label: 'STACK 01 // ESSENTIALS', title: 'Make the next step obvious',
@@ -230,8 +315,9 @@
   }
 
   function questionFlow() {
-    if (!state.answers.stage) return [...commonQuestions, ...routeQuestions.working];
-    return [...commonQuestions, ...routeQuestions[routeKey()]];
+    if (!state.answers.stage) return [commonQuestions[0], ...establishedQuestions];
+    if (routeKey() === 'starter') return [...commonQuestions, ...routeQuestions.starter];
+    return [commonQuestions[0], ...establishedQuestions];
   }
 
   function persistSession(completed = false) {
@@ -321,6 +407,17 @@
 
   function pickPlan() {
     const answer = (id) => state.answers[id]?.value;
+    if (routeKey() !== 'starter') {
+      const connectedSignal = answer('volume') === 'high'
+        && (['handoff'].includes(answer('stall')) || ['shared', 'unknown'].includes(answer('owner')) || answer('visible') === 'no');
+      const pipelineSignal = ['medium', 'high'].includes(answer('volume'))
+        || ['no', 'unknown'].includes(answer('visible'))
+        || ['memory', 'shared', 'unknown'].includes(answer('owner'))
+        || ['adhoc', 'none', 'unknown'].includes(answer('noresponse'));
+      if (connectedSignal) return 'growth';
+      if (pipelineSignal) return 'pipeline';
+      return 'essentials';
+    }
     const growthSignal = routeKey() === 'growth'
       && (answer('volume') === 'high' || ['admin', 'disconnected', 'followup'].includes(answer('symptom')))
       && ['team', 'dfy', 'setup'].includes(answer('involvement'));
@@ -331,6 +428,82 @@
     if (growthSignal) return 'growth';
     if (pipelineSignal) return 'pipeline';
     return 'essentials';
+  }
+
+  function pickConstraint() {
+    const answer = (id) => state.answers[id]?.value;
+    const label = (id) => state.answers[id]?.label || 'Not answered';
+    let key = 'measurement';
+
+    if (answer('stall') === 'inquiry' || ['longer', 'unknown'].includes(answer('response'))) key = 'response';
+    if (answer('stall') === 'booking') key = 'booking';
+    if (['aftercall', 'proposal', 'nurture'].includes(answer('stall')) || answer('visible') === 'no') key = 'visibility';
+    if (answer('stall') === 'handoff' || ['shared', 'unknown'].includes(answer('owner'))) key = 'ownership';
+    if (answer('stall') === 'unknown' || answer('visible') === 'unknown') key = 'measurement';
+
+    const constraints = {
+      response: {
+        label: 'FIRST CONSTRAINT // RESPONSE DELAY',
+        title: 'Good-fit interest is waiting too long for a useful human response.',
+        reason: 'Your answers make response time the earliest constraint worth testing. A faster acknowledgment alone is not enough. The buyer needs a useful next step and a named owner.',
+        unproven: 'This does not prove that a faster response will create revenue or that the website needs rebuilding.',
+        fix: ['Route every serious inquiry to one visible destination', 'Set a deadline for the first useful human response', 'Name the person who owns the next action', 'Record what happened after the response'],
+        measures: ['Median first useful response time', 'Inquiries with an owner and next action', 'Qualified conversations started', 'Inquiries with no recorded outcome'],
+        skip: ['A full website rebuild', 'Long nurture automation', 'A second lead source'],
+        upgrade: 'Upgrade when volume makes the response deadline unreliable or more than one person needs the same inquiry context.'
+      },
+      booking: {
+        label: 'FIRST CONSTRAINT // QUALIFICATION PATH',
+        title: 'The path from interest to a useful conversation is losing momentum.',
+        reason: 'The reported stall happens before or during booking. Test whether the questions, scheduling step, or missing context is asking the buyer to do too much before receiving enough value.',
+        unproven: 'This does not prove that the calendar, form vendor, or traffic source is the cause.',
+        fix: ['Choose the one useful next step for a good-fit buyer', 'Remove questions that do not change the decision', 'Explain what happens after submission', 'Track started, completed, booked, and attended separately'],
+        measures: ['Started-to-completed inquiry rate', 'Completed-to-booked rate', 'Booking no-show rate', 'Time from inquiry to confirmed next step'],
+        skip: ['A generic contact form', 'More form fields for curiosity', 'A CRM migration before the path is tested'],
+        upgrade: 'Upgrade when qualification rules are stable and manual routing repeatedly delays the next step.'
+      },
+      visibility: {
+        label: 'FIRST CONSTRAINT // OPPORTUNITY VISIBILITY',
+        title: 'Active opportunities become unreliable once they leave the conversation.',
+        reason: 'The strongest signal is not traffic. It is that open opportunities, follow-up, or post-call next steps are difficult to see from one dependable place.',
+        unproven: 'This does not prove that a CRM, website rebuild, or automation project will create revenue. The 14-day test has to show the operating gap first.',
+        fix: ['Put every active opportunity in one view', 'Require an owner, stage, next action, and next-action date', 'Review opportunities with no next action twice per week', 'Record a final outcome instead of letting deals disappear'],
+        measures: ['Active opportunities with a next action and date', 'Median first-response time', 'Stalled conversations reopened', 'Qualified opportunities with no recorded outcome'],
+        skip: ['A website rebuild', 'Omnichannel automation', 'A larger CRM before the current process is used consistently'],
+        upgrade: 'Upgrade when more than one person needs the same context, opportunities become difficult to scan, or the proven follow-up process can no longer be executed manually.'
+      },
+      ownership: {
+        label: 'FIRST CONSTRAINT // HANDOFF OWNERSHIP',
+        title: 'The next step loses an owner when the opportunity changes hands.',
+        reason: 'Your answers point to an ownership failure between people or tools. Shared responsibility is not the same as one accountable person with a deadline.',
+        unproven: 'This does not prove that automation is necessary. A clear handoff rule may solve the immediate failure without new software.',
+        fix: ['Name one owner at every stage', 'Require a next action and deadline before a handoff closes', 'Keep the full context in one visible record', 'Create an exception queue for anything the normal path cannot route'],
+        measures: ['Handoffs with a named owner', 'Handoffs with a next-action date', 'Time between stages', 'Opportunities returned for missing context'],
+        skip: ['Ownerless automation', 'Rebuilding every tool at once', 'A platform nobody is accountable for'],
+        upgrade: 'Upgrade when the handoff rule works manually but volume or permissions make execution unreliable.'
+      },
+      measurement: {
+        label: 'FIRST CONSTRAINT // MISSING EVIDENCE',
+        title: 'The business cannot yet reconstruct where good-fit opportunities stop moving.',
+        reason: 'The answers do not support a responsible software decision yet. The first job is to make the last 10 opportunities traceable from first interest to recorded outcome.',
+        unproven: 'This does not prove that a lead leak exists. It proves that the current evidence cannot confirm or reject one.',
+        fix: ['List the last 10 good-fit prospects', 'Record first response, owner, stage, next action, and outcome', 'Mark where momentum stopped', 'Review the pattern before choosing a tool'],
+        measures: ['Opportunities with a complete history', 'Opportunities with a recorded outcome', 'First-response time', 'Most common point of stall'],
+        skip: ['A revenue-at-risk forecast', 'A platform comparison', 'Automation based on an assumed bottleneck'],
+        upgrade: 'Upgrade only after the same failure appears often enough that a tool can remove a measured cost.'
+      }
+    };
+
+    const constraint = { key, ...constraints[key] };
+    constraint.evidence = [
+      `Normal client value: ${label('value')}`,
+      `Good-fit prospects per month: ${label('volume')}`,
+      `Last strong prospect stalled: ${label('stall')}`,
+      `First useful response: ${label('response')}`,
+      `Open-opportunity visibility: ${label('visible')}`,
+      `Next-step owner: ${label('owner')}`
+    ];
+    return constraint;
   }
 
   function baseRecommendation(overrides) {
@@ -596,21 +769,33 @@
     progressLabel.textContent = 'INITIAL BRIEF COMPLETE';
     const planKey = pickPlan();
     const plan = plans[planKey];
-    const website = pickWebsite();
-    const recommendations = [website, pickInquiry(website), pickPipeline(planKey)];
+    const established = routeKey() !== 'starter';
+    const constraint = established ? pickConstraint() : null;
+    const website = established ? null : pickWebsite();
+    const recommendations = established ? [] : [website, pickInquiry(website), pickPipeline(planKey)];
     const flow = questionFlow();
     const recommendationSummary = recommendations.map((item) => `${item.layer}: ${item.product} (${item.status})`).join(' | ');
     const answerSummary = flow.map((question) => `${question.kicker}: ${state.answers[question.id].label}`).join(' | ');
-    const summary = `${plan.label} | ${recommendationSummary} | ${answerSummary}`;
+    const summary = `${constraint?.label || plan.label} | ${recommendationSummary} | ${answerSummary}`;
     if (!state.briefId) state.briefId = funnel?.makeId('SBB') || `SBB-${Date.now().toString(36)}`;
     if (!state.completedAt) state.completedAt = new Date().toISOString();
-    const portableBrief = [
+    const portableBrief = established ? [
+      `STACKBRIEF — ${constraint.label}`, constraint.title, constraint.reason, '',
+      'WHAT YOUR ANSWERS SUPPORT', ...constraint.evidence, '',
+      'WHAT THEY DO NOT PROVE', constraint.unproven, '',
+      'FIX IN THE NEXT 7 DAYS', ...constraint.fix.map((item) => `- ${item}`), '',
+      'MEASURE FOR 14 DAYS', ...constraint.measures.map((item) => `- ${item}`), '',
+      'DO NOT BUY YET', ...constraint.skip.map((item) => `- ${item}`), '',
+      'UPGRADE WHEN', constraint.upgrade, '',
+      'Generated at https://stackbriefxp.vercel.app/stackbrief',
+      'This is a hypothesis to test, not a revenue forecast.'
+    ].join('\n') : [
       `STACKBRIEF — ${plan.label}`, plan.title, plan.reason, '',
       ...recommendations.flatMap((item) => [
         `${item.layer}: ${item.product} — ${item.status}`, `Why: ${item.summary}`, `Disqualifier: ${item.avoid}`,
         `No-buy path: ${item.noBuy}`, `Cost fact checked ${verifiedDate}: ${item.cost}`, ''
       ]),
-      'Generated at expansion-works-llc-2.vercel.app/stackbrief',
+      'Generated at https://stackbriefxp.vercel.app/stackbrief',
       'Verify current vendor prices, limits, and terms before purchasing.'
     ].join('\n');
     const answersRecord = Object.fromEntries(flow.map((question) => [question.id, {
@@ -623,7 +808,8 @@
       visitorId: funnel?.visitorId() || '',
       route: routeKey(),
       planKey,
-      planTitle: plan.title,
+      planTitle: constraint?.title || plan.title,
+      constraint: constraint ? { key: constraint.key, label: constraint.label, title: constraint.title } : null,
       recommendations: recommendations.map((item) => ({ layer: item.layer, product: item.product, status: item.status })),
       answers: answersRecord,
       portableBrief,
@@ -639,54 +825,86 @@
         rulesetVersion,
         route: routeKey(),
         planKey,
-        goal: answersRecord.goal?.value,
+        goal: answersRecord.goal?.value || constraint?.key || '',
         implementationPreference: answersRecord.involvement?.value,
         products: resultData.recommendations.map((item) => item.product).join(' | ')
       });
       state.wasCompleted = true;
     }
-    const wantsImplementation = ['dfy', 'setup'].includes(state.answers.involvement.value) || planKey === 'growth';
-    const implementationTitle = wantsImplementation
-      ? 'You have the plan. You do not have to become the person who builds it.'
-      : 'Your answers do not prove that you need to pay someone to build this yet.';
-    const implementationBody = ['dfy', 'setup'].includes(state.answers.involvement.value)
-      ? `You said, “${state.answers.involvement.label}.” Expansion Works can carry this exact StackBrief into the build, connect the moving parts, test the handoffs, and give you a system you can see and manage.`
-      : wantsImplementation
-        ? 'Your answers point to a business where disconnected handoffs are already becoming an operating cost. Expansion Works can carry this exact StackBrief into the build, connect the moving parts, test the handoffs, and give the team one system to manage.'
-        : 'Use this brief to make the next decision yourself. If the setup later begins costing more time or lost opportunities than the installation, Expansion Works will still have the context needed to take it over.';
-    const implementationCTA = wantsImplementation
-      ? 'Turn this StackBrief into a working system →'
-      : 'See what done-for-you would include →';
-    const implementationHref = `/sales?from=stackbrief&brief=${encodeURIComponent(state.briefId)}&fit=${encodeURIComponent(planKey)}`;
+    const valueQualified = ['5to10', '10to25', '25plus'].includes(state.answers.value?.value);
+    const demandQualified = ['medium', 'high'].includes(state.answers.volume?.value);
+    const painQualified = established && constraint.key !== 'measurement'
+      && (['no', 'unknown'].includes(state.answers.visible?.value)
+        || ['memory', 'shared', 'unknown'].includes(state.answers.owner?.value)
+        || ['nextday', 'longer', 'unknown'].includes(state.answers.response?.value)
+        || ['aftercall', 'proposal', 'nurture', 'handoff'].includes(state.answers.stall?.value));
+    const paidFit = established && valueQualified && demandQualified && painQualified;
+    const implementationTitle = paidFit
+      ? 'Test whether this leak is worth paying to remove.'
+      : 'Do not hire me yet.';
+    const implementationBody = paidFit
+      ? 'Send me this brief and a view of the last 90 days of lead movement. I will answer one question before a discovery call: does the evidence support a $4K–$7.5K build, a smaller repair, or no paid work?'
+      : established
+        ? 'Run the 14-day test first. If good-fit opportunities are still disappearing without an owner, next action, or recorded outcome, come back with the evidence.'
+        : 'Prove one path from interest to conversation before paying for implementation. Use the tool decisions below and keep the system as small as the current demand.';
+    const implementationCTA = paidFit ? 'Test the economics of a build →' : 'Review the 14-day test →';
+    const implementationHref = paidFit
+      ? `/sales?from=stackbrief&brief=${encodeURIComponent(state.briefId)}&fit=${encodeURIComponent(planKey)}#apply`
+      : '#diagnostic-evidence';
 
-    stage.innerHTML = `
-      <div class="result-header">
-        <div><p class="result-tier">${escapeHtml(plan.label)}</p><h2 class="result-title">${escapeHtml(plan.title)}</h2></div>
-        <div class="result-score" aria-label="Stack level ${plan.code}">${plan.code}</div>
-      </div>
-      <p class="result-reason">${escapeHtml(plan.reason)}</p>
-      <div class="result-grid">
-        <div class="result-block"><h4>DO NOW</h4>${list(plan.doNow)}</div>
-        <div class="result-block"><h4>ADD LATER</h4>${list(plan.later)}</div>
-        <div class="result-block"><h4>SKIP FOR NOW</h4>${list(plan.skip)}</div>
-      </div>
-      <section class="ascension-box ${wantsImplementation ? 'is-qualified' : 'is-diy'}">
-        <h3>${escapeHtml(implementationTitle)}</h3>
-        <p>${escapeHtml(implementationBody)}</p>
-        <div class="ascension-actions">
-          <a class="button" href="${escapeHtml(implementationHref)}" data-dfy-link>${escapeHtml(implementationCTA)}</a>
-          <a href="#product-brief">I want to review the tool decisions first</a>
-        </div>
-        <small>Your answers and recommendations come with you. You will not have to explain the business again from scratch.</small>
-      </section>
-      <div class="product-brief" id="product-brief">
+    const resultTier = constraint?.label || plan.label;
+    const resultTitle = constraint?.title || plan.title;
+    const resultReason = constraint?.reason || plan.reason;
+    const actionGrid = established ? `
+      <div class="result-block"><h4>FIX IN 7 DAYS</h4>${list(constraint.fix)}</div>
+      <div class="result-block"><h4>MEASURE FOR 14 DAYS</h4>${list(constraint.measures)}</div>
+      <div class="result-block"><h4>DO NOT BUY YET</h4>${list(constraint.skip)}</div>` : `
+      <div class="result-block"><h4>DO NOW</h4>${list(plan.doNow)}</div>
+      <div class="result-block"><h4>ADD LATER</h4>${list(plan.later)}</div>
+      <div class="result-block"><h4>SKIP FOR NOW</h4>${list(plan.skip)}</div>`;
+    const decisionDetail = established ? `
+      <div class="diagnostic-evidence" id="diagnostic-evidence">
+        <div class="product-brief-heading"><p>THE EVIDENCE</p><span>Hypothesis, not invented certainty</span></div>
+        <article>
+          <h4>What your answers support</h4>
+          ${list(constraint.evidence)}
+        </article>
+        <article>
+          <h4>What they do not prove</h4>
+          <p>${escapeHtml(constraint.unproven)}</p>
+        </article>
+        <article>
+          <h4>What would justify an upgrade</h4>
+          <p>${escapeHtml(constraint.upgrade)}</p>
+        </article>
+        <p class="legal-note">One-loss equivalent: ${escapeHtml(state.answers.value.label)}. This states the economic stake of one normal engagement. It does not claim the loss was preventable or forecast a recovery.</p>
+      </div>` : `
+      <div class="product-brief" id="diagnostic-evidence">
         <div class="product-brief-heading"><p>THE TOOL DECISIONS</p><span>Fit decided before compensation</span></div>
         ${recommendations.map(recommendationCard).join('')}
         <p class="legal-note">Recommendations are educational. Verify current prices, limits, and terms with each vendor before purchasing.</p>
+      </div>`;
+
+    stage.innerHTML = `
+      <div class="result-header">
+        <div><p class="result-tier">${escapeHtml(resultTier)}</p><h2 class="result-title">${escapeHtml(resultTitle)}</h2></div>
+        <div class="result-score" aria-label="Stack level ${plan.code}">${plan.code}</div>
       </div>
+      <p class="result-reason">${escapeHtml(resultReason)}</p>
+      <div class="result-grid">${actionGrid}</div>
+      <section class="ascension-box ${paidFit ? 'is-qualified' : 'is-diy'}">
+        <h3>${escapeHtml(implementationTitle)}</h3>
+        <p>${escapeHtml(implementationBody)}</p>
+        <div class="ascension-actions">
+          <a class="button" href="${escapeHtml(implementationHref)}" ${paidFit ? 'data-dfy-link' : ''}>${escapeHtml(implementationCTA)}</a>
+          <a href="#diagnostic-evidence">Show me why StackBrief chose this</a>
+        </div>
+        <small>${paidFit ? 'Diagnosis first. If the evidence says DIY or no change, I will say so.' : 'Return with measured evidence before paying anyone to automate the problem.'}</small>
+      </section>
+      ${decisionDetail}
       <div class="save-box">
-        <h4>Want a second set of eyes before you spend money?</h4>
-        <p>Send me this exact StackBrief. During beta, I’ll check the recommendation and tell you if anything important looks wrong. You will not be added to a generic software newsletter.</p>
+        <h4>Give me permission to disagree with StackBrief.</h4>
+        <p>Send the brief. During beta, I will identify the strongest reason this result may be wrong and the one missing number most likely to change the decision. You will not be added to a generic newsletter.</p>
         <form class="save-form" action="https://formspree.io/f/xeewjjlv" method="POST" data-save-form>
           <input type="email" name="email" autocomplete="email" placeholder="you@business.com" aria-label="Work email" required>
           <input type="hidden" name="source" value="StackBrief manual beta review">
@@ -702,12 +920,12 @@
           <input type="hidden" name="stackbrief_started_at" value="${escapeHtml(state.startedAt)}">
           <input type="hidden" name="stackbrief_completed_at" value="${escapeHtml(state.completedAt)}">
           <input type="hidden" name="_subject" value="New StackBrief beta review request">
-          <button class="button" type="submit">Check my StackBrief →</button>
+          <button class="button" type="submit">Pressure-test my brief →</button>
         </form>
         <p class="form-status" data-form-status aria-live="polite"></p>
       </div>
       <div class="result-actions">
-        <a href="/tools/better-inquiry-form">Build a better inquiry form →</a>
+        <a href="/crm-or-spreadsheet-for-consultants">Test my CRM breakpoint →</a>
         <button type="button" data-copy-brief>Copy my brief</button>
         <button type="button" data-restart>Retake the brief</button>
       </div>`;
@@ -737,8 +955,9 @@
         });
       });
     });
-    stage.querySelector('[data-dfy-link]').addEventListener('click', () => {
-      funnel?.track('dfy_handoff_clicked', { briefId: state.briefId, planKey, route: routeKey() });
+    const dfyLink = stage.querySelector('[data-dfy-link]');
+    if (dfyLink) dfyLink.addEventListener('click', () => {
+      funnel?.track('dfy_handoff_clicked', { briefId: state.briefId, planKey, route: routeKey(), constraint: constraint?.key || '' });
     });
 
     const form = stage.querySelector('[data-save-form]');
@@ -757,7 +976,7 @@
       } catch (error) {
         status.textContent = 'That did not save. Try again or use the done-for-you page to contact me directly.';
         submit.disabled = false;
-        submit.textContent = 'CHECK MY STACKBRIEF →';
+        submit.textContent = 'PRESSURE-TEST MY BRIEF →';
       }
     });
   }

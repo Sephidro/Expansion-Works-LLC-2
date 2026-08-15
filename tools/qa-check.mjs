@@ -20,13 +20,13 @@ const FILES = [
   'guides/index.html', 'guides/leads-go-cold.html', 'guides/where-leads-come-from.html',
   'guides/consistent-followup.html', 'guides/why-isnt-it-closing.html',
   'guides/which-crm-fits.html', 'guides/how-i-write-follow-up.html',
-  'work/donation.html', 'work/staff.html', 'work/ibucks.html',
-  'tools/better-inquiry-form.html',
+  'work/donation.html', 'work/staff.html', 'work/ibucks.html', 'work/lead-recovery.html',
+  'tools/better-inquiry-form.html', 'crm-or-spreadsheet-for-consultants.html', 'privacy.html',
 ];
 
 const JS_FILES = [
   'assets/stackbrief-catalog.js', 'assets/funnel.js', 'assets/stackbrief.js',
-  'assets/stackbrief-handoff.js', 'assets/inquiry-builder.js', 'assets/site.js'
+  'assets/stackbrief-handoff.js', 'assets/service-form.js', 'assets/inquiry-builder.js', 'assets/crm-readiness.js', 'assets/site.js'
 ];
 
 let errors = 0;
@@ -57,6 +57,7 @@ for (const f of FILES) {
   while ((m = scriptRe.exec(src))) {
     const attrs = m[1] || '';
     if (/src=/.test(attrs)) continue;
+    if (/type=["']application\/ld\+json["']/.test(attrs)) continue;
     const code = m[2];
     if (!code.trim()) continue;
     try { new Function(code); }
@@ -80,7 +81,8 @@ for (const f of FILES) {
     if (href.startsWith('/')) {
       if (href.includes('#')) {
         const [filePart, anchor] = href.split('#');
-        const targetFile = (filePart === '' || filePart === '/') ? 'index.html' : filePart.replace(/^\//, '');
+        const cleanFilePart = filePart.split('?')[0];
+        const targetFile = (cleanFilePart === '' || cleanFilePart === '/') ? 'index.html' : cleanFilePart.replace(/^\//, '');
         const targetFull = path.join(root, targetFile.endsWith('.html') ? targetFile : targetFile + (fs.existsSync(path.join(root, targetFile + '.html')) ? '.html' : ''));
         if (fs.existsSync(targetFull)) {
           const targetIds = new Set([...fs.readFileSync(targetFull, 'utf8').matchAll(/\sid="([^"]+)"/g)].map(x => x[1]));
