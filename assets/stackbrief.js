@@ -271,21 +271,21 @@
   const plans = {
     essentials: {
       code: '01', label: 'STACK 01 // ESSENTIALS', title: 'Make the next step obvious',
-      reason: 'The business does not need more software yet. It needs one credible path from interest to action and a follow-up habit you will actually use.',
+      reason: 'More software would give you more setup, not more customers. Put one clear path between interest and action, then track every real conversation in one place.',
       doNow: ['Give the website one job', 'Give interested people one useful next step', 'Track every active conversation in one place'],
       later: ['Add a CRM when opportunities become hard to scan', 'Automate only after the same task repeats reliably'],
       skip: ['An all-in-one platform without an owner', 'A large stack before consistent demand', 'Features purchased for a future business']
     },
     pipeline: {
       code: '02', label: 'STACK 02 // RELIABLE PIPELINE', title: 'Stop relying on memory',
-      reason: 'You have enough real activity for scattered information and inconsistent follow-up to cost opportunities. The fix is visibility and discipline, not automation everywhere.',
+      reason: 'You have enough real inquiries that memory is now expensive. Put every opportunity in one visible place and make the first follow-up impossible to miss.',
       doNow: ['Send every inquiry to one dependable destination', 'Keep one visible pipeline', 'Make the first follow-up automatic or impossible to forget'],
       later: ['Connect proposal, payment, and onboarding', 'Add source and close-rate reporting'],
       skip: ['A second place to track the same leads', 'Automating every task', 'Migrating without a measured reason']
     },
     growth: {
       code: '03', label: 'STACK 03 // CONNECTED GROWTH', title: 'Connect the handoffs',
-      reason: 'The business has outgrown information scattered across tools and people. Every opportunity needs one visible record, one owner, and one next step.',
+      reason: 'More than one tool or person touches each opportunity now. Give every lead one visible record, one owner, and one next step before adding more automation.',
       doNow: ['Give one person ownership of the system', 'Connect capture, CRM, and follow-up', 'Measure response time and movement between stages'],
       later: ['Add long-term nurture', 'Build permissions, exceptions, and deeper reporting'],
       skip: ['An ownerless all-in-one platform', 'Rebuilding everything at once', 'Automation nobody knows how to fix']
@@ -780,7 +780,7 @@
     if (!state.briefId) state.briefId = funnel?.makeId('SBB') || `SBB-${Date.now().toString(36)}`;
     if (!state.completedAt) state.completedAt = new Date().toISOString();
     const portableBrief = established ? [
-      `STACKBRIEF — ${constraint.label}`, constraint.title, constraint.reason, '',
+      `STACKBRIEF | ${constraint.label}`, constraint.title, constraint.reason, '',
       'WHAT YOUR ANSWERS SUPPORT', ...constraint.evidence, '',
       'WHAT THEY DO NOT PROVE', constraint.unproven, '',
       'FIX IN THE NEXT 7 DAYS', ...constraint.fix.map((item) => `- ${item}`), '',
@@ -790,9 +790,9 @@
       'Generated at https://stackbriefxp.vercel.app/stackbrief',
       'This is a hypothesis to test, not a revenue forecast.'
     ].join('\n') : [
-      `STACKBRIEF — ${plan.label}`, plan.title, plan.reason, '',
+      `STACKBRIEF | ${plan.label}`, plan.title, plan.reason, '',
       ...recommendations.flatMap((item) => [
-        `${item.layer}: ${item.product} — ${item.status}`, `Why: ${item.summary}`, `Disqualifier: ${item.avoid}`,
+        `${item.layer}: ${item.product} | ${item.status}`, `Why: ${item.summary}`, `Disqualifier: ${item.avoid}`,
         `No-buy path: ${item.noBuy}`, `Cost fact checked ${verifiedDate}: ${item.cost}`, ''
       ]),
       'Generated at https://stackbriefxp.vercel.app/stackbrief',
@@ -840,14 +840,14 @@
         || ['aftercall', 'proposal', 'nurture', 'handoff'].includes(state.answers.stall?.value));
     const paidFit = established && valueQualified && demandQualified && painQualified;
     const implementationTitle = paidFit
-      ? 'Test whether this leak is worth paying to remove.'
+      ? 'Want me to turn this into the working version?'
       : 'Do not hire me yet.';
     const implementationBody = paidFit
-      ? 'Send me this brief and a view of the last 90 days of lead movement. I will answer one question before a discovery call: does the evidence support a $4K–$7.5K build, a smaller repair, or no paid work?'
+      ? 'Send me this brief and the last 90 days of lead movement. I’ll tell you whether I should build the full path, make a smaller repair, or tell you to keep the money.'
       : established
         ? 'Run the 14-day test first. If good-fit opportunities are still disappearing without an owner, next action, or recorded outcome, come back with the evidence.'
         : 'Prove one path from interest to conversation before paying for implementation. Use the tool decisions below and keep the system as small as the current demand.';
-    const implementationCTA = paidFit ? 'Test the economics of a build →' : 'Review the 14-day test →';
+    const implementationCTA = paidFit ? 'Show me how you’d build this →' : 'Review the 14-day test →';
     const implementationHref = paidFit
       ? `/sales?from=stackbrief&brief=${encodeURIComponent(state.briefId)}&fit=${encodeURIComponent(planKey)}#apply`
       : '#diagnostic-evidence';
@@ -897,14 +897,14 @@
         <p>${escapeHtml(implementationBody)}</p>
         <div class="ascension-actions">
           <a class="button" href="${escapeHtml(implementationHref)}" ${paidFit ? 'data-dfy-link' : ''}>${escapeHtml(implementationCTA)}</a>
-          <a href="#diagnostic-evidence">Show me why StackBrief chose this</a>
+          <a href="#diagnostic-evidence">Review why StackBrief chose this</a>
         </div>
-        <small>${paidFit ? 'Diagnosis first. If the evidence says DIY or no change, I will say so.' : 'Return with measured evidence before paying anyone to automate the problem.'}</small>
+        <small>${paidFit ? 'This StackBrief goes with you. I will already have the answers, evidence, and 14-day test.' : 'Return with measured evidence before paying anyone to automate the problem.'}</small>
       </section>
       ${decisionDetail}
       <div class="save-box">
-        <h4>Give me permission to disagree with StackBrief.</h4>
-        <p>Send the brief. During beta, I will identify the strongest reason this result may be wrong and the one missing number most likely to change the decision. You will not be added to a generic newsletter.</p>
+        <h4>Want me to check the recommendation?</h4>
+        <p>Send me this StackBrief. During beta, I’ll review it myself and tell you if I would change anything before you spend money. No software newsletter attached.</p>
         <form class="save-form" action="https://formspree.io/f/xeewjjlv" method="POST" data-save-form>
           <input type="email" name="email" autocomplete="email" placeholder="you@business.com" aria-label="Work email" required>
           <input type="hidden" name="source" value="StackBrief manual beta review">

@@ -15,12 +15,12 @@
 
   const title = document.createElement('h3');
   title.textContent = result.constraint
-    ? `I already have your “${result.constraint.title}” StackBrief.`
-    : `I already have your “${result.planTitle}” StackBrief.`;
+    ? `Your “${result.constraint.title}” StackBrief is attached.`
+    : `Your “${result.planTitle}” StackBrief is attached.`;
   const summary = document.createElement('p');
   summary.textContent = result.constraint
-    ? 'Your first-constraint hypothesis, economic inputs, evidence, and 14-day test are attached. You do not need to explain the lead path again from scratch.'
-    : `Your answers and ${result.recommendations.length} system decisions are attached to this inquiry. You do not need to explain everything again.`;
+    ? 'I already have your first-constraint hypothesis, economic inputs, evidence, and 14-day test. Start with anything the brief missed or anything that has changed.'
+    : `I already have your answers and ${result.recommendations.length} system decisions. Start with anything the brief missed or anything that has changed.`;
   const list = document.createElement('ul');
   if (result.constraint) {
     const item = document.createElement('li');
