@@ -1,9 +1,21 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "redirects": [
     { "source": "/qualify", "destination": "/sales#apply", "permanent": true },
-    { "source": "/audit-request", "destination": "/sales#apply", "permanent": true }
+    { "source": "/qualify.html", "destination": "/sales#apply", "permanent": true },
+    { "source": "/audit-request", "destination": "/sales#apply", "permanent": true },
+    { "source": "/audit-request.html", "destination": "/sales#apply", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/sales", "destination": "/sales.html" },
+    { "source": "/stackbrief", "destination": "/stackbrief.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/crm-or-spreadsheet-for-consultants", "destination": "/crm-or-spreadsheet-for-consultants.html" },
+    { "source": "/guides", "destination": "/guides/index.html" },
+    { "source": "/guides/:slug", "destination": "/guides/:slug.html" },
+    { "source": "/tools/:slug", "destination": "/tools/:slug.html" },
+    { "source": "/work/:slug", "destination": "/work/:slug.html" }
   ],
   "headers": [
     {
