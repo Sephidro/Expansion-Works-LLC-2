@@ -11,7 +11,7 @@
     <meta property="og:image" content="https://stackbriefxp.vercel.app/assets/xp-logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://stackbriefxp.vercel.app/assets/xp-logo.png">
-    <title>Case Study // 01 — Donation Page Rebuild</title>
+    <title>Case Study // 01: Donation Page Rebuild</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=JetBrains+Mono:wght@100;400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
@@ -277,19 +277,19 @@
         <h1>A Pretty Page <br><span>That Didn't Make Money.</span></h1>
 
         <div class="abstract">
-            The page looked incredible. Dark, sharp, brutalist, every designer's wet dream. It also wasn't bringing in donations. Beautiful and broken aren't mutually exclusive. I rebuilt three things. The pricing tiers. The copy. And what actually happens the second somebody clicks "Donate." Here's exactly what changed and why it worked.
+            The page looked incredible. Dark, sharp, and brutalist. But donors still had to make a hard jump between giving levels, read the same pitch at every amount, and leave the branded site for a generic checkout. I changed those three parts.
         </div>
 
         <h2>The $50 to $250 Cliff</h2>
         <p>Their donation page had two options. Fifty bucks or two hundred fifty. Nothing in between. That's a 5x jump with no place to land.</p>
-        <p>If you're staring at that grid and you actually want to give something meaningful, your brain does this thing. Fifty feels too small if you're being serious. Two-fifty feels like a lot. So you don't pick either. You close the tab. You tell yourself you'll come back. You don't come back.</p>
-        <p>That's not the donor being cheap. That's the page making them work too hard to decide.</p>
+        <p>For a donor who wanted to give more than $50, the next choice was $250. That five-times jump made the decision harder than it needed to be, so some donors left without choosing either amount.</p>
+        <p>The page made a willing donor work too hard to choose an amount.</p>
 
         <div class="tactic-card">
             <div class="tactic-title">The Fix: A $100 Bridge</div>
-            <p>I added a $100 tier. Not because I expected people to pick $100 (though a bunch did). I added it so <span class="highlight">$250 stopped feeling like a leap and started feeling like a step up.</span></p>
+            <p>I added a $100 tier. It gave people a natural middle choice and made <span class="highlight">$250 feel like the next step instead of a five-times jump.</span></p>
             <ul>
-                <li><strong>$50:</strong> Buys the materials a student actually uses.</li>
+                <li><strong>$50:</strong> Buys the materials a student uses.</li>
                 <li><strong>$100:</strong> Funds a local project from start to finish.</li>
                 <li><strong>$250:</strong> Changes the trajectory of one kid's year.</li>
             </ul>
@@ -297,23 +297,23 @@
         </div>
 
         <h2>Stop Sounding Like Every Other Nonprofit</h2>
-        <p>The original copy had every phrase you've ever read on a charity site. "Help students." "Support our mission." "Your gift makes a difference." None of it is wrong. None of it makes anyone click Donate.</p>
-        <p>A $50 donor and a $250 donor are different humans. They want different things. They give for different reasons. Writing the same line for both means you miss both.</p>
+        <p>The original copy used familiar charity phrases: “Help students.” “Support our mission.” “Your gift makes a difference.” These broad lines gave donors no concrete reason to choose one amount over another.</p>
+        <p>The $50 donor wanted to know the money would reach something tangible. The $250 donor wanted to see the larger moment the gift could create. Each tier needed its own reason to give.</p>
 
         <div class="tactic-card">
             <div class="tactic-title">The Fix: Different Pitch Per Tier</div>
             <p>For the $50 tier I made it concrete. <span class="copper-text">"Skip the admin. The exact materials the kid needs, in the kid's hands."</span> Grassroots donors fear waste. Tell them their money goes directly into the thing.</p>
-            <p>For the $250 tier I shifted to legacy. <span class="highlight">"You're not paying for a bus ride. You're paying for the moment a student realizes the door is open."</span> That donor wants to be the reason something happened. Sell them the outcome, not the line item.</p>
-            <p>Same school, same mission, two completely different conversations. Because they're two completely different people.</p>
+            <p>For the $250 tier I shifted to legacy. <span class="highlight">“A $250 gift gives a student the moment they realize the door is open.”</span> That donor wants to be the reason something happened, so the copy shows the moment their money creates.</p>
+        <p>Each amount spoke to the reason that donor would choose it.</p>
         </div>
 
         <h2>The Checkout That Killed the Vibe</h2>
         <p>This was the leak. They used Square for payments. Fine, Square works. But clicking "Donate" opened a new tab and dropped the donor on a generic, white-labeled Square checkout that looked nothing like the site they were just on.</p>
-        <p>That's the moment you lose them. They came in trusting a sharp, intentional brand. Now they're staring at what looks like a phishing page. Their brain says "wait, am I in the right place?" and the answer is "I'll come back later." They don't come back later.</p>
+        <p>The sharp, intentional site had earned trust. The generic checkout looked disconnected and made donors stop to question whether they were still in the right place.</p>
 
         <div class="tactic-card">
             <div class="tactic-title">The Fix: Bring the Checkout Onto the Page</div>
-            <p>I couldn't change the processor (the client wanted to keep Square). So I wrote a small piece of JavaScript that catches the click, kills the new tab, and pops the Square checkout in a window that hovers over the site they're already on. Same processor. Same security. Totally different experience.</p>
+            <p>I couldn't change the processor because the client wanted to keep Square. I wrote a small piece of JavaScript that opened the same secure Square checkout over the branded page instead of sending the donor to a new tab.</p>
 
             <div class="code-block">
 // Catch the "Donate" button click and open the
@@ -328,13 +328,13 @@ buttons.forEach(function(btn) {
   });
 });
             </div>
-            <p>The vibe holds. The donor clicks a sharp custom button and a Square checkout floats over the page they were already on. No redirect. No broken trust. Donation processed.</p>
+            <p>The donor stayed on the branded page while the secure Square checkout opened above it. The payment processor stayed the same, and the transition felt connected to the site.</p>
         </div>
 
-        <h2>The Real Lesson</h2>
-        <p>None of this was hard. A new button. Two different paragraphs. A few lines of JavaScript. The original page wasn't broken because the designer was bad. It was broken because nobody asked "what does the donor's brain actually do on this page?"</p>
-        <p>That's the gap. Most websites have a beautiful version of the thing. Almost none of them have a converting version. Pretending those are the same thing costs you money every day the site is live.</p>
-        <p>If your site looks great but the leads aren't coming through, the design isn't the problem. The mechanics are. <span class="copper-text">That's what I fix.</span></p>
+        <h2>What the small repair changed</h2>
+        <p>The repair was small: one new amount, copy written for each donor level, and a few lines of JavaScript. Each change removed one place where the donor had to stop and think.</p>
+        <p>Most websites are designed for appearance first. Conversion improves when the page also helps the visitor choose, act, and finish.</p>
+        <p>A site can look good and still lose buyers at the decision or checkout step. <span class="copper-text">I fix those mechanics.</span></p>
 
         <!-- TERMINAL CTA BLOCK -->
         <div style="
@@ -372,7 +372,7 @@ buttons.forEach(function(btn) {
                 color: #b0b4c0;
                 max-width: 600px;
                 margin: 0 auto 2rem;
-            ">If your business has real inquiry volume, send what happened to the last 10 serious prospects. I will tell you whether the evidence supports a paid diagnostic, a direct installation, a smaller repair, or no reason to hire me.</p>
+            ">If your business has real inquiry volume, send what happened to the last 10 serious prospects. I will tell you whether to start with the diagnostic, a smaller repair, a full installation, or no paid work yet.</p>
 
             <a href="/sales?from=case-donation#apply" style="
                 display: inline-block;

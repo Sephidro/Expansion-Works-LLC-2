@@ -19,7 +19,7 @@
         experience: 'Expansion Works currently supports client sites on Wix and previously ran an ecommerce site on the platform.',
         url: 'https://www.wix.com/',
         sourceUrl: 'https://www.wix.com/plans',
-        commercial: 'DIRECT LINK • AFFILIATE APPLICATION PENDING'
+        commercial: 'DIRECT PRODUCT LINK'
       },
       wordpressElementor: {
         name: 'WordPress + Elementor',
@@ -27,7 +27,7 @@
         experience: 'Expansion Works has built multiple WordPress sites and treats plugin load, upkeep, and performance as ongoing costs.',
         url: 'https://elementor.com/',
         sourceUrl: 'https://elementor.com/pricing/',
-        commercial: 'DIRECT LINK • NO ACTIVE COMMISSION'
+        commercial: 'DIRECT PRODUCT LINK'
       },
       formspree: {
         name: 'Formspree',
@@ -35,7 +35,7 @@
         experience: 'Expansion Works currently uses Formspree for its own website forms.',
         url: 'https://formspree.io/',
         sourceUrl: 'https://help.formspree.io/articles/account-management/account-limits',
-        commercial: 'DIRECT LINK • NO ACTIVE COMMISSION'
+        commercial: 'DIRECT PRODUCT LINK'
       },
       highLevel: {
         name: 'HighLevel',
@@ -43,7 +43,7 @@
         experience: 'Expansion Works used HighLevel to train a question-answering chatbot, capture interested prospects, and route human follow-up during a three-month organizational trial.',
         url: 'https://www.gohighlevel.com/',
         sourceUrl: 'https://www.gohighlevel.com/pricing',
-        commercial: 'DIRECT LINK • NO ACTIVE COMMISSION'
+        commercial: 'DIRECT PRODUCT LINK'
       },
       hubspot: {
         name: 'HubSpot Free CRM',
@@ -51,7 +51,7 @@
         experience: 'Expansion Works has used HubSpot for email campaigns, CRM segmentation, and follow-up tracking.',
         url: 'https://www.hubspot.com/products/crm',
         sourceUrl: 'https://www.hubspot.com/products/crm',
-        commercial: 'DIRECT LINK • AFFILIATE PROGRAM EXISTS, NO TRACKING LINK ACTIVE'
+        commercial: 'DIRECT PRODUCT LINK'
       },
       sheetsGmail: {
         name: 'Google Sheet + Gmail',
@@ -59,7 +59,7 @@
         experience: 'Expansion Works has built and operated multiple lightweight pipelines with Google Sheets, Gmail, and Apps Script.',
         url: 'https://workspace.google.com/products/sheets/',
         sourceUrl: 'https://developers.google.com/apps-script/guides/services/quotas',
-        commercial: 'NON-AFFILIATE RECOMMENDATION'
+        commercial: 'DIRECT PRODUCT LINK'
       }
     }
   };

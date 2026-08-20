@@ -19,7 +19,7 @@
     : `Your “${result.planTitle}” StackBrief is attached.`;
   const summary = document.createElement('p');
   summary.textContent = result.constraint
-    ? 'I already have your first-constraint hypothesis, economic inputs, evidence, and 14-day test. Start with anything the brief missed or anything that has changed.'
+    ? 'I already have the client value, lead volume, first problem to fix, and 14-day test. Start with anything the brief missed or anything that has changed.'
     : `I already have your answers and ${result.recommendations.length} system decisions. Start with anything the brief missed or anything that has changed.`;
   const list = document.createElement('ul');
   if (result.constraint) {

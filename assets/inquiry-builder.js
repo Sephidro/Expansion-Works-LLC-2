@@ -39,7 +39,7 @@
     if (data.platform === 'custom') {
       return {
         name: 'Formspree',
-        reason: 'A custom or static site needs a form backend, but your answers do not justify installing a full CRM merely to receive structured inquiries.'
+        reason: 'Use a simple form backend for the custom site. Your current volume does not need a full CRM just to receive inquiries.'
       };
     }
     if (data.platform === 'wordpress' && data.volume === 'medium') {
@@ -51,12 +51,12 @@
     if (['wix', 'beacons'].includes(data.platform)) {
       return {
         name: `Use ${data.platform === 'wix' ? 'Wix' : 'Beacons'} native capture`,
-        reason: 'Do not add another form subscription until the native system fails a specific routing, qualification, or follow-up requirement.'
+        reason: 'Use the form already included with the site. Add another product only when routing, qualification, or follow-up needs something it cannot do.'
       };
     }
     return {
       name: 'Use the current builder’s native form first',
-      reason: 'Your volume and routing needs do not yet justify a separate backend. Preserve a clean upgrade path if the process becomes harder to see.'
+      reason: 'Use the form already included with the site. Move to a separate backend when the process becomes hard to see or route.'
     };
   }
 
@@ -143,7 +143,7 @@ ${problems.map((problem, index) => `    <label><input type="radio" name="buyer_p
         <p>Replace the clearly marked form-handler value before publishing. Add your privacy notice, consent language, spam controls, and accessibility testing.</p>
       </div>
       <div class="output-next">
-        <p>The form is only one node. The next decision is where the inquiry is stored and how quickly follow-up starts.</p>
+        <p>The form starts the conversation. Next, decide where the inquiry is stored, who owns it, and how quickly follow-up starts.</p>
         <a href="/#stackbrief">Build the full StackBrief →</a>
         <a href="/sales">Have Expansion Works implement it →</a>
       </div>

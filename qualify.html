@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Lead Visibility Check · Expansion Works</title>
-<meta name="description" content="Answer 3 questions about your lead process. I'll tell you straight whether the Lead Visibility Sprint is worth your time, no pitch either way.">
+<meta name="description" content="Answer three questions about your lead volume, business, and follow-up problem. Find out whether the lead path is worth fixing now.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Lead Visibility Check · Expansion Works">
@@ -12,7 +12,7 @@
 <meta property="og:image" content="/assets/xp-logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Lead Visibility Check">
-<meta name="twitter:description" content="3 questions about your lead process. A straight answer, no pitch.">
+<meta name="twitter:description" content="Three questions about your lead process and a direct answer on whether it is worth fixing now.">
 <meta name="twitter:image" content="/assets/xp-logo.png">
 
 <link rel="icon" type="image/png" href="/assets/xp-logo.png">
@@ -81,9 +81,9 @@
 <!-- ─── HERO + FORM ─── -->
 <section class="hero wrap" id="check">
   <div class="hero-inner">
-    <div class="kicker" style="justify-content:center;">Free lead visibility check · 3 questions · no pitch</div>
-    <h1>Your leads aren't the problem. What happens <span class="mark">after</span> they land is.</h1>
-    <p class="hero-sub">I build the system between "someone showed interest" and "someone followed up." Answer 3 quick questions about how your leads actually move today, I'll tell you straight whether it's worth fixing right now.</p>
+    <div class="kicker" style="justify-content:center;">Free lead visibility check · 3 questions</div>
+    <h1>See what happens <span class="mark">after</span> a lead lands.</h1>
+    <p class="hero-sub">I build the path between “someone showed interest” and “someone followed up.” Answer three quick questions and I’ll tell you whether that path is worth fixing right now.</p>
 
     <form class="form-card" id="qualifyForm" action="https://formspree.io/f/YOUR_QUALIFY_FORM_ID" method="POST">
       <div class="form-card-label">Free lead visibility check</div>
@@ -147,7 +147,7 @@
         <select id="f-bottleneck" name="bottleneck" required>
           <option value="" disabled selected>Select one…</option>
           <option value="leads-go-cold">Leads go cold before anyone follows up</option>
-          <option value="dont-know-source">We don't know where our leads actually come from</option>
+          <option value="dont-know-source">We don't know where our leads come from</option>
           <option value="inconsistent-followup">Follow-up is inconsistent, falls on whoever's free</option>
           <option value="low-close-rate">We get leads but our close rate is low</option>
           <option value="other">Something else</option>
@@ -159,13 +159,13 @@
       </div>
 
       <button class="btn-primary form-submit" type="submit" id="qualifyBtn">See if it's worth fixing →</button>
-      <p class="form-note">I read every one of these myself. No spam, no auto-sequence you didn't ask for.</p>
+      <p class="form-note">Xavier reviews each response and replies by email.</p>
     </form>
 
     <div class="form-success" id="formSuccess">
       <div class="check">✓</div>
       <h3 id="successTitle">Got it.</h3>
-      <p id="successBody">Check your inbox, a quick video on what I actually do is on its way.</p>
+      <p id="successBody">Check your inbox. A short video about the service is on its way.</p>
     </div>
   </div>
 </section>
@@ -173,22 +173,22 @@
 <!-- ─── WHY THIS MATTERS ─── -->
 <section class="band alt wrap" style="text-align:center;">
   <div class="kicker" style="justify-content:center;">Why these 3 questions</div>
-  <h2 style="max-width:760px;margin:0 auto 40px;">Most lead systems don't break at the top of the funnel. <span class="mark">They break the second someone raises their hand.</span></h2>
+  <h2 style="max-width:760px;margin:0 auto 40px;">These three answers show me whether your demand, deal value, and follow-up problem can justify a fix.</h2>
   <div class="why-grid">
     <div class="why-card">
       <div class="kicker">01</div>
       <div class="why-title">Industry</div>
-      <div class="why-body">Tells me if the math works. A missed lead only matters if the deal is worth chasing. I only take clients where one recovered lead pays for the fix many times over.</div>
+      <div class="why-body">I compare the value of a normal engagement with the likely cost of the repair.</div>
     </div>
     <div class="why-card">
       <div class="kicker">02</div>
       <div class="why-title">Volume</div>
-      <div class="why-body">Too few leads and there's nothing to systematize yet. Too many with no process and you're losing real money every week it stays broken.</div>
+      <div class="why-body">Volume shows whether one person can still manage the work or qualified opportunities now need a shared process.</div>
     </div>
     <div class="why-card">
       <div class="kicker">03</div>
       <div class="why-title">Bottleneck</div>
-      <div class="why-body">Tells me exactly where to look first, before we ever talk. You get a straighter answer, faster, because I'm not guessing.</div>
+      <div class="why-body">The bottleneck tells me which part of the lead path to review first.</div>
     </div>
   </div>
 </section>
@@ -196,7 +196,7 @@
 <!-- ─── PROOF ─── -->
 <section class="band wrap">
   <div class="kicker" style="justify-content:center;">Proof it works</div>
-  <p class="proof-quote">Ran this exact playbook on an inquiry process that was losing families at the finish line. Completion went from <span class="accent">32% to 72%</span>. Recovered value: <span class="accent">$1.7M+</span>. Same mechanism, different industry: catch the people who already raised their hand before they go cold.</p>
+  <p class="proof-quote">At a NYC charter school, I found 207 applications that had been started but not completed. Structured reminders and human follow-up helped 105 reach completion. Enrolled students associated with that flow represented approximately <span class="accent">$1.7M</span> in public funding across two recorded years.</p>
   <div class="proof-cite">Xavier Pearson, Expansion Works</div>
 </section>
 
@@ -278,10 +278,10 @@
       if (response.ok) {
         if (r.tier === 'high') {
           successTitle.textContent = 'Good fit.';
-          successBody.textContent = "Check your inbox, a quick video on what I actually do is on its way. Based on what you sent over, expect a call offer from me within 24 hours.";
+          successBody.textContent = "Check your inbox. A short video about the service is on its way. I’ll reply within 24 hours with the next step.";
         } else {
           successTitle.textContent = 'Got it.';
-          successBody.textContent = "Check your inbox, a quick video on what I actually do is on its way. I'll follow up over the next couple weeks with a few things that might help. If anything changes on your end, just reply.";
+          successBody.textContent = "Check your inbox. A short video about the service is on its way. I’ll send a few useful follow-up notes over the next two weeks.";
         }
         form.style.display = 'none';
         success.classList.add('show');

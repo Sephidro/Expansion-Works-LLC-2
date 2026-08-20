@@ -16,40 +16,40 @@
   const outcomes = {
     sheet: {
       code: 'KEEP THE SPREADSHEET',
-      title: 'Your current system has not earned a replacement.',
-      summary: 'The evidence does not show enough repeated visibility, ownership, or follow-up failure to justify CRM overhead yet.',
+      title: 'Keep the spreadsheet for now.',
+      summary: 'You can still see the active opportunities, keep ownership clear, and follow up without adding CRM upkeep.',
       test: 'For 14 days, keep one row per active opportunity with an owner, stage, next action, and next-action date. Review rows with no next action twice per week.',
-      wrong: 'This result becomes wrong when follow-up slips repeatedly, more than one person needs the same context, or you cannot scan every active opportunity in 60 seconds.',
+      wrong: 'Recheck this when follow-up slips repeatedly, more than one person needs the same context, or you cannot scan every active opportunity in 60 seconds.',
       skip: ['A CRM migration', 'Workflow automation', 'A second place to track the same people'],
       cta: 'Build the rest of my lean stack',
       href: '/stackbrief?utm_source=crm_breakpoint&utm_medium=result&utm_campaign=keep_sheet'
     },
     process: {
       code: 'FIX THE PROCESS FIRST',
-      title: 'The missing system is a decision, not a database.',
-      summary: 'Your answers show uncertainty about the leak or its economics. Installing software now would automate assumptions you have not tested.',
+      title: 'Write down the process before you buy a CRM.',
+      summary: 'You still need to find where leads stall and what one missed engagement costs. Track that first, then choose the software.',
       test: 'For 14 days, record every qualified inquiry, first useful response time, current stage, owner, next action, and outcome. Do not add automation during the test.',
-      wrong: 'This result becomes wrong if the process is already defined and the real failure is that people cannot execute it at the current volume.',
+      wrong: 'Recheck this if the process is already clear and people cannot keep up with it at the current volume.',
       skip: ['A feature comparison', 'A full-funnel rebuild', 'Revenue-at-risk estimates without recorded outcomes'],
       cta: 'Diagnose the full lead path',
       href: '/stackbrief?utm_source=crm_breakpoint&utm_medium=result&utm_campaign=fix_process'
     },
     crm: {
       code: 'INSTALL A LIGHTWEIGHT CRM',
-      title: 'The spreadsheet is beginning to fail at follow-through.',
-      summary: 'You have enough repeated visibility or follow-up friction for one shared pipeline to remove a demonstrated problem. Buy discipline, not a feature arsenal.',
+      title: 'Move the active opportunities into one shared CRM.',
+      summary: 'Follow-up is slipping or opportunities are getting hard to see. One shared pipeline can keep the work in front of you.',
       test: 'Create one pipeline with no more than six stages. Require an owner, next action, and date on every open opportunity. Measure adoption and stalled deals for 14 days before adding automation.',
-      wrong: 'This result becomes wrong if one person can still see every opportunity and the real failure is demand, offer clarity, or proposal quality.',
+      wrong: 'Recheck this if one person can still see every opportunity and the real issue is demand, offer clarity, or proposal quality.',
       skip: ['Complex marketing automation', 'A platform chosen for future headcount', 'Migrating client delivery before the sales path works'],
       cta: 'Choose the smallest fitting system',
       href: '/stackbrief?utm_source=crm_breakpoint&utm_medium=result&utm_campaign=light_crm'
     },
     connected: {
       code: 'CONNECT THE LEAD SYSTEM',
-      title: 'Your problem is bigger than storing contacts.',
-      summary: 'Volume, handoffs, or duplicate entry suggest the lead path is breaking between tools and people. A CRM alone will give the failure a new interface.',
+      title: 'Connect the handoffs around one shared record.',
+      summary: 'Volume, handoffs, or duplicate entry are making leads harder to track between tools and people. The CRM needs to connect those steps.',
       test: 'Map the last 10 qualified inquiries from first touch to recorded outcome. Mark every handoff, delay, copied field, missing owner, and unrecorded next action before choosing software.',
-      wrong: 'This result becomes wrong if the last 10 inquiries moved cleanly and the perceived complexity is not causing delays, lost context, or missed follow-up.',
+      wrong: 'Recheck this if the last 10 inquiries moved cleanly without delays, lost context, or missed follow-up.',
       skip: ['A CRM-only purchase', 'Rebuilding every tool at once', 'Automation without an accountable owner'],
       cta: 'Trace my last 10 inquiries',
       href: '/sales?from=crm-breakpoint&fit=connected#apply'
@@ -74,13 +74,13 @@
     const economicSignal = Number(values.economics) === 3;
 
     result.innerHTML = `
-      <div class="breakpoint-result-topline"><span>YOUR BREAKPOINT</span><b>${escapeHtml(outcome.code)}</b></div>
+      <div class="breakpoint-result-topline"><span>YOUR RESULT</span><b>${escapeHtml(outcome.code)}</b></div>
       <h3>${escapeHtml(outcome.title)}</h3>
       <p class="breakpoint-result-summary">${escapeHtml(outcome.summary)}</p>
-      ${economicSignal ? '<p class="economic-signal"><strong>ECONOMIC SIGNAL</strong> One preventable missed engagement could outweigh normal software cost. That does not prove the loss was preventable. It means the failure deserves measurement.</p>' : ''}
+      ${economicSignal ? '<p class="economic-signal"><strong>ONE-CLIENT MATH</strong> One normal engagement could cost more than the software. Measure how often the failure happens before you buy.</p>' : ''}
       <div class="breakpoint-result-grid">
         <article><span>RUN THIS 14-DAY TEST</span><p>${escapeHtml(outcome.test)}</p></article>
-        <article><span>WHAT WOULD MAKE THIS WRONG</span><p>${escapeHtml(outcome.wrong)}</p></article>
+        <article><span>RECHECK THIS RESULT WHEN</span><p>${escapeHtml(outcome.wrong)}</p></article>
         <article><span>DO NOT BUY YET</span><ul>${outcome.skip.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>
       </div>
       <div class="breakpoint-result-actions">
@@ -88,7 +88,7 @@
         <button type="button" data-copy-result>Copy this result</button>
         <button type="button" data-reset-result>Retake the test</button>
       </div>
-      <p class="legal-note">This is a rules-based decision aid. It does not predict revenue or prove that software caused a business outcome.</p>`;
+      <p class="legal-note">This tool uses the six answers above. It cannot predict revenue or prove what caused a lost deal.</p>`;
     result.hidden = false;
     form.hidden = true;
     funnel?.track('crm_breakpoint_completed', { outcome: outcomeKey, score, unknowns, economicSignal });

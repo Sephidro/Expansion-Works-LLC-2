@@ -43,8 +43,8 @@
       form.innerHTML = `
         <div class="service-form-success field-wide" role="status">
           <span>REQUEST RECEIVED</span>
-          <h3>I have the evidence you sent.</h3>
-          <p>Expect a yes, no, or missing-evidence reply within one business day. I will not make you book a call before I decide whether the economics deserve one.</p>
+          <h3>I have the details you sent.</h3>
+          <p>Within one business day, I’ll tell you whether I see a reason to talk, what information is missing, or why I would stop here.</p>
         </div>`;
     } catch (error) {
       funnel?.track('dfy_inquiry_failed', { source: params.get('from') || 'direct' });
