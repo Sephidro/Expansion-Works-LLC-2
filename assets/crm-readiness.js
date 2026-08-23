@@ -17,8 +17,8 @@
     sheet: {
       code: 'KEEP THE SPREADSHEET',
       title: 'Keep the spreadsheet for now.',
-      summary: 'You can still see the active opportunities, keep ownership clear, and follow up without adding CRM upkeep.',
-      test: 'For 14 days, keep one row per active opportunity with an owner, stage, next action, and next-action date. Review rows with no next action twice per week.',
+      summary: 'You can still see the active opportunities, know who is responsible, and follow up without adding CRM upkeep.',
+      test: 'For 14 days, keep one row per active opportunity with the person responsible, stage, next action, and next-action date. Review rows with no next action twice per week.',
       wrong: 'Recheck this when follow-up slips repeatedly, more than one person needs the same context, or you cannot scan every active opportunity in 60 seconds.',
       skip: ['A CRM migration', 'Workflow automation', 'A second place to track the same people'],
       cta: 'Build the rest of my lean stack',
@@ -28,7 +28,7 @@
       code: 'FIX THE PROCESS FIRST',
       title: 'Write down the process before you buy a CRM.',
       summary: 'You still need to find where leads stall and what one missed engagement costs. Track that first, then choose the software.',
-      test: 'For 14 days, record every qualified inquiry, first useful response time, current stage, owner, next action, and outcome. Do not add automation during the test.',
+      test: 'For 14 days, record every qualified inquiry, first useful response time, current stage, who is responsible, next action, and outcome. Do not add automation during the test.',
       wrong: 'Recheck this if the process is already clear and people cannot keep up with it at the current volume.',
       skip: ['A feature comparison', 'A full-funnel rebuild', 'Revenue-at-risk estimates without recorded outcomes'],
       cta: 'Diagnose the full lead path',
@@ -38,7 +38,7 @@
       code: 'INSTALL A LIGHTWEIGHT CRM',
       title: 'Move the active opportunities into one shared CRM.',
       summary: 'Follow-up is slipping or opportunities are getting hard to see. One shared pipeline can keep the work in front of you.',
-      test: 'Create one pipeline with no more than six stages. Require an owner, next action, and date on every open opportunity. Measure adoption and stalled deals for 14 days before adding automation.',
+      test: 'Create one pipeline with no more than six stages. Name the person responsible, next action, and date on every open opportunity. Measure adoption and stalled deals for 14 days before adding automation.',
       wrong: 'Recheck this if one person can still see every opportunity and the real issue is demand, offer clarity, or proposal quality.',
       skip: ['Complex marketing automation', 'A platform chosen for future headcount', 'Migrating client delivery before the sales path works'],
       cta: 'Choose the smallest fitting system',
@@ -48,11 +48,11 @@
       code: 'CONNECT THE LEAD SYSTEM',
       title: 'Connect the handoffs around one shared record.',
       summary: 'Volume, handoffs, or duplicate entry are making leads harder to track between tools and people. The CRM needs to connect those steps.',
-      test: 'Map the last 10 qualified inquiries from first touch to recorded outcome. Mark every handoff, delay, copied field, missing owner, and unrecorded next action before choosing software.',
+      test: 'Map the last 10 qualified inquiries from first touch to recorded outcome. Mark every handoff, delay, copied field, unclear responsibility, and unrecorded next action before choosing software.',
       wrong: 'Recheck this if the last 10 inquiries moved cleanly without delays, lost context, or missed follow-up.',
-      skip: ['A CRM-only purchase', 'Rebuilding every tool at once', 'Automation without an accountable owner'],
-      cta: 'Trace my last 10 inquiries',
-      href: '/sales?from=crm-breakpoint&fit=connected#apply'
+      skip: ['A CRM-only purchase', 'Rebuilding every tool at once', 'Automation with nobody responsible for it'],
+      cta: 'Build my StackBrief',
+      href: '/stackbrief?utm_source=crm_breakpoint&utm_medium=result&utm_campaign=connected_system'
     }
   };
 

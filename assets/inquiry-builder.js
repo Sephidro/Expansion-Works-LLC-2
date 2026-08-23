@@ -33,7 +33,7 @@
     if (data.routing === 'crm' || data.volume === 'high') {
       return {
         name: 'HubSpot Forms first; evaluate HighLevel only with a dedicated operator',
-        reason: 'The inquiry must enter a visible pipeline, and the volume can justify structured ownership. HighLevel remains disqualified when nobody owns the workflows.'
+        reason: 'The inquiry must enter a visible pipeline, and the volume can justify a more structured process. HighLevel remains disqualified when nobody is responsible for the workflows.'
       };
     }
     if (data.platform === 'custom') {
@@ -115,7 +115,7 @@ ${problems.map((problem, index) => `    <label><input type="radio" name="buyer_p
       ? 'Route each buyer-problem choice to its responsible person. Send “partnership or other” to a separate low-priority inbox.'
       : data.routing === 'crm'
         ? 'Create the contact first, store the selected buyer problem, then create or update the corresponding deal or opportunity.'
-        : 'Send qualified service requests to the primary owner. Filter “partnership or other” into a separate label or inbox.';
+        : 'Send qualified service requests to the person responsible for follow-up. Filter “partnership or other” into a separate label or inbox.';
 
     output.innerHTML = `
       <div class="output-heading"><span>OUTPUT // GENERATED</span><h3>Your structured inquiry route</h3></div>
@@ -143,9 +143,8 @@ ${problems.map((problem, index) => `    <label><input type="radio" name="buyer_p
         <p>Replace the clearly marked form-handler value before publishing. Add your privacy notice, consent language, spam controls, and accessibility testing.</p>
       </div>
       <div class="output-next">
-        <p>The form starts the conversation. Next, decide where the inquiry is stored, who owns it, and how quickly follow-up starts.</p>
-        <a href="/#stackbrief">Build the full StackBrief →</a>
-        <a href="/sales">Have Expansion Works implement it →</a>
+        <p>The form starts the conversation. Next, decide where the inquiry is stored, who follows up, and how quickly that follow-up starts.</p>
+        <a href="/stackbrief">Build my StackBrief →</a>
       </div>
     `;
 

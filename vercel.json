@@ -2,10 +2,10 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/qualify", "destination": "/sales#apply", "permanent": true },
-    { "source": "/qualify.html", "destination": "/sales#apply", "permanent": true },
-    { "source": "/audit-request", "destination": "/sales#apply", "permanent": true },
-    { "source": "/audit-request.html", "destination": "/sales#apply", "permanent": true }
+    { "source": "/qualify", "destination": "/stackbrief", "permanent": true },
+    { "source": "/qualify.html", "destination": "/stackbrief", "permanent": true },
+    { "source": "/audit-request", "destination": "/stackbrief", "permanent": true },
+    { "source": "/audit-request.html", "destination": "/stackbrief", "permanent": true }
   ],
   "rewrites": [
     { "source": "/sales", "destination": "/sales.html" },

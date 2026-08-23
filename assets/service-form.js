@@ -40,17 +40,21 @@
         fit: params.get('fit') || '',
         briefId: params.get('brief') || ''
       });
+      funnel?.track('build_review_requested', {
+        source: params.get('from') || 'direct',
+        briefId: params.get('brief') || ''
+      });
       form.innerHTML = `
         <div class="service-form-success field-wide" role="status">
           <span>REQUEST RECEIVED</span>
-          <h3>I have the details you sent.</h3>
-          <p>Within one business day, I’ll tell you whether I see a reason to talk, what information is missing, or why I would stop here.</p>
+          <h3>I have your StackBrief.</h3>
+          <p>I’ll send the secure $300 payment link. After payment, the calendar opens so you can choose a time.</p>
         </div>`;
     } catch (error) {
       funnel?.track('dfy_inquiry_failed', { source: params.get('from') || 'direct' });
       if (status) status.textContent = 'The request did not send. Try again or email xavier.brandmanager@gmail.com.';
       submit.disabled = false;
-      submit.textContent = 'TRACE MY LAST 10 INQUIRIES →';
+      submit.textContent = 'SEND ME THE $300 BOOKING LINK →';
     }
   });
 })();

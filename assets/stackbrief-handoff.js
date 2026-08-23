@@ -36,6 +36,14 @@
   panel.append(title, summary, list);
   panel.hidden = false;
 
+  form.querySelectorAll('[data-brief-covered]').forEach((field) => {
+    field.hidden = true;
+    field.querySelectorAll('input, select, textarea').forEach((control) => {
+      control.disabled = true;
+      control.required = false;
+    });
+  });
+
   function addHidden(name, value) {
     const input = document.createElement('input');
     input.type = 'hidden';
@@ -45,11 +53,12 @@
   }
 
   const source = form.querySelector('input[name="source"]');
-  if (source) source.value = 'StackBrief qualified implementation handoff';
+  if (source) source.value = 'StackBrief qualified Build Review handoff';
   addHidden('stackbrief_id', result.briefId);
   addHidden('stackbrief_ruleset', result.rulesetVersion);
   addHidden('stackbrief_route', result.route);
   addHidden('stackbrief_level', result.planKey);
+  addHidden('stackbrief_qualified_for_review', result.qualifiedForReview ? 'yes' : 'no');
   addHidden('stackbrief_constraint', result.constraint?.label || '');
   addHidden('stackbrief_client_value', result.answers.value?.label || '');
   addHidden('stackbrief_monthly_good_fit_volume', result.answers.volume?.label || '');
