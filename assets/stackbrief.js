@@ -167,7 +167,7 @@
         id: 'volume', kicker: 'QUALIFIED DEMAND', title: 'How many serious inquiries or sales opportunities enter the business in a typical month?', answers: [
           { value: 'low', label: 'Fewer than 5', detail: 'Complexity may come from deal value or handoffs rather than volume.' },
           { value: 'medium', label: 'About 5 to 20', detail: 'Pipeline discipline and response speed can materially affect results.' },
-          { value: 'high', label: 'More than 20', detail: 'Routing, clear responsibility, and automation may now justify their cost.' },
+          { value: 'high', label: 'More than 20', detail: 'There may be enough volume for routing, clear responsibility, and automation to pay off.' },
           { value: 'unknown', label: 'We do not have a dependable count', detail: 'Start with a dependable count.' }
         ]
       },
@@ -187,8 +187,8 @@
     {
       id: 'value', kicker: 'WHAT ONE CLIENT IS WORTH', title: 'What is one normal new client worth in the first 90 days?',
       note: 'Use a normal engagement, not the biggest contract you have ever sold.', answers: [
-        { value: 'under2', label: 'Under $2,000', detail: 'A paid build may be difficult to justify from one preventable loss.' },
-        { value: '2to5', label: '$2,000 to $4,999', detail: 'The leak needs enough volume or repeated admin cost to justify a larger fix.' },
+        { value: 'under2', label: 'Under $2,000', detail: 'Start with a smaller repair before paying for a full build.' },
+        { value: '2to5', label: '$2,000 to $4,999', detail: 'Look for repeated losses or admin work before paying for a larger fix.' },
         { value: '5to10', label: '$5,000 to $9,999', detail: 'One preventable loss could outweigh normal setup and software cost.' },
         { value: '10to25', label: '$10,000 to $24,999', detail: 'Track every active opportunity and its next step.' },
         { value: '25plus', label: '$25,000 or more', detail: 'A few stalled opportunities can put a large amount of revenue on hold.' },
@@ -444,8 +444,8 @@
     const constraints = {
       response: {
         label: 'FIRST FIX // RESPONSE DELAY',
-        title: 'Good-fit interest is waiting too long for a useful human response.',
-        reason: 'New inquiries are waiting too long for a useful response. Give each one a next step and a person responsible, then measure the change for 14 days.',
+        title: 'Reply to new inquiries faster',
+        reason: 'New inquiries are waiting too long. Route each one to a real person, set a response deadline, and measure it for 14 days.',
         unproven: 'Track whether faster responses produce more qualified conversations before rebuilding the website.',
         fix: ['Route every serious inquiry to one visible destination', 'Set a deadline for the first useful human response', 'Name the person responsible for the next action', 'Record what happened after the response'],
         measures: ['Median first useful response time', 'Inquiries with a person responsible and a next action', 'Qualified conversations started', 'Inquiries with no recorded outcome'],
@@ -454,8 +454,8 @@
       },
       booking: {
         label: 'FIRST FIX // QUALIFICATION PATH',
-        title: 'The path from interest to a useful conversation is losing momentum.',
-        reason: 'Prospects are stalling before or during booking. Check whether the questions, scheduling step, or missing context asks for too much too soon.',
+        title: 'Make the next conversation easier to book',
+        reason: 'Good prospects are stalling before or during booking. Check the questions, the scheduling step, and what they are told before they choose a time.',
         unproven: 'Check the current path before replacing the calendar, form, or traffic source.',
         fix: ['Choose the one useful next step for a good-fit buyer', 'Remove questions that do not change the decision', 'Explain what happens after submission', 'Track started, completed, booked, and attended separately'],
         measures: ['Started-to-completed inquiry rate', 'Completed-to-booked rate', 'Booking no-show rate', 'Time from inquiry to confirmed next step'],
@@ -464,8 +464,8 @@
       },
       visibility: {
         label: 'FIRST FIX // OPEN OPPORTUNITIES',
-        title: 'Active opportunities become unreliable once they leave the conversation.',
-        reason: 'You cannot see every open opportunity, follow-up, and post-call next step from one dependable place.',
+        title: 'Put every active opportunity and its next step in one place',
+        reason: 'Right now, you have to check more than one place to see who is interested, who followed up, and what should happen next.',
         unproven: 'Run the 14-day test before buying a CRM, rebuilding the website, or adding automation.',
         fix: ['Put every active opportunity in one view', 'Require a person responsible, stage, next action, and next-action date', 'Review opportunities with no next action twice per week', 'Record a final outcome instead of letting deals disappear'],
         measures: ['Active opportunities with a next action and date', 'Median first-response time', 'Stalled conversations reopened', 'Qualified opportunities with no recorded outcome'],
@@ -474,8 +474,8 @@
       },
       ownership: {
         label: 'FIRST FIX // HANDOFF RESPONSIBILITY',
-        title: 'No one is clearly responsible after the opportunity changes hands.',
-        reason: 'The next step becomes unclear when people or tools pass the opportunity forward. Give each handoff one person and one deadline.',
+        title: 'Make one person responsible after every handoff',
+        reason: 'The next step gets lost when people or tools pass an opportunity forward. Give every handoff one person and one deadline.',
         unproven: 'Start with a clear handoff rule. Add automation only if people cannot keep the rule at the current volume.',
         fix: ['Name the person responsible at every stage', 'Require a next action and deadline before a handoff closes', 'Keep the full context in one visible record', 'Create an exception queue for anything the normal path cannot route'],
         measures: ['Handoffs with one person responsible', 'Handoffs with a next-action date', 'Time between stages', 'Opportunities returned for missing context'],
@@ -484,7 +484,7 @@
       },
       measurement: {
         label: 'FIRST FIX // MISSING RECORDS',
-        title: 'Start by finding where good-fit opportunities stop moving.',
+        title: 'Start by finding where good-fit opportunities stop moving',
         reason: 'Trace the last 10 opportunities from first interest to a recorded outcome before buying software.',
         unproven: 'A leak may exist, but the records are too incomplete to show where it happens.',
         fix: ['List the last 10 good-fit prospects', 'Record first response, person responsible, stage, next action, and outcome', 'Mark where momentum stopped', 'Review the pattern before choosing a tool'],
@@ -544,11 +544,11 @@
     if (tooUnclearToChoose) {
       return baseRecommendation({
         layer: 'FRONT DOOR', product: 'Define the first customer path', status: 'PAUSE',
-        summary: 'First decide how people will discover you and the one action they should take next. Then choose the website platform.',
+        summary: 'First decide how people will discover you and what they should do next. Pick the website platform after that.',
         fit: 'Use a temporary page or current profile while testing the offer and customer path.',
         avoid: 'Do not let a platform’s feature list decide the business model for you.',
         cost: 'No platform purchase recommended', alternative: 'Revisit Wix, Beacons, or WordPress after the first path is clear.',
-        noBuy: 'Buy nothing yet.', experience: 'Answer those two questions before you choose a platform.',
+        noBuy: 'Use a temporary page or your current profile for now.', experience: 'Answer those two questions before you choose a platform.',
         url: '', sourceUrl: '', commercial: 'NO PRODUCT PURCHASE RECOMMENDED'
       });
     }
@@ -580,7 +580,7 @@
       return recommendProduct('wordpressElementor', {
         layer: 'FRONT DOOR',
         summary: 'This combination offers publishing control and a visual editing layer for a content-led site.',
-        fit: 'Best when organic content, design control, and flexibility justify ongoing maintenance.',
+        fit: 'Best when organic content, design control, and flexibility are worth the extra maintenance.',
         avoid: 'Avoid when nobody will manage hosting, updates, plugins, security, and performance.',
         alternative: 'Wix if you want less maintenance and can give up some publishing control.',
         noBuy: 'Keep the existing site until it stops you from publishing the content you need.',
@@ -589,7 +589,7 @@
 
     return recommendProduct('wix', {
       layer: 'FRONT DOOR',
-      summary: 'Wix is the strongest fit here because the business needs a clear website with useful functions and a manageable learning curve.',
+      summary: 'I would use Wix here. It can handle the website, bookings, and other useful functions without turning maintenance into another job.',
       fit: 'Best for service businesses using bookings, events, content, memberships, donations, or moderate commerce.',
       avoid: 'Avoid when maximum design control matters more than convenience. Complex layouts still deserve a manual mobile review.',
       alternative: 'Beacons for social-first selling; WordPress + Elementor for content control.',
@@ -605,11 +605,11 @@
     if (website.status === 'PAUSE') {
       return baseRecommendation({
         layer: 'INQUIRY ROUTE', product: 'Choose one next action', status: 'PAUSE',
-        summary: 'A form tool cannot be selected until you know whether the visitor should contact, book, apply, buy, or join a list.',
+        summary: 'Decide whether the visitor should contact, book, apply, buy, or join a list before you pick a form tool.',
         fit: 'Write the first customer path in plain language before configuring software.',
         avoid: 'Do not build a generic contact form just to make the page feel complete.',
         cost: 'No form purchase recommended', alternative: 'Use direct email or messages temporarily while learning what people ask for.',
-        noBuy: 'Buy nothing yet.', experience: 'Choose the form’s job before choosing its vendor.',
+        noBuy: 'Use direct email or messages until the form has a clear job.', experience: 'Choose the form’s job before choosing its vendor.',
         url: '', sourceUrl: '', commercial: 'NO PRODUCT PURCHASE RECOMMENDED'
       });
     }
@@ -621,7 +621,7 @@
         fit: 'Use clear choices that let visitors identify why they are reaching out.',
         avoid: 'Do not send every visitor into one unrestricted “contact us” message box.',
         cost: 'Included within the selected platform and plan limits', alternative: 'Formspree if a custom form becomes necessary.',
-        noBuy: 'No additional form subscription is justified yet.', experience: `Expansion Works has implemented structured capture inside ${website.product} workflows.`,
+        noBuy: `Use the form that comes with ${website.product}.`, experience: `Expansion Works has implemented structured capture inside ${website.product} workflows.`,
         url: '', sourceUrl: website.sourceUrl, commercial: 'INCLUDED WITH THE WEBSITE PLATFORM'
       });
     }
@@ -662,14 +662,14 @@
         fit: 'Keep the current CRM while improving the message, offer path, or measurement.',
         avoid: 'Do not use a new platform as a substitute for a process decision.', cost: 'No migration cost',
         alternative: 'Audit stages and response time before comparing vendors.', noBuy: 'Keep the current CRM.',
-        experience: 'No CRM migration is justified by the answers provided.', url: '', sourceUrl: '', commercial: 'NO PRODUCT PURCHASE RECOMMENDED'
+        experience: 'Keep the current CRM and fix the earlier problem first.', url: '', sourceUrl: '', commercial: 'NO PRODUCT PURCHASE RECOMMENDED'
       });
     }
 
     if (highLevelEligible) {
       return recommendProduct('highLevel', {
         layer: 'PIPELINE + FOLLOW-UP',
-        summary: 'Your volume, repeated workflow, and one person responsible can justify a platform for the pipeline, messaging, calendars, and automation.',
+        summary: 'You have enough volume and repeated work for one platform to handle the pipeline, messaging, calendars, and automation.',
         fit: 'Best when one person can maintain CRM data, routing, campaigns, agents, calendars, and workflow exceptions.',
         avoid: 'Do not buy it when nobody is responsible for the system or fewer tools can handle the proven workflow.',
         alternative: 'HubSpot when you need a dependable CRM without the wider automation workload.',
@@ -683,7 +683,7 @@
         summary: 'Use one visible pipeline without taking on HighLevel’s wider setup and maintenance.',
         fit: 'Best for centralizing contacts, deals, tasks, meeting links, and basic email tracking before advanced automation.',
         avoid: 'Avoid paid upgrades until a specific limit blocks a valuable repeated process.',
-        alternative: 'HighLevel later if volume grows and a dedicated operator owns broader automation.',
+        alternative: 'HighLevel later if volume grows and one person is responsible for the broader automation.',
         noBuy: 'A disciplined spreadsheet still wins when one person can see every active opportunity.',
       });
     }
@@ -708,12 +708,12 @@
         <h4>${escapeHtml(item.product)}</h4>
         <p class="product-summary">${escapeHtml(item.summary)}</p>
         <dl>
-          <div><dt>WHY THIS FITS</dt><dd>${escapeHtml(item.fit)}</dd></div>
-          <div><dt>WHEN IT BECOMES WRONG</dt><dd>${escapeHtml(item.avoid)}</dd></div>
-          <div><dt>WHAT IT COSTS NOW</dt><dd>${escapeHtml(item.cost)}</dd></div>
-          <div><dt>WHY I WOULD USE IT HERE</dt><dd>${escapeHtml(item.experience)}</dd></div>
-          <div><dt>NEXT BEST OPTION</dt><dd>${escapeHtml(item.alternative)}</dd></div>
-          <div><dt>KEEP WHAT YOU HAVE IF...</dt><dd>${escapeHtml(item.noBuy)}</dd></div>
+          <div><dt>WHY I PICKED IT</dt><dd>${escapeHtml(item.fit)}</dd></div>
+          <div><dt>SKIP IT IF</dt><dd>${escapeHtml(item.avoid)}</dd></div>
+          <div><dt>CURRENT COST</dt><dd>${escapeHtml(item.cost)}</dd></div>
+          <div><dt>MY EXPERIENCE WITH IT</dt><dd>${escapeHtml(item.experience)}</dd></div>
+          <div><dt>BACKUP OPTION</dt><dd>${escapeHtml(item.alternative)}</dd></div>
+          <div><dt>KEEP WHAT YOU HAVE WHEN</dt><dd>${escapeHtml(item.noBuy)}</dd></div>
         </dl>
         <div class="product-meta"><span>FACTS CHECKED ${escapeHtml(verifiedDate.toUpperCase())}</span><span>${escapeHtml(item.commercial)}</span></div>
         <div class="product-links">${productLink}${sourceLink}</div>
@@ -869,10 +869,10 @@
           <p>${escapeHtml(constraint.unproven)}</p>
         </article>
         <article>
-          <h4>What would justify an upgrade</h4>
+          <h4>When to upgrade</h4>
           <p>${escapeHtml(constraint.upgrade)}</p>
         </article>
-        <p class="legal-note">One normal client is worth ${escapeHtml(state.answers.value.label)} in the first 90 days. Use that number to judge the size of the problem. It is not a recovery forecast.</p>
+        <p class="legal-note">One normal client is worth ${escapeHtml(state.answers.value.label)} in the first 90 days. Keep that number in view when you decide how much this problem is worth fixing.</p>
       </div>` : `
       <div class="product-brief" id="diagnostic-evidence">
         <div class="product-brief-heading"><p>THE TOOL DECISIONS</p><span>Chosen from your answers before any affiliate link is considered</span></div>

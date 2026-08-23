@@ -33,7 +33,7 @@
     if (data.routing === 'crm' || data.volume === 'high') {
       return {
         name: 'HubSpot Forms first; evaluate HighLevel only with a dedicated operator',
-        reason: 'The inquiry must enter a visible pipeline, and the volume can justify a more structured process. HighLevel remains disqualified when nobody is responsible for the workflows.'
+        reason: 'The inquiry must enter a visible pipeline, and this volume needs a more structured process. Skip HighLevel when nobody is responsible for the workflows.'
       };
     }
     if (data.platform === 'custom') {
