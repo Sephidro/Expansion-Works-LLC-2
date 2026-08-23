@@ -671,7 +671,7 @@
         layer: 'PIPELINE + FOLLOW-UP',
         summary: 'Your volume, repeated workflow, and one person responsible can justify a platform for the pipeline, messaging, calendars, and automation.',
         fit: 'Best when one person can maintain CRM data, routing, campaigns, agents, calendars, and workflow exceptions.',
-        avoid: 'Do not buy it when nobody owns the system or fewer tools can handle the proven workflow.',
+        avoid: 'Do not buy it when nobody is responsible for the system or fewer tools can handle the proven workflow.',
         alternative: 'HubSpot when you need a dependable CRM without the wider automation workload.',
         noBuy: 'Keep the current stack if the manual cost has not been measured.',
       });
