@@ -50,6 +50,7 @@ The request-a-payment-link form is a temporary implementation gap. The intended 
 - `npm run build:content` — generates managed article pages, the guides index, sitemap, RSS feed, and `llms.txt` from `content/articles/*.json`.
 - `npm test` — verifies generated output, operations state, JS syntax, local links, anchors, and banned claims.
 - `.github/workflows/qa.yml` — runs the same checks on pull requests and pushes to `main`.
+- `.github/workflows/content-release.yml` — turns article-source changes on automation branches into generated public files before review and merge.
 - `node tools/serve.mjs 8080` — local static server, cleanUrls-aware (mirrors production routing).
 - `node tools/screenshot.mjs <url> <out.png>` — headless-Chrome screenshot, no puppeteer/playwright install needed.
 
