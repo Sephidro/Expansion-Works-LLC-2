@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.which-crm-fits",
+  "slug": "which-crm-fits",
+  "status": "published",
+  "managed": false,
+  "category": "Tools",
+  "title": "CRM or spreadsheet for consultants: when to switch",
+  "deck": "Choose the smallest tracking system that can show every serious opportunity and its next action.",
+  "excerpt": "Choose a CRM or spreadsheet based on active opportunities, handoffs, follow-up volume, and maintenance.",
+  "author": "Xavier Pearson",
+  "published": "2026-08-15",
+  "updated": "2026-08-15",
+  "factsChecked": "2026-08-15",
+  "readTimeMinutes": 5,
+  "seoTitle": "CRM or Spreadsheet for Consultants: When to Switch",
+  "metaDescription": "Use active opportunities, follow-up volume, and maintenance burden to decide whether your consulting firm needs a CRM.",
+  "cta": { "label": "Build my StackBrief", "href": "/stackbrief" },
+  "sources": [],
+  "body": [],
+  "related": ["where-leads-come-from", "consistent-followup"]
+}

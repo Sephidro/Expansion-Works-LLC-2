@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>StackBrief Guides</title>
+    <link>https://stackbriefxp.vercel.app/guides</link>
+    <description>Practical business-system decisions from Xavier Pearson.</description>
+    <item>
+      <title>Consulting Lead Follow-Up System: Stop Relying on Memory</title>
+      <link>https://stackbriefxp.vercel.app/guides/consistent-followup</link>
+      <guid>https://stackbriefxp.vercel.app/guides/consistent-followup</guid>
+      <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Build follow-up that keeps running after your attention moves somewhere else.</description>
+    </item>
+    <item>
+      <title>Consulting inquiry follow-up emails: what to send and when</title>
+      <link>https://stackbriefxp.vercel.app/guides/how-i-write-follow-up</link>
+      <guid>https://stackbriefxp.vercel.app/guides/how-i-write-follow-up</guid>
+      <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Write useful follow-up that answers the buyer&#039;s real question and gives them a clear next step.</description>
+    </item>
+    <item>
+      <title>How fast should a consulting firm respond to new inquiries?</title>
+      <link>https://stackbriefxp.vercel.app/guides/leads-go-cold</link>
+      <guid>https://stackbriefxp.vercel.app/guides/leads-go-cold</guid>
+      <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
+      <description>How response delays cost conversations, plus the school follow-up case associated with $1.7M in public funding.</description>
+    </item>
+    <item>
+      <title>Simple lead source tracking for consulting firms</title>
+      <link>https://stackbriefxp.vercel.app/guides/where-leads-come-from</link>
+      <guid>https://stackbriefxp.vercel.app/guides/where-leads-come-from</guid>
+      <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Track where qualified inquiries come from before paying for more traffic or another dashboard.</description>
+    </item>
+    <item>
+      <title>CRM or spreadsheet for consultants: when to switch</title>
+      <link>https://stackbriefxp.vercel.app/guides/which-crm-fits</link>
+      <guid>https://stackbriefxp.vercel.app/guides/which-crm-fits</guid>
+      <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Choose a CRM or spreadsheet based on active opportunities, handoffs, follow-up volume, and maintenance.</description>
+    </item>
+    <item>
+      <title>Why consulting inquiries do not turn into clients</title>
+      <link>https://stackbriefxp.vercel.app/guides/why-isnt-it-closing</link>
+      <guid>https://stackbriefxp.vercel.app/guides/why-isnt-it-closing</guid>
+      <pubDate>Sat, 15 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Check qualification, the conversation, and the next step before spending more on traffic.</description>
+    </item>
+  </channel>
+</rss>

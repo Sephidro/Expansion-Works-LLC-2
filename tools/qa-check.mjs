@@ -3,7 +3,7 @@
 // matches the site's own "no framework" philosophy. Run after any edit:
 //   node tools/qa-check.mjs
 //
-// Checks, per HTML file in FILES below:
+// Checks, per HTML file discovered in the repository:
 //   1. Every inline <script> block is syntactically valid JS.
 //   2. Every getElementById('x') call has a matching id="x" somewhere in the same file.
 //   3. Every local href (root-relative "/..." or "#...") resolves to a real file/anchor.
@@ -15,19 +15,19 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
-const FILES = [
-  'index.html', 'stackbrief.html', 'sales.html', 'qualify.html', 'audit-request.html',
-  'guides/index.html', 'guides/leads-go-cold.html', 'guides/where-leads-come-from.html',
-  'guides/consistent-followup.html', 'guides/why-isnt-it-closing.html',
-  'guides/which-crm-fits.html', 'guides/how-i-write-follow-up.html',
-  'work/donation.html', 'work/staff.html', 'work/ibucks.html', 'work/lead-recovery.html',
-  'tools/better-inquiry-form.html', 'crm-or-spreadsheet-for-consultants.html', 'privacy.html',
-];
+function walk(dir, predicate) {
+  const found = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.name === '.git' || entry.name === 'node_modules') continue;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) found.push(...walk(full, predicate));
+    else if (predicate(full)) found.push(path.relative(root, full).split(path.sep).join('/'));
+  }
+  return found.sort();
+}
 
-const JS_FILES = [
-  'assets/stackbrief-catalog.js', 'assets/funnel.js', 'assets/stackbrief.js',
-  'assets/stackbrief-handoff.js', 'assets/service-form.js', 'assets/inquiry-builder.js', 'assets/crm-readiness.js', 'assets/site.js'
-];
+const FILES = walk(root, full => full.endsWith('.html'));
+const JS_FILES = walk(path.join(root, 'assets'), full => full.endsWith('.js'));
 
 let errors = 0;
 
@@ -115,6 +115,23 @@ for (const f of JS_FILES) {
     errors++;
     console.log('=== ' + f + ' ===');
     console.log('  [SYNTAX ERROR] ' + e.message);
+  }
+}
+
+const bannedClaims = [
+  { pattern: /increased application completion from 32% to 72%/i, reason: 'unsupported completion-rate claim' },
+  { pattern: /32%\s*(?:to|→|–|-)\s*72%/i, reason: 'unsupported completion-rate claim' }
+];
+
+const textFiles = walk(root, full => /\.(?:html|md|txt|json|js|xml)$/.test(full));
+for (const f of textFiles) {
+  const src = fs.readFileSync(path.join(root, f), 'utf8');
+  for (const banned of bannedClaims) {
+    if (banned.pattern.test(src)) {
+      errors++;
+      console.log(`=== ${f} ===`);
+      console.log(`  [BANNED CLAIM] ${banned.reason}`);
+    }
   }
 }
 

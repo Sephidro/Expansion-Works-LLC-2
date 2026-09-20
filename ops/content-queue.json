@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-20T00:00:00Z",
+  "items": [
+    {
+      "id": "content.tally-free-upgrade",
+      "title": "Tally's free-plan upgrade: what changes for a small service business",
+      "status": "research_ready",
+      "sourceCandidateId": "catalog.tally",
+      "voicePasses": 0,
+      "nextAction": "Reverify current plan limits, then convert the working draft into the article schema."
+    },
+    {
+      "id": "content.docusign-chatgpt",
+      "title": "DocuSign in ChatGPT: useful shortcut or another review risk?",
+      "status": "voice_review",
+      "sourceCandidateId": "catalog.docusign-chatgpt",
+      "voicePasses": 1,
+      "notBefore": "2026-09-30",
+      "nextAction": "Reverify release status and revise only if the evidence changes the recommendation."
+    }
+  ]
+}

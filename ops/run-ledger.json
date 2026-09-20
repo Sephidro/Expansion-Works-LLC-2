@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-20T00:00:00Z",
+  "runs": [
+    {
+      "id": "run.2026-09-20.foundation",
+      "worker": "system-foundation",
+      "startedAt": "2026-09-20T00:00:00Z",
+      "finishedAt": "2026-09-20T00:00:00Z",
+      "status": "completed",
+      "inputs": ["canonical-project-pack-v2"],
+      "outputs": [
+        "content-schema-v1",
+        "operations-state-v1",
+        "github-qa-workflow",
+        "generated-guides-index",
+        "generated-feed",
+        "generated-sitemap",
+        "generated-llms"
+      ]
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 # Expansion Works: Public Site
 
-The public-facing brand for Expansion Works / EXPworks (Xavier Pearson). Vanilla HTML + GSAP, no build step. Deploys to Vercel on every push to `main`.
+The public-facing brand for Expansion Works / EXPworks (Xavier Pearson). Vanilla HTML, CSS, and JavaScript with a zero-dependency content generator. Deploys to Vercel on every push to `main`.
 
 ## Pages
 
 | URL | File | Job |
 |-----|------|-----|
-| `/` | `index.html` | **StackBrief homepage.** Lead-to-revenue positioning for 1–5 person consulting and advisory firms, with the diagnostic and the implementation path separated by buyer intent. |
-| `/stackbrief` | `stackbrief.html` | **Rules-based diagnostic.** Nine evidence questions for established firms, a separate early-stage tool-plan branch, result before email, and an explicit 14-day test with falsifiers. |
+| `/` | `index.html` | **StackBrief homepage.** One public entrance for owners who need a practical setup or paid help. |
+| `/stackbrief` | `stackbrief.html` | **Rules-based diagnostic.** Adaptive questions, early-stage and established branches, result before email, and qualified Build Review ascension. |
 | `/crm-or-spreadsheet-for-consultants` | `crm-or-spreadsheet-for-consultants.html` | **Search-native decision tool.** Six evidence questions identify the operating breakpoint between keeping a spreadsheet, repairing the process, adopting a light CRM, or connecting the lead path. |
-| `/sales` | `sales.html` | **Expansion Works implementation page.** Last 10 Leads Diagnostic, Lead Recovery Installation, economic fit filter, acceptance tests, and the verified Formspree intake. |
-| `/qualify` and `/audit-request` | `vercel.json` redirects | **Legacy routes.** Permanently redirect to `/sales#apply`; the placeholder forms are not public conversion paths. |
+| `/sales` | `sales.html` | **Expansion Works paid path.** $300 Build Review, deeper diagnostic and installation context, terms, and the temporary Formspree handoff. |
+| `/qualify` and `/audit-request` | `vercel.json` redirects | **Legacy routes.** Permanently redirect to `/stackbrief`. |
 | `/guides` | `guides/index.html` | **Guides hub.** Six query-matched lead-system articles with destination-accurate CTAs and no email wall. |
 | `/work/lead-recovery` | `work/lead-recovery.html` | **Primary proof page.** Recovery mechanism, direct counts, associated funding estimate, and attribution limitations. |
 | `/work/donation` | `work/donation.html` | Case study 01: Donation Page Rebuild |
@@ -20,7 +20,9 @@ The public-facing brand for Expansion Works / EXPworks (Xavier Pearson). Vanilla
 
 > The 3 case studies still use the older "terminal/HUD" treatment (Syncopate / JetBrains Mono, cyan + copper), not the current design system below. Flagged, not yet redesigned — a real gap, not a mistake.
 
-The premium front door is the fixed-scope Last 10 Leads Diagnostic ($1,500), followed when justified by the Lead Recovery Installation ($4,000–$7,500). StackBrief remains the free decision product and the search/DIY lane. Software is one possible output, not the product category.
+Every primary conversion button leads to StackBrief. Everyone receives the free result. Qualified visitors may also see the $300 StackBrief Build Review, credited toward qualifying work started within 30 days. The Build Review can lead to DIY, a referral, the fixed-scope Last 10 Leads Diagnostic ($1,500), or a Lead Recovery Installation ($4,000–$7,500).
+
+The request-a-payment-link form is a temporary implementation gap. The intended flow is brief ID → checkout → payment confirmation → paid scheduling → prepared meeting packet.
 
 ## Design systems
 
@@ -45,9 +47,15 @@ The premium front door is the fixed-scope Last 10 Leads Diagnostic ($1,500), fol
 
 `tools/` — zero-dependency scripts, run after any edit:
 
-- `node tools/qa-check.mjs` — checks every tracked page for JS syntax errors, broken local links/anchors, and `getElementById()` calls with no matching `id`.
+- `npm run build:content` — generates managed article pages, the guides index, sitemap, RSS feed, and `llms.txt` from `content/articles/*.json`.
+- `npm test` — verifies generated output, operations state, JS syntax, local links, anchors, and banned claims.
+- `.github/workflows/qa.yml` — runs the same checks on pull requests and pushes to `main`.
 - `node tools/serve.mjs 8080` — local static server, cleanUrls-aware (mirrors production routing).
 - `node tools/screenshot.mjs <url> <out.png>` — headless-Chrome screenshot, no puppeteer/playwright install needed.
+
+## Automation state
+
+`ops/` is the public-safe control plane for software candidates, content work, experiments, external-connection readiness, and worker runs. It never stores credentials or private customer data. Automated workers may record `no_op` when nothing is eligible or evidence is weak.
 
 ## The dashboard is NOT here
 

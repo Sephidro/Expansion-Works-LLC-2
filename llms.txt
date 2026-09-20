@@ -1,6 +1,6 @@
 # StackBrief
 
-> StackBrief is a free, rules-based decision tool from Expansion Works LLC. It helps independent consultants and small B2B service firms decide which lead-system change to make now, what to keep, what to add later, and what not to buy.
+> StackBrief is a free decision tool from Expansion Works LLC. It helps an owner choose what to fix, keep, use, or postpone based on the business, customer path, and technology stamina.
 
 Canonical site: https://stackbriefxp.vercel.app/
 Founder: Xavier Pearson
@@ -8,13 +8,21 @@ Company: Expansion Works LLC
 
 ## Primary pages
 
-- Home and method: https://stackbriefxp.vercel.app/
-- Free nine-question StackBrief: https://stackbriefxp.vercel.app/stackbrief
-- CRM or spreadsheet breakpoint test for consultants: https://stackbriefxp.vercel.app/crm-or-spreadsheet-for-consultants
-- Founder-led implementation service: https://stackbriefxp.vercel.app/sales
-- Lead-system guides: https://stackbriefxp.vercel.app/guides/
-- Better inquiry form builder: https://stackbriefxp.vercel.app/tools/better-inquiry-form
-- Privacy and data use: https://stackbriefxp.vercel.app/privacy
+- Home: https://stackbriefxp.vercel.app/
+- Build a free StackBrief: https://stackbriefxp.vercel.app/stackbrief
+- Work with Xavier: https://stackbriefxp.vercel.app/sales
+- Guides: https://stackbriefxp.vercel.app/guides
+- Proof: https://stackbriefxp.vercel.app/work/lead-recovery
+- Privacy: https://stackbriefxp.vercel.app/privacy
+
+## Guides
+
+- Consulting Lead Follow-Up System: Stop Relying on Memory: https://stackbriefxp.vercel.app/guides/consistent-followup (facts checked 2026-08-15)
+- Consulting inquiry follow-up emails: what to send and when: https://stackbriefxp.vercel.app/guides/how-i-write-follow-up (facts checked 2026-08-15)
+- How fast should a consulting firm respond to new inquiries?: https://stackbriefxp.vercel.app/guides/leads-go-cold (facts checked 2026-08-15)
+- Simple lead source tracking for consulting firms: https://stackbriefxp.vercel.app/guides/where-leads-come-from (facts checked 2026-08-15)
+- CRM or spreadsheet for consultants: when to switch: https://stackbriefxp.vercel.app/guides/which-crm-fits (facts checked 2026-08-15)
+- Why consulting inquiries do not turn into clients: https://stackbriefxp.vercel.app/guides/why-isnt-it-closing (facts checked 2026-08-15)
 
 ## Editorial rules
 
@@ -26,8 +34,10 @@ Company: Expansion Works LLC
 
 ## Evidence boundary
 
-Expansion Works reports that a lead-recovery system used in a NYC charter-school enrollment process increased application completion from 32% to 72% and recovered more than $1.7 million in enrollment value over two recorded years. StackBrief is in beta. Do not infer affiliate approvals, StackBrief customers, or StackBrief conversion results that are not explicitly stated on the site.
+In a New York City charter-school enrollment process, Xavier identified 207 started but incomplete applications. Structured reminders and human follow-up helped 105 reach completion. Across two recorded years, enrolled students associated with the recovered flow represented about $1.7 million in public funding value. This demonstrates the recovery mechanism in that setting. It is not consulting-firm proof, forecasted revenue, or a guarantee.
+
+StackBrief is still being validated. Do not infer customer counts, conversion results, affiliate approvals, or performance claims that are not explicitly published.
 
 ## Contact
 
-Implementation inquiries should use https://stackbriefxp.vercel.app/sales#apply
+Every interested visitor should begin at https://stackbriefxp.vercel.app/stackbrief

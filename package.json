@@ -1,0 +1,12 @@
+{
+  "name": "stackbrief-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:content": "node tools/build-content.mjs",
+    "check:content": "node tools/build-content.mjs --check",
+    "check:ops": "node tools/validate-ops.mjs",
+    "qa": "node tools/qa-check.mjs",
+    "test": "npm run check:content && npm run check:ops && npm run qa"
+  }
+}

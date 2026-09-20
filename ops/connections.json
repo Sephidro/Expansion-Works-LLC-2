@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-20T00:00:00Z",
+  "connections": [
+    { "id": "analytics.posthog", "status": "blocked", "requiredInput": "PostHog project key and host", "publicRuntimeValue": true },
+    { "id": "payments.stripe", "status": "blocked", "requiredInput": "Stripe account, $300 product, API credentials, and webhook signing secret", "publicRuntimeValue": false },
+    { "id": "scheduling.paid-review", "status": "blocked", "requiredInput": "Paid Build Review event URL and booking webhook", "publicRuntimeValue": false },
+    { "id": "email.lifecycle", "status": "blocked", "requiredInput": "Approved sender, provider, and reply address", "publicRuntimeValue": false },
+    { "id": "search.google-console", "status": "blocked", "requiredInput": "Verified property and authorized API access", "publicRuntimeValue": false },
+    { "id": "social.publisher", "status": "blocked", "requiredInput": "Approved publisher and authorized LinkedIn, Pinterest, and YouTube destinations", "publicRuntimeValue": false }
+  ]
+}

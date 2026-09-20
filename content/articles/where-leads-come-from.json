@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.where-leads-come-from",
+  "slug": "where-leads-come-from",
+  "status": "published",
+  "managed": false,
+  "category": "Attribution",
+  "title": "Simple lead source tracking for consulting firms",
+  "deck": "How a small service business loses track of its own pipeline, and what is worth instrumenting first.",
+  "excerpt": "Track where qualified inquiries come from before paying for more traffic or another dashboard.",
+  "author": "Xavier Pearson",
+  "published": "2026-08-15",
+  "updated": "2026-08-15",
+  "factsChecked": "2026-08-15",
+  "readTimeMinutes": 5,
+  "seoTitle": "Simple Lead Source Tracking for Consulting Firms",
+  "metaDescription": "A practical way for small consulting firms to track lead sources without adding another dashboard.",
+  "cta": { "label": "Build my StackBrief", "href": "/stackbrief" },
+  "sources": [],
+  "body": [],
+  "related": ["leads-go-cold", "consistent-followup"]
+}

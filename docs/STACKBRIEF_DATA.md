@@ -38,6 +38,8 @@ Answers stay in the browser until the visitor explicitly submits the beta-review
 
 Events are pushed to `dataLayer` and, when present, PostHog, Plausible, or Vercel Analytics. They are also kept locally for QA. No external analytics destination is configured by this repository alone.
 
+Additional paid-path events currently instrumented include service-page views, application starts, confirmed or failed handoffs, and Build Review booking-link requests. These events are still instrumented rather than collected until an external destination is connected and verified.
+
 ## Form handoff
 
 Both Formspree conversion paths include structured fields for:
@@ -63,3 +65,17 @@ The stable `stackbrief_id` is the join key:
 4. Attribute approved revenue occurring within 90 days of lead capture.
 
 Until an external analytics destination and partner reporting workflow are connected, clicks are instrumented but not durably collected across devices. Do not report 90-day revenue per lead as measured before that boundary is completed.
+
+## Finished paid-path join
+
+The intended paid flow preserves `stackbrief_id` through:
+
+1. Qualified result.
+2. Checkout creation.
+3. Payment confirmation webhook.
+4. Paid scheduling.
+5. Meeting packet.
+6. Build Review outcome.
+7. Diagnostic or installation revenue.
+
+The current Formspree request step does not complete this join. It remains a temporary handoff until payment and scheduling credentials are connected.

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-20T00:00:00Z",
+  "experiments": [
+    {
+      "id": "experiment.build-review-300",
+      "name": "$300 StackBrief Build Review",
+      "status": "active",
+      "hypothesis": "A qualified paid review creates a clearer next step than a generic consultation while preserving the free recommendation for everyone.",
+      "startedAt": "2026-09-20",
+      "primaryMetric": "qualified_paid_review_rate",
+      "guardrails": [
+        "free_result_completion_rate",
+        "refund_or_dispute_rate",
+        "paid_review_to_next_step_rate"
+      ],
+      "decisionRule": "Keep, revise, or stop only after the checkout path is live and the observation window contains enough qualified sessions to interpret."
+    }
+  ]
+}

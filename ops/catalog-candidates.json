@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-20T00:00:00Z",
+  "candidates": [
+    {
+      "id": "catalog.tally",
+      "name": "Tally",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-08-28",
+      "testQuestion": "Can the free plan support a credible client intake and handoff without creating avoidable admin?",
+      "nextAction": "Run the standard intake-to-handoff test and record limits, setup time, and failure points."
+    },
+    {
+      "id": "catalog.salesforce-free-suite",
+      "name": "Salesforce Free Suite",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-08-28",
+      "testQuestion": "Is the free suite usable for a small service business without expert configuration?",
+      "nextAction": "Run the standard lead-capture and follow-up test with a new workspace."
+    },
+    {
+      "id": "catalog.wix-symphony",
+      "name": "Wix Symphony",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-08-28",
+      "testQuestion": "Does the assisted site-building flow reduce setup time without creating an unmaintainable result?",
+      "nextAction": "Build one small service-business page and score editing control, accessibility, and handoff quality."
+    },
+    {
+      "id": "catalog.make-maia",
+      "name": "Make Maia",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-08-28",
+      "testQuestion": "Can a nontechnical owner create and safely maintain a useful workflow?",
+      "nextAction": "Create a bounded lead-routing workflow and record setup, recovery, and monitoring requirements."
+    },
+    {
+      "id": "catalog.cal-com-mobile",
+      "name": "Cal.com mobile workflow",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-09-14",
+      "testQuestion": "Is the mobile scheduling workflow reliable enough for an owner operating away from a desk?",
+      "nextAction": "Complete booking, rescheduling, cancellation, and notification checks on mobile."
+    },
+    {
+      "id": "catalog.docusign-chatgpt",
+      "name": "DocuSign in ChatGPT",
+      "status": "source_verified",
+      "sourceVerifiedAt": "2026-09-08",
+      "notBefore": "2026-09-30",
+      "testQuestion": "Does the released integration shorten agreement preparation without weakening review or auditability?",
+      "nextAction": "Reverify release status on or after the not-before date, then decide whether a hands-on test is available."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.leads-go-cold",
+  "slug": "leads-go-cold",
+  "status": "published",
+  "managed": false,
+  "category": "Speed to lead",
+  "title": "How fast should a consulting firm respond to new inquiries?",
+  "deck": "How response delays cost conversations, plus the school follow-up case associated with $1.7M in public funding.",
+  "excerpt": "How response delays cost conversations, plus the school follow-up case associated with $1.7M in public funding.",
+  "author": "Xavier Pearson",
+  "published": "2026-08-15",
+  "updated": "2026-08-15",
+  "factsChecked": "2026-08-15",
+  "readTimeMinutes": 6,
+  "seoTitle": "How Fast Should a Consulting Firm Respond to New Inquiries?",
+  "metaDescription": "See how slow response time causes qualified consulting inquiries to go cold and what to fix before buying more leads.",
+  "cta": { "label": "Build my StackBrief", "href": "/stackbrief" },
+  "sources": [],
+  "body": [],
+  "related": ["consistent-followup", "where-leads-come-from"]
+}
