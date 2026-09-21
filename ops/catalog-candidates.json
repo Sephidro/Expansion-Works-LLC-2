@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20T00:00:00Z",
+  "updatedAt": "2026-09-21T09:01:44Z",
   "candidates": [
     {
       "id": "catalog.tally",
@@ -40,16 +40,16 @@
       "status": "test_queued",
       "sourceVerifiedAt": "2026-09-14",
       "testQuestion": "Is the mobile scheduling workflow reliable enough for an owner operating away from a desk?",
-      "nextAction": "Complete booking, rescheduling, cancellation, and notification checks on mobile."
+      "nextAction": "Complete booking, rescheduling, cancellation, notification, export, payment, conflict-handling, and integration entitlement checks."
     },
     {
       "id": "catalog.docusign-chatgpt",
-      "name": "DocuSign in ChatGPT",
+      "name": "Docusign in ChatGPT",
       "status": "source_verified",
-      "sourceVerifiedAt": "2026-09-08",
+      "sourceVerifiedAt": "2026-09-21",
       "notBefore": "2026-09-30",
       "testQuestion": "Does the released integration shorten agreement preparation without weakening review or auditability?",
-      "nextAction": "Reverify release status on or after the not-before date, then decide whether a hands-on test is available."
+      "nextAction": "On or after September 30, reverify general availability, then use three dummy agreements to test retrieval scope, renewal detection, NDA preparation, approval gating, activity history, revocation, and export."
     }
   ]
 }
