@@ -17,6 +17,7 @@ Company: Expansion Works LLC
 
 ## Guides
 
+- Docusign Put Your Contracts in ChatGPT. I Would Feed It Fake Ones First.: https://stackbriefxp.vercel.app/guides/docusign-chatgpt-plugin-contract-workflow (facts checked 2026-09-21)
 - Consulting Lead Follow-Up System: Stop Relying on Memory: https://stackbriefxp.vercel.app/guides/consistent-followup (facts checked 2026-08-15)
 - Consulting inquiry follow-up emails: what to send and when: https://stackbriefxp.vercel.app/guides/how-i-write-follow-up (facts checked 2026-08-15)
 - How fast should a consulting firm respond to new inquiries?: https://stackbriefxp.vercel.app/guides/leads-go-cold (facts checked 2026-08-15)
