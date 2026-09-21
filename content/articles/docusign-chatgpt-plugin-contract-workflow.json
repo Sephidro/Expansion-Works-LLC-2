@@ -92,15 +92,15 @@
     },
     {
       "type": "paragraph",
-      "text": "If your agreements already live in Docusign and someone is regularly hunting for renewal dates, notice windows, or the last approved NDA, this deserves a test. Docusign is aiming at a real pile of work."
+      "text": "The launch demo already shows the happy path. I care about the cases that make software sweat."
     },
     {
       "type": "paragraph",
-      "text": "If those agreements live across inboxes, local folders, and three signature accounts, stop there. ChatGPT may give you a faster conversation with the mess. It cannot decide which copy is current, who owns the template, or who is allowed to send it."
+      "text": "Give the plugin one contract with a renewal date, another with a separate notice deadline, and one the connected user should not be able to open."
     },
     {
       "type": "paragraph",
-      "text": "For everyone else, the first test should be slightly annoying. The plugin must find the right agreement, cite what it used, respect access boundaries, preserve human approval, show what happened, and leave behind something the owner can inspect."
+      "text": "Then ask for something annoyingly specific. If it cannot cite the agreement, keep access straight, and stop before signature, it has not earned live data."
     },
     {
       "type": "heading",
@@ -167,5 +167,6 @@
   "related": [
     "consistent-followup",
     "which-crm-fits"
-  ]
+  ],
+  "workflowState": "published"
 }
