@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-21T09:01:44Z",
+  "updatedAt": "2026-09-22T09:07:57Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -14,11 +14,31 @@
       "id": "content.docusign-chatgpt",
       "title": "Docusign Put Your Contracts in ChatGPT. I Would Feed It Fake Ones First.",
       "slug": "docusign-chatgpt-plugin-contract-workflow",
-      "status": "ready_for_publish",
+      "status": "published",
       "sourceCandidateId": "catalog.docusign-chatgpt",
       "voicePasses": 3,
       "notBefore": "2026-09-30",
       "releaseDecisionAt": "2026-09-21",
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
+      "publishedAt": "2026-09-22"
+    },
+    {
+      "id": "content.highlevel-jotform-workflow-integration",
+      "title": "HighLevel Finally Added Jotform. Keep It Away From Payment Forms for Now.",
+      "slug": "highlevel-jotform-workflow-integration",
+      "status": "voice_review",
+      "sourceCandidateId": "catalog.highlevel-jotform-workflows",
+      "voicePasses": 0,
+      "nextAction": "Run the first bounded Voice Lab pass without weakening the payment, unsupported-field, or hands-on evidence boundaries."
+    },
+    {
+      "id": "content.highlevel-chat-widget-spam-protection",
+      "title": "HighLevel Added Chat Spam Protection. Its Default Is Backwards.",
+      "slug": "highlevel-chat-widget-spam-protection",
+      "status": "ready_for_publish",
+      "sourceCandidateId": "catalog.highlevel-chat-widget-spam-protection",
+      "voicePasses": 1,
+      "releaseDecisionAt": "2026-09-22",
       "nextAction": "Merge the release pull request only after the generated commit arrives and every required check passes, then mark the item published."
     }
   ]
