@@ -5,6 +5,13 @@
     <link>https://stackbriefxp.vercel.app/guides</link>
     <description>Practical business-system decisions from Xavier Pearson.</description>
     <item>
+      <title>HighLevel Added Chat Spam Protection. Its Default Is Backwards.</title>
+      <link>https://stackbriefxp.vercel.app/guides/highlevel-chat-widget-spam-protection</link>
+      <guid>https://stackbriefxp.vercel.app/guides/highlevel-chat-widget-spam-protection</guid>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 GMT</pubDate>
+      <description>HighLevel’s spam control keeps suspicious chat leads visible, which I like. Its Pause Both default is backwards until the classifier proves it can separate junk from real leads.</description>
+    </item>
+    <item>
       <title>Docusign Put Your Contracts in ChatGPT. I Would Feed It Fake Ones First.</title>
       <link>https://stackbriefxp.vercel.app/guides/docusign-chatgpt-plugin-contract-workflow</link>
       <guid>https://stackbriefxp.vercel.app/guides/docusign-chatgpt-plugin-contract-workflow</guid>
