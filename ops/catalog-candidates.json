@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-21T09:01:44Z",
+  "updatedAt": "2026-09-22T09:07:57Z",
   "candidates": [
     {
       "id": "catalog.tally",
@@ -50,6 +50,22 @@
       "notBefore": "2026-09-30",
       "testQuestion": "Does the released integration shorten agreement preparation without weakening review or auditability?",
       "nextAction": "On or after September 30, reverify general availability, then use three dummy agreements to test retrieval scope, renewal detection, NDA preparation, approval gating, activity history, revocation, and export."
+    },
+    {
+      "id": "catalog.highlevel-jotform-workflows",
+      "name": "HighLevel and Jotform workflows",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-09-21",
+      "testQuestion": "Can the native HighLevel connection replace a working Zapier or webhook handoff without creating incomplete or misleading Jotform records?",
+      "nextAction": "In a non-production workspace, run a normal lead, signed agreement, required unsupported field, and payment form through the integration; verify values, payment state, duplicates, failure visibility, revocation, and export before removing the existing handoff."
+    },
+    {
+      "id": "catalog.highlevel-chat-widget-spam-protection",
+      "name": "HighLevel Chat Widget spam protection",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-09-22",
+      "testQuestion": "Can Tag Only identify obvious chat spam without flagging normal, duplicate, or campaign-spike inquiries?",
+      "nextAction": "On a test widget, enable Tag Only; submit normal, duplicate, malformed, rapid, and legitimate burst entries; verify tags, activity history, restoration, and false positives before allowing any channel pause."
     }
   ]
 }
