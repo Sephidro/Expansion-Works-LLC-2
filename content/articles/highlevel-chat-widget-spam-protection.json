@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.highlevel-chat-widget-spam-protection",
+  "slug": "highlevel-chat-widget-spam-protection",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "HighLevel Added Chat Spam Protection. Its Default Is Backwards.",
+  "deck": "The new control keeps suspicious chat contacts visible and can stop paid follow-up. Good. New widgets default to Pause Both. I’d make the filter earn that power first.",
+  "excerpt": "HighLevel’s spam control keeps suspicious chat leads visible, which I like. Its Pause Both default is backwards until the classifier proves it can separate junk from real leads.",
+  "author": "Xavier Pearson",
+  "published": "2026-09-22",
+  "updated": "2026-09-22",
+  "factsChecked": "2026-09-22",
+  "readTimeMinutes": 4,
+  "seoTitle": "HighLevel Chat Spam Protection: Why Tag Only Should Be Default",
+  "metaDescription": "HighLevel can now tag suspicious chat leads and pause email or SMS. New widgets default to Pause Both. Here is why I would start with Tag Only.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "HighLevel Chat Widget spam-protection release",
+      "url": "https://ideas.gohighlevel.com/changelog/chat-widget-spam-protection"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "HighLevel built a spam control I actually like, then gave it too much authority by default."
+    },
+    {
+      "type": "paragraph",
+      "text": "Suspicious chat contacts stay in the CRM. They get tagged. The pause shows up in activity history. That is much better than making a real inquiry disappear because a hidden classifier got nervous."
+    },
+    {
+      "type": "paragraph",
+      "text": "My verdict: HighLevel got the new-widget default backwards. Start with Tag Only. Let the filter point at suspects before it gets to silence them."
+    },
+    {
+      "type": "heading",
+      "text": "Old widgets get nothing. New widgets get Pause Both."
+    },
+    {
+      "type": "paragraph",
+      "text": "This update has two defaults."
+    },
+    {
+      "type": "paragraph",
+      "text": "Existing Chat Widgets stay off. That avoids changing a live flow without warning. New widgets start with protection on and Pause Both selected."
+    },
+    {
+      "type": "paragraph",
+      "text": "I understand the first decision. I do not understand giving an untested classifier control of both channels on the second."
+    },
+    {
+      "type": "paragraph",
+      "text": "Check every widget. There is no safe account-wide assumption here."
+    },
+    {
+      "type": "heading",
+      "text": "The useful part is that the lead stays visible"
+    },
+    {
+      "type": "paragraph",
+      "text": "HighLevel does not delete a flagged contact. It keeps the record, adds a searchable tag, logs the pause, and lets someone restore messaging when the submission is legitimate."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is the right shape for this kind of control. A fake lead should not burn message credits or throw more bad addresses at your sender reputation. A real lead should not disappear because they submitted twice or showed up during a traffic spike."
+    },
+    {
+      "type": "paragraph",
+      "text": "The feature offers four actions: Tag Only, Pause SMS, Pause Email, and Pause Both. Give it Tag Only. Review what it catches. Then let the evidence decide whether it earns a channel."
+    },
+    {
+      "type": "heading",
+      "text": "HighLevel will not show you the rule"
+    },
+    {
+      "type": "paragraph",
+      "text": "HighLevel does not publish the signals or thresholds it uses to identify suspicious activity. That may keep spammers from gaming the filter. It also means you cannot inspect the rule before letting it stop follow-up."
+    },
+    {
+      "type": "paragraph",
+      "text": "I have not tested the classifier. The retention, tag, pause options, defaults, and activity logging are vendor-documented. The false-positive rate is not. Until you measure it in your own traffic, “suspicious” is a useful label, not a verdict."
+    },
+    {
+      "type": "heading",
+      "text": "Give it normal leads and annoying leads"
+    },
+    {
+      "type": "paragraph",
+      "text": "On a test widget, submit the kinds of records that should be easy to separate:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "One normal inquiry.",
+        "The same inquiry twice.",
+        "A malformed email or phone number.",
+        "Several rapid submissions.",
+        "A legitimate burst that resembles a campaign launch."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Confirm which contacts receive the tag, whether the activity history names the paused channel, and whether restoring a legitimate contact resumes the expected follow-up."
+    },
+    {
+      "type": "paragraph",
+      "text": "Then watch the flagged set through a normal traffic cycle. If the obvious junk is caught and the real inquiries stay intact, move from Tag Only to the narrowest useful pause. SMS may be the expensive channel. Email may be the reputation problem. “Pause Both” should be a decision, not a default you forgot to notice."
+    },
+    {
+      "type": "heading",
+      "text": "Keep the current path when spam is not the problem"
+    },
+    {
+      "type": "paragraph",
+      "text": "If your widget does not trigger automatic outbound messages, this setting has less work to do. If you barely receive chat spam, turn on Tag Only or leave the flow alone. Do not create a daily review ritual to solve a problem you do not have."
+    },
+    {
+      "type": "paragraph",
+      "text": "The no-buy path is even simpler: send nothing automatically until a chat contact passes basic validation or a person reviews it. That costs more attention, but it keeps an unknown classifier away from a high-value inquiry."
+    },
+    {
+      "type": "paragraph",
+      "text": "For current HighLevel users with real spam, this is a worthwhile keep-current improvement. It is not a reason to buy HighLevel by itself."
+    },
+    {
+      "type": "paragraph",
+      "text": "If fake contacts, paid messages, and unowned follow-up are colliding in the same lead path, [Build a StackBrief](/stackbrief) and find the first failure worth fixing."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "HighLevel Chat Widget spam-protection release",
+          "url": "https://ideas.gohighlevel.com/changelog/chat-widget-spam-protection"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "consistent-followup",
+    "leads-go-cold"
+  ],
+  "workflowState": "published"
+}
