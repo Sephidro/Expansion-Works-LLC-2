@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20T00:00:00Z",
+  "updatedAt": "2026-09-21T09:01:44Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -12,12 +12,14 @@
     },
     {
       "id": "content.docusign-chatgpt",
-      "title": "DocuSign in ChatGPT: useful shortcut or another review risk?",
-      "status": "voice_review",
+      "title": "Docusign Put Your Contracts in ChatGPT. I Would Feed It Fake Ones First.",
+      "slug": "docusign-chatgpt-plugin-contract-workflow",
+      "status": "ready_for_publish",
       "sourceCandidateId": "catalog.docusign-chatgpt",
-      "voicePasses": 1,
+      "voicePasses": 3,
       "notBefore": "2026-09-30",
-      "nextAction": "Reverify release status and revise only if the evidence changes the recommendation."
+      "releaseDecisionAt": "2026-09-21",
+      "nextAction": "Merge the release pull request only after the generated commit arrives and every required check passes, then mark the item published."
     }
   ]
 }

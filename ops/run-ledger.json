@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20T00:00:00Z",
+  "updatedAt": "2026-09-21T09:01:44Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -8,7 +8,9 @@
       "startedAt": "2026-09-20T00:00:00Z",
       "finishedAt": "2026-09-20T00:00:00Z",
       "status": "completed",
-      "inputs": ["canonical-project-pack-v2"],
+      "inputs": [
+        "canonical-project-pack-v2"
+      ],
       "outputs": [
         "content-schema-v1",
         "operations-state-v1",
@@ -18,6 +20,30 @@
         "generated-sitemap",
         "generated-llms"
       ]
+    },
+    {
+      "id": "run.2026-09-21.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-09-21T09:01:44Z",
+      "finishedAt": "2026-09-21T09:01:44Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-2026-09-14",
+        "articles-docusign-chatgpt-plugin-contract-workflow",
+        "voice-lab-through-2026-09-20",
+        "repository-main-03a8b0088be5e9fdfcd49160017ff054e904f569"
+      ],
+      "outputs": [
+        "voice-pass-3-ready-for-publish",
+        "articles-doc-copy-revision",
+        "catalog-queue-reconciliation",
+        "content-queue-ready-for-publish",
+        "managed-docusign-article-record",
+        "automation-release-branch"
+      ],
+      "finalState": "release_pull_request_pending_generated_commit_and_checks",
+      "nextEligibleAction": "After the content-release workflow commits generated files and all required checks pass on the release pull request, merge it in a later conductor run."
     }
   ]
 }

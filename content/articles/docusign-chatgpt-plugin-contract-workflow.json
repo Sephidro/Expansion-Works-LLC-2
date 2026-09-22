@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.docusign-chatgpt-plugin-contract-workflow",
+  "slug": "docusign-chatgpt-plugin-contract-workflow",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "Docusign Put Your Contracts in ChatGPT. I Would Feed It Fake Ones First.",
+  "deck": "Finding renewal dates is exactly the kind of boring work AI should steal. Docusign has shown the job. It still needs to finish the access and pricing story.",
+  "excerpt": "Docusign's ChatGPT plugin points at useful contract jobs for small firms. Test permissions, approvals, auditability, and plan access before using client data.",
+  "author": "Xavier Pearson",
+  "published": "2026-09-21",
+  "updated": "2026-09-21",
+  "factsChecked": "2026-09-21",
+  "readTimeMinutes": 6,
+  "seoTitle": "Docusign ChatGPT Plugin: Test It With Fake Contracts First",
+  "metaDescription": "Docusign's ChatGPT plugin can find obligations and renewals, but access and pricing remain unclear. Here's the dummy-contract test I'd run first.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "Docusign's small-business ChatGPT announcement",
+      "url": "https://www.docusign.com/blog/docusign-brings-agreement-intelligence-to-small-businesses-in-chatgpt"
+    },
+    {
+      "label": "Docusign's MCP general-availability announcement",
+      "url": "https://www.docusign.com/blog/agreement-layer-modern-agentic-enterprise"
+    },
+    {
+      "label": "Docusign Agreement Manager overview",
+      "url": "https://www.docusign.com/products/platform/agreement-manager"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Docusign got my attention by promising to find renewal dates. That is the exact kind of boring job I want AI to steal."
+    },
+    {
+      "type": "paragraph",
+      "text": "Do not write me another email. Tell me which client agreement renews in 32 days, which notice deadline comes first, and where we hid the clause that matters."
+    },
+    {
+      "type": "paragraph",
+      "text": "Docusign says its plugin can find obligations, surface renewals, prepare familiar agreements from reviewed templates, and draft the follow-up without sending anything until a human approves it. That is a real job. The problem is that Docusign still has not made the required access and cost clear enough for me to recommend buying in."
+    },
+    {
+      "type": "paragraph",
+      "text": "I want to test this badly. I would also be out of my mind to connect live client agreements on day one."
+    },
+    {
+      "type": "heading",
+      "text": "This gets useful when the contracts start hiding"
+    },
+    {
+      "type": "paragraph",
+      "text": "If your agreements already live in Docusign and someone keeps hunting for renewal dates, notice windows, or the last approved NDA, this deserves a test. Docusign is aiming at a real pile of work."
+    },
+    {
+      "type": "paragraph",
+      "text": "The tool cannot clean the process for you. Renewal dates still need to exist. Someone still has to own the reviewed templates and signing authority. A person still has to read the final agreement and decide whether it leaves the building."
+    },
+    {
+      "type": "paragraph",
+      "text": "If the agreements live across inboxes, local folders, and three signature accounts, ChatGPT may give you a faster conversation with the mess. It cannot decide which copy is current, who owns the template, or who is allowed to send it."
+    },
+    {
+      "type": "heading",
+      "text": "Docusign showed the job before it showed the bill"
+    },
+    {
+      "type": "paragraph",
+      "text": "Until that changes, I would test the workflow only with dummy agreements in an account that already has the required IAM access."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is the whole uncertainty block. Docusign has shown the job. It has not shown small firms the full access and cost story."
+    },
+    {
+      "type": "paragraph",
+      "text": "The plugin is available through ChatGPT. Docusign says the connection runs through its MCP server, which remains beta until September 30, 2026. The launch announcement does not state which paid IAM entitlement unlocks the workflow, and Agreement Manager is included only in select IAM plans."
+    },
+    {
+      "type": "paragraph",
+      "text": "That blocks my buy recommendation. It does not block a test for firms that already have the required access. Everyone else should wait for Docusign to finish the buying story."
+    },
+    {
+      "type": "heading",
+      "text": "The first test should be slightly annoying"
+    },
+    {
+      "type": "paragraph",
+      "text": "The launch demo already shows the happy path. I care about the cases that make software sweat."
+    },
+    {
+      "type": "paragraph",
+      "text": "Give the plugin one contract with a renewal date, another with a separate notice deadline, and one the connected user should not be able to open."
+    },
+    {
+      "type": "paragraph",
+      "text": "Then ask for something annoyingly specific. If it cannot cite the agreement, keep access straight, and stop before signature, it has not earned live data."
+    },
+    {
+      "type": "heading",
+      "text": "Make it earn access with fake agreements"
+    },
+    {
+      "type": "paragraph",
+      "text": "After September 30, I would load a non-production account with three dummy agreements: one client contract, one supplier agreement, and one contract with separate renewal and notice dates."
+    },
+    {
+      "type": "paragraph",
+      "text": "Then make it prove seven things:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Find every obligation and cite the agreement it came from.",
+        "Separate the renewal date from the notice deadline.",
+        "Prepare an NDA from a reviewed template without adding a term.",
+        "Draft the renewal email and leave it unsent.",
+        "Refuse an agreement outside the connected user's access.",
+        "Stop before signature until a human approves.",
+        "Show the activity history, revoke the connection, and export what it created."
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "If it passes, you have evidence. If it gives a polished answer from the wrong contract, you have a demo, not a system."
+    },
+    {
+      "type": "heading",
+      "text": "If a spreadsheet can hold the dates, use the spreadsheet"
+    },
+    {
+      "type": "paragraph",
+      "text": "A solo consultant with a few active agreements can keep this much simpler. Track the agreement, counterparty, start date, end or renewal date, notice deadline, owner, next action, and document link in the CRM or spreadsheet already in use."
+    },
+    {
+      "type": "paragraph",
+      "text": "That register is not as exciting as asking ChatGPT to inspect a contract portfolio. It is cheap, visible, exportable, and easy to audit. For a small set of agreements, that wins."
+    },
+    {
+      "type": "paragraph",
+      "text": "Until Docusign names the required plan and the MCP server reaches general availability, I would not buy anything for this plugin. Existing IAM users can prepare a dummy-data test. Everyone else should make the dates visible and wait."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "Docusign's small-business ChatGPT announcement",
+          "url": "https://www.docusign.com/blog/docusign-brings-agreement-intelligence-to-small-businesses-in-chatgpt"
+        },
+        {
+          "label": "Docusign's MCP general-availability announcement",
+          "url": "https://www.docusign.com/blog/agreement-layer-modern-agentic-enterprise"
+        },
+        {
+          "label": "Docusign Agreement Manager overview",
+          "url": "https://www.docusign.com/products/platform/agreement-manager"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "consistent-followup",
+    "which-crm-fits"
+  ],
+  "workflowState": "published"
+}
