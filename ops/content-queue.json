@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-22T09:07:57Z",
+  "updatedAt": "2026-09-23T09:11:43Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -26,20 +26,22 @@
       "id": "content.highlevel-jotform-workflow-integration",
       "title": "HighLevel Finally Added Jotform. Keep It Away From Payment Forms for Now.",
       "slug": "highlevel-jotform-workflow-integration",
-      "status": "voice_review",
+      "status": "ready_for_publish",
       "sourceCandidateId": "catalog.highlevel-jotform-workflows",
-      "voicePasses": 0,
-      "nextAction": "Run the first bounded Voice Lab pass without weakening the payment, unsupported-field, or hands-on evidence boundaries."
+      "voicePasses": 1,
+      "nextAction": "Merge the release pull request only after the generated commit arrives and every required check passes, then mark the item published.",
+      "releaseDecisionAt": "2026-09-23"
     },
     {
       "id": "content.highlevel-chat-widget-spam-protection",
       "title": "HighLevel Added Chat Spam Protection. Its Default Is Backwards.",
       "slug": "highlevel-chat-widget-spam-protection",
-      "status": "ready_for_publish",
+      "status": "published",
       "sourceCandidateId": "catalog.highlevel-chat-widget-spam-protection",
       "voicePasses": 1,
       "releaseDecisionAt": "2026-09-22",
-      "nextAction": "Merge the release pull request only after the generated commit arrives and every required check passes, then mark the item published."
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
+      "publishedAt": "2026-09-23"
     }
   ]
 }
