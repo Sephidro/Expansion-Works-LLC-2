@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-21T09:01:44Z",
+  "updatedAt": "2026-09-22T09:07:57Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -44,6 +44,31 @@
       ],
       "finalState": "release_pull_request_pending_generated_commit_and_checks",
       "nextEligibleAction": "After the content-release workflow commits generated files and all required checks pass on the release pull request, merge it in a later conductor run."
+    },
+    {
+      "id": "run.2026-09-22.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-09-22T09:07:57Z",
+      "finishedAt": "2026-09-22T09:07:57Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-2026-09-21",
+        "articles-highlevel-chat-widget-spam-protection",
+        "voice-lab-through-highlevel-chat-spam-pass-1",
+        "repository-main-7ac178ad96957c42a37e51797d1943f8d3121456"
+      ],
+      "outputs": [
+        "merged-pr-1-docusign-release",
+        "voice-pass-1-ready-for-publish",
+        "articles-doc-copy-revision",
+        "highlevel-catalog-queue-reconciliation",
+        "content-queue-reconciliation",
+        "managed-highlevel-chat-spam-article-record",
+        "automation-release-branch"
+      ],
+      "finalState": "release_pull_request_pending_generated_commit_and_checks",
+      "nextEligibleAction": "After the content-release workflow commits generated files and all required checks pass on the new pull request, merge it in a later conductor run."
     }
   ]
 }
