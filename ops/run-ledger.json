@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-22T09:07:57Z",
+  "updatedAt": "2026-09-23T09:11:43Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -65,6 +65,32 @@
         "highlevel-catalog-queue-reconciliation",
         "content-queue-reconciliation",
         "managed-highlevel-chat-spam-article-record",
+        "automation-release-branch"
+      ],
+      "finalState": "release_pull_request_pending_generated_commit_and_checks",
+      "nextEligibleAction": "After the content-release workflow commits generated files and all required checks pass on the new pull request, merge it in a later conductor run."
+    },
+    {
+      "id": "run.2026-09-23.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-09-23T09:11:43Z",
+      "finishedAt": "2026-09-23T09:11:43Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-2026-09-21",
+        "articles-highlevel-jotform-workflow-integration",
+        "voice-lab-through-highlevel-jotform-pass-1",
+        "repository-main-215914cfbbc31d97f691ba8425f8f893e8747d58"
+      ],
+      "outputs": [
+        "merged-pr-2-highlevel-chat-spam-release",
+        "voice-pass-1-ready-for-publish",
+        "articles-doc-copy-revision",
+        "voice-lab-jotform-pass-1",
+        "catalog-queue-verified-no-change",
+        "content-queue-reconciliation",
+        "managed-highlevel-jotform-article-record",
         "automation-release-branch"
       ],
       "finalState": "release_pull_request_pending_generated_commit_and_checks",

@@ -5,6 +5,13 @@
     <link>https://stackbriefxp.vercel.app/guides</link>
     <description>Practical business-system decisions from Xavier Pearson.</description>
     <item>
+      <title>HighLevel Finally Added Jotform. Keep It Away From Payment Forms for Now.</title>
+      <link>https://stackbriefxp.vercel.app/guides/highlevel-jotform-workflow-integration</link>
+      <guid>https://stackbriefxp.vercel.app/guides/highlevel-jotform-workflow-integration</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+      <description>HighLevel’s native Jotform workflow can remove a handoff, but its Create Submission action has sharp limits. Test required fields and payment records before switching.</description>
+    </item>
+    <item>
       <title>HighLevel Added Chat Spam Protection. Its Default Is Backwards.</title>
       <link>https://stackbriefxp.vercel.app/guides/highlevel-chat-widget-spam-protection</link>
       <guid>https://stackbriefxp.vercel.app/guides/highlevel-chat-widget-spam-protection</guid>

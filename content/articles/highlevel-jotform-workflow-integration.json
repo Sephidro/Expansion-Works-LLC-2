@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.highlevel-jotform-workflow-integration",
+  "slug": "highlevel-jotform-workflow-integration",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "HighLevel Finally Added Jotform. Keep It Away From Payment Forms for Now.",
+  "deck": "The triggers can remove a Zapier step. The Create Submission action can also make an unpaid record look paid.",
+  "excerpt": "HighLevel’s native Jotform workflow can remove a handoff, but its Create Submission action has sharp limits. Test required fields and payment records before switching.",
+  "author": "Xavier Pearson",
+  "published": "2026-09-23",
+  "updated": "2026-09-23",
+  "factsChecked": "2026-09-23",
+  "readTimeMinutes": 5,
+  "seoTitle": "HighLevel Jotform Integration: What to Test Before Switching",
+  "metaDescription": "HighLevel now connects directly to Jotform, but unsupported and payment fields can create misleading records. Here is the test to run before replacing Zapier.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "HighLevel Jotform workflow release",
+      "url": "https://ideas.gohighlevel.com/changelog/jotform-new-actions-triggers-in-workflows"
+    },
+    {
+      "label": "Jotform pricing and limits",
+      "url": "https://www.jotform.com/pricing/"
+    },
+    {
+      "label": "Jotform security overview",
+      "url": "https://www.jotform.com/security/"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "HighLevel finally put Jotform inside its workflow builder. I immediately wanted to delete a Zap."
+    },
+    {
+      "type": "paragraph",
+      "text": "Then I hit one sentence in the release notes that stopped me: on a payment form, HighLevel’s Create Submission action can make an unpaid record look identical to a paid one."
+    },
+    {
+      "type": "paragraph",
+      "text": "That gives me two verdicts, not one. Test the incoming triggers beside your current handoff. Keep Create Submission away from payment forms until nobody can mistake a workflow-created submission for money collected."
+    },
+    {
+      "type": "heading",
+      "text": "The shortcut I actually want"
+    },
+    {
+      "type": "paragraph",
+      "text": "The useful part is not “more integrations.” It is getting rid of a handoff no one owns."
+    },
+    {
+      "type": "paragraph",
+      "text": "A Jotform inquiry can create or update the contact, trigger the acknowledgment, add the right tag, and put the next action in front of a person. A signed document can move the opportunity and create onboarding work without someone watching an inbox."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is the exact kind of boring automation I like. The customer does one thing, the system records it once, and the next person knows what to do."
+    },
+    {
+      "type": "paragraph",
+      "text": "HighLevel says new submissions trigger immediately. Signed documents are checked every five minutes. The connection uses a Jotform API key, then loads the chosen form fields for mapping."
+    },
+    {
+      "type": "heading",
+      "text": "Here is the trap"
+    },
+    {
+      "type": "paragraph",
+      "text": "HighLevel also published a limitation big enough to change the recommendation."
+    },
+    {
+      "type": "paragraph",
+      "text": "Its Create Submission action does not support file uploads, signatures, appointments, payments, product lists, terms and conditions, and several other field types. Those fields do not appear in the mapper. If an unsupported field is required, HighLevel says Jotform can still accept the submission, leave the field empty, and mark the record active."
+    },
+    {
+      "type": "paragraph",
+      "text": "The payment behavior is worse. A workflow-created submission on a payment form carries no payment, amount, product, or booked time. HighLevel says it can look identical to a paid submission."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is not a small edge case. A clean-looking record with no money behind it is how an automation upgrades from “convenient” to “who told the client they were paid?”"
+    },
+    {
+      "type": "heading",
+      "text": "Make it earn the delete button"
+    },
+    {
+      "type": "paragraph",
+      "text": "I would build the native connection beside the current handoff and try to make the records misleading on purpose:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Submit a normal lead and trace every mapped field into HighLevel.",
+        "Sign a dummy agreement and confirm onboarding starts once.",
+        "Make an unsupported field required and see whether Jotform still marks the incomplete record active.",
+        "Create a submission on a payment form without paying. Then hand the record to someone who did not build the workflow and ask what they think happened."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Trace both systems. Check the Jotform record, HighLevel contact, opportunity stage, tags, messages, duplicates, and activity history. Disconnect the API key. Confirm what breaks, where the failure is logged, and how the workflow recovers."
+    },
+    {
+      "type": "paragraph",
+      "text": "The native integration wins only when the records stay unambiguous and a failure is easier to spot than the one in the current Zapier or webhook setup. If it passes, delete a moving part. If it does not, keep the boring connection that already works."
+    },
+    {
+      "type": "heading",
+      "text": "What I have not tested"
+    },
+    {
+      "type": "paragraph",
+      "text": "I have used HighLevel, but I have not run this Jotform release. The supported fields, timing, empty required fields, and payment-record behavior above come from HighLevel’s own release notes. The release does not name a separate integration price, and I did not find a documented export for mappings or run history."
+    },
+    {
+      "type": "paragraph",
+      "text": "That uncertainty does not make the feature useless. It makes this a source-backed test plan, not a recommendation to move production data today."
+    },
+    {
+      "type": "heading",
+      "text": "The no-buy path is five minutes of manual work"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you receive a few forms each month, keep the current manual handoff. Copy the useful fields, create the next action, and move on. A new connection is not automatically simpler just because the menu finally contains both logos."
+    },
+    {
+      "type": "paragraph",
+      "text": "If you already use both platforms and a third-party handoff is costing money or failing, test the native route. Keep payment truth in the payment system. Keep signatures attached to the human action that created them. Let this integration handle ordinary lead data first."
+    },
+    {
+      "type": "paragraph",
+      "text": "If the bigger problem is that leads enter three systems and nobody can tell which one owns the next action, [Build a StackBrief](/stackbrief) before replacing one connector with another."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "HighLevel Jotform workflow release",
+          "url": "https://ideas.gohighlevel.com/changelog/jotform-new-actions-triggers-in-workflows"
+        },
+        {
+          "label": "Jotform pricing and limits",
+          "url": "https://www.jotform.com/pricing/"
+        },
+        {
+          "label": "Jotform security overview",
+          "url": "https://www.jotform.com/security/"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "consistent-followup",
+    "where-leads-come-from"
+  ],
+  "workflowState": "published"
+}
