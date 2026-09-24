@@ -1,14 +1,69 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-23T09:11:43Z",
+  "updatedAt": "2026-09-24T09:02:57Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
-      "title": "Tally's free-plan upgrade: what changes for a small service business",
-      "status": "research_ready",
+      "title": "Tally May Be the Best Free Upgrade From Google Forms. You May Not Need It.",
+      "slug": "tally-vs-google-forms-free",
+      "status": "drafting",
       "sourceCandidateId": "catalog.tally",
       "voicePasses": 0,
-      "nextAction": "Reverify current plan limits, then convert the working draft into the article schema."
+      "factsCheckedAt": null,
+      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
+      "nextAction": "Reverify every current plan, feature, pricing, privacy, and file-upload claim against the linked primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+    },
+    {
+      "id": "content.cal-com-vs-calendly-free",
+      "title": "Cal.com Free vs. Calendly Free: The Better Deal Is Not Automatically the Better Move",
+      "slug": "cal-com-vs-calendly-free",
+      "status": "drafting",
+      "sourceCandidateId": "catalog.cal-com-mobile",
+      "voicePasses": 0,
+      "factsCheckedAt": null,
+      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
+      "nextAction": "Reverify every current free-plan, paid-plan, migration, and affiliate claim against the linked primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+    },
+    {
+      "id": "content.webflow-ai-agent-instructions-breakpoints",
+      "title": "Webflow Just Made AI Website Work Easier to Review. That Is the Part I Care About.",
+      "slug": "webflow-ai-agent-instructions-breakpoints",
+      "status": "drafting",
+      "voicePasses": 0,
+      "factsCheckedAt": null,
+      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
+      "nextAction": "Reverify each Webflow release claim and current availability against the linked primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+    },
+    {
+      "id": "content.hubspot-payments-tax-processing-fees",
+      "title": "HubSpot Payments Has a New Tax Line. Check Your Payouts Before You Blame the Math.",
+      "slug": "hubspot-payments-tax-processing-fees",
+      "status": "drafting",
+      "voicePasses": 0,
+      "factsCheckedAt": null,
+      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
+      "nextAction": "Reverify the rollout dates, tax-invoice access, refund treatment, and reconciliation guidance against the linked HubSpot primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+    },
+    {
+      "id": "content.salesforce-free-suite-vs-spreadsheet",
+      "title": "Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet",
+      "slug": "salesforce-free-suite-vs-spreadsheet",
+      "status": "drafting",
+      "sourceCandidateId": "catalog.salesforce-free-suite",
+      "voicePasses": 0,
+      "factsCheckedAt": "2026-09-14",
+      "recoveryState": "complete_draft_recovered_from_articles_document",
+      "nextAction": "Create the matching Writer handoff in Voice Lab with voicePasses 0, then run one bounded voice pass before any release decision."
+    },
+    {
+      "id": "content.hubspot-recorded-meetings-workflow-change",
+      "title": "HubSpot Stopped Double-Logging Recorded Meetings. Your Old Workflows May Be Waiting for a Record That Never Comes.",
+      "slug": "hubspot-recorded-meetings-workflow-change",
+      "status": "drafting",
+      "voicePasses": 0,
+      "factsCheckedAt": "2026-09-14",
+      "recoveryState": "complete_draft_recovered_from_articles_document",
+      "nextAction": "Create the matching Writer handoff in Voice Lab with voicePasses 0, then run one bounded voice pass before any release decision."
     },
     {
       "id": "content.docusign-chatgpt",
@@ -17,6 +72,7 @@
       "status": "published",
       "sourceCandidateId": "catalog.docusign-chatgpt",
       "voicePasses": 3,
+      "factsCheckedAt": "2026-09-21",
       "notBefore": "2026-09-30",
       "releaseDecisionAt": "2026-09-21",
       "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
@@ -26,11 +82,13 @@
       "id": "content.highlevel-jotform-workflow-integration",
       "title": "HighLevel Finally Added Jotform. Keep It Away From Payment Forms for Now.",
       "slug": "highlevel-jotform-workflow-integration",
-      "status": "ready_for_publish",
+      "status": "published",
       "sourceCandidateId": "catalog.highlevel-jotform-workflows",
       "voicePasses": 1,
-      "nextAction": "Merge the release pull request only after the generated commit arrives and every required check passes, then mark the item published.",
-      "releaseDecisionAt": "2026-09-23"
+      "factsCheckedAt": "2026-09-23",
+      "releaseDecisionAt": "2026-09-23",
+      "publishedAt": "2026-09-23",
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available."
     },
     {
       "id": "content.highlevel-chat-widget-spam-protection",
@@ -39,6 +97,7 @@
       "status": "published",
       "sourceCandidateId": "catalog.highlevel-chat-widget-spam-protection",
       "voicePasses": 1,
+      "factsCheckedAt": "2026-09-22",
       "releaseDecisionAt": "2026-09-22",
       "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
       "publishedAt": "2026-09-23"
