@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T09:02:57Z",
+  "updatedAt": "2026-09-24T09:08:41Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -113,13 +113,13 @@
         "observed-pr-3-merged-highlevel-jotform-release",
         "content-queue-nine-article-inventory-reconciliation",
         "five-complete-drafts-recovered-to-drafting",
-        "four-missing-facts-checked-dates-recorded-for-recovery",
+        "four-visible-facts-checked-dates-reconciled",
         "catalog-queue-verified-no-change",
         "voice-pass-no-op-no-handoff-in-voice-review",
         "automation-release-branch"
       ],
       "finalState": "release_pull_request_pending_checks",
-      "nextEligibleAction": "After all required checks pass and the branch remains current, merge the inventory reconciliation pull request in a later conductor run; then create the oldest recovered draft's Writer handoff only after its missing facts-checked date is restored."
+      "nextEligibleAction": "After all required checks pass and the branch remains current, merge the inventory reconciliation pull request in a later conductor run; then reverify the oldest recovered draft and create its Writer handoff."
     }
   ]
 }
