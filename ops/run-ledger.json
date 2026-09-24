@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-23T09:11:43Z",
+  "updatedAt": "2026-09-24T09:02:57Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -95,6 +95,31 @@
       ],
       "finalState": "release_pull_request_pending_generated_commit_and_checks",
       "nextEligibleAction": "After the content-release workflow commits generated files and all required checks pass on the new pull request, merge it in a later conductor run."
+    },
+    {
+      "id": "run.2026-09-24.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-09-24T09:02:57Z",
+      "finishedAt": "2026-09-24T09:02:57Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-2026-09-21",
+        "articles-complete-inventory-through-highlevel-chat-spam",
+        "voice-lab-through-highlevel-jotform-pass-1",
+        "repository-main-7b12b717384f3760913f45c9bce10d31ba05687d"
+      ],
+      "outputs": [
+        "observed-pr-3-merged-highlevel-jotform-release",
+        "content-queue-nine-article-inventory-reconciliation",
+        "five-complete-drafts-recovered-to-drafting",
+        "four-missing-facts-checked-dates-recorded-for-recovery",
+        "catalog-queue-verified-no-change",
+        "voice-pass-no-op-no-handoff-in-voice-review",
+        "automation-release-branch"
+      ],
+      "finalState": "release_pull_request_pending_checks",
+      "nextEligibleAction": "After all required checks pass and the branch remains current, merge the inventory reconciliation pull request in a later conductor run; then create the oldest recovered draft's Writer handoff only after its missing facts-checked date is restored."
     }
   ]
 }
