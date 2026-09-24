@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T09:02:57Z",
+  "updatedAt": "2026-09-24T09:08:41Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -9,9 +9,9 @@
       "status": "drafting",
       "sourceCandidateId": "catalog.tally",
       "voicePasses": 0,
-      "factsCheckedAt": null,
-      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
-      "nextAction": "Reverify every current plan, feature, pricing, privacy, and file-upload claim against the linked primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+      "factsCheckedAt": "2026-09-08",
+      "recoveryState": "complete_draft_reconciled_from_articles_document",
+      "nextAction": "Reverify current plan, feature, pricing, privacy, and file-upload claims against the linked primary sources; update the facts-checked date if anything changes; then create a Writer handoff in Voice Lab."
     },
     {
       "id": "content.cal-com-vs-calendly-free",
@@ -20,9 +20,9 @@
       "status": "drafting",
       "sourceCandidateId": "catalog.cal-com-mobile",
       "voicePasses": 0,
-      "factsCheckedAt": null,
-      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
-      "nextAction": "Reverify every current free-plan, paid-plan, migration, and affiliate claim against the linked primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+      "factsCheckedAt": "2026-09-08",
+      "recoveryState": "complete_draft_recovered_from_articles_document",
+      "nextAction": "Reverify current free-plan, paid-plan, migration, and affiliate claims against the linked primary sources; update the facts-checked date if anything changes; then create a Writer handoff in Voice Lab."
     },
     {
       "id": "content.webflow-ai-agent-instructions-breakpoints",
@@ -30,9 +30,9 @@
       "slug": "webflow-ai-agent-instructions-breakpoints",
       "status": "drafting",
       "voicePasses": 0,
-      "factsCheckedAt": null,
-      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
-      "nextAction": "Reverify each Webflow release claim and current availability against the linked primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+      "factsCheckedAt": "2026-09-08",
+      "recoveryState": "complete_draft_recovered_from_articles_document",
+      "nextAction": "Reverify each Webflow release claim and current availability against the linked primary sources; update the facts-checked date if anything changes; then create a Writer handoff in Voice Lab."
     },
     {
       "id": "content.hubspot-payments-tax-processing-fees",
@@ -40,9 +40,9 @@
       "slug": "hubspot-payments-tax-processing-fees",
       "status": "drafting",
       "voicePasses": 0,
-      "factsCheckedAt": null,
-      "recoveryState": "complete_draft_recovered_from_articles_document_missing_visible_facts_checked_date",
-      "nextAction": "Reverify the rollout dates, tax-invoice access, refund treatment, and reconciliation guidance against the linked HubSpot primary sources; write the ISO facts-checked date into the Articles document; then create a Writer handoff in Voice Lab."
+      "factsCheckedAt": "2026-09-08",
+      "recoveryState": "complete_draft_recovered_from_articles_document",
+      "nextAction": "Reverify the rollout dates, tax-invoice access, refund treatment, and reconciliation guidance against the linked HubSpot primary sources; update the facts-checked date if anything changes; then create a Writer handoff in Voice Lab."
     },
     {
       "id": "content.salesforce-free-suite-vs-spreadsheet",
