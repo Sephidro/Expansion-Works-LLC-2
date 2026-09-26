@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T16:12:00Z",
+  "updatedAt": "2026-09-26T09:02:45Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
-      "title": "Tally May Be the Best Free Upgrade From Google Forms. You May Not Need It.",
+      "title": "Tally Is the First Free Google Forms Upgrade I’d Test",
       "slug": "tally-vs-google-forms-free",
-      "status": "voice_review",
+      "status": "ready_for_publish",
       "sourceCandidateId": "catalog.tally",
-      "voicePasses": 0,
+      "voicePasses": 1,
       "factsCheckedAt": "2026-09-24",
-      "recoveryState": "writer_handoff_appended",
-      "nextAction": "Run one bounded Voice Lab pass. Do not mark ready_for_publish until the reader panel accepts the article or records a no-op under the three-pass limit."
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
+      "releaseDecisionAt": "2026-09-26"
     },
     {
       "id": "content.cal-com-vs-calendly-free",
