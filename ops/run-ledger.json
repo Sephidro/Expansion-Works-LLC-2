@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-26T09:12:00Z",
+  "updatedAt": "2026-09-26T09:16:00Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -142,10 +142,12 @@
         "catalog-queue-verified-no-change",
         "four-complete-drafts-remain-recovered",
         "automation-release-branch",
-        "generated-content-commit-arrived"
+        "generated-content-commit-arrived",
+        "merged-pr-5-tally-release",
+        "tally-content-queue-published-reconciliation"
       ],
-      "finalState": "release_pull_request_pending_checks",
-      "nextEligibleAction": "After StackBrief QA and Vercel pass and the branch remains current, merge the Tally release pull request in a later conductor run; then reverify the Cal.com draft and create its Writer handoff."
+      "finalState": "post_merge_queue_reconciliation_pending_checks",
+      "nextEligibleAction": "After QA passes, merge the post-release state reconciliation pull request; then reverify the Cal.com draft and create its Writer handoff."
     }
   ]
 }
