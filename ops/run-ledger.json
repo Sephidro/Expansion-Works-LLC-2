@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-26T09:02:45Z",
+  "updatedAt": "2026-09-26T09:12:00Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -141,10 +141,11 @@
         "managed-tally-article-record",
         "catalog-queue-verified-no-change",
         "four-complete-drafts-remain-recovered",
-        "automation-release-branch"
+        "automation-release-branch",
+        "generated-content-commit-arrived"
       ],
-      "finalState": "release_pull_request_pending_generated_commit_and_checks",
-      "nextEligibleAction": "After the content-release workflow commits generated files and all required checks pass, merge the Tally release pull request in a later conductor run; then reverify the Cal.com draft and create its Writer handoff."
+      "finalState": "release_pull_request_pending_checks",
+      "nextEligibleAction": "After StackBrief QA and Vercel pass and the branch remains current, merge the Tally release pull request in a later conductor run; then reverify the Cal.com draft and create its Writer handoff."
     }
   ]
 }
