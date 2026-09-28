@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-27T09:12:00Z",
+  "updatedAt": "2026-09-27T16:00:00Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -29,13 +29,13 @@
     },
     {
       "id": "content.webflow-ai-agent-instructions-breakpoints",
-      "title": "Webflow Just Made AI Website Work Easier to Review. That Is the Part I Care About.",
+      "title": "Webflow’s New AI Controls Make Bad Changes Easier to Catch",
       "slug": "webflow-ai-agent-instructions-breakpoints",
-      "status": "drafting",
+      "status": "voice_review",
       "voicePasses": 0,
-      "factsCheckedAt": "2026-09-08",
-      "recoveryState": "complete_draft_recovered_from_articles_document",
-      "nextAction": "Reverify each Webflow release claim and current availability against the linked primary sources; update the facts-checked date if anything changes; then create a Writer handoff in Voice Lab."
+      "factsCheckedAt": "2026-09-27",
+      "recoveryState": "writer_handoff_created",
+      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
     },
     {
       "id": "content.hubspot-payments-tax-processing-fees",
