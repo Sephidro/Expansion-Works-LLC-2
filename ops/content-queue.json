@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-27T16:00:00Z",
+  "updatedAt": "2026-09-28T16:00:00Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -39,13 +39,13 @@
     },
     {
       "id": "content.hubspot-payments-tax-processing-fees",
-      "title": "HubSpot Payments Has a New Tax Line. Check Your Payouts Before You Blame the Math.",
+      "title": "HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.",
       "slug": "hubspot-payments-tax-processing-fees",
-      "status": "drafting",
+      "status": "voice_review",
       "voicePasses": 0,
-      "factsCheckedAt": "2026-09-08",
-      "recoveryState": "complete_draft_recovered_from_articles_document",
-      "nextAction": "Reverify the rollout dates, tax-invoice access, refund treatment, and reconciliation guidance against the linked HubSpot primary sources; update the facts-checked date if anything changes; then create a Writer handoff in Voice Lab."
+      "factsCheckedAt": "2026-09-28",
+      "recoveryState": "writer_handoff_created",
+      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
     },
     {
       "id": "content.salesforce-free-suite-vs-spreadsheet",
