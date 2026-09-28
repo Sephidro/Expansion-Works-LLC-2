@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.cal-com-vs-calendly-free",
+  "slug": "cal-com-vs-calendly-free",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "Cal.com Free Makes Calendly Free Look Stingy. Your Old Links Are Calendly’s Defense.",
+  "deck": "Cal.com gives solo operators more for $0. Calendly’s defense is every live link already pointing to it.",
+  "excerpt": "Cal.com gives solo operators more for free. The real decision is whether those extra features are worth moving a scheduling link that already works.",
+  "author": "Xavier Pearson",
+  "updated": "2026-09-27",
+  "published": "2026-09-27",
+  "factsChecked": "2026-09-27",
+  "readTimeMinutes": 6,
+  "seoTitle": "Cal.com Free vs. Calendly Free: Which One Should You Use?",
+  "metaDescription": "Cal.com Free beats Calendly on features. See when to switch, when to keep Calendly, and the fake-booking test to run before moving your live link.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "Cal.com pricing",
+      "url": "https://cal.com/pricing"
+    },
+    {
+      "label": "Calendly pricing",
+      "url": "https://calendly.com/pricing"
+    },
+    {
+      "label": "Cal.com workflows",
+      "url": "https://cal.com/help/workflows/workflowsoverview"
+    },
+    {
+      "label": "Cal.com Companion",
+      "url": "https://cal.com/app"
+    },
+    {
+      "label": "Cal.com Insights",
+      "url": "https://cal.com/help/bookings/insights"
+    },
+    {
+      "label": "Cal.com affiliate terms",
+      "url": "https://cal.com/affiliate-terms"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Cal.com Free makes Calendly Free look stingy."
+    },
+    {
+      "type": "paragraph",
+      "text": "One user gets unlimited event types and calendars, Stripe and PayPal payments, more than 100 integrations, mobile access, and one-click Calendly import. Calendly Free gives you one event type and one calendar."
+    },
+    {
+      "type": "paragraph",
+      "text": "Starting fresh? I would test Cal.com first."
+    },
+    {
+      "type": "paragraph",
+      "text": "Already using Calendly? Its best feature is not on the pricing page. It is every website button, email signature, old follow-up, social profile, proposal, and forgotten PDF already pointing to it."
+    },
+    {
+      "type": "paragraph",
+      "text": "Cal.com wins the free-plan fight. Calendly keeps the job only when replacing it creates more work than its limits do."
+    },
+    {
+      "type": "heading",
+      "text": "Cal.com wins the free-plan fight"
+    },
+    {
+      "type": "paragraph",
+      "text": "The [Cal.com pricing page](https://cal.com/pricing) currently lists unlimited event types and calendars for one user, email and SMS notifications, Stripe and PayPal payments, more than 100 app integrations, two-way HubSpot and Salesforce sync, a mobile app, and one-click Calendly import on the free plan."
+    },
+    {
+      "type": "paragraph",
+      "text": "[Calendly’s pricing page](https://calendly.com/pricing) gives free users one event type and one calendar connection. Calendly Standard is $10 per seat per month when billed annually. It adds unlimited event types, up to six calendars, automations and reminders, payments, and more integrations."
+    },
+    {
+      "type": "paragraph",
+      "text": "So yes, Cal.com Free embarrasses Calendly Free on the feature grid."
+    },
+    {
+      "type": "paragraph",
+      "text": "The paid comparison gets less dramatic. [Cal.com’s workflow documentation](https://cal.com/help/workflows/workflowsoverview) says free users get the default reminder email but cannot customize it. Cal.com Teams is $12 per user per month when billed annually and adds custom email and SMS notifications, shared availability, round robin scheduling, routing forms, branding removal, and booking analytics."
+    },
+    {
+      "type": "paragraph",
+      "text": "Compare the workflow you need, not the word “free.” If one reminder is enough, great. If a missed meeting costs real money, the follow-up sequence matters more than which logo is cheaper."
+    },
+    {
+      "type": "heading",
+      "text": "The migration is the real product test"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cal.com advertises one-click import from Calendly. Helpful. It does not update every old button, embed, email, proposal, and social bio that points to your current link."
+    },
+    {
+      "type": "paragraph",
+      "text": "Run the new calendar beside the old one before changing anything public."
+    },
+    {
+      "type": "paragraph",
+      "text": "Book from a second time zone. Create a conflict on another calendar. Cancel and reschedule. Require confirmation. Pay for a test appointment and refund it. Check what reaches the CRM. Use the [Companion mobile app](https://cal.com/app) on iOS or Android. Download the current booking view as a CSV from [Insights](https://cal.com/help/bookings/insights). Then remove the test data and see what remains."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is the review. The pricing table only tells you what deserves a test."
+    },
+    {
+      "type": "paragraph",
+      "text": "My evidence boundary is simple: I have not run this comparison hands-on. The vendors document the plan limits, prices, mobile app, import, and CSV download. Their pages do not prove that every free-plan entitlement, payment handoff, conflict check, CRM sync, refund, deletion, or export works the way your business needs. I would not replace the live link until fake bookings pass."
+    },
+    {
+      "type": "heading",
+      "text": "When I would move"
+    },
+    {
+      "type": "paragraph",
+      "text": "I would test Cal.com when Calendly Free’s single event type or calendar connection forces manual work, blocks paid appointments, or makes double-booking more likely."
+    },
+    {
+      "type": "paragraph",
+      "text": "I would also test it if you pay for Calendly Standard mainly to unlock multiple event types, calendars, reminders, or payments. Cal.com may remove that bill, but the savings only count after the new workflow survives the migration."
+    },
+    {
+      "type": "heading",
+      "text": "When I would keep Calendly"
+    },
+    {
+      "type": "paragraph",
+      "text": "Keep Calendly if one event type and one calendar already handle the job, prospects know the link, and bookings arrive with the information you need."
+    },
+    {
+      "type": "paragraph",
+      "text": "Keep it if your reminders, payments, CRM handoff, and rescheduling flow already work. Saving $10 a month is not a win if you spend two hours fixing links and miss one real meeting."
+    },
+    {
+      "type": "paragraph",
+      "text": "For very low meeting volume, skip both. Offer two or three times manually and send a calendar invite. A scheduler should remove coordination work. It does not deserve a permanent seat because everyone else has one."
+    },
+    {
+      "type": "heading",
+      "text": "My current verdict"
+    },
+    {
+      "type": "paragraph",
+      "text": "Starting fresh, test Cal.com. Already reliable on Calendly, make Cal.com beat the live system, not the pricing page."
+    },
+    {
+      "type": "paragraph",
+      "text": "Move when a current limit creates manual work or missed-booking risk, and only after Cal.com survives the fake-booking test. The scheduler is infrastructure disguised as a link."
+    },
+    {
+      "type": "paragraph",
+      "text": "Cal.com also runs an [affiliate program](https://cal.com/affiliate-program) that advertises 20% commission for 12 months for approved participants. That commercial option did not decide this verdict, and this article does not claim that StackBrief participates in the program."
+    },
+    {
+      "type": "paragraph",
+      "text": "[Build my StackBrief](/stackbrief) if you want the rest of the customer path judged with the same rule."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "Cal.com pricing",
+          "url": "https://cal.com/pricing"
+        },
+        {
+          "label": "Calendly pricing",
+          "url": "https://calendly.com/pricing"
+        },
+        {
+          "label": "Cal.com workflows",
+          "url": "https://cal.com/help/workflows/workflowsoverview"
+        },
+        {
+          "label": "Cal.com Companion",
+          "url": "https://cal.com/app"
+        },
+        {
+          "label": "Cal.com Insights",
+          "url": "https://cal.com/help/bookings/insights"
+        },
+        {
+          "label": "Cal.com affiliate terms",
+          "url": "https://cal.com/affiliate-terms"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "consistent-followup",
+    "where-leads-come-from"
+  ],
+  "workflowState": "published"
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-27T09:01:00Z",
+  "updatedAt": "2026-09-27T09:16:00Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -148,6 +148,34 @@
       ],
       "finalState": "post_merge_queue_reconciliation_pending_checks",
       "nextEligibleAction": "After QA passes, merge the post-release state reconciliation pull request; then run the bounded Cal.com voice pass."
+    },
+    {
+      "id": "run.2026-09-27.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-09-27T09:00:00Z",
+      "finishedAt": "2026-09-27T09:13:00Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-2026-09-21",
+        "articles-complete-inventory-through-cal-com-pass-1",
+        "voice-lab-through-cal-com-pass-1",
+        "repository-main-382710e38f721190a1f099492b8461f480c43093"
+      ],
+      "outputs": [
+        "merged-pr-6-tally-state-reconciliation",
+        "content-queue-nine-article-inventory-reconciled",
+        "cal-com-pass-1-ready-for-publish",
+        "articles-doc-copy-revision",
+        "voice-lab-cal-com-pass-1",
+        "managed-cal-com-article-record",
+        "catalog-queue-verified-no-change",
+        "four-complete-drafts-remain-recovered",
+        "automation-release-branch",
+        "generated-content-commit-arrived"
+      ],
+      "finalState": "release_pull_request_pending_checks",
+      "nextEligibleAction": "After StackBrief QA and Vercel pass and the branch remains current, merge the Cal.com release pull request in a later conductor run; then reverify the Webflow draft and create its Writer handoff."
     }
   ]
 }

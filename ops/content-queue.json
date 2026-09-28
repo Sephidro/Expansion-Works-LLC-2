@@ -17,14 +17,15 @@
     },
     {
       "id": "content.cal-com-vs-calendly-free",
-      "title": "Cal.com Free Beats Calendly Free. That Still Isn’t a Reason to Move",
+      "title": "Cal.com Free Makes Calendly Free Look Stingy. Your Old Links Are Calendly’s Defense.",
       "slug": "cal-com-vs-calendly-free",
-      "status": "voice_review",
+      "status": "ready_for_publish",
       "sourceCandidateId": "catalog.cal-com-mobile",
-      "voicePasses": 0,
-      "factsCheckedAt": "2026-09-26",
-      "recoveryState": "writer_handoff_created",
-      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
+      "voicePasses": 1,
+      "factsCheckedAt": "2026-09-27",
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
+      "releaseDecisionAt": "2026-09-27"
     },
     {
       "id": "content.webflow-ai-agent-instructions-breakpoints",
