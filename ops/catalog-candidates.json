@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-22T09:07:57Z",
+  "updatedAt": "2026-09-29T09:01:00Z",
   "candidates": [
     {
       "id": "catalog.tally",
@@ -22,9 +22,9 @@
       "id": "catalog.wix-symphony",
       "name": "Wix Symphony",
       "status": "test_queued",
-      "sourceVerifiedAt": "2026-08-28",
-      "testQuestion": "Does the assisted site-building flow reduce setup time without creating an unmaintainable result?",
-      "nextAction": "Build one small service-business page and score editing control, accessibility, and handoff quality."
+      "sourceVerifiedAt": "2026-09-28",
+      "testQuestion": "Can Symphony replace a bounded Wix Custom Agent task without weakening approvals, auditability, export, or cost predictability?",
+      "nextAction": "Run the same follow-up and morning-report jobs in legacy Custom Agent and new Symphony accounts; compare scopes, approvals, logs, export, credits, and recovery."
     },
     {
       "id": "catalog.make-maia",
@@ -38,9 +38,9 @@
       "id": "catalog.cal-com-mobile",
       "name": "Cal.com mobile workflow",
       "status": "test_queued",
-      "sourceVerifiedAt": "2026-09-14",
-      "testQuestion": "Is the mobile scheduling workflow reliable enough for an owner operating away from a desk?",
-      "nextAction": "Complete booking, rescheduling, cancellation, notification, export, payment, conflict-handling, and integration entitlement checks."
+      "sourceVerifiedAt": "2026-09-28",
+      "testQuestion": "Does Individual Free reliably support two event types, two calendars, payments, mobile management, export, and custom reminder workflows without an unexpected paywall?",
+      "nextAction": "Run the complete solo scheduling test and record every entitlement, workflow paywall, export path, notification, payment state, and deletion result."
     },
     {
       "id": "catalog.docusign-chatgpt",
@@ -66,6 +66,22 @@
       "sourceVerifiedAt": "2026-09-22",
       "testQuestion": "Can Tag Only identify obvious chat spam without flagging normal, duplicate, or campaign-spike inquiries?",
       "nextAction": "On a test widget, enable Tag Only; submit normal, duplicate, malformed, rapid, and legitimate burst entries; verify tags, activity history, restoration, and false positives before allowing any channel pause."
+    },
+    {
+      "id": "catalog.hubspot-chatgpt-connector",
+      "name": "HubSpot connector for ChatGPT",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-09-28",
+      "testQuestion": "Can the connector reduce CRM admin without bypassing rules, creating duplicates, or granting more data access than the job requires?",
+      "nextAction": "Run five dummy create and update cases covering duplicates, required fields, invalid stages, missing associations, and normal changes; verify preview, approval, attribution, rollback, export, and revocation."
+    },
+    {
+      "id": "catalog.webflow-mcp-maintenance",
+      "name": "Webflow MCP maintenance workflow",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-09-28",
+      "testQuestion": "Can an owner or operator safely complete recurring Webflow maintenance through MCP without uncontrolled production access or hidden Designer dependencies?",
+      "nextAction": "Test one GSAP interaction, a filtered CMS update, a localized-item failure, permission review, revocation, and agent-instruction export on a non-production site."
     }
   ]
 }
