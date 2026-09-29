@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T16:00:00Z",
+  "updatedAt": "2026-09-29T09:01:00Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -19,23 +19,25 @@
       "id": "content.cal-com-vs-calendly-free",
       "title": "Cal.com Free Makes Calendly Free Look Stingy. Your Old Links Are Calendly’s Defense.",
       "slug": "cal-com-vs-calendly-free",
-      "status": "ready_for_publish",
+      "status": "published",
       "sourceCandidateId": "catalog.cal-com-mobile",
       "voicePasses": 1,
       "factsCheckedAt": "2026-09-27",
-      "recoveryState": "voice_pass_1_ready_for_publish",
-      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
-      "releaseDecisionAt": "2026-09-27"
+      "recoveryState": "published_from_recovered_draft",
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
+      "releaseDecisionAt": "2026-09-27",
+      "publishedAt": "2026-09-28"
     },
     {
       "id": "content.webflow-ai-agent-instructions-breakpoints",
       "title": "Webflow’s New AI Controls Make Bad Changes Easier to Catch",
       "slug": "webflow-ai-agent-instructions-breakpoints",
-      "status": "voice_review",
-      "voicePasses": 0,
+      "status": "ready_for_publish",
+      "voicePasses": 1,
       "factsCheckedAt": "2026-09-27",
-      "recoveryState": "writer_handoff_created",
-      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
+      "releaseDecisionAt": "2026-09-29"
     },
     {
       "id": "content.hubspot-payments-tax-processing-fees",

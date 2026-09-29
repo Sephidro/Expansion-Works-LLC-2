@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.webflow-ai-agent-instructions-breakpoints",
+  "slug": "webflow-ai-agent-instructions-breakpoints",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "Webflow’s New AI Controls Make Bad Changes Easier to Catch",
+  "deck": "Webflow can now show several screen sizes at once, draft your site rules, and let you fix AI-made parts by hand. That will not make AI smart. It will make bad work easier to spot.",
+  "excerpt": "Webflow’s new AI controls make bad site changes easier to catch. That helps current users, but it is not a reason to move a working site.",
+  "author": "Xavier Pearson",
+  "updated": "2026-09-29",
+  "published": "2026-09-29",
+  "factsChecked": "2026-09-27",
+  "readTimeMinutes": 5,
+  "seoTitle": "Webflow’s New AI Controls: What Site Owners Should Test",
+  "metaDescription": "Webflow added side-by-side breakpoints, AI-made site instructions, and visual editing. See who should test them and who should keep what already works.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "Webflow breakpoint update",
+      "url": "https://webflow.com/updates/see-every-breakpoint-while-you-edit"
+    },
+    {
+      "label": "Webflow agent-instructions documentation",
+      "url": "https://help.webflow.com/hc/en-us/articles/52536649709971-Create-and-manage-AI-agent-instructions"
+    },
+    {
+      "label": "Webflow AI-component documentation",
+      "url": "https://help.webflow.com/hc/en-us/articles/51168990228499-Build-AI-code-components"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Most AI website demos stop when the homepage looks good on one laptop. Very convenient."
+    },
+    {
+      "type": "paragraph",
+      "text": "A real site keeps going. It has phone screens, forms, old pages, brand rules, and a CMS. CMS means content management system. It is where the site keeps things like blog posts and product details. Then one button gets fixed on desktop and hangs off the side of somebody's phone."
+    },
+    {
+      "type": "paragraph",
+      "text": "Making a change is not the hard part anymore. Finding what the change broke is."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is why Webflow's new AI tools matter. They do not make AI smarter. They make its work easier to check."
+    },
+    {
+      "type": "paragraph",
+      "text": "Here is my verdict: if you already use Webflow and change your site often, test them. If your site works and you barely touch it, leave it alone."
+    },
+    {
+      "type": "heading",
+      "text": "What changed"
+    },
+    {
+      "type": "paragraph",
+      "text": "Webflow released three connected tools in September."
+    },
+    {
+      "type": "paragraph",
+      "text": "The [breakpoint canvas](https://webflow.com/updates/see-every-breakpoint-while-you-edit) shows several screen sizes at once. A breakpoint is a set of design rules for a screen size, like desktop, tablet, or phone. Webflow can also draft AI rules from the site. AI-made React components can now be edited by hand. React is a common way developers build website parts like forms and price tools."
+    },
+    {
+      "type": "paragraph",
+      "text": "The important word in that paragraph is “review.”"
+    },
+    {
+      "type": "paragraph",
+      "text": "Webflow lets you export the instructions. It also says manual visual changes do not use AI credits, while prompt-based changes do. Credits are the units Webflow counts when you use its AI."
+    },
+    {
+      "type": "paragraph",
+      "text": "These are not magical website employees. They are better controls for a person who already owns the site."
+    },
+    {
+      "type": "heading",
+      "text": "Giving AI a rulebook is useful. Reviewing the rulebook is the job."
+    },
+    {
+      "type": "paragraph",
+      "text": "A brand guide in Google Drive does not control the website by magic. The same is true for an AI rule file. Someone still has to check the parts, names, CMS fields, and things the business does not want changed."
+    },
+    {
+      "type": "paragraph",
+      "text": "Webflow can draft that context from the site. That saves setup time."
+    },
+    {
+      "type": "paragraph",
+      "text": "Read the draft line by line. If AI writes its own rulebook and nobody checks it, you did not add control. You gave the intern a laminator."
+    },
+    {
+      "type": "paragraph",
+      "text": "The export gives the next person a clearer record of how the site should work. It does not make the whole Webflow site easy to move somewhere else. It just makes the rules easier to keep."
+    },
+    {
+      "type": "heading",
+      "text": "Breakpoints are where “looks good” goes to die"
+    },
+    {
+      "type": "paragraph",
+      "text": "Side-by-side breakpoints solve a very ordinary problem: a change can look correct at one width while breaking the layout somewhere else."
+    },
+    {
+      "type": "paragraph",
+      "text": "That is common when AI edits a site part without knowing every page and screen size where it appears. Seeing several breakpoints at once makes the problem easier to catch."
+    },
+    {
+      "type": "paragraph",
+      "text": "This view helps you review the design. It does not prove the live page works. Webflow says the breakpoint canvas is not available in Preview or Comment mode, so test the final page like a real visitor. Click the buttons. Send the form. Try the phone version."
+    },
+    {
+      "type": "heading",
+      "text": "Who should care"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you already use Webflow and change your site often, these tools are worth a test."
+    },
+    {
+      "type": "paragraph",
+      "text": "You can draft the rules, export them, make one small change, and check several screen sizes before you publish."
+    },
+    {
+      "type": "paragraph",
+      "text": "Now, you should probably keep your current setup if it works and you barely change it. A five-page site with two updates each year does not need a new platform because Webflow made AI easier to watch."
+    },
+    {
+      "type": "paragraph",
+      "text": "You may not need to buy anything at all. The feature should follow the work."
+    },
+    {
+      "type": "heading",
+      "text": "How I would test it"
+    },
+    {
+      "type": "paragraph",
+      "text": "Use a test site or a copy that is not live. Pick one real part that appears in several places."
+    },
+    {
+      "type": "paragraph",
+      "text": "First, generate the [agent instructions](https://help.webflow.com/hc/en-us/articles/52536649709971-Create-and-manage-AI-agent-instructions) and compare them with the actual brand and CMS rules. Remove anything vague. Add the constraints the generator missed. Export a backup."
+    },
+    {
+      "type": "paragraph",
+      "text": "Then make one change with an AI prompt and one small change by hand. Check desktop, tablet, and phone sizes. Test the buttons and forms. Write down the time and cleanup."
+    },
+    {
+      "type": "paragraph",
+      "text": "If that process is faster and catches more problems, keep it. If it creates more cleanup than it saves, stop. You tested a feature. You did not marry it."
+    },
+    {
+      "type": "heading",
+      "text": "What I can prove"
+    },
+    {
+      "type": "paragraph",
+      "text": "Webflow’s current pages confirm these controls exist. I have not run this full test on a live site yet. So I can say they deserve a test. I cannot say they will save time or catch every broken page."
+    },
+    {
+      "type": "paragraph",
+      "text": "If you already use Webflow, test them on one real site part. If your site works and does not change much, stay where you are. If you only need five simple pages, you may not need Webflow or AI at all."
+    },
+    {
+      "type": "paragraph",
+      "text": "The win is not “AI can touch my website.” The win is “I can catch what AI touched before my customers do.”"
+    },
+    {
+      "type": "paragraph",
+      "text": "[Build my StackBrief](/stackbrief) before you rebuild a working site around a new feature."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "Webflow breakpoint update",
+          "url": "https://webflow.com/updates/see-every-breakpoint-while-you-edit"
+        },
+        {
+          "label": "Webflow agent-instructions documentation",
+          "url": "https://help.webflow.com/hc/en-us/articles/52536649709971-Create-and-manage-AI-agent-instructions"
+        },
+        {
+          "label": "Webflow AI-component documentation",
+          "url": "https://help.webflow.com/hc/en-us/articles/51168990228499-Build-AI-code-components"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "consistent-followup",
+    "where-leads-come-from"
+  ],
+  "workflowState": "published"
+}

@@ -5,6 +5,13 @@
     <link>https://stackbriefxp.vercel.app/guides</link>
     <description>Practical business-system decisions from Xavier Pearson.</description>
     <item>
+      <title>Webflow’s New AI Controls Make Bad Changes Easier to Catch</title>
+      <link>https://stackbriefxp.vercel.app/guides/webflow-ai-agent-instructions-breakpoints</link>
+      <guid>https://stackbriefxp.vercel.app/guides/webflow-ai-agent-instructions-breakpoints</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Webflow’s new AI controls make bad site changes easier to catch. That helps current users, but it is not a reason to move a working site.</description>
+    </item>
+    <item>
       <title>Cal.com Free Makes Calendly Free Look Stingy. Your Old Links Are Calendly’s Defense.</title>
       <link>https://stackbriefxp.vercel.app/guides/cal-com-vs-calendly-free</link>
       <guid>https://stackbriefxp.vercel.app/guides/cal-com-vs-calendly-free</guid>
