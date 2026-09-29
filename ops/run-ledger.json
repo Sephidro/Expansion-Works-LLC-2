@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-27T09:16:00Z",
+  "updatedAt": "2026-09-29T09:01:00Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -176,6 +176,35 @@
       ],
       "finalState": "release_pull_request_pending_checks",
       "nextEligibleAction": "After StackBrief QA and Vercel pass and the branch remains current, merge the Cal.com release pull request in a later conductor run; then reverify the Webflow draft and create its Writer handoff."
+    },
+    {
+      "id": "run.2026-09-29.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-09-29T09:01:00Z",
+      "finishedAt": "2026-09-29T09:01:00Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-2026-09-28",
+        "articles-complete-inventory-through-webflow-pass-1",
+        "voice-lab-through-webflow-pass-1",
+        "repository-main-after-pr-7"
+      ],
+      "outputs": [
+        "observed-pr-7-merged-cal-com-release",
+        "cal-com-content-queue-published-reconciliation",
+        "content-queue-nine-article-inventory-reconciled",
+        "webflow-pass-1-ready-for-publish",
+        "articles-doc-copy-revision",
+        "voice-lab-webflow-pass-1",
+        "catalog-queue-hubspot-chatgpt-and-webflow-mcp-added",
+        "catalog-queue-wix-and-cal-com-tests-refreshed",
+        "managed-webflow-article-record",
+        "two-complete-recovered-drafts-remain",
+        "automation-release-branch"
+      ],
+      "finalState": "release_pull_request_pending_generated_commit_and_checks",
+      "nextEligibleAction": "After the content-release workflow commits generated files and every required check passes while the branch remains current, merge the Webflow release pull request in a later conductor run; then run the bounded HubSpot payment-tax voice pass."
     }
   ]
 }
