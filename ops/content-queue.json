@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T09:06:18Z",
+  "updatedAt": "2026-10-01T16:03:11Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -55,12 +55,12 @@
       "id": "content.salesforce-free-suite-vs-spreadsheet",
       "title": "Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet",
       "slug": "salesforce-free-suite-vs-spreadsheet",
-      "status": "drafting",
+      "status": "voice_review",
       "sourceCandidateId": "catalog.salesforce-free-suite",
       "voicePasses": 0,
-      "factsCheckedAt": "2026-09-14",
-      "recoveryState": "complete_draft_recovered_from_articles_document",
-      "nextAction": "Create the matching Writer handoff in Voice Lab with voicePasses 0, then run one bounded voice pass before any release decision."
+      "factsCheckedAt": "2026-10-01",
+      "recoveryState": "writer_handoff_created",
+      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
     },
     {
       "id": "content.hubspot-recorded-meetings-workflow-change",
