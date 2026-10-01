@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.hubspot-payments-tax-processing-fees",
+  "slug": "hubspot-payments-tax-processing-fees",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.",
+  "deck": "HubSpot can now take tax from the fees it charges to process a payment. Your price may stay the same while less money reaches the bank.",
+  "excerpt": "HubSpot’s new tax line can lower the payout without changing the sale. Existing users should update their reports, not rebuild a working payment setup.",
+  "author": "Xavier Pearson",
+  "updated": "2026-10-01",
+  "published": "2026-10-01",
+  "factsChecked": "2026-10-01",
+  "readTimeMinutes": 5,
+  "seoTitle": "HubSpot Payment Fee Taxes: What Changed in Your Payout",
+  "metaDescription": "HubSpot now deducts tax on some platform and payment-processing fees. See what changed, what happens after refunds, and what to check each month.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "HubSpot indirect taxes on payment processing fees",
+      "url": "https://knowledge.hubspot.com/payment-processing/indirect-taxes-on-payment-processing-fees"
+    },
+    {
+      "label": "HubSpot payments account overview",
+      "url": "https://knowledge.hubspot.com/payment-processing/payments-account-overview"
+    },
+    {
+      "label": "HubSpot Payments Terms of Use",
+      "url": "https://legal.hubspot.com/payments-terms-of-use"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "Your customer pays $1,000. HubSpot shows a $1,000 sale. Your bank gets less."
+    },
+    {
+      "type": "paragraph",
+      "text": "Great. Three numbers, one payment, and now you get to solve the mystery."
+    },
+    {
+      "type": "paragraph",
+      "text": "The missing money may be tax on HubSpot’s platform and payment-processing fees. Payment processing is the work behind charging a card or bank account and moving the money to you."
+    },
+    {
+      "type": "paragraph",
+      "text": "My verdict: if you already take payments through HubSpot, keep the setup. Fix the tax details, add the cost to your report, and check the next payout. Do not rebuild your payment system over one tax line."
+    },
+    {
+      "type": "heading",
+      "text": "What changed"
+    },
+    {
+      "type": "paragraph",
+      "text": "HubSpot began this rollout in early August and finished it country by country by the end of the month."
+    },
+    {
+      "type": "paragraph",
+      "text": "The tax can apply to two fees:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Platform fee: what HubSpot charges for using its payment tools.",
+        "Processing fee: what it costs to run the card or bank payment."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "HubSpot says the tax depends on where your business is and its tax status. It uses the main business address saved in your account."
+    },
+    {
+      "type": "paragraph",
+      "text": "The tax comes out of your payout with the other fees. A payout is the money HubSpot sends to your bank after costs are removed."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the sale can be $1,000 while the payout is smaller. That was already normal because of fees. Now some accounts have one more cost to explain."
+    },
+    {
+      "type": "paragraph",
+      "text": "Since September, HubSpot has made a monthly tax invoice available in Account & Billing for affected accounts."
+    },
+    {
+      "type": "heading",
+      "text": "The refund rule is the part people will miss"
+    },
+    {
+      "type": "paragraph",
+      "text": "Let's say a customer pays you, then asks for a refund."
+    },
+    {
+      "type": "paragraph",
+      "text": "HubSpot says it will not return the tax charged on its platform or processing fees when you refund that payment."
+    },
+    {
+      "type": "paragraph",
+      "text": "The sale may be gone. Part of the cost may stay."
+    },
+    {
+      "type": "paragraph",
+      "text": "That matters if you sell something with lots of refunds. Your sales report can show zero revenue from the deal while the bank account still took a small hit."
+    },
+    {
+      "type": "paragraph",
+      "text": "It does not mean HubSpot Payments is bad. It means your report should use the money that came back, not pretend every part of the first payment was erased."
+    },
+    {
+      "type": "heading",
+      "text": "Check these three things"
+    },
+    {
+      "type": "paragraph",
+      "text": "First, check the main business address under Account & Billing. HubSpot uses that address to work out the tax rate. HubSpot says a new rate can take up to one business day to show after an address change."
+    },
+    {
+      "type": "paragraph",
+      "text": "Second, add your tax ID if your account gives you that option. If your business is tax-exempt, send HubSpot a valid exemption form. Do not assume the account knows because your accountant does. The software has not reached that level of awareness. Yet."
+    },
+    {
+      "type": "paragraph",
+      "text": "Third, compare three records each month:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "The customer payment.",
+        "The payout sent to your bank.",
+        "The monthly tax invoice."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Reconcile means making sure those records match and that every gap has a reason. If the payment was $1,000 and the payout was lower, the report should name each fee and tax instead of calling the difference “miscellaneous” and hoping nobody asks."
+    },
+    {
+      "type": "heading",
+      "text": "Who can ignore this"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you do not process payments through HubSpot or through Stripe connected as the payment option inside HubSpot, this change does not matter to you."
+    },
+    {
+      "type": "paragraph",
+      "text": "Using HubSpot as a CRM does not make the tax appear. CRM means customer relationship management software. It is where a business tracks leads and customers."
+    },
+    {
+      "type": "paragraph",
+      "text": "You also do not need a new dashboard for this. Give one person the job of checking the payout and invoice each month. Add the tax line to the report you already use."
+    },
+    {
+      "type": "heading",
+      "text": "What I can prove"
+    },
+    {
+      "type": "paragraph",
+      "text": "HubSpot's current help page says the rollout is complete, monthly tax invoices are available, the rate uses the main business address, the tax comes out of payouts, and that tax is not returned when a customer payment is refunded."
+    },
+    {
+      "type": "paragraph",
+      "text": "I have not checked a live affected account, so I cannot tell you how cleanly the tax appears in every report or accounting tool. That is the test left to run."
+    },
+    {
+      "type": "heading",
+      "text": "My current verdict"
+    },
+    {
+      "type": "paragraph",
+      "text": "Keep HubSpot if the payment path works."
+    },
+    {
+      "type": "paragraph",
+      "text": "Fix the address and tax details. Add the tax to your cost report. Check the next payout against the monthly invoice."
+    },
+    {
+      "type": "paragraph",
+      "text": "Look at another processor only when the full cost or the work around it stops making sense. Switching because one new line exists is not a plan. It is moving houses because the electric bill went up."
+    },
+    {
+      "type": "paragraph",
+      "text": "A small fee with no owner becomes a mystery. A small fee with a clear line in the report becomes bookkeeping."
+    },
+    {
+      "type": "paragraph",
+      "text": "[Build my StackBrief](/stackbrief) if you want the rest of your tools judged by the same rule."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "HubSpot indirect taxes on payment processing fees",
+          "url": "https://knowledge.hubspot.com/payment-processing/indirect-taxes-on-payment-processing-fees"
+        },
+        {
+          "label": "HubSpot payments account overview",
+          "url": "https://knowledge.hubspot.com/payment-processing/payments-account-overview"
+        },
+        {
+          "label": "HubSpot Payments Terms of Use",
+          "url": "https://legal.hubspot.com/payments-terms-of-use"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "consistent-followup",
+    "where-leads-come-from"
+  ],
+  "workflowState": "published"
+}
