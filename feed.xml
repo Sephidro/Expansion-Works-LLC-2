@@ -5,6 +5,13 @@
     <link>https://stackbriefxp.vercel.app/guides</link>
     <description>Practical business-system decisions from Xavier Pearson.</description>
     <item>
+      <title>HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.</title>
+      <link>https://stackbriefxp.vercel.app/guides/hubspot-payments-tax-processing-fees</link>
+      <guid>https://stackbriefxp.vercel.app/guides/hubspot-payments-tax-processing-fees</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <description>HubSpot’s new tax line can lower the payout without changing the sale. Existing users should update their reports, not rebuild a working payment setup.</description>
+    </item>
+    <item>
       <title>Webflow’s New AI Controls Make Bad Changes Easier to Catch</title>
       <link>https://stackbriefxp.vercel.app/guides/webflow-ai-agent-instructions-breakpoints</link>
       <guid>https://stackbriefxp.vercel.app/guides/webflow-ai-agent-instructions-breakpoints</guid>
