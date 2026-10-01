@@ -17,6 +17,7 @@ Company: Expansion Works LLC
 
 ## Guides
 
+- HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.: https://stackbriefxp.vercel.app/guides/hubspot-payments-tax-processing-fees (facts checked 2026-10-01)
 - Webflow’s New AI Controls Make Bad Changes Easier to Catch: https://stackbriefxp.vercel.app/guides/webflow-ai-agent-instructions-breakpoints (facts checked 2026-09-27)
 - Cal.com Free Makes Calendly Free Look Stingy. Your Old Links Are Calendly’s Defense.: https://stackbriefxp.vercel.app/guides/cal-com-vs-calendly-free (facts checked 2026-09-27)
 - Tally Is the First Free Google Forms Upgrade I’d Test: https://stackbriefxp.vercel.app/guides/tally-vs-google-forms-free (facts checked 2026-09-24)

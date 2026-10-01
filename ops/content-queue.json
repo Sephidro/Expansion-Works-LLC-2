@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T09:01:00Z",
+  "updatedAt": "2026-10-01T09:06:18Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -32,22 +32,24 @@
       "id": "content.webflow-ai-agent-instructions-breakpoints",
       "title": "Webflow’s New AI Controls Make Bad Changes Easier to Catch",
       "slug": "webflow-ai-agent-instructions-breakpoints",
-      "status": "ready_for_publish",
+      "status": "published",
       "voicePasses": 1,
       "factsCheckedAt": "2026-09-27",
-      "recoveryState": "voice_pass_1_ready_for_publish",
-      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
-      "releaseDecisionAt": "2026-09-29"
+      "recoveryState": "published_from_recovered_draft",
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
+      "releaseDecisionAt": "2026-09-29",
+      "publishedAt": "2026-09-29"
     },
     {
       "id": "content.hubspot-payments-tax-processing-fees",
       "title": "HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.",
       "slug": "hubspot-payments-tax-processing-fees",
-      "status": "voice_review",
-      "voicePasses": 0,
-      "factsCheckedAt": "2026-09-28",
-      "recoveryState": "writer_handoff_created",
-      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
+      "status": "ready_for_publish",
+      "voicePasses": 1,
+      "factsCheckedAt": "2026-10-01",
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
+      "releaseDecisionAt": "2026-10-01"
     },
     {
       "id": "content.salesforce-free-suite-vs-spreadsheet",
