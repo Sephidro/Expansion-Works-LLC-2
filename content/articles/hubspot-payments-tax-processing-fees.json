@@ -21,7 +21,7 @@
   },
   "sources": [
     {
-      "label": "HubSpot indirect taxes on payment processing fees",
+      "label": "HubSpot payment-fee tax documentation",
       "url": "https://knowledge.hubspot.com/payment-processing/indirect-taxes-on-payment-processing-fees"
     },
     {
@@ -193,7 +193,7 @@
       "type": "sources",
       "items": [
         {
-          "label": "HubSpot indirect taxes on payment processing fees",
+          "label": "HubSpot payment-fee tax documentation",
           "url": "https://knowledge.hubspot.com/payment-processing/indirect-taxes-on-payment-processing-fees"
         },
         {
