@@ -39,47 +39,47 @@
   ],
   "body": [
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "I signed up for Salesforce Free Suite. Within seconds, I had two calls and an email from its small-business team."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "So, yes. Salesforce seems to understand speed to lead."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "Speed to lead means contacting someone while the interest is still hot. Not three days later when they have forgotten your company and started researching air fryers."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "The calls and email used almost the same message. That consistency matters. Salesforce created the lead, routed it to the right team, and gave the rep one clear next step while the signup tab was probably still open."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "It was a good demo of what a CRM is supposed to do before I had really used the CRM."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "It was also aggressive. Two calls within seconds can make a lead feel less like a prospect and more like an escaped prisoner. The lesson is not to chase everyone twice. It is to respond while they still care, keep the message consistent, and make the next step clear."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "There is one more trap before you reach the product. Salesforce uses similar “start free” language for its permanent Free Suite and 30-day trials. I had to look for Free Suite specifically. The direct signup page I used is [Salesforce Free Suite signup](https://www.salesforce.com/crm/free-crm/sign-up-v2/)."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "A trial signup should not charge you automatically without payment details. The real risk is spending 30 days building in the wrong Salesforce product, then learning that it expires."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "My verdict: if two people are losing track of real deals, Salesforce Free Suite has earned a test. If one clean Google Sheet already shows every lead, owner, next step, and due date, keep the Sheet."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "I am testing Salesforce for an extra reason. Knowing the system is part of my work. I need to know where it helps, where it slows down, and where the free plan breaks. That makes Salesforce sensible for me even if it is not the simplest answer for every solo operator."
     },
     {
-      "type": "heading",
+      "type": "paragraph",
       "text": "Welcome to your free CRM. You are now also inside theirs."
     },
     {
