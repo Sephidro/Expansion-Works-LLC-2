@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T16:03:11Z",
+  "updatedAt": "2026-10-02T16:02:42Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -66,11 +66,11 @@
       "id": "content.hubspot-recorded-meetings-workflow-change",
       "title": "HubSpot Stopped Double-Logging Recorded Meetings. Your Old Workflows May Be Waiting for a Record That Never Comes.",
       "slug": "hubspot-recorded-meetings-workflow-change",
-      "status": "drafting",
+      "status": "voice_review",
       "voicePasses": 0,
-      "factsCheckedAt": "2026-09-14",
-      "recoveryState": "complete_draft_recovered_from_articles_document",
-      "nextAction": "Create the matching Writer handoff in Voice Lab with voicePasses 0, then run one bounded voice pass before any release decision."
+      "factsCheckedAt": "2026-10-02",
+      "recoveryState": "writer_handoff_created",
+      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
     },
     {
       "id": "content.docusign-chatgpt",
