@@ -5,6 +5,13 @@
     <link>https://stackbriefxp.vercel.app/guides</link>
     <description>Practical business-system decisions from Xavier Pearson.</description>
     <item>
+      <title>Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet</title>
+      <link>https://stackbriefxp.vercel.app/guides/salesforce-free-suite-vs-spreadsheet</link>
+      <guid>https://stackbriefxp.vercel.app/guides/salesforce-free-suite-vs-spreadsheet</guid>
+      <pubDate>Fri, 02 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Salesforce now offers a real free CRM for two users. The question is whether your pipeline needs the structure or your spreadsheet just needs an owner.</description>
+    </item>
+    <item>
       <title>HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.</title>
       <link>https://stackbriefxp.vercel.app/guides/hubspot-payments-tax-processing-fees</link>
       <guid>https://stackbriefxp.vercel.app/guides/hubspot-payments-tax-processing-fees</guid>
