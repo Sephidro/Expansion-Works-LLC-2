@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T16:03:11Z",
+  "updatedAt": "2026-10-02T09:01:39Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -44,23 +44,25 @@
       "id": "content.hubspot-payments-tax-processing-fees",
       "title": "HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.",
       "slug": "hubspot-payments-tax-processing-fees",
-      "status": "ready_for_publish",
+      "status": "published",
       "voicePasses": 1,
       "factsCheckedAt": "2026-10-01",
-      "recoveryState": "voice_pass_1_ready_for_publish",
-      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
-      "releaseDecisionAt": "2026-10-01"
+      "recoveryState": "published_from_recovered_draft",
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
+      "releaseDecisionAt": "2026-10-01",
+      "publishedAt": "2026-10-01"
     },
     {
       "id": "content.salesforce-free-suite-vs-spreadsheet",
       "title": "Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet",
       "slug": "salesforce-free-suite-vs-spreadsheet",
-      "status": "voice_review",
+      "status": "ready_for_publish",
       "sourceCandidateId": "catalog.salesforce-free-suite",
-      "voicePasses": 0,
+      "voicePasses": 1,
       "factsCheckedAt": "2026-10-01",
-      "recoveryState": "writer_handoff_created",
-      "nextAction": "Run one bounded Voice Lab pass; do not publish until the voice reviewer marks ready_for_publish."
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
+      "releaseDecisionAt": "2026-10-02"
     },
     {
       "id": "content.hubspot-recorded-meetings-workflow-change",
