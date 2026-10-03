@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-02T16:02:42Z",
+  "updatedAt": "2026-10-03T15:58:29Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -108,6 +108,17 @@
       "releaseDecisionAt": "2026-09-22",
       "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
       "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "content.hubspot-chatgpt-connector-write-controls",
+      "title": "HubSpot Can Now Write Back From ChatGPT. Your CRM Rules May Not Come With It.",
+      "slug": "hubspot-chatgpt-connector-write-controls",
+      "status": "voice_review",
+      "sourceCandidateId": "catalog.hubspot-chatgpt-connector",
+      "voicePasses": 0,
+      "factsCheckedAt": "2026-10-03",
+      "recoveryState": "new_article",
+      "nextAction": "Run the first Voice Lab pass. Do not mark ready_for_publish until the voice review accepts the article without weakening the evidence boundary."
     }
   ]
 }
