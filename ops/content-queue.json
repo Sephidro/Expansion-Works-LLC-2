@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-03T15:58:29Z",
+  "updatedAt": "2026-10-04T16:02:18Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -119,6 +119,17 @@
       "factsCheckedAt": "2026-10-03",
       "recoveryState": "new_article",
       "nextAction": "Run the first Voice Lab pass. Do not mark ready_for_publish until the voice review accepts the article without weakening the evidence boundary."
+    },
+    {
+      "id": "content.wix-custom-agent-symphony-migration",
+      "title": "Wix Replaced Its AI Custom Agent for New Accounts. Don’t Migrate Just Because Symphony Is New.",
+      "slug": "wix-custom-agent-symphony-migration",
+      "status": "voice_review",
+      "sourceCandidateId": "catalog.wix-symphony",
+      "voicePasses": 0,
+      "factsCheckedAt": "2026-10-04",
+      "recoveryState": "new_article",
+      "nextAction": "Run one bounded Voice Lab pass. Do not mark ready_for_publish until the review keeps the keep-current path, no-buy path, and evidence boundary intact."
     }
   ]
 }
