@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-02T09:01:39Z",
+  "updatedAt": "2026-10-05T08:57:52Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -68,11 +68,12 @@
       "id": "content.hubspot-recorded-meetings-workflow-change",
       "title": "HubSpot Stopped Double-Logging Recorded Meetings. Your Old Workflows May Be Waiting for a Record That Never Comes.",
       "slug": "hubspot-recorded-meetings-workflow-change",
-      "status": "drafting",
-      "voicePasses": 0,
-      "factsCheckedAt": "2026-09-14",
-      "recoveryState": "complete_draft_recovered_from_articles_document",
-      "nextAction": "Create the matching Writer handoff in Voice Lab with voicePasses 0, then run one bounded voice pass before any release decision."
+      "status": "ready_for_publish",
+      "voicePasses": 1,
+      "factsCheckedAt": "2026-10-02",
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "Release after the open Salesforce automation pull request merges and the article becomes the next eligible queued item.",
+      "releaseDecisionAt": "2026-10-03"
     },
     {
       "id": "content.docusign-chatgpt",
@@ -110,6 +111,30 @@
       "releaseDecisionAt": "2026-09-22",
       "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
       "publishedAt": "2026-09-23"
+    },
+    {
+      "id": "content.hubspot-chatgpt-connector-write-controls",
+      "title": "HubSpot Can Now Write Back From ChatGPT. Your CRM Rules May Not Come With It.",
+      "slug": "hubspot-chatgpt-connector-write-controls",
+      "status": "ready_for_publish",
+      "sourceCandidateId": "catalog.hubspot-chatgpt-connector",
+      "voicePasses": 1,
+      "factsCheckedAt": "2026-10-03",
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "Release after the Salesforce and HubSpot recorded-meetings items clear the queue.",
+      "releaseDecisionAt": "2026-10-04"
+    },
+    {
+      "id": "content.wix-custom-agent-symphony-migration",
+      "title": "Wix Replaced Its AI Custom Agent for New Accounts. Don’t Migrate Just Because Symphony Is New.",
+      "slug": "wix-custom-agent-symphony-migration",
+      "status": "ready_for_publish",
+      "sourceCandidateId": "catalog.wix-symphony",
+      "voicePasses": 1,
+      "factsCheckedAt": "2026-10-04",
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "Release after the earlier ready articles clear the queue.",
+      "releaseDecisionAt": "2026-10-05"
     }
   ]
 }
