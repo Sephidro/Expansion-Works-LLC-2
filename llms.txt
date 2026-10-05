@@ -17,6 +17,7 @@ Company: Expansion Works LLC
 
 ## Guides
 
+- HubSpot Stopped Double-Logging Recorded Meetings. Your Old Workflows May Be Waiting for a Record That Never Comes.: https://stackbriefxp.vercel.app/guides/hubspot-recorded-meetings-workflow-change (facts checked 2026-10-02)
 - Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet: https://stackbriefxp.vercel.app/guides/salesforce-free-suite-vs-spreadsheet (facts checked 2026-10-01)
 - HubSpot Added Tax to Payment Fees. Check Your Payout Before You Blame the Math.: https://stackbriefxp.vercel.app/guides/hubspot-payments-tax-processing-fees (facts checked 2026-10-01)
 - Webflow’s New AI Controls Make Bad Changes Easier to Catch: https://stackbriefxp.vercel.app/guides/webflow-ai-agent-instructions-breakpoints (facts checked 2026-09-27)

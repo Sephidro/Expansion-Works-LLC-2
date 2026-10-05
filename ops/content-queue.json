@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T08:57:52Z",
+  "updatedAt": "2026-10-05T09:16:00Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -56,13 +56,14 @@
       "id": "content.salesforce-free-suite-vs-spreadsheet",
       "title": "Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet",
       "slug": "salesforce-free-suite-vs-spreadsheet",
-      "status": "ready_for_publish",
+      "status": "published",
       "sourceCandidateId": "catalog.salesforce-free-suite",
       "voicePasses": 1,
       "factsCheckedAt": "2026-10-01",
-      "recoveryState": "voice_pass_1_ready_for_publish",
-      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
-      "releaseDecisionAt": "2026-10-02"
+      "recoveryState": "published_from_recovered_draft",
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
+      "releaseDecisionAt": "2026-10-02",
+      "publishedAt": "2026-10-05"
     },
     {
       "id": "content.hubspot-recorded-meetings-workflow-change",
@@ -72,7 +73,7 @@
       "voicePasses": 1,
       "factsCheckedAt": "2026-10-02",
       "recoveryState": "voice_pass_1_ready_for_publish",
-      "nextAction": "Release after the open Salesforce automation pull request merges and the article becomes the next eligible queued item.",
+      "nextAction": "After the content-release workflow commits generated files and every required check passes, merge the automation pull request; then reconcile this item to published.",
       "releaseDecisionAt": "2026-10-03"
     },
     {

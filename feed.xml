@@ -5,6 +5,13 @@
     <link>https://stackbriefxp.vercel.app/guides</link>
     <description>Practical business-system decisions from Xavier Pearson.</description>
     <item>
+      <title>HubSpot Stopped Double-Logging Recorded Meetings. Your Old Workflows May Be Waiting for a Record That Never Comes.</title>
+      <link>https://stackbriefxp.vercel.app/guides/hubspot-recorded-meetings-workflow-change</link>
+      <guid>https://stackbriefxp.vercel.app/guides/hubspot-recorded-meetings-workflow-change</guid>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 GMT</pubDate>
+      <description>HubSpot removed duplicate call records for recorded meetings on August 31. Existing call-based automation and reporting may need a focused repair.</description>
+    </item>
+    <item>
       <title>Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet</title>
       <link>https://stackbriefxp.vercel.app/guides/salesforce-free-suite-vs-spreadsheet</link>
       <guid>https://stackbriefxp.vercel.app/guides/salesforce-free-suite-vs-spreadsheet</guid>
