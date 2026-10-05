@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.salesforce-free-suite-vs-spreadsheet",
+  "slug": "salesforce-free-suite-vs-spreadsheet",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet",
+  "deck": "Salesforce put a real sales pipeline, support cases, reports, basic marketing, and AI in a free two-person account. The question is whether your business needs a CRM or just a cleaner Sheet.",
+  "excerpt": "Salesforce now offers a real free CRM for two users. The question is whether your pipeline needs the structure or your spreadsheet just needs an owner.",
+  "author": "Xavier Pearson",
+  "updated": "2026-10-02",
+  "published": "2026-10-02",
+  "factsChecked": "2026-10-01",
+  "readTimeMinutes": 7,
+  "seoTitle": "Salesforce Free Suite vs. Spreadsheet: When to Test It",
+  "metaDescription": "Salesforce Free Suite supports two users at no cost. See when a small consulting firm should test it, keep a spreadsheet, or prepare to pay.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "Salesforce Free CRM overview",
+      "url": "https://www.salesforce.com/crm/free-crm/"
+    },
+    {
+      "label": "Salesforce Free Suite signup",
+      "url": "https://www.salesforce.com/crm/free-crm/sign-up-v2/"
+    },
+    {
+      "label": "Salesforce small business pricing",
+      "url": "https://www.salesforce.com/small-business/pricing/"
+    },
+    {
+      "label": "Salesforce Free CRM FAQ",
+      "url": "https://www.salesforce.com/crm/free-crm/faq/"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "I signed up for Salesforce Free Suite. Within seconds, I had two calls and an email from its small-business team."
+    },
+    {
+      "type": "paragraph",
+      "text": "So, yes. Salesforce seems to understand speed to lead."
+    },
+    {
+      "type": "paragraph",
+      "text": "Speed to lead means contacting someone while the interest is still hot. Not three days later when they have forgotten your company and started researching air fryers."
+    },
+    {
+      "type": "paragraph",
+      "text": "The calls and email used almost the same message. That consistency matters. Salesforce created the lead, routed it to the right team, and gave the rep one clear next step while the signup tab was probably still open."
+    },
+    {
+      "type": "paragraph",
+      "text": "It was a good demo of what a CRM is supposed to do before I had really used the CRM."
+    },
+    {
+      "type": "paragraph",
+      "text": "It was also aggressive. Two calls within seconds can make a lead feel less like a prospect and more like an escaped prisoner. The lesson is not to chase everyone twice. It is to respond while they still care, keep the message consistent, and make the next step clear."
+    },
+    {
+      "type": "paragraph",
+      "text": "There is one more trap before you reach the product. Salesforce uses similar “start free” language for its permanent Free Suite and 30-day trials. I had to look for Free Suite specifically. The direct signup page I used is [Salesforce Free Suite signup](https://www.salesforce.com/crm/free-crm/sign-up-v2/)."
+    },
+    {
+      "type": "paragraph",
+      "text": "A trial signup should not charge you automatically without payment details. The real risk is spending 30 days building in the wrong Salesforce product, then learning that it expires."
+    },
+    {
+      "type": "paragraph",
+      "text": "My verdict: if two people are losing track of real deals, Salesforce Free Suite has earned a test. If one clean Google Sheet already shows every lead, owner, next step, and due date, keep the Sheet."
+    },
+    {
+      "type": "paragraph",
+      "text": "I am testing Salesforce for an extra reason. Knowing the system is part of my work. I need to know where it helps, where it slows down, and where the free plan breaks. That makes Salesforce sensible for me even if it is not the simplest answer for every solo operator."
+    },
+    {
+      "type": "paragraph",
+      "text": "Welcome to your free CRM. You are now also inside theirs."
+    },
+    {
+      "type": "heading",
+      "text": "The job comes before the logo"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a Working-stage decision for a one- or two-person consulting firm. The job is simple: keep every serious lead visible, show who owns the next move, and make sure follow-up does not disappear."
+    },
+    {
+      "type": "paragraph",
+      "text": "Salesforce starts to matter when your Sheet cannot answer basic questions fast:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Which deals are still alive?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Who needs to follow up?"
+    },
+    {
+      "type": "paragraph",
+      "text": "What is the next step?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Which clients also have open service problems?"
+    },
+    {
+      "type": "paragraph",
+      "text": "If the answers are already clear, you do not need to migrate anything. You need to keep doing the boring thing that works. Congratulations. You escaped a software project."
+    },
+    {
+      "type": "heading",
+      "text": "A spreadsheet can still win"
+    },
+    {
+      "type": "paragraph",
+      "text": "A Sheet is easy to open, easy to change, and hard to blame. For a solo consultant with a short lead list, that may be enough."
+    },
+    {
+      "type": "paragraph",
+      "text": "Keep the Sheet when one person owns follow-up, the list stays current, and every open deal has a next step and date."
+    },
+    {
+      "type": "paragraph",
+      "text": "A CRM starts earning its place when more than one person needs the history, leads arrive from several places, follow-up gets lost, access needs to be controlled, or reporting takes more work than the selling."
+    },
+    {
+      "type": "paragraph",
+      "text": "Moving clean data into a CRM can help. Moving a neglected Sheet into Salesforce gives you professionally organized neglect."
+    },
+    {
+      "type": "heading",
+      "text": "What the free plan actually gives you"
+    },
+    {
+      "type": "paragraph",
+      "text": "Salesforce says Free Suite is free for up to two users. It has no expiration date as long as someone logs in at least once every 60 days."
+    },
+    {
+      "type": "paragraph",
+      "text": "The free plan includes leads, accounts, contacts, opportunities, support cases, task feeds, knowledge tools, reports, dashboards, landing pages, and up to 100 marketing emails each month. It also includes built-in AI for record summaries and email drafts."
+    },
+    {
+      "type": "paragraph",
+      "text": "Salesforce also says the free plan does not include automation or custom objects. Automation means the system does work by itself after something happens. A custom object is a new kind of record you build for your own process."
+    },
+    {
+      "type": "paragraph",
+      "text": "Those limits are not a problem if you only need a clear place to track deals. They become a problem when you expect the free plan to run a custom sales machine."
+    },
+    {
+      "type": "heading",
+      "text": "The upgrade is where the math gets serious"
+    },
+    {
+      "type": "paragraph",
+      "text": "The two-user limit is the first clear stop sign."
+    },
+    {
+      "type": "paragraph",
+      "text": "Starter Suite is currently $25 per user each month and can be billed monthly or yearly. Salesforce says it adds stronger automation, lead routing, and online selling tools."
+    },
+    {
+      "type": "paragraph",
+      "text": "Pro Suite is listed at $100 per user each month. It adds deeper setup options and forecasting, which means estimating future sales from the deals in your pipeline."
+    },
+    {
+      "type": "paragraph",
+      "text": "So, the free two-person CRM can become a $75 monthly system the moment a third person needs the same level of access on Starter. That may be fine. It should not be a surprise after you move years of data."
+    },
+    {
+      "type": "heading",
+      "text": "How I would test it"
+    },
+    {
+      "type": "paragraph",
+      "text": "I would create ten fake deals and make Salesforce prove the whole path:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Capture a lead through a basic landing page."
+    },
+    {
+      "type": "paragraph",
+      "text": "Turn that lead into the right customer and deal records."
+    },
+    {
+      "type": "paragraph",
+      "text": "Add an owner, next step, and due date."
+    },
+    {
+      "type": "paragraph",
+      "text": "Log a call or email and create a follow-up task."
+    },
+    {
+      "type": "paragraph",
+      "text": "Open a support case for an existing client."
+    },
+    {
+      "type": "paragraph",
+      "text": "Build one report that shows every active deal with no next step."
+    },
+    {
+      "type": "paragraph",
+      "text": "Export the data."
+    },
+    {
+      "type": "paragraph",
+      "text": "Add a pretend third user and write down what the upgrade would cost."
+    },
+    {
+      "type": "paragraph",
+      "text": "Then I would run the same ten deals through HubSpot Free and the current Sheet."
+    },
+    {
+      "type": "paragraph",
+      "text": "The winner is the one a real owner can keep accurate on a busy Thursday. It is not the one with the longest page of features."
+    },
+    {
+      "type": "heading",
+      "text": "Who should test it"
+    },
+    {
+      "type": "paragraph",
+      "text": "Test Salesforce Free Suite when two people handle real sales and service work, deals are getting lost, and one shared record would remove confusion."
+    },
+    {
+      "type": "paragraph",
+      "text": "Test it when you may grow into a bigger CRM and want to learn the system before the bill arrives."
+    },
+    {
+      "type": "paragraph",
+      "text": "Keep your Sheet when lead volume is low, one person owns follow-up, and the current list already shows the truth."
+    },
+    {
+      "type": "paragraph",
+      "text": "Buy nothing when the real problem is that nobody follows up. New software cannot assign ownership to a team that keeps avoiding the job."
+    },
+    {
+      "type": "heading",
+      "text": "What I can prove"
+    },
+    {
+      "type": "paragraph",
+      "text": "Salesforce's current pages confirm the two-user limit, the 60-day login rule, the included sales and service records, 100 monthly marketing emails, built-in AI, and the current Starter and Pro prices."
+    },
+    {
+      "type": "paragraph",
+      "text": "I have not run the ten-deal test yet. I cannot tell you whether Free Suite is easier to maintain than HubSpot Free or a well-built Sheet in a real consulting firm. That is the test left to run."
+    },
+    {
+      "type": "heading",
+      "text": "My current verdict"
+    },
+    {
+      "type": "paragraph",
+      "text": "Salesforce Free Suite belongs in the StackBrief test queue for two-person firms with real deal volume and a reason to keep sales and service work together."
+    },
+    {
+      "type": "paragraph",
+      "text": "But do not move because Salesforce finally put a $0 sign on the door."
+    },
+    {
+      "type": "paragraph",
+      "text": "Keep the Sheet if it already shows every deal, owner, next step, and outcome. Test the CRM when the Sheet stops doing that job."
+    },
+    {
+      "type": "paragraph",
+      "text": "The free plan removes the entry price. It does not remove the work of keeping records useful."
+    },
+    {
+      "type": "paragraph",
+      "text": "Build my StackBrief before you turn a follow-up problem into a Salesforce project."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "Salesforce Free CRM overview",
+          "url": "https://www.salesforce.com/crm/free-crm/"
+        },
+        {
+          "label": "Salesforce Free Suite signup",
+          "url": "https://www.salesforce.com/crm/free-crm/sign-up-v2/"
+        },
+        {
+          "label": "Salesforce small business pricing",
+          "url": "https://www.salesforce.com/small-business/pricing/"
+        },
+        {
+          "label": "Salesforce Free CRM FAQ",
+          "url": "https://www.salesforce.com/crm/free-crm/faq/"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "which-crm-fits",
+    "consistent-followup"
+  ],
+  "workflowState": "published"
+}

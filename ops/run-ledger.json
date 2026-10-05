@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T09:06:18Z",
+  "updatedAt": "2026-10-05T08:57:52Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -231,6 +231,62 @@
       ],
       "finalState": "release_pull_request_pending_generated_commit_and_checks",
       "nextEligibleAction": "After the content-release workflow commits generated files and all required checks pass on the new pull request, merge it in a later conductor run, then reconcile the HubSpot article to published."
+    },
+    {
+      "id": "run.2026-10-02.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-10-02T09:01:39Z",
+      "finishedAt": "2026-10-02T09:01:39Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-through-2026-09-28",
+        "articles-salesforce-free-suite-vs-spreadsheet",
+        "voice-lab-through-salesforce-pass-1",
+        "repository-main-326fe6b377217255f38e12acdf489ec5952ddbd0",
+        "xavier-firsthand-salesforce-signup-observation"
+      ],
+      "outputs": [
+        "observed-pr-9-merged",
+        "hubspot-payment-fee-tax-content-queue-published-reconciliation",
+        "salesforce-free-suite-voice-pass-1-ready-for-publish",
+        "articles-doc-copy-revision",
+        "voice-lab-salesforce-pass-1",
+        "catalog-queue-verified-current",
+        "managed-salesforce-free-suite-article-record",
+        "one-complete-recovered-draft-remains",
+        "automation-release-branch"
+      ],
+      "finalState": "release_pull_request_pending_generated_commit_and_checks",
+      "nextEligibleAction": "After the content-release workflow commits generated files and every required check passes while the branch remains current, merge the Salesforce release pull request in a later conductor run; then create the HubSpot recorded-meetings Writer handoff."
+    },
+    {
+      "id": "run.2026-10-05.voice-conductor",
+      "worker": "stackbrief-voice-conductor",
+      "startedAt": "2026-10-05T08:57:52Z",
+      "finishedAt": "2026-10-05T08:57:52Z",
+      "status": "completed",
+      "inputs": [
+        "stackbrief-operating-doctrine-v2",
+        "radar-queue-through-2026-10-04",
+        "articles-complete-inventory-through-wix-symphony",
+        "voice-lab-through-wix-symphony-pass-1",
+        "repository-main-7e355b7f36474441b96a76de0cd398240798ee71",
+        "automation-pr-10"
+      ],
+      "outputs": [
+        "pr-10-reconciled-with-main",
+        "complete-article-inventory-reconciled",
+        "hubspot-recorded-meetings-ready-for-publish",
+        "hubspot-chatgpt-connector-ready-for-publish",
+        "wix-symphony-voice-pass-1-ready-for-publish",
+        "articles-doc-copy-revision",
+        "voice-lab-wix-symphony-pass-1",
+        "catalog-queue-verified-current",
+        "zero-recovered-drafts-remain"
+      ],
+      "finalState": "existing_release_pull_request_pending_fresh_stackbrief_qa_approval_and_checks",
+      "nextEligibleAction": "Approve the fresh StackBrief QA run on PR #10, then merge only after every required check passes while the branch remains current."
     }
   ]
 }
