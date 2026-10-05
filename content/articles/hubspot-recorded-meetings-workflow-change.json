@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "guide.hubspot-recorded-meetings-workflow-change",
+  "slug": "hubspot-recorded-meetings-workflow-change",
+  "status": "published",
+  "managed": true,
+  "category": "Software",
+  "title": "HubSpot Stopped Double-Logging Recorded Meetings. Your Old Workflows May Be Waiting for a Record That Never Comes.",
+  "deck": "Recorded meetings now create a meeting record instead of both a meeting and a call. The cleanup makes sense, but call-based workflows and reports may need a repair.",
+  "excerpt": "HubSpot removed duplicate call records for recorded meetings on August 31. Existing call-based automation and reporting may need a focused repair.",
+  "author": "Xavier Pearson",
+  "updated": "2026-10-05",
+  "published": "2026-10-05",
+  "factsChecked": "2026-10-02",
+  "readTimeMinutes": 5,
+  "seoTitle": "HubSpot Recorded Meetings Change: Fix Workflows and Reports",
+  "metaDescription": "HubSpot recorded meetings now create meeting records only. Check call-based workflows, reports, integrations, transcripts, and follow-up after the change.",
+  "cta": {
+    "label": "Build my StackBrief",
+    "href": "/stackbrief"
+  },
+  "sources": [
+    {
+      "label": "HubSpot recorded-meeting migration guide",
+      "url": "https://knowledge.hubspot.com/meetings-tool/recorded-meetings-will-no-longer-create-duplicate-call-records"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "text": "HubSpot cleaned up duplicate meeting records. If your follow-up still waits for a call record, it may now wait forever."
+    },
+    {
+      "type": "paragraph",
+      "text": "On August 31, HubSpot changed how recorded meetings are logged. Meetings recorded through HubSpot Notetaker or its Zoom, Microsoft Teams, and Google Meet integrations now create a meeting record only. Before the change, the same interaction created both a meeting record and a call record."
+    },
+    {
+      "type": "paragraph",
+      "text": "Actual phone calls still create call records. Historical records remain. For recorded meetings, transcripts, recordings, summaries, and relevant properties now live on the meeting record."
+    },
+    {
+      "type": "paragraph",
+      "text": "My verdict: keep HubSpot. Repair any workflow, report, or integration that depended on the old call record. Do not buy another meeting tool to fix a record change."
+    },
+    {
+      "type": "callout",
+      "text": "A recorded meeting can look complete while the next action, report, or integration quietly waits for a call record that will never arrive."
+    },
+    {
+      "type": "heading",
+      "text": "Who should check this"
+    },
+    {
+      "type": "paragraph",
+      "text": "This matters to Working and Growing firms that record sales or client meetings in HubSpot and use those records to trigger follow-up, feed a report, update an integration, or surface transcripts."
+    },
+    {
+      "type": "paragraph",
+      "text": "HubSpot says you may be affected if a workflow starts when a call is created, if a report uses call or engagement activity to count recorded meetings, or if an integration looks for call properties such as transcript status."
+    },
+    {
+      "type": "paragraph",
+      "text": "If recorded meetings only sit on the contact timeline and nobody built logic around call records, you may have nothing to fix. Do not turn a relevant warning for someone else into a weekend project for yourself."
+    },
+    {
+      "type": "heading",
+      "text": "The repair is inside HubSpot"
+    },
+    {
+      "type": "paragraph",
+      "text": "Start with workflows that use call-based triggers or properties. Separate actual phone-call logic from recorded-meeting logic. Rebuild the meeting path with meeting-based triggers and meeting properties where needed. HubSpot notes that meeting-based workflows may still require access to its Meetings in Workflows beta."
+    },
+    {
+      "type": "paragraph",
+      "text": "Then inspect activity reports. A report filtered on calls may show a drop after August 31 because HubSpot stopped creating the duplicate call record. Change the filter to use meeting data where appropriate, then validate the count against a small set of known recordings."
+    },
+    {
+      "type": "paragraph",
+      "text": "Finally, change any habit or internal link that sends the team to the call index for recordings and transcripts. HubSpot now directs users to the meeting index for recorded meetings."
+    },
+    {
+      "type": "heading",
+      "text": "Test one meeting from beginning to end"
+    },
+    {
+      "type": "paragraph",
+      "text": "Record one internal test meeting through the same connection your team normally uses. Confirm that the meeting record appears, the transcript and recording land where expected, the right workflow fires, the follow-up task is created, and the activity reaches the report."
+    },
+    {
+      "type": "paragraph",
+      "text": "Do not stop at seeing the recording. The operating job is preserving the next action after the meeting. A clean meeting record that never produces follow-up is still a clean dead end."
+    },
+    {
+      "type": "paragraph",
+      "text": "Also compare reporting before and after August 31. HubSpot says it copied key properties from historical call records to their associated meeting records where applicable, while leaving the old call records in place. Any trend line that spans the change deserves a quick definition check."
+    },
+    {
+      "type": "heading",
+      "text": "Keep HubSpot. Repair the object."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a keep-current issue for an existing HubSpot setup. The breakpoint is a workflow, report, or integration that depended on the old call record. Fix that dependency and keep the platform if the rest of the lead path works."
+    },
+    {
+      "type": "paragraph",
+      "text": "The no-buy path is straightforward: do not add another meeting tool to repair a HubSpot record change. Give the meeting object the job the call object used to perform, then test the handoff."
+    },
+    {
+      "type": "paragraph",
+      "text": "If meetings are only one of several places where opportunities lose their next action, [build a StackBrief](https://stackbriefxp.vercel.app/stackbrief) and find the first break worth fixing."
+    },
+    {
+      "type": "paragraph",
+      "text": "Evidence boundary: HubSpot’s current documentation confirms the meeting-only record, the workflow and reporting changes, the historical property copy, and private recording URLs that require authenticated access for custom integrations. I have not tested an affected live HubSpot account, so this is a source-backed repair plan, not a claim that every migration path has been proven."
+    },
+    {
+      "type": "paragraph",
+      "text": "If a custom integration downloads or processes recordings, update it to retrieve a secure signed URL through HubSpot’s API and test its permissions before relying on it."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "HubSpot recorded-meeting migration guide",
+          "url": "https://knowledge.hubspot.com/meetings-tool/recorded-meetings-will-no-longer-create-duplicate-call-records"
+        }
+      ]
+    }
+  ],
+  "related": [
+    "consistent-followup",
+    "salesforce-free-suite-vs-spreadsheet"
+  ],
+  "workflowState": "published"
+}

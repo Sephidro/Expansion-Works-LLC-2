@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T08:57:52Z",
+  "updatedAt": "2026-10-05T09:16:00Z",
   "runs": [
     {
       "id": "run.2026-09-20.foundation",
@@ -276,6 +276,8 @@
       ],
       "outputs": [
         "pr-10-reconciled-with-main",
+        "pr-10-merged-after-stackbrief-qa-and-vercel-passed",
+        "salesforce-content-queue-published-reconciliation",
         "complete-article-inventory-reconciled",
         "hubspot-recorded-meetings-ready-for-publish",
         "hubspot-chatgpt-connector-ready-for-publish",
@@ -283,10 +285,12 @@
         "articles-doc-copy-revision",
         "voice-lab-wix-symphony-pass-1",
         "catalog-queue-verified-current",
-        "zero-recovered-drafts-remain"
+        "zero-recovered-drafts-remain",
+        "managed-hubspot-recorded-meetings-article-record",
+        "automation-release-branch"
       ],
-      "finalState": "existing_release_pull_request_pending_fresh_stackbrief_qa_approval_and_checks",
-      "nextEligibleAction": "Approve the fresh StackBrief QA run on PR #10, then merge only after every required check passes while the branch remains current."
+      "finalState": "hubspot_recorded_meetings_release_pull_request_pending_generated_commit_and_checks",
+      "nextEligibleAction": "After the content-release workflow commits generated files and every required check passes while the branch remains current, merge the HubSpot recorded-meetings release pull request in a later conductor run."
     }
   ]
 }
