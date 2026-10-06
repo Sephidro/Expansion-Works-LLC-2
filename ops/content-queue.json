@@ -73,7 +73,7 @@
       "voicePasses": 1,
       "factsCheckedAt": "2026-10-02",
       "recoveryState": "voice_pass_1_ready_for_publish",
-      "nextAction": "Release after the open Salesforce automation pull request merges and the article becomes the next eligible queued item.",
+      "nextAction": "Bring PR #11 current with main, re-run every required check, and merge only if the branch becomes mergeable with all checks passing.",
       "releaseDecisionAt": "2026-10-03"
     },
     {
