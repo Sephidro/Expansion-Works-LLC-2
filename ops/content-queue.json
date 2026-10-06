@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06T09:02:17Z",
+  "updatedAt": "2026-10-06T16:03:29Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -148,6 +148,17 @@
       "recoveryState": "voice_pass_1_ready_for_publish",
       "nextAction": "Keep queued behind the existing HubSpot recorded-meetings release pull request; release only after that PR is current, mergeable, and merged with every required check passing.",
       "releaseDecisionAt": "2026-10-06"
+    },
+    {
+      "id": "content.webflow-mcp-interactions-maintenance",
+      "title": "Webflow’s MCP Can Animate the Site Now. That Makes the Handoff Question More Important.",
+      "slug": "webflow-mcp-interactions-maintenance",
+      "status": "voice_review",
+      "sourceCandidateId": "catalog.webflow-mcp-maintenance",
+      "voicePasses": 0,
+      "factsCheckedAt": "2026-10-06",
+      "recoveryState": "new_writer_draft",
+      "nextAction": "Run Voice Lab pass 1. Preserve the early test/keep/no-buy verdict and keep the handoff test concrete."
     }
   ]
 }
