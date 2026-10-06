@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T16:01:41Z",
+  "updatedAt": "2026-10-06T09:02:17Z",
   "items": [
     {
       "id": "content.tally-free-upgrade",
@@ -56,13 +56,14 @@
       "id": "content.salesforce-free-suite-vs-spreadsheet",
       "title": "Salesforce Finally Has a Free CRM I Want to Stress-Test Against a Spreadsheet",
       "slug": "salesforce-free-suite-vs-spreadsheet",
-      "status": "ready_for_publish",
+      "status": "published",
       "sourceCandidateId": "catalog.salesforce-free-suite",
       "voicePasses": 1,
       "factsCheckedAt": "2026-10-01",
-      "recoveryState": "voice_pass_1_ready_for_publish",
-      "nextAction": "After the content-release workflow commits generated files and all required checks pass, merge the automation pull request; then reconcile this item to published.",
-      "releaseDecisionAt": "2026-10-02"
+      "recoveryState": "published_from_ready_release",
+      "nextAction": "Distribute the approved guide, then collect visits, StackBrief starts, completions, qualified offers, and paid outcomes when available.",
+      "releaseDecisionAt": "2026-10-02",
+      "publishedAt": "2026-10-05"
     },
     {
       "id": "content.hubspot-recorded-meetings-workflow-change",
@@ -140,12 +141,13 @@
       "id": "content.elementor-mcp-wordpress-maintenance",
       "title": "Elementor MCP Makes WordPress Faster. I Still Wouldn’t Aim It at Production First.",
       "slug": "elementor-mcp-wordpress-maintenance",
-      "status": "voice_review",
+      "status": "ready_for_publish",
       "sourceCandidateId": "catalog.elementor-mcp",
-      "voicePasses": 0,
+      "voicePasses": 1,
       "factsCheckedAt": "2026-10-05",
-      "recoveryState": "new_writer_draft",
-      "nextAction": "Run Voice Lab pass 1 against the new draft; preserve the staging-first evidence boundary and do not mark ready_for_publish unless the voice review accepts it."
+      "recoveryState": "voice_pass_1_ready_for_publish",
+      "nextAction": "Keep queued behind the existing HubSpot recorded-meetings release pull request; release only after that PR is current, mergeable, and merged with every required check passing.",
+      "releaseDecisionAt": "2026-10-06"
     }
   ]
 }
