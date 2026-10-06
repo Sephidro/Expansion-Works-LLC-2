@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T09:01:00Z",
+  "updatedAt": "2026-10-06T09:02:17Z",
   "candidates": [
     {
       "id": "catalog.tally",
@@ -45,11 +45,11 @@
     {
       "id": "catalog.docusign-chatgpt",
       "name": "Docusign in ChatGPT",
-      "status": "source_verified",
-      "sourceVerifiedAt": "2026-09-21",
-      "notBefore": "2026-09-30",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-10-05",
+      "notBefore": null,
       "testQuestion": "Does the released integration shorten agreement preparation without weakening review or auditability?",
-      "nextAction": "On or after September 30, reverify general availability, then use three dummy agreements to test retrieval scope, renewal detection, NDA preparation, approval gating, activity history, revocation, and export."
+      "nextAction": "Use three dummy agreements to test retrieval scope, renewal detection, NDA preparation, approval gating, activity history, revocation, and export."
     },
     {
       "id": "catalog.highlevel-jotform-workflows",
@@ -82,6 +82,32 @@
       "sourceVerifiedAt": "2026-09-28",
       "testQuestion": "Can an owner or operator safely complete recurring Webflow maintenance through MCP without uncontrolled production access or hidden Designer dependencies?",
       "nextAction": "Test one GSAP interaction, a filtered CMS update, a localized-item failure, permission review, revocation, and agent-instruction export on a non-production site."
+    },
+    {
+      "id": "catalog.elementor-mcp",
+      "name": "Elementor MCP maintenance workflow",
+      "status": "test_queued",
+      "sourceVerifiedAt": "2026-10-05",
+      "testQuestion": "Can an existing Elementor operator complete recurring page, theme, dynamic-content, and WordPress maintenance through MCP without uncontrolled administrator access, broken native structure, or hidden Angie dependencies?",
+      "nextAction": "On a staging site, test one new Atomic page, one existing-page edit, one theme part, one dynamic field, one Angie-dependent bulk task, draft behavior, conflict handling, credential revocation, and export.",
+      "affectedPublicCatalogEntry": "wordpressElementor",
+      "primarySourceUrls": [
+        "https://elementor.com/blog/elementor-mcp-launch/",
+        "https://elementor.com/pricing/",
+        "https://wordpress.org/about/license/"
+      ]
+    },
+    {
+      "id": "catalog.wordpress-elementor-pricing",
+      "name": "WordPress + Elementor public price correction",
+      "status": "source_verified",
+      "sourceVerifiedAt": "2026-10-05",
+      "testQuestion": "Does the active catalog state the current minimum Elementor Pro price without implying that paid Elementor is required for every site?",
+      "nextAction": "Correct the public catalog minimum Elementor Pro price from $49 per year to $59 per year in a protected review; keep Elementor Free as the no-buy path.",
+      "affectedPublicCatalogEntry": "wordpressElementor",
+      "primarySourceUrls": [
+        "https://elementor.com/pricing/"
+      ]
     }
   ]
 }
