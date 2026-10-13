@@ -219,3 +219,6 @@
 @media(prefers-reduced-motion:reduce) {
  .plan-ready .plan-card:not([hidden]) * { animation:none!important; }
 }
+
+.plan-playback { display:flex; align-items:center; gap:16px; }
+.plan-playback button { color:#c2dfe8; }
