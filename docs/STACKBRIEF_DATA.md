@@ -5,7 +5,7 @@ StackBrief uses browser storage to preserve an unfinished brief and carry a comp
 ## Versions
 
 - Funnel utility: `1.0.0`
-- Quiz ruleset: `2026-08-13.1`
+- Quiz ruleset: `2026-10-13.1`
 - Product catalog: `2026-08-11.1`
 
 Changing question IDs or recommendation behavior should increment the ruleset. Changing vendor facts or destinations should increment the catalog.
@@ -79,3 +79,15 @@ The intended paid flow preserves `stackbrief_id` through:
 7. Diagnostic or installation revenue.
 
 The current Formspree request step does not complete this join. It remains a temporary handoff until payment and scheduling credentials are connected.
+
+## October 13 rule-based repair release
+
+`assets/stackbrief-rules.js` contains nine process questions and authored result modules. `assets/stackbrief.js` renders them immediately without a scan, API, or free manual review. Catalog facts and affiliate relationships do not control the result. Low inquiries do not prove low traffic or poor conversion. Specific reported defects can be repaired while demand remains uncertain.
+
+The existing storage keys, brief ID, and attribution remain. Sessions from older rulesets restart rather than mixing incompatible answers. Results can be copied or downloaded. Email delivery is not connected or advertised.
+
+The service form accepts implementation, optional review, or diagnostic inquiries. Direct buyers do not need a quiz. A matching browser-local result is attached only when the visitor follows the result handoff. Answers are not placed in the URL. No test lead was submitted.
+
+Paid fit requires reported repair evidence, five or more inquiries, at least $5,000 customer value, and an implementation-help preference. This is screening logic, not proof of ROI. Other visitors retain useful materials and can visit the service page directly.
+
+Public offer uses Customer Journey Repair as its working name, existing installation range and 50/50 payment structure. Exact scope, dates, support, and failure remedy must be settled in the proposal. No new universal timeline or revenue guarantee is published.
