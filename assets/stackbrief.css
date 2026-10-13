@@ -892,3 +892,5 @@ h3 { font-size: 25px; font-weight: 800; line-height: 1; }
  .scan-page .hero { padding-top: 38px; }
  .scan-page .hero h1 { font-size: 44px; }
 }
+
+.scan-page .result-block.scan-details { min-height: 0; }

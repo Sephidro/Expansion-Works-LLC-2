@@ -14,11 +14,9 @@
   if (!panel || !form) return;
 
   const title = document.createElement('h3');
-  title.textContent = result.constraint
-    ? `Your “${result.constraint.title}” StackBrief is attached.`
-    : `Your “${result.planTitle}” StackBrief is attached.`;
+  title.textContent = 'Your StackBrief is attached.';
   const summary = document.createElement('p');
-  summary.textContent = 'Your answers and first-action materials are attached to this inquiry. Add the current tools and anything the result missed.';
+  summary.textContent = 'Add anything it missed.';
   const list = document.createElement('ul');
   if (result.constraint) {
     const item = document.createElement('li');
