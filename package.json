@@ -7,6 +7,7 @@
     "check:content": "node tools/build-content.mjs --check",
     "check:ops": "node tools/validate-ops.mjs",
     "qa": "node tools/qa-check.mjs",
-    "test": "npm run check:content && npm run check:ops && npm run qa"
+    "test": "npm run check:content && npm run check:ops && npm run qa && npm run test:diagnostic",
+    "test:diagnostic": "node tools/test-stackbrief-rules.mjs"
   }
 }

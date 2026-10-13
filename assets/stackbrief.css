@@ -821,3 +821,20 @@ h3 { font-size: 25px; font-weight: 800; line-height: 1; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Rule-based repair materials. Keep existing branding and page structure. */
+.quiz-panel-focus .answer-option strong { font-size: 16px; }
+.diagnostic-boundary { color: #b3c4ce; font-size: 16px; line-height: 1.6; margin: 20px 0; }
+.diagnostic-why { margin: 24px 0; padding: 18px; border: 1px solid #254258; }
+.diagnostic-why summary { cursor: pointer; font-weight: 600; }
+.diagnostic-why li { margin-top: 16px; }
+.repair-material { margin: 28px 0; padding: clamp(18px, 3vw, 28px); background: #0a1c2c; border-left: 3px solid #11c8e8; }
+.repair-material h3, .result-block h3 { font-size: 24px; margin-bottom: 14px; }
+.repair-material pre { white-space: pre-wrap; overflow-wrap: anywhere; font: 16px/1.7 var(--body, Inter, sans-serif); color: #f4f6f7; margin: 20px 0; }
+.repair-material p, .result-block p { font-size: 16px; line-height: 1.7; }
+.answer-option[aria-pressed="true"] { border-color: #11c8e8; background: #123244; }
+.result-actions { flex-wrap: wrap; }
+.result-actions button { min-height: 44px; }
+@media (max-width: 700px) { .quiz-panel-focus .answer-option strong { font-size: 16px; } .repair-material pre { font-size: 16px; } }
+
+.stack-demo-steps { display: flex; gap: 12px; align-items: center; justify-content: center; color: var(--cyan); font-family: var(--mono); }

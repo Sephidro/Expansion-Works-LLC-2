@@ -18,9 +18,7 @@
     ? `Your “${result.constraint.title}” StackBrief is attached.`
     : `Your “${result.planTitle}” StackBrief is attached.`;
   const summary = document.createElement('p');
-  summary.textContent = result.constraint
-    ? 'I already have the client value, lead volume, first problem to fix, and 14-day test. Start with anything the brief missed or anything that has changed.'
-    : `I already have your answers and ${result.recommendations.length} system decisions. Start with anything the brief missed or anything that has changed.`;
+  summary.textContent = 'Your answers and first-action materials are attached to this inquiry. Add the current tools and anything the result missed.';
   const list = document.createElement('ul');
   if (result.constraint) {
     const item = document.createElement('li');
@@ -53,7 +51,7 @@
   }
 
   const source = form.querySelector('input[name="source"]');
-  if (source) source.value = 'StackBrief qualified Build Review handoff';
+  if (source) source.value = 'StackBrief implementation inquiry handoff';
   addHidden('stackbrief_id', result.briefId);
   addHidden('stackbrief_ruleset', result.rulesetVersion);
   addHidden('stackbrief_route', result.route);
