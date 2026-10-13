@@ -2,28 +2,85 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/qualify", "destination": "/stackbrief", "permanent": true },
-    { "source": "/qualify.html", "destination": "/stackbrief", "permanent": true },
-    { "source": "/audit-request", "destination": "/stackbrief", "permanent": true },
-    { "source": "/audit-request.html", "destination": "/stackbrief", "permanent": true }
+    {
+      "source": "/qualify",
+      "destination": "/stackbrief",
+      "permanent": true
+    },
+    {
+      "source": "/qualify.html",
+      "destination": "/stackbrief",
+      "permanent": true
+    },
+    {
+      "source": "/audit-request",
+      "destination": "/stackbrief",
+      "permanent": true
+    },
+    {
+      "source": "/audit-request.html",
+      "destination": "/stackbrief",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/sales", "destination": "/sales.html" },
-    { "source": "/stackbrief", "destination": "/stackbrief.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/crm-or-spreadsheet-for-consultants", "destination": "/crm-or-spreadsheet-for-consultants.html" },
-    { "source": "/guides", "destination": "/guides/index.html" },
-    { "source": "/guides/:slug", "destination": "/guides/:slug.html" },
-    { "source": "/tools/:slug", "destination": "/tools/:slug.html" },
-    { "source": "/work/:slug", "destination": "/work/:slug.html" }
+    {
+      "source": "/sales",
+      "destination": "/sales.html"
+    },
+    {
+      "source": "/stackbrief",
+      "destination": "/stackbrief.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/crm-or-spreadsheet-for-consultants",
+      "destination": "/crm-or-spreadsheet-for-consultants.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides/index.html"
+    },
+    {
+      "source": "/guides/:slug",
+      "destination": "/guides/:slug.html"
+    },
+    {
+      "source": "/tools/:slug",
+      "destination": "/tools/:slug.html"
+    },
+    {
+      "source": "/work/:slug",
+      "destination": "/work/:slug.html"
+    },
+    {
+      "source": "/repair-terms",
+      "destination": "/repair-terms.html"
+    },
+    {
+      "source": "/onboarding",
+      "destination": "/onboarding.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     }
   ]

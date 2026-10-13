@@ -91,3 +91,7 @@ The service form accepts implementation, optional review, or diagnostic inquirie
 Paid fit requires reported repair evidence, five or more inquiries, at least $5,000 customer value, and an implementation-help preference. This is screening logic, not proof of ROI. Other visitors retain useful materials and can visit the service page directly.
 
 Public offer uses Customer Journey Repair as its working name, existing installation range and 50/50 payment structure. Exact scope, dates, support, and failure remedy must be settled in the proposal. No new universal timeline or revenue guarantee is published.
+
+## BANT deposit route
+
+Xavier selected the $4,000 standard package and $2,000 deposit via the existing Square account. /sales now uses need, budget, authority, timing, and scope questions. Answers stay locally in repair_fit_v1 until a deliberate onboarding submission. Low-fit visitors receive free resources without a sales form. Checkout receives payment/contact data directly in Square; card details never enter the site. The real Square-hosted checkout redirects to /onboarding after payment. The page does not assert paid status. Every onboarding record is unverified until matched in Square. No payment webhooks or automatic project activation are claimed.

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Customer Journey Repair | Expansion Works</title>
-  <meta name="description" content="Repair one buying journey: relevant pages, inquiry capture, routing, booking, and follow-up. $4,000–$7,500 after scope confirmation.">
+  <meta name="description" content="Repair one buying journey: relevant pages, inquiry capture, routing, booking, and follow-up. $4,000 fixed package with a $2,000 deposit.">
   <meta name="theme-color" content="#06111f">
   <link rel="canonical" href="https://stackbriefxp.vercel.app/sales">
   <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
     "offers": [
       { "@type": "Offer", "name": "StackBrief Build Review", "price": "300", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Last 10 Leads Diagnostic", "price": "1500", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Customer Journey Repair", "priceCurrency": "USD", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "4000", "maxPrice": "7500", "priceCurrency": "USD" } }
+      { "@type": "Offer", "name": "Customer Journey Repair", "price": "4000", "priceCurrency": "USD" }
     ]
   }
   </script>
@@ -42,8 +42,8 @@
   <script defer src="/_vercel/insights/script.js"></script>
   <script src="/assets/funnel.js" defer></script>
   <script src="/assets/stackbrief.js" defer></script>
-  <script src="/assets/stackbrief-handoff.js" defer></script>
-  <script src="/assets/service-form.js" defer></script>
+  <script src="/assets/repair-fit-rules.js" defer></script>
+  <script src="/assets/repair-fit.js" defer></script>
 </head>
 <body class="scan-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -64,63 +64,31 @@
   </header>
 
   <main id="main">
-    <section class="service-hero">
-      <div class="service-hero-copy">
-        <h1>Keep inquiries moving toward a booking or decision</h1>
-        <p>Customer Journey Repair · $4,000–$7,500 after scope confirmation.</p>
-        <p>Get your pages, forms, and booking repaired, plus automated confirmations and agreed follow-up. Your team handles prospect conversations.</p>
-        <div class="hero-actions"><a class="button" href="#apply" data-intent="implementation">Get my project scoped →</a></div>
-      </div>
-      <div class="service-hero-visual"><img src="/assets/xavier-headshot.png" alt="Xavier Pearson, founder of Expansion Works"><div class="service-callout"><span>CUSTOMER JOURNEY REPAIR</span><strong>A CLEAR NEXT STEP.<br>A WORKING HANDOFF.</strong></div></div>
+    <section class="service-hero"><div class="service-hero-copy">
+      <h1>Keep inquiries moving toward a booking or decision</h1>
+      <p>Get one inquiry path repaired, connected, and tested. Your team handles the prospect conversations.</p>
+      <p class="offer-price">$4,000 <span>fixed package</span></p><p>$2,000 deposit. Final $2,000 after the agreed tests pass.</p>
+      <div class="hero-actions"><a class="button" href="#apply">Check my fit →</a></div>
+    </div><div class="service-hero-visual"><img src="/assets/xavier-headshot.png" alt="Xavier Pearson, founder of Expansion Works"></div></section>
+    <section id="offers" class="section offers-section"><h2>What your $4,000 gets you</h2>
+      <div class="offer-grid"><article class="offer-card offer-featured"><h3>Customer Journey Repair</h3>
+        <ul><li>One existing page and one form or booking step repaired</li><li>Inquiries routed to a named owner and shared record</li><li>Automatic confirmation and one follow-up sequence, up to four messages</li><li>Reply, booking, opt-out, and closed-outcome exits</li><li>A visible owner, next action, and due date</li><li>End-to-end tests, an operating guide, and one team handoff</li></ul>
+      </article><div><h3>One defined path. Less setup work for you.</h3><p>One service. Up to two existing systems and two connections. Your accounts where supported.</p><p>Provide access, approve the wording, and name the person who handles prospects.</p><a class="button" href="#apply">Check my fit →</a></div></div>
     </section>
-    <section id="offers" class="section offers-section">
-      <div class="section-heading"><h2>Get one buying journey working.</h2><p class="section-subheading">For service businesses with existing inquiries and a process that needs repair.</p></div>
-      <div class="offer-grid">
-        <article class="offer-card offer-featured">
-          <h3>Customer Journey Repair</h3><p class="offer-price">$4,000–$7,500</p>
-          <p>A fixed quote after we confirm the path and scope.</p>
-          <ul><li>Pages, forms, and booking with clear next steps</li><li>Inquiries routed to the right person</li><li>Automatic confirmations and agreed follow-up</li><li>Follow-up stops on reply, booking, or opt-out</li><li>Owner, status, and next action in one place</li><li>A tested path and a guide your team can use</li></ul>
-          <a class="button" href="#apply" data-intent="implementation">Ask about implementation →</a>
-        </article>
-        <div class="secondary-offers">
-          <details id="review" class="scan-details"><summary>Want advice first? $300 Build Review</summary><p>60 minutes, a build order, and written next steps. Credited toward qualifying work started within 30 days.</p><a href="#apply" data-intent="review">Request the review →</a></details>
-          <details class="scan-details"><summary>Need investigation or ongoing support?</summary><p>Last 10 Leads Diagnostic: $1,500 for ten inquiries, a repair plan, and a readout.</p><p>Monitoring, tests, and agreed improvements: $750–$1,500/month, scoped separately.</p></details>
-        </div>
-      </div>
+    <section class="section working-terms-section"><h2>Pay the balance after the path passes its tests.</h2><p>Capture, routing, next actions, and sequence exits are tested before acceptance.</p>
+      <details class="scan-details"><summary>Included scope and deposit terms</summary><ul>
+        <li>The package covers one inquiry path for one service, one existing page, one form or booking step, and one follow-up sequence of up to four messages.</li>
+        <li>Up to two existing systems and two supported connections. A full rebuild, migration, custom application, or additional path is outside this package.</li>
+        <li>Start date and delivery milestones are confirmed during onboarding. If the setup cannot be supported or a start date cannot be agreed, the deposit is returned before implementation begins.</li>
+        <li>Vendor subscriptions and usage charges are separate client costs. New work requires a separate agreement before it begins.</li>
+        <li>The final balance waits for the agreed tests. If included tests still fail after the correction period, you may cancel and receive the deposit back. Read the full order terms before payment.</li>
+        <li>One handoff session and operating guide. Included defects are covered for 14 calendar days after acceptance. Ongoing monitoring is separate. Buyer decisions and sales are not guaranteed.</li>
+      </ul><a href="/repair-terms">Read the full order terms →</a></details>
+      <details id="review" class="scan-details"><summary>Want to learn first?</summary><p>Use the free starter below. The Build Review and deeper diagnostic remain optional, separate services.</p><a href="/tools/inquiry-first-aid">Get the free starter →</a></details>
     </section>
-    <section class="section working-terms-section">
-      <h2>Agree on scope. Test the work. Hand it over.</h2>
-      <p>50% to schedule. Final 50% after the agreed acceptance tests pass.</p>
-      <details class="scan-details"><summary>Scope, responsibilities, and terms</summary>
-        <ul><li>One service and up to three intake sources. A full rebuild is separate.</li><li>The proposal lists pages, connections, automations, dates, support, and the failure remedy before payment.</li><li>You provide access, approvals, and a team member to handle prospects.</li><li>Your accounts where supported. Vendor costs are separate.</li><li>Added work gets a price before it starts. Sales results are not guaranteed.</li></ul>
-      </details>
-    </section>
-    <section class="section proof-section">
-      <div class="proof-number">105</div><div class="proof-copy"><h2>Applications completed after structured follow-up.</h2><p>Structured reminders and human follow-up helped 105 of 207 unfinished school applications reach completion. School experience, not a sales forecast.</p><a href="/work/lead-recovery">See the case and its limits →</a></div>
-    </section>
-    <section id="apply" class="section apply-section">
-      <div class="apply-copy"><h2>Show me what needs fixing.</h2><div class="handoff-context" data-stackbrief-handoff hidden></div><p>Send the basics. I’ll check fit, confirm scope, and send a fixed proposal.</p><p class="apply-note">Prefer to fix it yourself? <a href="/stackbrief">Build my StackBrief →</a></p></div>
-      <form class="service-form" action="https://formspree.io/f/xeewjjlv" method="POST" data-service-form>
-        <input type="hidden" name="_subject" value="Expansion Works service inquiry">
-        <input type="hidden" name="source" value="Customer Journey Repair page">
-        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <label class="field-wide">What do you want help with?<select name="intent" required><option value="implementation">Build or repair the system</option><option value="review">$300 Build Review</option><option value="diagnostic">Investigate the process first</option></select></label>
-        <label>Name<input type="text" name="name" autocomplete="name" required></label>
-        <label>Work email<input type="email" name="email" autocomplete="email" required></label>
-        <label class="field-wide">Service you sell<input type="text" name="service" required maxlength="300"></label>
-        <label class="field-wide">What happens after an inquiry, and what do you want changed?<textarea name="brief_changes" rows="4" required maxlength="3000"></textarea></label>
-        <details class="scan-details field-wide"><summary>Add project details (optional)</summary>
-        <label>Website, if relevant<input type="url" name="website" placeholder="https://"></label>
-        <label data-brief-covered>Good-fit inquiries in the last 30 days<select name="qualified_inquiries_30d"><option value="">Choose one</option><option>0–4</option><option>5–20</option><option>More than 20</option><option>I do not know</option></select></label>
-        <label data-brief-covered>Normal customer value in the first 90 days<select name="customer_value_90d"><option value="">Choose one</option><option>Under $2,000</option><option>$2,000–$4,999</option><option>$5,000 or more</option><option>I do not know</option></select></label>
-        <label>Who will handle prospect conversations?<input type="text" name="internal_owner" maxlength="200" placeholder="You or someone on your team"></label>
-        <label class="field-wide">Current tools and inquiry sources<input type="text" name="tools_sources" maxlength="500" placeholder="Website form, inbox, calendar, sheet or CRM"></label>
-        <label class="field-wide">Desired timing<input type="text" name="timeline" maxlength="200" placeholder="A target date, or just exploring"></label>
-        </details>
-        <button class="button field-wide" type="submit">Request my scope →</button>
-        <p class="form-privacy field-wide">Used to handle your request. <a href="/privacy">Privacy</a></p>
-        <p class="form-status field-wide" data-apply-status aria-live="polite"></p>
-      </form>
+    <section class="section proof-section"><div class="proof-number">105</div><div class="proof-copy"><h2>Unfinished applications became completed applications.</h2><p>Structured reminders and staff follow-up helped 105 of 207 unfinished school applications reach completion. School experience, not a sales forecast.</p><a href="/work/lead-recovery">See the case and its limits →</a></div></section>
+    <section id="apply" class="section apply-section"><div class="apply-copy"><h2>Is this the right repair for you?</h2><p>Five short choices. See whether you are ready for the package or get a useful free next step.</p><p class="apply-note">Your answers stay in this browser during qualification.</p></div>
+      <div><noscript><p>Enable JavaScript for the fit check, or <a href="/tools/inquiry-first-aid">use the free starter</a>.</p></noscript><form class="service-form repair-fit" data-repair-fit></form><div data-repair-result hidden aria-live="polite"></div></div>
     </section>
   </main>
 
@@ -128,7 +96,7 @@
     <div class="footer-brand"><strong>EXPANSION WORKS</strong><span>STACKBRIEF IMPLEMENTATION</span></div>
     <p>Build and repair the next step.</p>
     <nav aria-label="Footer navigation"><a href="/">StackBrief</a><a href="/guides/">Guides</a><a href="/privacy">Privacy</a><a href="#apply">Contact</a></nav>
-    <p class="footer-note">© 2026 Expansion Works LLC. Final price, dates, and terms follow scope confirmation.</p>
+    <p class="footer-note">© 2026 Expansion Works LLC. Standard package: $4,000. Dates and included setup confirmed during onboarding.</p>
   </footer>
 </body>
 </html>

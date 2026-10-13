@@ -897,3 +897,16 @@ h3 { font-size: 25px; font-weight: 800; line-height: 1; }
 
 .scan-page .stack-demo-body { grid-template-columns: 1fr 1.2fr; gap: 18px; }
 @media (max-width: 700px) { .scan-page .stack-demo-body { grid-template-columns: 1fr; } }
+
+.repair-fit fieldset { border: 0; margin: 0; padding: 0; }
+.repair-fit legend { font: 700 26px/1.3 var(--display); color: var(--white); margin-bottom: 16px; }
+.repair-fit fieldset > p { font-size: 16px; color: #bed0da; margin-bottom: 18px; }
+.service-form .fit-option { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border: 1px solid var(--line); margin-bottom: 12px; font: 500 16px/1.5 var(--body,Inter,sans-serif); color: var(--white); cursor: pointer; }
+.service-form .fit-option input { width: 20px; height: 20px; flex: 0 0 20px; margin: 3px 0 0; accent-color: var(--cyan); }
+.service-form .fit-option:has(input:checked) { border-color: var(--cyan); background: #123244; }
+.repair-fit .hero-actions { margin-top: 20px; }
+[data-repair-result] { padding: 26px; border: 1px solid var(--cyan); }
+[data-repair-result] h3 { font-size: 30px; }
+[data-repair-result] p, [data-repair-result] li { margin: 16px 0; font-size: 16px; line-height: 1.65; }
+[data-repair-result] ol { padding-left: 22px; }
+.scan-page .section pre { white-space: pre-wrap; overflow-wrap: anywhere; font: 16px/1.6 var(--body,Inter,sans-serif); padding: 20px; background: #0a1c2c; }
