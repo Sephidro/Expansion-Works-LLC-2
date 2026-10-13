@@ -46,7 +46,8 @@
       "amountUSD": 2000,
       "redirectUrl": "https://stackbriefxp.vercel.app/onboarding",
       "paymentVerification": "Square receipt/dashboard match before work; no payment webhook connected",
-      "verification": "Hosted checkout title and $2,000 total verified; transaction and webhook untested"
+      "verification": "Hosted checkout title and $2,000 total verified; transaction and webhook untested",
+      "orderGate": "Xavier confirms compatibility, scope and start date before sending the deposit link; not automatically issued by BANT"
     }
   ]
 }

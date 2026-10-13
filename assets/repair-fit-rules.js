@@ -44,5 +44,5 @@
     const route = reasons[0] || 'qualified';
     return { status: reasons.length ? 'free' : 'qualified', route, reasons, need: value('need'), price: 4000, deposit: 2000, balance: 2000 };
   }
-  window.RepairFitRules = { version: '2026-10-13.1', questions, evaluate };
+  window.RepairFitRules = { version: '2026-10-13.2', questions, evaluate };
 })();

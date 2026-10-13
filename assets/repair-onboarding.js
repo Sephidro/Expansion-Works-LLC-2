@@ -7,7 +7,7 @@
   let fit;
   try { fit = JSON.parse(localStorage.getItem('repair_fit_v1')); } catch { /* Allow onboarding from another device. */ }
   const hidden = (name,value) => { const input=document.createElement('input');input.type='hidden';input.name=name;input.value=String(value ?? '');form.append(input); };
-  if (fit?.version === '2026-10-13.1') {
+  if (['2026-10-13.1','2026-10-13.2'].includes(fit?.version)) {
     hidden('fit_id',fit.fitId);hidden('fit_answers',JSON.stringify(fit.answers));hidden('terms_reviewed_at',fit.termsReviewedAt);hidden('terms_version',fit.termsVersion);
     const brief=funnel?.getResult();
     if(brief && brief.briefId===fit.briefId) {hidden('stackbrief_id',brief.briefId);hidden('stackbrief_summary',brief.portableBrief);hidden('stackbrief_attribution',JSON.stringify(brief.attribution));}
@@ -20,7 +20,7 @@
       const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
       if(!response.ok)throw new Error('Send failed');
       funnel?.track('repair_onboarding_submitted',{fitId:fit?.fitId || '',briefId:fit?.briefId || ''});
-      form.innerHTML='<div role="status"><h2>Project details received.</h2><p>Next: match your Square payment, confirm the start date, and arrange account access.</p></div>';
+      form.innerHTML='<div role="status"><h2>Project details received.</h2><p>Next: match your Square payment to the confirmed order and arrange account access.</p></div>';
     } catch {status.textContent='Could not send. Try again or email xavier.brandmanager@gmail.com.';button.disabled=false;button.textContent='Send my project details →';}
   });
 })();

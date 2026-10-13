@@ -21,7 +21,11 @@ assert.ok(html.includes('data-repair-fit'));
 console.log(`${checked} BANT combinations passed; only ${qualified} fit all criteria. Missing and invalid answers cannot qualify.`);
 
 const ui=fs.readFileSync(new URL('../assets/repair-fit.js',import.meta.url),'utf8');
-assert.ok(ui.includes('https://square.link/u/m1VsIYO7'));
+assert.ok(!ui.includes('location.assign'));
+assert.ok(ui.includes('data-setup-form'));
+assert.ok(ui.includes('name="payment_status" value="unpaid"'));
+assert.ok(ui.includes('https://formspree.io/f/xeewjjlv'));
+assert.ok(ui.includes("data.set('fit_answers'"));
 assert.ok(!ui.includes('checkout is not open'));
 const onboard=fs.readFileSync(new URL('../assets/repair-onboarding.js',import.meta.url),'utf8');
 assert.ok(!onboard.includes("payment_status', 'paid"));
