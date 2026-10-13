@@ -21,7 +21,7 @@
       test: 'For 14 days, keep one row per active opportunity with the person responsible, stage, next action, and next-action date. Review rows with no next action twice per week.',
       wrong: 'Recheck this when follow-up slips repeatedly, more than one person needs the same context, or you cannot scan every active opportunity in 60 seconds.',
       skip: ['A CRM migration', 'Workflow automation', 'A second place to track the same people'],
-      cta: 'Build the rest of my lean stack',
+      cta: 'Check the full journey',
       href: '/stackbrief?utm_source=crm_breakpoint&utm_medium=result&utm_campaign=keep_sheet'
     },
     process: {
@@ -41,7 +41,7 @@
       test: 'Create one pipeline with no more than six stages. Name the person responsible, next action, and date on every open opportunity. Measure adoption and stalled deals for 14 days before adding automation.',
       wrong: 'Recheck this if one person can still see every opportunity and the real issue is demand, offer clarity, or proposal quality.',
       skip: ['Complex marketing automation', 'A platform chosen for future headcount', 'Migrating client delivery before the sales path works'],
-      cta: 'Choose the smallest fitting system',
+      cta: 'Check the full journey',
       href: '/stackbrief?utm_source=crm_breakpoint&utm_medium=result&utm_campaign=light_crm'
     },
     connected: {
@@ -80,8 +80,8 @@
       ${economicSignal ? '<p class="economic-signal"><strong>ONE-CLIENT MATH</strong> One normal engagement could cost more than the software. Measure how often the failure happens before you buy.</p>' : ''}
       <div class="breakpoint-result-grid">
         <article><span>RUN THIS 14-DAY TEST</span><p>${escapeHtml(outcome.test)}</p></article>
-        <article><span>RECHECK THIS RESULT WHEN</span><p>${escapeHtml(outcome.wrong)}</p></article>
-        <article><span>DO NOT BUY YET</span><ul>${outcome.skip.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>
+        <details class="scan-details"><summary>When to reconsider</summary><p>${escapeHtml(outcome.wrong)}</p></details>
+        <details class="scan-details"><summary>What can wait</summary><ul>${outcome.skip.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></details>
       </div>
       <div class="breakpoint-result-actions">
         <a class="button" href="${escapeHtml(outcome.href)}">${escapeHtml(outcome.cta)} →</a>

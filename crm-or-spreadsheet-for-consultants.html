@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#06111f">
   <link rel="canonical" href="https://stackbriefxp.vercel.app/crm-or-spreadsheet-for-consultants">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Keep the spreadsheet until it starts losing the thread.">
+  <meta property="og:title" content="Do you need a CRM?">
   <meta property="og:description" content="Answer six questions and find out whether to keep the spreadsheet, fix the process, or move to a CRM.">
   <meta property="og:url" content="https://stackbriefxp.vercel.app/crm-or-spreadsheet-for-consultants">
   <meta property="og:image" content="https://stackbriefxp.vercel.app/assets/stackbrief-featured.jpg">
@@ -63,12 +63,12 @@
   }
   </script>
 </head>
-<body>
+<body class="scan-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="/" aria-label="StackBrief home">
       <span class="brand-mark" aria-hidden="true">XP</span>
-      <span class="brand-copy"><strong>STACKBRIEF</strong><small>DECISION TOOL</small></span>
+      <span class="brand-copy"><strong>STACKBRIEF</strong></span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
       <span></span><span></span><span></span><span class="sr-only">Open menu</span>
@@ -85,13 +85,13 @@
     <section class="breakpoint-hero">
       <div>
         <p class="question-kicker">CRM READINESS TEST // FOR INDEPENDENT CONSULTANTS</p>
-        <h1>Keep the spreadsheet until it starts losing the thread.</h1>
-        <p class="breakpoint-dek">Move to a CRM when active opportunities become hard to scan, follow-up slips, or two people need the same information. Six questions will tell you if that is happening now.</p>
+        <h1>Do you need a CRM?</h1>
+        <p class="breakpoint-dek">Six questions to decide whether to keep your sheet, fix the process, or switch.</p>
         <div class="hero-actions">
           <a class="button" href="#breakpoint">Find out if I need a CRM <span aria-hidden="true">→</span></a>
           <a class="text-link" href="#answer">Give me the short answer</a>
         </div>
-        <ul class="trust-line"><li>6 questions</li><li>Immediate result</li><li>Product names come last</li></ul>
+        <ul class="trust-line"><li>6 questions</li><li>Immediate result</li><li>Free</li></ul>
       </div>
       <aside class="breakpoint-card" aria-label="When to move from a spreadsheet to a CRM">
         <span>WHEN TO SWITCH</span>
@@ -103,85 +103,64 @@
 
     <section id="breakpoint" class="section breakpoint-test-section">
       <div class="section-heading">
-        <h2>Rate what failed in the last 30 days.</h2>
-        <p class="section-subheading">Save the feature wishlist for later. Answer for the business you run today.</p>
+        <h2>Answer for the last 30 days.</h2>
+        <p class="section-subheading">Choose what happened, not what you plan to build.</p>
       </div>
       <form class="breakpoint-form" data-crm-test>
         <fieldset data-question="volume">
           <legend><span>01</span>How many serious opportunities are active in a normal month?</legend>
-          <label><input type="radio" name="volume" value="0" required><span><strong>0 to 4</strong><small>I can usually remember each one.</small></span></label>
-          <label><input type="radio" name="volume" value="1"><span><strong>5 to 12</strong><small>One person can still scan them with discipline.</small></span></label>
-          <label><input type="radio" name="volume" value="2"><span><strong>13 to 30</strong><small>These are getting hard to track from memory.</small></span></label>
-          <label><input type="radio" name="volume" value="3"><span><strong>More than 30</strong><small>You need to decide which opportunity needs attention next.</small></span></label>
+          <label><input type="radio" name="volume" value="0" required><span><strong>0 to 4</strong></span></label>
+          <label><input type="radio" name="volume" value="1"><span><strong>5 to 12</strong></span></label>
+          <label><input type="radio" name="volume" value="2"><span><strong>13 to 30</strong></span></label>
+          <label><input type="radio" name="volume" value="3"><span><strong>More than 30</strong></span></label>
         </fieldset>
 
         <fieldset data-question="people">
           <legend><span>02</span>How many people touch an opportunity before it closes?</legend>
-          <label><input type="radio" name="people" value="0" required><span><strong>Only me</strong><small>I hold the whole story.</small></span></label>
-          <label><input type="radio" name="people" value="2"><span><strong>Me and one other person</strong><small>Both people need the same record and next step.</small></span></label>
-          <label><input type="radio" name="people" value="3"><span><strong>Three or more people</strong><small>Each opportunity needs one person responsible for the next step.</small></span></label>
+          <label><input type="radio" name="people" value="0" required><span><strong>Only me</strong></span></label>
+          <label><input type="radio" name="people" value="2"><span><strong>Me and one other person</strong></span></label>
+          <label><input type="radio" name="people" value="3"><span><strong>Three or more people</strong></span></label>
         </fieldset>
 
         <fieldset data-question="nextaction">
           <legend><span>03</span>Of the last 10 good-fit prospects, how many had no visible next action and date?</legend>
-          <label><input type="radio" name="nextaction" value="0" required><span><strong>0 or 1</strong><small>The process is mostly visible.</small></span></label>
-          <label><input type="radio" name="nextaction" value="2"><span><strong>2 or 3</strong><small>This has happened more than once.</small></span></label>
-          <label><input type="radio" name="nextaction" value="4"><span><strong>4 or more</strong><small>The business cannot reliably see what should happen next.</small></span></label>
-          <label><input type="radio" name="nextaction" value="2" data-unknown><span><strong>I cannot answer in 60 seconds</strong><small>Start by listing every active opportunity.</small></span></label>
+          <label><input type="radio" name="nextaction" value="0" required><span><strong>0 or 1</strong></span></label>
+          <label><input type="radio" name="nextaction" value="2"><span><strong>2 or 3</strong></span></label>
+          <label><input type="radio" name="nextaction" value="4"><span><strong>4 or more</strong></span></label>
+          <label><input type="radio" name="nextaction" value="2" data-unknown><span><strong>I cannot answer in 60 seconds</strong></span></label>
         </fieldset>
 
         <fieldset data-question="followup">
           <legend><span>04</span>How often does a follow-up happen later than intended or not at all?</legend>
-          <label><input type="radio" name="followup" value="0" required><span><strong>Rarely</strong><small>The current habit is holding.</small></span></label>
-          <label><input type="radio" name="followup" value="2"><span><strong>A few times a month</strong><small>Follow-up is slipping several times each month.</small></span></label>
-          <label><input type="radio" name="followup" value="4"><span><strong>Every week</strong><small>Late or missed follow-up is normal now.</small></span></label>
-          <label><input type="radio" name="followup" value="2" data-unknown><span><strong>I do not track it</strong><small>Measure before blaming a tool.</small></span></label>
+          <label><input type="radio" name="followup" value="0" required><span><strong>Rarely</strong></span></label>
+          <label><input type="radio" name="followup" value="2"><span><strong>A few times a month</strong></span></label>
+          <label><input type="radio" name="followup" value="4"><span><strong>Every week</strong></span></label>
+          <label><input type="radio" name="followup" value="2" data-unknown><span><strong>I do not track it</strong></span></label>
         </fieldset>
 
         <fieldset data-question="copying">
           <legend><span>05</span>How often is lead information copied between inboxes, forms, notes, or sheets?</legend>
-          <label><input type="radio" name="copying" value="0" required><span><strong>Rarely</strong><small>One place already does the job.</small></span></label>
-          <label><input type="radio" name="copying" value="1"><span><strong>Sometimes</strong><small>Some re-entry exists but it is manageable.</small></span></label>
-          <label><input type="radio" name="copying" value="3"><span><strong>For most leads</strong><small>Most leads have to be copied from one place to another.</small></span></label>
+          <label><input type="radio" name="copying" value="0" required><span><strong>Rarely</strong></span></label>
+          <label><input type="radio" name="copying" value="1"><span><strong>Sometimes</strong></span></label>
+          <label><input type="radio" name="copying" value="3"><span><strong>For most leads</strong></span></label>
         </fieldset>
 
         <fieldset data-question="economics">
           <legend><span>06</span>What would one preventable missed engagement mean?</legend>
-          <label><input type="radio" name="economics" value="0" required><span><strong>I do not know yet</strong><small>Measure the leak before buying the fix.</small></span></label>
-          <label><input type="radio" name="economics" value="1"><span><strong>Mostly an annoyance</strong><small>A manual process may still cost less than CRM setup and upkeep.</small></span></label>
-          <label><input type="radio" name="economics" value="3"><span><strong>One win could pay for the system</strong><small>Track how often this failure happens.</small></span></label>
+          <label><input type="radio" name="economics" value="0" required><span><strong>I do not know yet</strong></span></label>
+          <label><input type="radio" name="economics" value="1"><span><strong>Mostly an annoyance</strong></span></label>
+          <label><input type="radio" name="economics" value="3"><span><strong>One win could pay for the system</strong></span></label>
         </fieldset>
 
         <div class="breakpoint-submit">
           <button class="button" type="submit">Show my answer →</button>
-          <p>No answers are sent anywhere. The result is calculated in this browser.</p>
+          <p></p>
         </div>
       </form>
       <div class="breakpoint-result" data-crm-result hidden aria-live="polite"></div>
     </section>
 
-    <section id="answer" class="section breakpoint-answer">
-      <div class="section-heading">
-        <p class="question-kicker">THE SHORT ANSWER</p>
-        <h2>You need a CRM when you can no longer see or follow up with every active opportunity.</h2>
-        <p class="section-subheading">These four results show what to keep, what to fix, and when to switch.</p>
-      </div>
-      <div class="breakpoint-grid">
-        <article><span>KEEP THE SPREADSHEET</span><h3>One person can see every open opportunity.</h3><p>Each prospect has a stage, next action, and date. Follow-up rarely slips. A new platform would add upkeep before it adds control.</p></article>
-        <article><span>FIX THE PROCESS FIRST</span><h3>Write down the stages before choosing software.</h3><p>List what happens from first interest to paid, who handles each step, and how long each step should take. Then choose a tool that supports it.</p></article>
-        <article><span>INSTALL A CRM</span><h3>Active opportunities are getting hard to see.</h3><p>Opportunities disappear, follow-up runs late, or two people need the same context. A lightweight CRM can keep the work visible.</p></article>
-        <article><span>CONNECT THE SYSTEM</span><h3>Several people and tools now share the same opportunity.</h3><p>Connect the intake sources, responsible people, and repeated workflows around one record and one next step.</p></article>
-      </div>
-    </section>
-
-    <section class="section breakpoint-truth">
-      <div>
-        <p class="question-kicker">SOMEONE STILL HAS TO FOLLOW UP</p>
-        <h2>A CRM does not guarantee follow-up gets done.</h2>
-      </div>
-      <p>Give every active opportunity one person responsible, one stage, one next action, one date, and one recorded outcome. Then choose the smallest tool that helps your team keep doing it.</p>
-    </section>
-
+    <section id="answer" class="section breakpoint-answer"><h2>The short answer</h2><p>Keep a sheet while every opportunity has an owner, next action, and date. Consider a CRM when tracking or follow-up repeatedly slips.</p></section>
     <section id="faq" class="section breakpoint-faq">
       <div class="section-heading"><h2>Questions consultants ask before switching.</h2></div>
       <details><summary>Do I need a CRM as a solo consultant?</summary><p>Use a spreadsheet while you can see every active opportunity, follow-up rarely slips, and each prospect has a clear next action and date.</p></details>
@@ -191,7 +170,7 @@
 
     <section class="section final-cta">
       <h2>A CRM handles one part of your lead path.</h2>
-      <p class="section-subheading">Run the full StackBrief to see what should happen before and after the pipeline, or bring the leak to Expansion Works if one recovered engagement could justify the build.</p>
+      <p class="section-subheading">Check the full journey with StackBrief, or ask me to build the fix.</p>
       <div class="hero-actions">
         <a class="button" href="/stackbrief?utm_source=crm_breakpoint&amp;utm_medium=internal&amp;utm_campaign=decision_tool">Build my StackBrief →</a>
       </div>

@@ -6,7 +6,13 @@
   const status = document.querySelector('[data-apply-status]');
   const params = new URLSearchParams(window.location.search);
   let started = false;
-  document.querySelectorAll('[data-intent]').forEach(link => link.addEventListener('click', () => { form.elements.intent.value = link.dataset.intent; }));
+  const updateIntent = () => {
+    const labels = { implementation: 'Request my scope →', review: 'Request the review →', diagnostic: 'Ask about a diagnostic →' };
+    form.querySelector('button[type="submit"]').textContent = labels[form.elements.intent.value] || labels.implementation;
+  };
+  document.querySelectorAll('[data-intent]').forEach(link => link.addEventListener('click', () => { form.elements.intent.value = link.dataset.intent; updateIntent(); }));
+  form.elements.intent.addEventListener('change', updateIntent);
+  updateIntent();
   funnel?.track('service_page_viewed', { source: params.get('from') || 'direct', fit: params.get('fit') || '', briefId: params.get('brief') || '' });
   form.addEventListener('focusin', () => { if (!started) { started = true; funnel?.track('dfy_application_started', { source: params.get('from') || 'direct' }); } });
   form.addEventListener('submit', async event => {

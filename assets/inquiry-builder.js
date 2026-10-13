@@ -137,14 +137,14 @@ ${problems.map((problem, index) => `    <label><input type="radio" name="buyer_p
         <h4>04 // ROUTING</h4>
         <p>${escapeHtml(routing)}</p>
       </div>
-      <div class="output-code">
+      <details class="output-code scan-details"><summary>Starter HTML</summary>
         <div><h4>STARTER HTML</h4><button type="button" data-copy-code>COPY STARTER HTML</button></div>
         <pre><code>${escapeHtml(code)}</code></pre>
-        <p>Replace the clearly marked form-handler value before publishing. Add your privacy notice, consent language, spam controls, and accessibility testing.</p>
-      </div>
+        <p>Replace the form handler. Add privacy and consent text, spam controls, and accessibility checks before publishing.</p>
+      </details>
       <div class="output-next">
-        <p>The form starts the conversation. Next, decide where the inquiry is stored, who follows up, and how quickly that follow-up starts.</p>
-        <a href="/stackbrief">Build my StackBrief →</a>
+        <p>Want capture and follow-up connected?</p>
+        <a href="/sales#apply">Ask about implementation →</a>
       </div>
     `;
 
