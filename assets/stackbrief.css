@@ -894,3 +894,6 @@ h3 { font-size: 25px; font-weight: 800; line-height: 1; }
 }
 
 .scan-page .result-block.scan-details { min-height: 0; }
+
+.scan-page .stack-demo-body { grid-template-columns: 1fr 1.2fr; gap: 18px; }
+@media (max-width: 700px) { .scan-page .stack-demo-body { grid-template-columns: 1fr; } }
