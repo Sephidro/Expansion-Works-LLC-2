@@ -25,8 +25,8 @@
       ['month', 'Within the next 30 days'],
       ['later', 'Later, or I am still exploring']
     ]) },
-    { id: 'scope', title: 'Does the standard package fit your project?', note: 'One service, one inquiry path, up to two existing systems. Your team handles prospects.', answers: options([
-      ['yes', 'Yes. We need one defined path repaired'],
+    { id: 'scope', title: 'Does the standard package fit your project?', note: 'Six workflows for one business and service. Your team handles conversations and updates booking and job status.', answers: options([
+      ['yes', 'Yes. We need this six-workflow system'],
       ['larger', 'We need a full rebuild, migration, or custom application'],
       ['unknown', 'I cannot confirm that yet']
     ]) }
@@ -44,5 +44,5 @@
     const route = reasons[0] || 'qualified';
     return { status: reasons.length ? 'free' : 'qualified', route, reasons, need: value('need'), price: 4000, deposit: 2000, balance: 2000 };
   }
-  window.RepairFitRules = { version: '2026-10-13.2', questions, evaluate };
+  window.RepairFitRules = { version: '2026-10-14.1', questions, evaluate };
 })();

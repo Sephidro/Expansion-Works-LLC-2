@@ -222,3 +222,10 @@
 
 .plan-playback { display:flex; align-items:center; gap:16px; }
 .plan-playback button { color:#c2dfe8; }
+
+.sales-six-workflows { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.sales-six-workflows article { padding:26px; }
+.sales-six-workflows h3 { font-size:27px; }
+.workflow-trigger { margin-top:18px; padding-top:12px; border-top:1px solid #294254; color:#83c9d8; font-size:12px; line-height:1.55; }
+@media(max-width:950px) { .sales-six-workflows { grid-template-columns:1fr 1fr; } }
+@media(max-width:700px) { .sales-six-workflows { grid-template-columns:1fr; } }
